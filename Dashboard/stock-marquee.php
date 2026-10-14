@@ -1,24 +1,24 @@
 <?php
 /**
- * Live financial-stock marquee. Data is fetched through a same-origin PHP proxy,
+ * US stock cards. Data is fetched through a same-origin PHP proxy,
  * which keeps the Finnhub API key on the server rather than exposing it in the browser.
  */
 ?>
-<section class="vh-stock-marquee" aria-label="Live stock market prices">
+<section class="vh-stock-marquee" aria-label="US stock market prices">
     <div class="vh-stock-marquee-head">
         <div>
             <span class="vh-stock-live-dot" aria-hidden="true"></span>
-            <strong>MARKET WATCH</strong>
-            <span class="vh-stock-market-caption">US equities · intraday</span>
+            <strong>US STOCKS</strong>
+            <span class="vh-stock-market-caption">Live market prices</span>
         </div>
-        <span class="vh-stock-updated" id="vhStockUpdated" aria-live="polite">Loading live quotes…</span>
+        <span class="vh-stock-updated" id="vhStockUpdated" aria-live="polite">Loading US stock quotes…</span>
     </div>
-    <div class="vh-stock-marquee-viewport">
+    <div class="vh-stock-marquee-viewport" tabindex="0" role="region" aria-label="Scroll horizontally to view more stock cards">
         <div class="vh-stock-marquee-track" id="vhStockTrack">
-            <div class="vh-stock-loading">Connecting to live market data…</div>
+            <div class="vh-stock-loading">Connecting to US market data…</div>
         </div>
     </div>
-    <div class="vh-stock-marquee-note">Market prices may be delayed depending on the data provider.</div>
+    <div class="vh-stock-marquee-note">Shows current quote and daily price movement. Quotes may be delayed by the data provider.</div>
 </section>
 <script>
 (function () {
@@ -29,40 +29,28 @@
     track.dataset.initialized = 'true';
 
     const endpoint = 'stock-market-data.php';
-    const expectedCount = 20;
+    const maxStocks = 10;
     const esc = value => String(value == null ? '' : value).replace(/[&<>"']/g, ch => ({
         '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
     }[ch]));
     const money = value => new Intl.NumberFormat('en-US', {
         style: 'currency', currency: 'USD',
-        minimumFractionDigits: value < 1 ? 3 : 2,
-        maximumFractionDigits: value < 1 ? 4 : 2
+        minimumFractionDigits: 2, maximumFractionDigits: 2
     }).format(value);
-    function sparkline(values, up) {
-        if (!values || values.length < 2) return '<span class="vh-stock-no-chart" aria-label="Intraday chart unavailable">—</span>';
-        const width = 86, height = 28, pad = 2;
-        const low = Math.min.apply(null, values), high = Math.max.apply(null, values);
-        const range = high - low || 1;
-        const points = values.map((v, i) => {
-            const x = pad + i * (width - pad * 2) / (values.length - 1);
-            const y = height - pad - ((v - low) / range) * (height - pad * 2);
-            return x.toFixed(1) + ',' + y.toFixed(1);
-        }).join(' ');
-        const color = up ? '#27c281' : '#f06b75';
-        return '<svg class="vh-stock-sparkline" viewBox="0 0 '+width+' '+height+'" role="img" aria-label="Intraday price trend" focusable="false"><polyline points="'+points+'" fill="none" stroke="'+color+'" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-    }
+    const signedMoney = value => (Number(value) > 0 ? '+' : Number(value) < 0 ? '−' : '') + money(Math.abs(Number(value) || 0));
     function card(stock) {
-        const up = Number(stock.change) >= 0;
+        const changeAmount = Number(stock.changeAmount) || 0;
+        const changePercent = Number(stock.change) || 0;
+        const up = changeAmount >= 0;
         const cls = up ? 'is-up' : 'is-down';
         const icon = up ? 'fa-arrow-up' : 'fa-arrow-down';
-        const change = Number(stock.change);
-        const pct = (up ? '+' : '') + change.toFixed(2) + '%';
+        const percent = (changePercent > 0 ? '+' : '') + changePercent.toFixed(2) + '%';
         return '<article class="vh-stock-ticker '+cls+'" title="'+esc(stock.name)+' ('+esc(stock.symbol)+')">'
-            + '<div class="vh-stock-ticker-top"><span class="vh-stock-symbol">'+esc(stock.symbol)+'</span>'
-            + '<span class="vh-stock-change '+cls+'"><i class="fas '+icon+'" aria-hidden="true"></i>'+pct+'</span></div>'
+            + '<div class="vh-stock-ticker-top"><span class="vh-stock-symbol">'+esc(stock.symbol)+'</span></div>'
             + '<strong class="vh-stock-price">'+money(Number(stock.price))+'</strong>'
-            + '<div class="vh-stock-ticker-bottom">'+sparkline(stock.values, up)
-            + '<span class="vh-stock-company">'+esc(stock.name)+'</span></div></article>';
+            + '<div class="vh-stock-ticker-bottom"><span class="vh-stock-change-amount '+cls+'"><i class="fas '+icon+'" aria-hidden="true"></i>'+signedMoney(changeAmount)+'</span>'
+            + '<span class="vh-stock-change-percent '+cls+'">'+percent+'</span></div>'
+            + '<span class="vh-stock-company">'+esc(stock.name)+'</span></article>';
     }
     async function load() {
         try {
@@ -73,23 +61,22 @@
             });
             const payload = await response.json().catch(() => ({}));
             if (!response.ok) throw new Error(payload.error || 'Stock quotes are temporarily unavailable.');
-            const stocks = Array.isArray(payload.stocks) ? payload.stocks.filter(stock =>
+            const stocks = (Array.isArray(payload.stocks) ? payload.stocks : []).filter(stock =>
                 stock && typeof stock.symbol === 'string' &&
                 Number.isFinite(Number(stock.price)) &&
-                Number.isFinite(Number(stock.change))
-            ) : [];
+                Number.isFinite(Number(stock.change)) &&
+                Number.isFinite(Number(stock.changeAmount))
+            ).slice(0, maxStocks);
             if (!stocks.length) throw new Error('No stock quotes are available right now.');
-            const cards = stocks.map(card).join('');
-            track.innerHTML = cards + cards;
+            track.innerHTML = stocks.map(card).join('');
             track.classList.add('is-ready');
-            updated.textContent = stocks.length + ' of ' + expectedCount + ' stocks · Updated ' +
+            updated.textContent = stocks.length + ' US stocks · Updated ' +
                 new Date((Number(payload.updatedAt) || Math.floor(Date.now() / 1000)) * 1000)
                     .toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
-            track.setAttribute('aria-label', 'Live stock prices. The ticker repeats for continuous scrolling.');
-            track.style.setProperty('--vh-stock-scroll-duration', Math.max(55, stocks.length * 5.5) + 's');
+            track.setAttribute('aria-label', 'Up to 10 US stock prices. Scroll horizontally to see each card.');
         } catch (error) {
             if (!track.classList.contains('is-ready')) {
-                track.innerHTML = '<div class="vh-stock-loading">Live stock quotes are temporarily unavailable. Please check the server API configuration.</div>';
+                track.innerHTML = '<div class="vh-stock-loading">US stock quotes are temporarily unavailable. Please check the server API configuration.</div>';
             }
             updated.textContent = 'Quotes unavailable';
         }
