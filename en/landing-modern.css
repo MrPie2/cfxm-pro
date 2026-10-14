@@ -247,12 +247,21 @@ body.professional:not(.on-page-editor) #wrapper #footer a:not(.geo-ip-modal__lin
   content: "";
   position: absolute;
   inset: 0;
-  z-index: -1;
+  z-index: 0;
   pointer-events: none;
   background: linear-gradient(90deg, rgba(19, 12, 35, .88) 0%, rgba(30, 16, 53, .72) 48%, rgba(30, 16, 53, .14) 100%);
 }
+body.professional:not(.on-page-editor) #wrapper .button-solid.button-primary a,
+body.professional:not(.on-page-editor) #wrapper .button-primary a,
+body.professional:not(.on-page-editor) #wrapper .hpherobuttons .button-solid a,
+body.professional:not(.on-page-editor) #wrapper .cta-bar a,
+body.professional:not(.on-page-editor) #wrapper .cta-with-cards a.button {
+  color: #fff !important;
+}
 #wrapper #hpheader .two-column-callout,
 #wrapper #hpheader .callout-body {
+  position: relative;
+  z-index: 1;
   width: 100%;
 }
 #wrapper #hpheader .callout-body {
