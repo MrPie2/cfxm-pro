@@ -27,6 +27,7 @@ $curAbbr=$userDetails['curAbbr'];
     <title>Dashboard</title>
     <!-- Custom CSS -->
           <link href="css/style.css" rel="stylesheet">
+    <link href="../en/site-theme.css?v=1" rel="stylesheet">
     <link href="css/dashboard-modern.css" rel="stylesheet">
 <link href="css/lib/sweetalert/sweetalert.css" rel="stylesheet">
 <link href="css/lib/toastr/toastr.min.css" rel="stylesheet">
