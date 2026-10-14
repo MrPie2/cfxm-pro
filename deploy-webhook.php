@@ -90,7 +90,7 @@ if (!flock($lock, LOCK_EX | LOCK_NB)) {
     respond(409, ['ok' => false, 'message' => 'A deployment is already running']);
 }
 
-$command = ['git', '-C', __DIR__, 'pull', '--ff-only', 'origin', 'main'];
+$command = 'git -C ' . escapeshellarg(__DIR__) . ' pull --ff-only origin main';
 $descriptors = [
     0 => ['pipe', 'r'],
     1 => ['pipe', 'w'],
