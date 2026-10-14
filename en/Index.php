@@ -2481,71 +2481,7 @@ Get Started      </span>
                                                                     </div>
 
                                                                 </div>
-                                                                <div class="cta-cards ">
-                                                                    <div class="card-simple card-simple-dark">
-                                                                        <div class="card-icon field-lighticon"><img loading="lazy"src="https://www.forex.com/en-us/-/media/project/gain-capital/forex/icons/platforms/compare-platforms/icon-compareplatform-rangeofmarkets-colour.svg?iar=0&amp;extension=webp" alt="Blue icon of a combined bar chart with a line graph"
-                                                                                data-variantitemid="{E9A1D94D-8179-4433-B5C1-4C3F6B8C34F3}" data-variantfieldname="LightIcon" /></div>
-
-                                                                        <div class="card-title field-title">
-                                                                            Elite products, value, and execution
-                                                                        </div>
-                                                                        <div class="card-desc field-text">
-                                                                            <p>
-                                                                                Choose from
-                                                                                <a style="color: #fff; text-decoration: underline;" href="https://www.cfxm-pro.com/en/forex-trading/"><span style="text-decoration: underline;">80 products</span></a> and selected
-                                                                                <a style="color: #fff; text-decoration: underline;" href="https://www.cfxm-pro.com/en/futures-and-futures-options/"><span style="text-decoration: underline;">futures</span></a> through our affiliate.
-                                                                            </p>
-                                                                            <p>Enjoy consistently low trading costs and fast, quality execution.</p>
-                                                                        </div>
-                                                                        <div class="arrow-link">
-                                                                            <a gtmLinkName="Trade markets" href="https://www.cfxm-pro.com/en/markets-to-trade/" gtmLinkContext="main">Trade markets</a>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="card-simple card-simple-dark">
-                                                                        <div class="card-icon field-lighticon"><img loading="lazy"src="https://www.forex.com/en-us/-/media/project/gain-capital/forex/icons/landing-page/openfxaccount/icon-openfxaccount-wellprovideyoutools-colour.svg?iar=0&amp;extension=webp" alt=""
-                                                                                data-variantitemid="{6906455B-622A-4445-8659-9B7A93B4064A}" data-variantfieldname="LightIcon" /></div>
-
-                                                                        <div class="card-title field-title">
-                                                                            Tools designed for your edge
-                                                                        </div>
-                                                                        <div class="card-desc field-text">
-                                                                            <p>Refine your trading with exclusive data tools like <a style="color: #fff; text-decoration: underline;" href="https://www.cfxm-pro.com/en/performance-analytics-hub/"><span style="text-decoration: underline;">Performance Analytics</span></a>.
-                                                                                And take full command of your analysis with industry-leading <a style="color: #fff; text-decoration: underline;" href="https://www.cfxm-pro.com/en/trading-platforms/tradingview/"><span style="text-decoration: underline;">TradingView charts</span></a>.</p>
-                                                                        </div>
-                                                                        <div class="arrow-link">
-                                                                            <a gtmLinkName="Get trading tools" href="https://www.cfxm-pro.com/en/trading-tools/" gtmLinkContext="main">Get trading tools</a>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="card-simple card-simple-dark">
-                                                                        <div class="card-icon field-lighticon"><img loading="lazy"src="https://www.forex.com/en-us/-/media/project/gain-capital/forex/icons/markets/icon-market-globalmarketleader-colour.svg?iar=0&amp;extension=webp" alt="Global Market Leader" data-variantitemid="{129B6498-BF0B-4C99-AFB8-4303AE92CA5D}"
-                                                                                data-variantfieldname="LightIcon" /></div>
-
-                                                                        <div class="card-title field-title">
-                                                                            A trusted global leader
-                                                                        </div>
-                                                                        <div class="card-desc field-text">
-                                                                            <p>We're a wholly-owned subsidiary of StoneX Group Inc., a Fortune 50 financial giant.</p>
-                                                                            <p>As the number 1 broker in the US*, we're regulated, financially stable, and have provided our clients with trading services since 2001.</p>
-                                                                        </div>
-                                                                        <div class="arrow-link">
-                                                                            <a gtmLinkName="Financial security" href="https://www.cfxm-pro.com/en/about-us/strength-and-security/" gtmLinkContext="main">Financial security</a>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="card-simple card-simple-dark">
-                                                                        <div class="card-icon field-lighticon"><img loading="lazy"src="https://www.forex.com/en-us/-/media/project/gain-capital/forex/icons/nav/fxall-meganav-academy-support-bl.svg?iar=0&amp;extension=webp" alt="Blue chat icon of 2 people and a speech bubble"
-                                                                                data-variantitemid="{3D698A3E-3104-41B7-89EB-BB2B1D1DAE15}" data-variantfieldname="LightIcon" /></div>
-
-                                                                        <div class="card-title field-title">
-                                                                            A superior customer experience
-                                                                        </div>
-                                                                        <div class="card-desc field-text">
-                                                                            <p>Access knowledgeable customer support by phone, email or chat, enjoy convenient online account management tools, and experience a personalized service (selected offerings only).</p>
-                                                                        </div>
-                                                                        <div class="arrow-link">
-                                                                            <a gtmLinkName="Customer support" href="https://www.cfxm-pro.com/en/help-and-support/" gtmLinkContext="main">Customer support</a>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
+                                                                <!-- Duplicate trading-value cards removed; the primary cards section above remains available. -->
                                                             </div>
                                                         </div>
 
