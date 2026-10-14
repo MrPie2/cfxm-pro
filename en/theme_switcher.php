@@ -46,7 +46,8 @@
       
    </div>
 <script>
-const currentTheme=localStorage.getItem('theme');
+const currentTheme=localStorage.getItem('theme') || 'dark';
+ $('html').attr('data-theme', currentTheme);
  if(currentTheme=='dark'){
      $('html').attr('data-theme', currentTheme);
      $('.switch-dark').html(currentTheme==='dark' ? "<i class='fa fa-sun fa-spin spin' style='color: var(--liner-text-color); font-size: 20pt; margin-top: 15px'></i>" : "<i class='fa fa-moon' style='color: var(--liner-text-color); font-size: 20pt; margin-top: 15px'></i>");
