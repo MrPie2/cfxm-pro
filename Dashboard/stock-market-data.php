@@ -105,7 +105,7 @@ foreach ($requests as $index => $request) {
 }
 
 $result = array();
-foreach $result = array();
+$result = array();
 foreach ($bySymbol as $symbol => $data) {
     $quote = $data['quote'];
     if (!is_array($quote) || !isset($quote['c'], $quote['dp']) || !is_numeric($quote['c']) || !is_numeric($quote['dp']) || (float)$quote['c'] <= 0) {
