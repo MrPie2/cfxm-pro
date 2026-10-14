@@ -129,8 +129,6 @@ html[data-theme="dark"] .vh-chart-badge { background: rgba(185, 155, 232, .12); 
 .vh-stock-change-amount,.vh-stock-change-percent{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:800;font-variant-numeric:tabular-nums;white-space:nowrap}
 .vh-stock-change-amount.is-up,.vh-stock-change-percent.is-up{color:#27c281}
 .vh-stock-change-amount.is-down,.vh-stock-change-percent.is-down{color:#f06b75}
-.vh-stock-ticker.is-up .vh-stock-price{color:#27c281}
-.vh-stock-ticker.is-down .vh-stock-price{color:#f06b75}
 .vh-stock-company{display:block;min-width:0;margin-top:9px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--cfxm-muted,#a5b1ba);font-size:9px}
 .vh-stock-loading{padding:25px 18px;color:var(--cfxm-muted,#a5b1ba);font-size:12px}
 .vh-stock-marquee-note{padding:0 16px 11px;color:var(--cfxm-muted,#a5b1ba);font-size:9px}
