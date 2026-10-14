@@ -77,57 +77,6 @@
         performanceCanvas.style.display = 'none';
     }
 
-    var allocationCanvas = document.getElementById('vhAllocationChart');
-    var allocationEmpty = document.getElementById('vhAllocationEmpty');
-    var legend = document.getElementById('vhAllocationLegend');
-    if (allocationCanvas && Array.isArray(data.portfolioLabels) && data.portfolioLabels.length) {
-        if (allocationEmpty) allocationEmpty.hidden = true;
-        charts.push(new Chart(allocationCanvas, {
-            type: 'doughnut',
-            data: {
-                labels: data.portfolioLabels,
-                datasets: [{
-                    data: data.portfolioValues || [],
-                    backgroundColor: colors,
-                    borderWidth: 0,
-                    hoverOffset: 5
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                cutout: '70%',
-                plugins: {
-                    legend: { display: false },
-                    tooltip: { callbacks: { label: function (ctx) { return ' ' + ctx.label + ': ' + currency + Number(ctx.parsed || 0).toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2}); } } }
-                }
-            }
-        }));
-        if (legend) {
-            legend.innerHTML = '';
-            data.portfolioLabels.forEach(function (label, index) {
-                var row = document.createElement('div');
-                row.className = 'vh-legend-row';
-                var labelWrap = document.createElement('div');
-                labelWrap.className = 'vh-legend-label';
-                var dot = document.createElement('span');
-                dot.className = 'vh-legend-dot';
-                dot.style.backgroundColor = colors[index % colors.length];
-                var name = document.createElement('span');
-                name.textContent = label;
-                var amount = document.createElement('strong');
-                amount.textContent = currency + Number((data.portfolioValues || [])[index] || 0).toLocaleString(undefined, {maximumFractionDigits: 2});
-                labelWrap.appendChild(dot);
-                labelWrap.appendChild(name);
-                row.appendChild(labelWrap);
-                row.appendChild(amount);
-                legend.appendChild(row);
-            });
-        }
-    } else if (allocationCanvas) {
-        allocationCanvas.style.display = 'none';
-        if (legend) legend.style.display = 'none';
-    }
     var themeToggle = document.querySelector('.switch-dark');
     if (themeToggle) themeToggle.addEventListener('click', function () {
         window.setTimeout(refreshChartTheme, 0);
