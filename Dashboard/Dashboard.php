@@ -52,7 +52,7 @@ window.location.href='Notification.php?id=".$id."';
     $dashboardCompletedCount = 0;
     $dashboardPortfolio = array();
     $dashboardTimeline = array();
-    $dashboardHistoryQuery = mysqli_query($Conn, "SELECT Plan_Type, Amount, ROI, Date_Entered, Status FROM contracts WHERE Investor_id='$Investor_id' ORDER BY Date_Entered ASC");
+    $dashboardHistoryQuery = mysqli_query($Conn, "SELECT Plan_Type, Amount, ROI, Date_Entered, Status FROM contracts WHERE Investor_id='$Investor_id' AND Status IN (1,2) ORDER BY Date_Entered ASC");
     if ($dashboardHistoryQuery) {
         while ($dashboardRow = mysqli_fetch_assoc($dashboardHistoryQuery)) {
             $dashboardAmount = (float)$dashboardRow['Amount'];
