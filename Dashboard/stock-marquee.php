@@ -44,9 +44,22 @@
         const up = changeAmount >= 0;
         const cls = up ? 'is-up' : 'is-down';
         const icon = up ? 'fa-arrow-up' : 'fa-arrow-down';
+        const companyIcons = {
+            'AAPL': 'fab fa-apple',
+            'MSFT': 'fab fa-microsoft',
+            'NVDA': 'fas fa-microchip',
+            'AMZN': 'fab fa-amazon',
+            'GOOGL': 'fab fa-google',
+            'META': 'fas fa-users',
+            'BRK.B': 'fas fa-landmark',
+            'JPM': 'fas fa-university',
+            'AVGO': 'fas fa-microchip',
+            'LLY': 'fas fa-flask'
+        };
+        const companyIcon = companyIcons[stock.symbol] || 'fas fa-chart-line';
         const percent = (changePercent > 0 ? '+' : '') + changePercent.toFixed(2) + '%';
         return '<article class="vh-stock-ticker '+cls+'" title="'+esc(stock.name)+' ('+esc(stock.symbol)+')">'
-            + '<div class="vh-stock-ticker-top"><span class="vh-stock-symbol">'+esc(stock.symbol)+'</span></div>'
+            + '<div class="vh-stock-ticker-top"><span class="vh-stock-company-icon" aria-hidden="true"><i class="'+companyIcon+'"></i></span><span class="vh-stock-symbol">'+esc(stock.symbol)+'</span></div>'
             + '<strong class="vh-stock-price">'+money(Number(stock.price))+'</strong>'
             + '<div class="vh-stock-ticker-bottom"><span class="vh-stock-change-amount '+cls+'"><i class="fas '+icon+'" aria-hidden="true"></i>'+signedMoney(changeAmount)+'</span>'
             + '<span class="vh-stock-change-percent '+cls+'">'+percent+'</span></div>'
