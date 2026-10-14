@@ -161,8 +161,8 @@ window.smartsupp||(function(d) {
     <div class="vh-chart-grid">
         <section class="vh-panel vh-performance-panel">
             <div class="vh-panel-heading">
-                <div><h2>Portfolio performance</h2><p>Cumulative invested amount from your recorded contracts</p></div>
-                <span class="vh-chart-badge"><i class="fas fa-wave-square"></i> Account data</span>
+                <div><h2>Investment activity</h2><p>Cumulative invested amount from your recorded contracts</p></div>
+                <span class="vh-chart-badge"><i class="fas fa-wave-square"></i> Contract history</span>
             </div>
             <div class="vh-chart-wrap"><canvas id="vhPerformanceChart" aria-label="Cumulative investment history chart" role="img"></canvas></div>
             <div class="vh-chart-empty" id="vhPerformanceEmpty" <?php echo count($dashboardTimelineLabels) ? 'hidden' : ''; ?>>
