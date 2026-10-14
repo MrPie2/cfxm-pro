@@ -22,6 +22,14 @@ body {
 }
 body, #wrapper { overflow-x: clip; }
 #wrapper { background: var(--cfxm-page) !important; }
+/* Override legacy template-wide white link rule on light surfaces. */
+body.professional:not(.on-page-editor) #wrapper a:not(.geo-ip-modal__link) {
+  color: var(--cfxm-purple) !important;
+}
+body.professional:not(.on-page-editor) #wrapper .container-dark-background a:not(.geo-ip-modal__link),
+body.professional:not(.on-page-editor) #wrapper #footer a:not(.geo-ip-modal__link) {
+  color: rgba(255,255,255,.9) !important;
+}
 #wrapper a { transition: color .2s ease, background-color .2s ease, border-color .2s ease, box-shadow .2s ease, transform .2s ease; }
 #wrapper a:focus-visible, #wrapper button:focus-visible, #wrapper input:focus-visible, #wrapper select:focus-visible {
   outline: 3px solid rgba(119, 72, 188, .45) !important;
