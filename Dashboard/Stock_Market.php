@@ -8,9 +8,16 @@ include('Header.php');
 
 $stockId = isset($_GET['Stock_id']) ? (int)$_GET['Stock_id'] : 0;
 $stockRow = null;
-$stockQuery = mysqli_query($Conn, "SELECT * FROM stock WHERE id=" . $stockId . " LIMIT 1");
+$stockQuery = null;
+if ($stockId > 0) {
+    $stockQuery = mysqli_query($Conn, "SELECT * FROM stock WHERE id=" . $stockId . " LIMIT 1");
+} elseif (isset($_GET['Symbol']) && strtoupper(trim((string)$_GET['Symbol'])) === 'TSLA') {
+    // Public landing-page links resolve Tesla against the live stock catalogue.
+    $stockQuery = mysqli_query($Conn, "SELECT * FROM stock WHERE CompanyName LIKE '%Tesla%' OR tradingview LIKE '%TSLA%' ORDER BY CASE WHEN tradingview LIKE '%TSLA%' THEN 0 ELSE 1 END, id ASC LIMIT 1");
+}
 if ($stockQuery && mysqli_num_rows($stockQuery) > 0) {
     $stockRow = mysqli_fetch_assoc($stockQuery);
+    $stockId = (int)$stockRow['id'];
 }
 $vehicle = isset($_GET['Vehicle']) ? trim((string)$_GET['Vehicle']) : '';
 $allowedVehicles = array('company', 'Model S', 'Model 3', 'Model X', 'Model Y');
