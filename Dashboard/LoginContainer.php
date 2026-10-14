@@ -46,6 +46,44 @@ $WelcomeNote=$row['note'];
         .hidden{
         display: none;
     }
+    
+/* Modern CFXM-PRO authentication UI */
+:root{color-scheme:dark;--auth-bg:#080f1d;--auth-panel:#111c2f;--auth-border:rgba(148,163,184,.2);--auth-text:#f3f6fc;--auth-muted:#9eacc2;--auth-accent:<?php echo $Background; ?>}
+html{min-height:100%;background:var(--auth-bg)}
+body.header-fix.fix-sidebar{min-height:100vh!important;margin:0;background:radial-gradient(ellipse at 12% 5%,rgba(35,115,131,.24),transparent 38%),radial-gradient(ellipse at 90% 90%,rgba(<?php echo '30,90,110'; ?>,.18),transparent 38%),#080f1d!important;color:var(--auth-text)!important;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif!important}
+#main-wrapper{min-height:100vh;margin:0!important;padding:48px 16px 30px}
+.unix-login{width:100%;padding:0}
+.unix-login>.container-fluid{max-width:1180px}
+.unix-login .row{align-items:center;min-height:calc(100vh - 90px)}
+.unix-login .col-md-4{width:100%;max-width:460px;flex:0 1 460px}
+.unix-login .col-md-4>div:first-child{margin:0 0 24px!important}
+.unix-login h1{font-size:clamp(2rem,5vw,2.65rem);font-weight:800;letter-spacing:-.045em;color:#f8fafc!important;margin-bottom:10px}
+.unix-login .lead{font-size:.98rem!important;line-height:1.7;color:var(--auth-muted)!important;max-width:390px;margin:0 auto}
+.login-content.card{padding:clamp(22px,5vw,34px)!important;background:linear-gradient(145deg,rgba(20,33,54,.98),rgba(12,21,37,.98))!important;border:1px solid var(--auth-border);border-radius:22px;box-shadow:0 28px 80px rgba(0,0,0,.36);color:var(--auth-text)}
+.login-form .form-group{margin-bottom:19px}
+.login-form label{display:block;margin:0 0 8px;color:#dce5f2!important;font-size:.88rem;font-weight:600}
+.login-form .form-control{min-height:49px;padding:12px 14px;background:#0b1424!important;color:#f8fafc!important;border:1px solid #2b3b53!important;border-radius:10px!important;box-shadow:none!important;font-size:.95rem}
+.login-form .form-control::placeholder{color:#74839a}
+.login-form .form-control:focus{border-color:<?php echo $Background; ?>!important;box-shadow:0 0 0 3px rgba(<?php echo '50,160,150'; ?>,.15)!important;outline:0}
+.login-form .row[style*="background: #fff"]{min-height:49px;align-items:center;background:#0b1424!important;border:1px solid #2b3b53!important;border-radius:10px!important;overflow:hidden}
+.login-form .row[style*="background: #fff"] .form-control{min-height:47px;background:transparent!important}
+.login-form .eye{display:inline-block;padding:0 12px!important;color:#aab8cc!important;font-size:16px!important;cursor:pointer}
+.login-form .checkbox{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.login-form .checkbox label{display:inline-flex;align-items:center;gap:7px;margin:0;font-weight:500;color:var(--auth-muted)!important}
+.login-form input[type="checkbox"]{accent-color:<?php echo $Background; ?>}
+.login-form a,.register-link a{color:#7dd3c7;text-decoration:none;font-weight:600}
+.login-form a:hover,.register-link a:hover{color:#b2fff2;text-decoration:underline}
+.login-form #Login{width:100%;min-height:50px;border:0;border-radius:11px;background:<?php echo $Background; ?>;color:#fff;font-weight:750;font-size:1rem;letter-spacing:.01em;box-shadow:0 10px 24px rgba(0,0,0,.2);transition:transform .2s ease,filter .2s ease}
+.login-form #Login:hover{filter:brightness(1.12);transform:translateY(-1px)}
+.login-form #Login:focus-visible,.login-form a:focus-visible{outline:3px solid #7dd3c7;outline-offset:3px}
+.register-link{margin-top:22px!important;color:var(--auth-muted)}
+.register-link p{margin:0;color:var(--auth-muted)!important;font-size:.9rem}
+#google_translate_element{margin-top:10px}
+#google_translate_element select{max-width:100%;padding:8px;border-radius:8px}
+.hasError{border-color:#fb7185!important;box-shadow:0 0 0 3px rgba(251,113,133,.12)!important}
+@media(max-width:575px){#main-wrapper{padding:28px 14px 20px}.unix-login .row{min-height:auto}.login-content.card{border-radius:17px}.unix-login .lead{font-size:.9rem!important}}
+@media(prefers-reduced-motion:reduce){.login-form #Login{transition:none}}
+
     </style>
 </head>
 <?php //include('../home/TopHeader.php'); ?>

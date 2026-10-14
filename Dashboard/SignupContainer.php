@@ -41,6 +41,46 @@ background  #f0f;
   .form-group{
         margin-bottom: 20px;
     }
+
+/* Modern CFXM-PRO authentication UI */
+:root{color-scheme:dark;--auth-bg:#080f1d;--auth-panel:#111c2f;--auth-border:rgba(148,163,184,.2);--auth-text:#f3f6fc;--auth-muted:#9eacc2}
+html{min-height:100%;background:var(--auth-bg)}
+body.header-fix.fix-sidebar{min-height:100vh!important;margin:0;background:radial-gradient(ellipse at 10% 5%,rgba(35,115,131,.24),transparent 38%),radial-gradient(ellipse at 90% 90%,rgba(30,90,110,.18),transparent 38%),#080f1d!important;color:var(--auth-text)!important;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif!important}
+#main-wrapper{min-height:100vh;padding:42px 16px 30px}
+#main-wrapper>.unix-login{width:100%}
+#main-wrapper>.unix-login>.container-fluid{max-width:920px}
+#main-wrapper>.unix-login .row{justify-content:center}
+#main-wrapper>.unix-login .col-md-12{width:100%;max-width:680px;flex:0 1 680px}
+#main-wrapper>.unix-login .col-md-12>div:first-child{margin:0 0 24px!important}
+#main-wrapper h1{font-size:clamp(2rem,5vw,2.65rem);font-weight:800;letter-spacing:-.045em;color:#f8fafc!important;margin-bottom:10px}
+#main-wrapper .lead{font-size:.98rem!important;line-height:1.7;color:var(--auth-muted)!important;max-width:460px;margin:0 auto}
+.login-content.card{padding:clamp(22px,5vw,36px)!important;background:linear-gradient(145deg,rgba(20,33,54,.98),rgba(12,21,37,.98))!important;border:1px solid var(--auth-border);border-radius:22px;box-shadow:0 28px 80px rgba(0,0,0,.36);color:var(--auth-text)}
+.login-form .form-group{margin-bottom:19px}
+.login-form label{display:block;margin:0 0 8px;color:#dce5f2!important;font-size:.88rem;font-weight:600}
+.login-form .form-control{width:100%;min-height:49px;padding:12px 14px;background:#0b1424!important;color:#f8fafc!important;border:1px solid #2b3b53!important;border-radius:10px!important;box-shadow:none!important;font-size:.95rem}
+.login-form .form-control::placeholder{color:#74839a}
+.login-form .form-control:focus{border-color:<?php echo $Background; ?>!important;box-shadow:0 0 0 3px rgba(50,160,150,.15)!important;outline:0}
+.login-form select.form-control{appearance:auto}
+.login-form select option{background:#111c2f;color:#f8fafc}
+.login-form .btn{display:inline-flex;justify-content:center;align-items:center;min-height:48px;padding:12px 22px;border:0;border-radius:10px;font-weight:750;transition:transform .2s ease,filter .2s ease}
+.login-form .btn:hover{filter:brightness(1.1);transform:translateY(-1px)}
+.login-form .Verify,.login-form .Submit,.login-form .Next2{width:100%;background:<?php echo $Background; ?>!important;color:#fff!important}
+.login-form .Next2{margin-top:4px}
+.login-form .Verify{margin-top:3px}
+.login-form fieldset{min-width:0;margin:0;padding:0;border:0}
+.login-form .inactive{display:none!important}
+.login-form .verifyAgentReport p,.login-form .verifyAgentReport{color:var(--auth-muted)!important;font-size:.9rem;line-height:1.6}
+.login-form .register-link{margin-top:24px!important;text-align:center}
+.login-form .register-link p{margin:0;color:var(--auth-muted)!important;font-size:.9rem}
+.login-form .register-link a{color:#7dd3c7;text-decoration:none;font-weight:700}
+.login-form .register-link a:hover{color:#b2fff2;text-decoration:underline}
+.login-form .hasError,.hasError{border-color:#fb7185!important;box-shadow:0 0 0 3px rgba(251,113,133,.12)!important}
+.login-form .Status{max-width:100%}
+#google_translate_element{margin-top:10px}
+#google_translate_element select{max-width:100%;padding:8px;border-radius:8px}
+@media(max-width:575px){#main-wrapper{padding:26px 12px 20px}#main-wrapper>.unix-login .col-md-12{padding:0 4px}.login-content.card{border-radius:17px}.login-form .btn{width:100%}#main-wrapper .lead{font-size:.9rem!important}}
+@media(prefers-reduced-motion:reduce){.login-form .btn{transition:none}}
+
 </style>
 </head>
 <?php //include('../home/TopHeader.php'); ?>
