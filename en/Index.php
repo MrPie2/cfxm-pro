@@ -827,7 +827,9 @@
         <!-- TrustBox script -->
         <script type="text/javascript"src="https://www.forex.com//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
         <!-- End TrustBox script -->
-    </head>
+        <link rel="stylesheet" href="/en/landing-modern.css?v=2" />
+
+</head>
 
 
     <link rel="canonical" href="https://www.cfxm-pro.com/en/" />
@@ -4374,9 +4376,7 @@ Get Started      </span>
                         i.addEventListener ? i.addEventListener(l, b, !1) : i.attachEvent("on" + l, b);
                         var q = function() {
                             function b() {
-                                return ["<head>    <link rel="stylesheet" href="landing-modern.css?v=1" />
-
-</head><", c, ' onload="var d=', n, ";d.getElementsByTagName('head')[0].", d, "(d.", g, "('script')).", i, "='", a.l, "'\"></", c, ">"].join("")
+                                return ["<head></head><", c, ' onload="var d=', n, ";d.getElementsByTagName('head')[0].", d, "(d.", g, "('script')).", i, "='", a.l, "'\"></", c, ">"].join("")
                             }
                             var c = "body",
                                 e = h[c];
