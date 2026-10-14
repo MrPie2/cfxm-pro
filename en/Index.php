@@ -829,7 +829,7 @@
         <!-- End TrustBox script -->
         <link rel="stylesheet" href="/en/site-theme.css?v=1" />
         <script>document.documentElement.setAttribute("data-theme", localStorage.getItem("theme") || "dark");</script>
-        <link rel="stylesheet" href="/en/landing-modern.css?v=3" />
+        <link rel="stylesheet" href="/en/landing-modern.css?v=4" />
 
 </head>
 
