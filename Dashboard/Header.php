@@ -28,7 +28,7 @@ $curAbbr=$userDetails['curAbbr'];
     <!-- Custom CSS -->
           <link href="css/style.css" rel="stylesheet">
     <link href="../en/site-theme.css?v=1" rel="stylesheet">
-    <link href="css/dashboard-modern.css?v=20261014-stock-cards-fix1" rel="stylesheet">
+    <link href="css/dashboard-modern.css?v=20261014-dashboard-referrals-compact1" rel="stylesheet">
 <link href="css/lib/sweetalert/sweetalert.css" rel="stylesheet">
 <link href="css/lib/toastr/toastr.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">

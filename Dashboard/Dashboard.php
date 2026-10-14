@@ -80,6 +80,16 @@ window.location.href='Notification.php?id=".$id."';
     $dashboardTotalROIDisplay = $dashboardTotalROI * (float)$exchangerate;
     $dashboardWalletDisplay = (float)$userDetails['Fin_Asset'] * (float)$exchangerate;
 
+    // Match the referral page: only available (Status = 1) referral earnings count here.
+    $dashboardReferralEarnings = 0;
+    $dashboardReferralQuery = mysqli_query($Conn, "SELECT Refferal_Earnings FROM refferals WHERE Refferer='$Investor_id' AND Status='1'");
+    if ($dashboardReferralQuery) {
+        while ($dashboardReferralRow = mysqli_fetch_assoc($dashboardReferralQuery)) {
+            $dashboardReferralEarnings += (float)$dashboardReferralRow['Refferal_Earnings'];
+        }
+    }
+    $dashboardReferralEarningsDisplay = $dashboardReferralEarnings * (float)$exchangerate;
+
 ?>
 <style>
     .card-dark{
@@ -147,6 +157,12 @@ window.smartsupp||(function(d) {
             <strong><?php echo number_format($dashboardActiveCount); ?></strong>
             <small><?php echo number_format($dashboardCompletedCount); ?> completed</small>
         </div>
+        <div class="vh-stat-card">
+            <span class="vh-stat-icon vh-icon-referral"><i class="fas fa-share-alt"></i></span>
+            <span class="vh-stat-label">Referral earnings</span>
+            <strong><?php echo htmlspecialchars($curAbbr, ENT_QUOTES, 'UTF-8') . number_format($dashboardReferralEarningsDisplay, 2, '.', ','); ?></strong>
+            <small>Available referral rewards</small>
+        </div>
     </div>
 
     <?php include __DIR__ . '/cryptocurrency.php'; ?>
@@ -154,7 +170,7 @@ window.smartsupp||(function(d) {
     <div class="vh-chart-grid">
         <section class="vh-panel vh-performance-panel">
             <div class="vh-panel-heading">
-                <div><h2>Investment activity</h2><p>Cumulative invested amount from your recorded contracts</p></div>
+                <div><h2>Investment activity</h2></div>
                 <span class="vh-chart-badge"><i class="fas fa-wave-square"></i> Contract history</span>
             </div>
            
