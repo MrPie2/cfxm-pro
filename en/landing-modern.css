@@ -517,3 +517,56 @@ html[data-theme="light"] #wrapper .card-title { color: #202438; }
     height: 390px !important;
   }
 }
+
+
+/* Tesla investment carousel — landing page */
+.cfxm-tesla-section { position:relative; isolation:isolate; padding:clamp(38px,5vw,68px) 0; background:linear-gradient(145deg,#0b161c 0%,#121f27 55%,#191d30 100%); color:var(--cfxm-text,#DFD0B8); border-top:1px solid rgba(223,208,184,.1); border-bottom:1px solid rgba(223,208,184,.1); }
+.cfxm-tesla-inner { width:min(1240px,calc(100% - 48px)); margin:0 auto; min-width:0; }
+.cfxm-tesla-heading { display:flex; align-items:flex-end; justify-content:space-between; gap:18px; margin-bottom:20px; }
+.cfxm-tesla-eyebrow { display:inline-block; margin-bottom:9px; color:#b79be4; font-size:10px; font-weight:850; letter-spacing:.17em; }
+.cfxm-tesla-heading h2 { margin:0 0 7px; color:#fff; font-size:clamp(27px,3.4vw,40px); line-height:1.12; font-weight:800; letter-spacing:-.045em; }
+.cfxm-tesla-heading p { margin:0; max-width:600px; color:#a5b1ba; font-size:14px; line-height:1.65; }
+.cfxm-tesla-controls { display:flex; gap:8px; flex-shrink:0; }
+.cfxm-tesla-arrow { display:grid; place-items:center; width:40px; height:40px; border:1px solid rgba(223,208,184,.2); border-radius:12px; color:#e5d8f8; background:rgba(255,255,255,.045); cursor:pointer; transition:background .2s,border-color .2s,transform .2s; }
+.cfxm-tesla-arrow:hover { background:#49247e; border-color:#7748bc; transform:translateY(-1px); }
+.cfxm-tesla-track { display:flex; gap:16px; min-width:0; overflow-x:auto; overscroll-behavior-x:contain; scroll-snap-type:x mandatory; scroll-padding:2px; padding:3px 2px 15px; scrollbar-width:thin; scrollbar-color:rgba(119,72,188,.65) transparent; }
+.cfxm-tesla-track::-webkit-scrollbar { height:5px; }
+.cfxm-tesla-track::-webkit-scrollbar-thumb { background:rgba(119,72,188,.65); border-radius:999px; }
+.cfxm-tesla-card { flex:0 0 278px; min-width:0; overflow:hidden; border:1px solid rgba(223,208,184,.13); border-radius:18px; background:linear-gradient(160deg,#222831,#19232c); box-shadow:0 14px 32px rgba(0,0,0,.2); scroll-snap-align:start; transition:transform .22s,border-color .22s,box-shadow .22s; }
+.cfxm-tesla-card:hover { transform:translateY(-3px); border-color:rgba(183,155,228,.5); box-shadow:0 18px 36px rgba(0,0,0,.3); }
+.cfxm-tesla-company-art { height:158px; display:grid; place-items:center; position:relative; overflow:hidden; color:#fff; background:radial-gradient(circle at 72% 20%,rgba(119,72,188,.6),transparent 38%),linear-gradient(135deg,#101729,#12225c 55%,#49247e); }
+.cfxm-tesla-mark { z-index:1; font-family:Arial,sans-serif; font-size:76px; font-weight:900; font-style:italic; line-height:1; letter-spacing:-.13em; transform:translateX(-4px); text-shadow:0 8px 28px rgba(0,0,0,.35); }
+.cfxm-tesla-orbit { position:absolute; width:190px; height:190px; right:-55px; bottom:-120px; border:1px solid rgba(255,255,255,.22); border-radius:50%; box-shadow:0 0 0 18px rgba(255,255,255,.035),0 0 0 38px rgba(255,255,255,.025); }
+.cfxm-tesla-art-label { position:absolute; bottom:12px; left:13px; color:rgba(255,255,255,.68); font-size:9px; font-weight:800; letter-spacing:.12em; }
+.cfxm-tesla-image { position:relative; height:158px; overflow:hidden; background:#242a33; }
+.cfxm-tesla-image img { display:block; width:100%; height:100%; object-fit:cover; transition:transform .45s; }
+.cfxm-tesla-card:hover .cfxm-tesla-image img { transform:scale(1.045); }
+.cfxm-tesla-image-shade { position:absolute; inset:35% 0 0; background:linear-gradient(180deg,transparent,rgba(8,13,27,.56)); pointer-events:none; }
+.cfxm-tesla-image-label { position:absolute; left:13px; bottom:12px; padding:5px 8px; border-radius:999px; background:rgba(15,21,40,.72); color:#fff; font-size:9px; font-weight:800; letter-spacing:.08em; backdrop-filter:blur(8px); }
+.cfxm-tesla-card-body { padding:15px; }
+.cfxm-tesla-meta { display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:8px; }
+.cfxm-tesla-pill { display:inline-flex; padding:5px 8px; border-radius:999px; background:rgba(119,72,188,.17); color:#c7aaf2; font-size:9px; font-weight:850; letter-spacing:.08em; }
+.cfxm-tesla-symbol { color:#9eabb6; font-size:10px; font-weight:800; letter-spacing:.055em; }
+.cfxm-tesla-card-body h3 { margin:0 0 6px; color:#fff; font-size:18px; line-height:1.3; font-weight:800; letter-spacing:-.025em; }
+.cfxm-tesla-card-body p { min-height:36px; margin:0 0 14px; color:#a5b1ba; font-size:12px; line-height:1.55; }
+.cfxm-tesla-cta { display:flex; align-items:center; justify-content:center; gap:9px; width:100%; min-height:43px; padding:10px 12px; border:1px solid rgba(255,255,255,.08); border-radius:11px; background:linear-gradient(110deg,#49247e,#7748bc); color:#fff!important; text-decoration:none!important; font-size:12px; font-weight:800; transition:filter .2s,transform .2s; }
+.cfxm-tesla-cta:hover { color:#fff!important; filter:brightness(1.1); transform:translateY(-1px); }
+.cfxm-tesla-disclaimer { display:flex; align-items:flex-start; gap:8px; margin:10px 2px 0; color:#95a3ad; font-size:11px; line-height:1.6; }
+.cfxm-tesla-disclaimer i { margin-top:2px; color:#b79be4; }
+@media(max-width:760px) {
+ .cfxm-tesla-section { padding:34px 0 38px; }
+ .cfxm-tesla-inner { width:calc(100% - 28px); }
+ .cfxm-tesla-heading { align-items:center; gap:10px; margin-bottom:15px; }
+ .cfxm-tesla-heading h2 { font-size:27px; }
+ .cfxm-tesla-heading p { max-width:255px; font-size:12px; }
+ .cfxm-tesla-arrow { width:34px; height:34px; border-radius:10px; }
+ .cfxm-tesla-track { gap:12px; margin-right:-14px; padding-right:14px; }
+ .cfxm-tesla-card { flex-basis:68%; max-width:300px; border-radius:16px; }
+ .cfxm-tesla-company-art,.cfxm-tesla-image { height:132px; }
+ .cfxm-tesla-card-body { padding:12px; }
+ .cfxm-tesla-card-body h3 { font-size:16px; }
+ .cfxm-tesla-card-body p { min-height:36px; margin-bottom:11px; font-size:11px; }
+ .cfxm-tesla-disclaimer { font-size:10px; }
+}
+@media(max-width:390px) { .cfxm-tesla-card { flex-basis:72%; } .cfxm-tesla-heading p { max-width:200px; } }
+@media(prefers-reduced-motion:reduce) { .cfxm-tesla-card,.cfxm-tesla-image img,.cfxm-tesla-cta,.cfxm-tesla-arrow { transition:none; } .cfxm-tesla-track { scroll-behavior:auto; } }
