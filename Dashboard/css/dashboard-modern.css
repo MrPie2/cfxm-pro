@@ -51,7 +51,7 @@
 .vh-legacy-shortcuts { display:flex; gap:10px; flex-wrap:wrap; margin:0 auto 18px; padding:0 22px; max-width:1500px; }
 .vh-legacy-shortcuts a { display:flex; align-items:center; gap:9px; padding:11px 14px; color:var(--text-color,#142b36)!important; border:1px solid var(--vh-border); border-radius:12px; background:var(--card-bg,#fff); font-size:12px; font-weight:700; }
 .vh-legacy-shortcuts a i { color:var(--liner-text-color,#087f8c); }
-.vh-dashboard + .container-fluid { max-width:1500px; }
+.vh-legacy-shortcuts + .container-fluid { max-width:1500px; }
 .vh-dashboard + .container-fluid .card { border:1px solid var(--vh-border); box-shadow:0 7px 24px rgba(17,39,51,.035); }
 .vh-dashboard + .container-fluid h4 { font-weight:750; }
 @media (max-width:1100px) { .vh-hero-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }.vh-balance-card { grid-column:span 2; }.vh-chart-grid { grid-template-columns:minmax(0,1.4fr) minmax(260px,1fr); } }
