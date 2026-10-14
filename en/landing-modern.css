@@ -570,3 +570,109 @@ html[data-theme="light"] #wrapper .card-title { color: #202438; }
 }
 @media(max-width:390px) { .cfxm-tesla-card { flex-basis:72%; } .cfxm-tesla-heading p { max-width:200px; } }
 @media(prefers-reduced-motion:reduce) { .cfxm-tesla-card,.cfxm-tesla-image img,.cfxm-tesla-cta,.cfxm-tesla-arrow { transition:none; } .cfxm-tesla-track { scroll-behavior:auto; } }
+
+
+/* Landing-page consistency fixes: normalize responsive variants and typography. */
+/* The source template contains separate desktop/mobile versions of some sections.
+   Keep exactly one version visible at each viewport width. */
+#wrapper .mobile-only { display: none !important; }
+#wrapper .desktop-only { display: initial !important; }
+@media (max-width: 767px) {
+  #wrapper .desktop-only { display: none !important; }
+  #wrapper .mobile-only { display: initial !important; }
+}
+
+/* One shared text hierarchy across legacy template components and new sections. */
+html:not([data-theme="light"]) #wrapper,
+html[data-theme="dark"] #wrapper {
+  color: #DFD0B8 !important;
+}
+html:not([data-theme="light"]) #wrapper h1,
+html:not([data-theme="light"]) #wrapper h2,
+html:not([data-theme="light"]) #wrapper h3,
+html:not([data-theme="light"]) #wrapper h4,
+html:not([data-theme="light"]) #wrapper h5,
+html:not([data-theme="light"]) #wrapper h6,
+html:not([data-theme="light"]) #wrapper .field-title,
+html:not([data-theme="light"]) #wrapper .cta-title,
+html:not([data-theme="light"]) #wrapper .card-title,
+html:not([data-theme="light"]) #wrapper .callout-title,
+html:not([data-theme="light"]) #wrapper label,
+html[data-theme="dark"] #wrapper h1,
+html[data-theme="dark"] #wrapper h2,
+html[data-theme="dark"] #wrapper h3,
+html[data-theme="dark"] #wrapper h4,
+html[data-theme="dark"] #wrapper h5,
+html[data-theme="dark"] #wrapper h6,
+html[data-theme="dark"] #wrapper .field-title,
+html[data-theme="dark"] #wrapper .cta-title,
+html[data-theme="dark"] #wrapper .card-title,
+html[data-theme="dark"] #wrapper .callout-title,
+html[data-theme="dark"] #wrapper label {
+  color: #DFD0B8 !important;
+}
+html:not([data-theme="light"]) #wrapper p,
+html:not([data-theme="light"]) #wrapper .field-text,
+html:not([data-theme="light"]) #wrapper .field-content,
+html:not([data-theme="light"]) #wrapper .cta-description,
+html:not([data-theme="light"]) #wrapper .callout-desc,
+html:not([data-theme="light"]) #wrapper .card-desc,
+html:not([data-theme="light"]) #wrapper .field-pageheadingclarifyingtext,
+html[data-theme="dark"] #wrapper p,
+html[data-theme="dark"] #wrapper .field-text,
+html[data-theme="dark"] #wrapper .field-content,
+html[data-theme="dark"] #wrapper .cta-description,
+html[data-theme="dark"] #wrapper .callout-desc,
+html[data-theme="dark"] #wrapper .card-desc,
+html[data-theme="dark"] #wrapper .field-pageheadingclarifyingtext {
+  color: #A5B1BA !important;
+}
+html[data-theme="light"] #wrapper h1,
+html[data-theme="light"] #wrapper h2,
+html[data-theme="light"] #wrapper h3,
+html[data-theme="light"] #wrapper h4,
+html[data-theme="light"] #wrapper h5,
+html[data-theme="light"] #wrapper h6,
+html[data-theme="light"] #wrapper .field-title,
+html[data-theme="light"] #wrapper .cta-title,
+html[data-theme="light"] #wrapper .card-title,
+html[data-theme="light"] #wrapper .callout-title,
+html[data-theme="light"] #wrapper label {
+  color: #202438 !important;
+}
+html[data-theme="light"] #wrapper p,
+html[data-theme="light"] #wrapper .field-text,
+html[data-theme="light"] #wrapper .field-content,
+html[data-theme="light"] #wrapper .cta-description,
+html[data-theme="light"] #wrapper .callout-desc,
+html[data-theme="light"] #wrapper .card-desc,
+html[data-theme="light"] #wrapper .field-pageheadingclarifyingtext {
+  color: #687184 !important;
+}
+html[data-theme="light"] #wrapper .container-dark-background,
+html[data-theme="light"] #wrapper .dark-theme {
+  color: #DFD0B8 !important;
+}
+html[data-theme="light"] #wrapper .container-dark-background h1,
+html[data-theme="light"] #wrapper .container-dark-background h2,
+html[data-theme="light"] #wrapper .container-dark-background h3,
+html[data-theme="light"] #wrapper .container-dark-background h4,
+html[data-theme="light"] #wrapper .container-dark-background .field-title,
+html[data-theme="light"] #wrapper .container-dark-background .cta-title,
+html[data-theme="light"] #wrapper .container-dark-background label,
+html[data-theme="light"] #wrapper .dark-theme h1,
+html[data-theme="light"] #wrapper .dark-theme h2,
+html[data-theme="light"] #wrapper .dark-theme h3,
+html[data-theme="light"] #wrapper .dark-theme h4,
+html[data-theme="light"] #wrapper .dark-theme .field-title,
+html[data-theme="light"] #wrapper .dark-theme .cta-title {
+  color: #DFD0B8 !important;
+}
+html[data-theme="light"] #wrapper .container-dark-background p,
+html[data-theme="light"] #wrapper .container-dark-background .field-text,
+html[data-theme="light"] #wrapper .container-dark-background .cta-description,
+html[data-theme="light"] #wrapper .dark-theme p,
+html[data-theme="light"] #wrapper .dark-theme .field-text,
+html[data-theme="light"] #wrapper .dark-theme .cta-description {
+  color: #A5B1BA !important;
+}
