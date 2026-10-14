@@ -22,6 +22,16 @@
                 if (scale.ticks) scale.ticks.color = foreground;
                 if (scale.grid && key === 'y') scale.grid.color = dark ? 'rgba(255,255,255,.10)' : 'rgba(125,148,162,.16)';
             });
+            chart.data.datasets.forEach(function (dataset) {
+                if (chart.config.type === 'line') {
+                    dataset.borderColor = dark ? '#b99be8' : brand;
+                    dataset.backgroundColor = dark ? 'rgba(185,155,232,.16)' : 'rgba(73,36,126,.12)';
+                } else if (chart.config.type === 'doughnut') {
+                    dataset.backgroundColor = dark
+                        ? ['#b99be8', '#7748bc', '#0e6937', '#e5a13d', '#4384d6', '#d96c8b', '#5b9e8a', '#8b7bb8']
+                        : colors;
+                }
+            });
             chart.update('none');
         });
     }
