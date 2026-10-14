@@ -117,7 +117,7 @@ html[data-theme="dark"] .vh-chart-badge { background: rgba(185, 155, 232, .12); 
 .vh-stock-marquee-head strong{font-size:10px;letter-spacing:.13em;font-weight:850}
 .vh-stock-market-caption,.vh-stock-updated{font-size:10px;color:var(--cfxm-muted,#a5b1ba)}
 .vh-stock-updated{white-space:nowrap;text-align:right}
-.vh-stock-marquee-viewport{width:100%;overflow-x:auto;overflow-y:hidden;position:relative;overscroll-behavior-x:contain;touch-action:pan-x;scrollbar-width:thin;scrollbar-color:rgba(125,148,162,.5) transparent;-webkit-overflow-scrolling:touch}
+.vh-stock-marquee-viewport{width:100%;overflow-x:auto;overflow-y:hidden;position:relative;container-type:inline-size;overscroll-behavior-x:contain;touch-action:pan-x;scrollbar-width:thin;scrollbar-color:rgba(125,148,162,.5) transparent;-webkit-overflow-scrolling:touch}
 .vh-stock-marquee-viewport::-webkit-scrollbar{height:5px}
 .vh-stock-marquee-viewport::-webkit-scrollbar-thumb{background:rgba(125,148,162,.5);border-radius:99px}
 .vh-stock-marquee-track{display:flex;width:max-content;min-width:100%;gap:10px;padding:12px;align-items:stretch}
@@ -142,7 +142,7 @@ html[data-theme="dark"] .vh-chart-badge { background: rgba(185, 155, 232, .12); 
  .vh-stock-marquee-head strong{font-size:9px}
  .vh-stock-updated{font-size:9px}
  .vh-stock-marquee-track{gap:5px;padding:7px}
- .vh-stock-ticker{width:calc((100vw - 60px)/3);min-width:0;max-width:140px;padding:9px 7px;border-radius:9px}
+ .vh-stock-ticker{flex:0 0 calc((100cqw - 24px)/3);width:calc((100cqw - 24px)/3);min-width:0;max-width:none;padding:9px 7px;border-radius:9px}
  .vh-stock-ticker-top{gap:4px}
  .vh-stock-company-icon{flex-basis:20px;width:20px;height:20px;border-radius:6px;font-size:10px}
  .vh-stock-symbol{font-size:9px}
