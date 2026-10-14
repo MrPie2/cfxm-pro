@@ -337,9 +337,11 @@ $query=mysqli_query($Conn, $sql);
                                     $sql="select * from contracts where Investor_id='$Investor_id'";
                                     $query=mysqli_query($Conn, $sql);
                                 $Count=mysqli_num_rows($query);
-                                $investment='<div class="table-responsive">
-                                        <table class="table table">
-                                            <tbody>';
+                                $investment='<div class="table-responsive vh-history-table-wrap">
+                                        <table class="table vh-history-table">
+                                            <thead><tr>
+                                                <th>#</th><th>Investment plan</th><th>Amount</th><th>ROI</th><th>Interest</th><th>Start date</th><th>Remaining</th><th>Status</th>
+                                            </tr></thead><tbody>';
                                 if($Count>0){
                                     $sn=0;
                                 while($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
