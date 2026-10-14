@@ -50,30 +50,24 @@ window.location.href='Notification.php?id=".$id."';
     $dashboardTotalROI = 0;
     $dashboardActiveCount = 0;
     $dashboardCompletedCount = 0;
-    $dashboardPortfolio = array();
     $dashboardTimeline = array();
     $dashboardHistoryQuery = mysqli_query($Conn, "SELECT Plan_Type, Amount, ROI, Date_Entered, Status FROM contracts WHERE Investor_id='$Investor_id' AND Status IN (1,2) ORDER BY Date_Entered ASC");
     if ($dashboardHistoryQuery) {
         while ($dashboardRow = mysqli_fetch_assoc($dashboardHistoryQuery)) {
             $dashboardAmount = (float)$dashboardRow['Amount'];
             $dashboardROI = (float)$dashboardRow['ROI'];
-            $dashboardPlan = (string)$dashboardRow['Plan_Type'];
             $dashboardDate = (string)$dashboardRow['Date_Entered'];
             $dashboardStatus = (int)$dashboardRow['Status'];
             $dashboardTotalInvested += $dashboardAmount;
             $dashboardTotalROI += $dashboardROI;
             if ($dashboardStatus === 1) { $dashboardActiveCount++; }
             if ($dashboardStatus === 2) { $dashboardCompletedCount++; }
-            if (!isset($dashboardPortfolio[$dashboardPlan])) { $dashboardPortfolio[$dashboardPlan] = 0; }
-            $dashboardPortfolio[$dashboardPlan] += $dashboardAmount;
             if ($dashboardDate !== '') {
                 if (!isset($dashboardTimeline[$dashboardDate])) { $dashboardTimeline[$dashboardDate] = 0; }
                 $dashboardTimeline[$dashboardDate] += $dashboardAmount;
             }
         }
     }
-    $dashboardPortfolioLabels = array_keys($dashboardPortfolio);
-    $dashboardPortfolioValues = array_values($dashboardPortfolio);
     $dashboardTimelineLabels = array();
     $dashboardTimelineValues = array();
     $dashboardRunningTotal = 0;
@@ -82,9 +76,6 @@ window.location.href='Notification.php?id=".$id."';
         $dashboardTimelineLabels[] = date('d M Y', strtotime($dashboardDate));
         $dashboardTimelineValues[] = round($dashboardRunningTotal * (float)$exchangerate, 2);
     }
-    $dashboardPortfolioValues = array_map(function($value) use ($exchangerate) {
-        return round((float)$value * (float)$exchangerate, 2);
-    }, $dashboardPortfolioValues);
     $dashboardTotalInvestedDisplay = $dashboardTotalInvested * (float)$exchangerate;
     $dashboardTotalROIDisplay = $dashboardTotalROI * (float)$exchangerate;
     $dashboardWalletDisplay = (float)$userDetails['Fin_Asset'] * (float)$exchangerate;
@@ -172,16 +163,6 @@ window.smartsupp||(function(d) {
                 <i class="fas fa-chart-area"></i><strong>No investment yet</strong><span>Your investment activity will appear here after you make your first investment.</span>
             </div>
         </section>
-        <section class="vh-panel vh-allocation-panel">
-            <div class="vh-panel-heading">
-                <div><h2>Portfolio allocation</h2><p>Invested amount by plan type</p></div>
-            </div>
-            <div class="vh-doughnut-wrap"><canvas id="vhAllocationChart" aria-label="Portfolio allocation by investment plan" role="img"></canvas></div>
-            <div class="vh-chart-empty vh-allocation-empty" id="vhAllocationEmpty" <?php echo count($dashboardPortfolioLabels) ? 'hidden' : ''; ?>>
-                <i class="fas fa-chart-pie"></i><strong>No portfolio allocation yet</strong><span>Your plan mix will appear here after your first investment.</span>
-            </div>
-            <div id="vhAllocationLegend" class="vh-allocation-legend"></div>
-        </section>
     </div>
 
     <script type="application/json" id="vhDashboardChartData"><?php
@@ -189,8 +170,6 @@ window.smartsupp||(function(d) {
             'currency' => $curAbbr,
             'timelineLabels' => $dashboardTimelineLabels,
             'timelineValues' => $dashboardTimelineValues,
-            'portfolioLabels' => $dashboardPortfolioLabels,
-            'portfolioValues' => $dashboardPortfolioValues
         ), JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_AMP | JSON_HEX_QUOT);
     ?></script>
 </section>
