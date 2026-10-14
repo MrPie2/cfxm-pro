@@ -1,0 +1,56 @@
+<head>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <style>
+
+   :root{
+       --bg-color: #009ea7;
+       --text-color: #222;
+       --liner-text-color: #009ea7;
+       --card-bg: #fff;
+       --accent: #0078ff;
+       --body-bg: #eee;
+       --nav-bg: #fff;
+       --liner-bg: #fff;
+   }
+   
+   [data-theme="dark"]{
+       --bg-color: #393E46;
+       --text-color: #DFD0B8;
+       --card-bg: #222831;
+       --accent: #4da3ff;
+       --body-bg: #222831;
+       --nav-bg: #222831;
+       --liner-bg: #393E46;
+       --liner-text-color: #fff;
+   }
+       .theme-switcher{
+           position: fixed;
+           align-items: center;
+           display: flex;
+           left: 0;
+           z-index: 99999;
+           height: 100vh;
+       }
+   </style>
+   </head>
+<div class="theme-switcher">
+       <a class="switch-dark" style="background: #555; padding: 10px; color: white; cursor: pointer"> Switch Mode</a>
+   </div>
+<div style="display: flex; background: var(--bg-color); margin: 0 auto; padding: 0; height: 100vh; width: 100vw">sdfjsdlfjsldjf</div>
+
+<script>
+const currentTheme=localStorage.getItem('theme');
+ if(currentTheme){ 
+     $('html').attr('data-theme', currentTheme);
+     $('.switch-dark').text(currentTheme==='dark' ? 'Light Mode' : 'Dark Mode').css({'color':'black'})
+ }
+ 
+
+$('.switch-dark').click(function(){
+let theme = $('html').attr('data-theme'); 
+let newTheme=theme === 'dark' ? 'light' : 'dark';
+$('html').attr('data-theme', newTheme);
+localStorage.setItem('theme', newTheme);
+$('.switch-dark').text(newTheme==='dark'? 'Light Mode' : 'Dark Mode').css({'color':'black'});
+})
+</script>

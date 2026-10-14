@@ -1,0 +1,77 @@
+[12-Sep-2022 22:22:12 UTC] PHP Warning:  require(vendor/autoload.php): failed to open stream: No such file or directory in /home/stashtr1/public_html/Dashboard/PHPMailer/get_oauth_token.php on line 61
+[12-Sep-2022 22:22:12 UTC] PHP Fatal error:  require(): Failed opening required 'vendor/autoload.php' (include_path='.:/opt/alt/php72/usr/share/pear') in /home/stashtr1/public_html/Dashboard/PHPMailer/get_oauth_token.php on line 61
+[12-Sep-2022 22:42:40 UTC] PHP Warning:  require(vendor/autoload.php): failed to open stream: No such file or directory in /home/stashtr1/public_html/Dashboard/PHPMailer/get_oauth_token.php on line 61
+[12-Sep-2022 22:42:40 UTC] PHP Fatal error:  require(): Failed opening required 'vendor/autoload.php' (include_path='.:/opt/alt/php72/usr/share/pear') in /home/stashtr1/public_html/Dashboard/PHPMailer/get_oauth_token.php on line 61
+[12-Sep-2022 23:18:15 UTC] PHP Warning:  require(vendor/autoload.php): failed to open stream: No such file or directory in /home/stashtr1/public_html/Dashboard/PHPMailer/get_oauth_token.php on line 61
+[12-Sep-2022 23:18:15 UTC] PHP Fatal error:  require(): Failed opening required 'vendor/autoload.php' (include_path='.:/opt/alt/php72/usr/share/pear') in /home/stashtr1/public_html/Dashboard/PHPMailer/get_oauth_token.php on line 61
+[15-Sep-2022 08:43:05 UTC] PHP Warning:  require(vendor/autoload.php): failed to open stream: No such file or directory in /home/stashtr1/public_html/Dashboard/PHPMailer/get_oauth_token.php on line 61
+[15-Sep-2022 08:43:05 UTC] PHP Fatal error:  require(): Failed opening required 'vendor/autoload.php' (include_path='.:/opt/alt/php72/usr/share/pear') in /home/stashtr1/public_html/Dashboard/PHPMailer/get_oauth_token.php on line 61
+[15-Sep-2022 08:43:24 UTC] PHP Warning:  require(vendor/autoload.php): failed to open stream: No such file or directory in /home/stashtr1/public_html/Dashboard/PHPMailer/get_oauth_token.php on line 61
+[15-Sep-2022 08:43:24 UTC] PHP Fatal error:  require(): Failed opening required 'vendor/autoload.php' (include_path='.:/opt/alt/php72/usr/share/pear') in /home/stashtr1/public_html/Dashboard/PHPMailer/get_oauth_token.php on line 61
+[15-Sep-2022 08:43:40 UTC] PHP Warning:  require(vendor/autoload.php): failed to open stream: No such file or directory in /home/stashtr1/public_html/Dashboard/PHPMailer/get_oauth_token.php on line 61
+[15-Sep-2022 08:43:40 UTC] PHP Fatal error:  require(): Failed opening required 'vendor/autoload.php' (include_path='.:/opt/alt/php72/usr/share/pear') in /home/stashtr1/public_html/Dashboard/PHPMailer/get_oauth_token.php on line 61
+[03-Nov-2023 06:56:44 UTC] PHP Warning:  require(vendor/autoload.php): Failed to open stream: No such file or directory in /home/fxmpireo/public_html/PHPMailer/get_oauth_token.php on line 61
+[03-Nov-2023 06:56:44 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/fxmpireo/public_html/PHPMailer/get_oauth_token.php:61
+Stack trace:
+#0 {main}
+  thrown in /home/fxmpireo/public_html/PHPMailer/get_oauth_token.php on line 61
+[03-Nov-2023 23:16:10 UTC] PHP Warning:  require(vendor/autoload.php): Failed to open stream: No such file or directory in /home/fxmpireo/public_html/PHPMailer/get_oauth_token.php on line 61
+[03-Nov-2023 23:16:10 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/fxmpireo/public_html/PHPMailer/get_oauth_token.php:61
+Stack trace:
+#0 {main}
+  thrown in /home/fxmpireo/public_html/PHPMailer/get_oauth_token.php on line 61
+[03-Nov-2023 23:35:39 UTC] PHP Warning:  require(vendor/autoload.php): Failed to open stream: No such file or directory in /home/fxmpireo/public_html/PHPMailer/get_oauth_token.php on line 61
+[03-Nov-2023 23:35:39 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/fxmpireo/public_html/PHPMailer/get_oauth_token.php:61
+Stack trace:
+#0 {main}
+  thrown in /home/fxmpireo/public_html/PHPMailer/get_oauth_token.php on line 61
+[03-Nov-2023 23:38:16 UTC] PHP Warning:  require(vendor/autoload.php): Failed to open stream: No such file or directory in /home/fxmpireo/public_html/PHPMailer/get_oauth_token.php on line 61
+[03-Nov-2023 23:38:16 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/fxmpireo/public_html/PHPMailer/get_oauth_token.php:61
+Stack trace:
+#0 {main}
+  thrown in /home/fxmpireo/public_html/PHPMailer/get_oauth_token.php on line 61
+[04-Nov-2023 00:15:48 UTC] PHP Warning:  require(vendor/autoload.php): Failed to open stream: No such file or directory in /home/fxmpireo/public_html/PHPMailer/get_oauth_token.php on line 61
+[04-Nov-2023 00:15:48 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/fxmpireo/public_html/PHPMailer/get_oauth_token.php:61
+Stack trace:
+#0 {main}
+  thrown in /home/fxmpireo/public_html/PHPMailer/get_oauth_token.php on line 61
+[04-Nov-2023 00:16:43 UTC] PHP Warning:  require(vendor/autoload.php): Failed to open stream: No such file or directory in /home/fxmpireo/public_html/PHPMailer/get_oauth_token.php on line 61
+[04-Nov-2023 00:16:43 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/fxmpireo/public_html/PHPMailer/get_oauth_token.php:61
+Stack trace:
+#0 {main}
+  thrown in /home/fxmpireo/public_html/PHPMailer/get_oauth_token.php on line 61
+[04-Nov-2023 00:17:38 UTC] PHP Warning:  require(vendor/autoload.php): Failed to open stream: No such file or directory in /home/fxmpireo/public_html/PHPMailer/get_oauth_token.php on line 61
+[04-Nov-2023 00:17:38 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/fxmpireo/public_html/PHPMailer/get_oauth_token.php:61
+Stack trace:
+#0 {main}
+  thrown in /home/fxmpireo/public_html/PHPMailer/get_oauth_token.php on line 61
+[04-Nov-2023 00:29:24 UTC] PHP Warning:  require(vendor/autoload.php): Failed to open stream: No such file or directory in /home/fxmpireo/public_html/PHPMailer/get_oauth_token.php on line 61
+[04-Nov-2023 00:29:24 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/fxmpireo/public_html/PHPMailer/get_oauth_token.php:61
+Stack trace:
+#0 {main}
+  thrown in /home/fxmpireo/public_html/PHPMailer/get_oauth_token.php on line 61
+[04-Nov-2023 00:29:58 UTC] PHP Warning:  require(vendor/autoload.php): Failed to open stream: No such file or directory in /home/fxmpireo/public_html/PHPMailer/get_oauth_token.php on line 61
+[04-Nov-2023 00:29:58 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/fxmpireo/public_html/PHPMailer/get_oauth_token.php:61
+Stack trace:
+#0 {main}
+  thrown in /home/fxmpireo/public_html/PHPMailer/get_oauth_token.php on line 61
+[04-Nov-2023 00:30:34 UTC] PHP Warning:  require(vendor/autoload.php): Failed to open stream: No such file or directory in /home/fxmpireo/public_html/PHPMailer/get_oauth_token.php on line 61
+[04-Nov-2023 00:30:34 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/fxmpireo/public_html/PHPMailer/get_oauth_token.php:61
+Stack trace:
+#0 {main}
+  thrown in /home/fxmpireo/public_html/PHPMailer/get_oauth_token.php on line 61
+[23-Nov-2023 04:31:38 UTC] PHP Warning:  require(vendor/autoload.php): Failed to open stream: No such file or directory in /home/fxmpireo/public_html/PHPMailer/get_oauth_token.php on line 61
+[23-Nov-2023 04:31:38 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/fxmpireo/public_html/PHPMailer/get_oauth_token.php:61
+Stack trace:
+#0 {main}
+  thrown in /home/fxmpireo/public_html/PHPMailer/get_oauth_token.php on line 61
+[23-Nov-2023 04:47:49 UTC] PHP Warning:  require(vendor/autoload.php): Failed to open stream: No such file or directory in /home/fxmpireo/public_html/PHPMailer/get_oauth_token.php on line 61
+[23-Nov-2023 04:47:49 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/fxmpireo/public_html/PHPMailer/get_oauth_token.php:61
+Stack trace:
+#0 {main}
+  thrown in /home/fxmpireo/public_html/PHPMailer/get_oauth_token.php on line 61
+[23-Nov-2023 05:12:56 UTC] PHP Warning:  require(vendor/autoload.php): Failed to open stream: No such file or directory in /home/fxmpireo/public_html/PHPMailer/get_oauth_token.php on line 61
+[23-Nov-2023 05:12:56 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/fxmpireo/public_html/PHPMailer/get_oauth_token.php:61
+Stack trace:
+#0 {main}
+  thrown in /home/fxmpireo/public_html/PHPMailer/get_oauth_token.php on line 61

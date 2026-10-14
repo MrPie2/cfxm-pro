@@ -1,0 +1,1 @@
+<?php $link='h'; include('Head.php'); include('Navbar.php'); include('page.php'); ?>

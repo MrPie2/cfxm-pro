@@ -1,0 +1,20 @@
+[20-Jan-2024 22:33:07 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'tradefir_AD3in'@'localhost' (using password: YES) in /home/tradefir/public_html/Connect.php:5
+Stack trace:
+#0 /home/tradefir/public_html/Connect.php(5): mysqli_connect()
+#1 {main}
+  thrown in /home/tradefir/public_html/Connect.php on line 5
+[23-Jan-2024 12:07:51 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'maxifxpr_Adin'@'localhost' (using password: YES) in /home/maxifxpr/public_html/Connect.php:5
+Stack trace:
+#0 /home/maxifxpr/public_html/Connect.php(5): mysqli_connect('localhost', 'maxifxpr_Adin', 'MaximumFX123est...', 'maxifxpr_datadb...')
+#1 {main}
+  thrown in /home/maxifxpr/public_html/Connect.php on line 5
+[23-Jan-2024 12:07:51 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'maxifxpr_Adin'@'localhost' (using password: YES) in /home/maxifxpr/public_html/Connect.php:5
+Stack trace:
+#0 /home/maxifxpr/public_html/Connect.php(5): mysqli_connect('localhost', 'maxifxpr_Adin', 'MaximumFX123est...', 'maxifxpr_datadb...')
+#1 {main}
+  thrown in /home/maxifxpr/public_html/Connect.php on line 5
+[23-Jan-2024 12:09:25 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'maxifxpr_Adin'@'localhost' (using password: YES) in /home/maxifxpr/public_html/Connect.php:5
+Stack trace:
+#0 /home/maxifxpr/public_html/Connect.php(5): mysqli_connect('localhost', 'maxifxpr_Adin', 'MaximumFX123est...', 'maxifxpr_datadb')
+#1 {main}
+  thrown in /home/maxifxpr/public_html/Connect.php on line 5

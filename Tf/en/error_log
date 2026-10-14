@@ -1,0 +1,97 @@
+[11-Nov-2025 13:37:40 UTC] PHP Warning:  include(theme-switcher.php): Failed to open stream: No such file or directory in /home/nextoptr/public_html/home/Index.php on line 3
+[11-Nov-2025 13:37:40 UTC] PHP Warning:  include(theme-switcher.php): Failed to open stream: No such file or directory in /home/nextoptr/public_html/home/Index.php on line 3
+[11-Nov-2025 13:37:40 UTC] PHP Warning:  include(): Failed opening 'theme-switcher.php' for inclusion (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/nextoptr/public_html/home/Index.php on line 3
+[18-Nov-2025 10:10:06 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Too many connections in /home/nextoptr/public_html/Connect.php:6
+Stack trace:
+#0 /home/nextoptr/public_html/Connect.php(6): mysqli_connect('localhost', 'nextoptr_2DAdfs...', 'NextTop2S4&W000...', 'nextoptr_Datast...')
+#1 /home/nextoptr/public_html/home/fakealert.php(3): include('/home/nextoptr/...')
+#2 /home/nextoptr/public_html/home/Index.php(3): include('/home/nextoptr/...')
+#3 {main}
+  thrown in /home/nextoptr/public_html/Connect.php on line 6
+[21-Nov-2025 20:06:56 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/nextoptr/public_html/home/fakealert.php on line 2
+[01-Dec-2025 20:21:25 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/nextoptr/public_html/home/fakealert.php on line 2
+[20-Dec-2025 23:14:54 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/nextoptr/public_html/home/fakealert.php on line 2
+[22-Dec-2025 10:50:56 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/nextoptr/public_html/home/fakealert.php on line 2
+[25-Dec-2025 03:48:18 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/nextoptr/public_html/home/fakealert.php on line 2
+[25-Dec-2025 11:46:36 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/nextoptr/public_html/home/fakealert.php on line 2
+[13-Jan-2026 07:36:49 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/nextoptr/public_html/home/fakealert.php on line 2
+[19-Jan-2026 19:43:44 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/nextoptr/public_html/home/fakealert.php on line 2
+[24-Jan-2026 00:01:26 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/nextoptr/public_html/home/fakealert.php on line 2
+[05-Feb-2026 20:20:41 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Too many connections in /home/nextoptr/public_html/Connect.php:6
+Stack trace:
+#0 /home/nextoptr/public_html/Connect.php(6): mysqli_connect('localhost', 'nextoptr_2DAdfs...', 'NextTop2S4&W000...', 'nextoptr_Datast...')
+#1 /home/nextoptr/public_html/home/fakealert.php(3): include('/home/nextoptr/...')
+#2 /home/nextoptr/public_html/home/Index.php(3): include('/home/nextoptr/...')
+#3 {main}
+  thrown in /home/nextoptr/public_html/Connect.php on line 6
+[07-Feb-2026 12:52:40 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[07-Feb-2026 12:54:08 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[07-Feb-2026 13:08:18 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[07-Feb-2026 13:09:13 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[07-Feb-2026 13:09:45 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[07-Feb-2026 13:10:37 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[07-Feb-2026 13:11:12 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[07-Feb-2026 13:24:20 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[07-Feb-2026 13:28:12 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[07-Feb-2026 13:32:41 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[07-Feb-2026 13:49:55 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[07-Feb-2026 13:50:16 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[07-Feb-2026 15:34:36 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[07-Feb-2026 15:38:08 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[07-Feb-2026 15:43:37 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[07-Feb-2026 16:25:48 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[07-Feb-2026 17:11:36 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[07-Feb-2026 17:12:22 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[07-Feb-2026 17:12:58 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[07-Feb-2026 17:36:02 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[07-Feb-2026 18:51:32 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[07-Feb-2026 20:52:02 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[07-Feb-2026 20:53:09 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[07-Feb-2026 20:53:09 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'maestrot_dat1db.WhatsApp' doesn't exist in /home2/maestrot/public_html/home/Whatsapp.php:23
+Stack trace:
+#0 /home2/maestrot/public_html/home/Whatsapp.php(23): mysqli_query(Object(mysqli), 'select * from W...')
+#1 /home2/maestrot/public_html/home/Index.php(3): include('/home2/maestrot...')
+#2 {main}
+  thrown in /home2/maestrot/public_html/home/Whatsapp.php on line 23
+[07-Feb-2026 20:55:40 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[07-Feb-2026 20:56:14 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[07-Feb-2026 21:31:59 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[07-Feb-2026 21:40:42 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[07-Feb-2026 21:41:12 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[07-Feb-2026 21:41:39 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[07-Feb-2026 21:43:34 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[07-Feb-2026 21:44:11 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[07-Feb-2026 21:45:07 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[07-Feb-2026 21:48:16 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[07-Feb-2026 21:48:32 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[07-Feb-2026 22:01:18 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[07-Feb-2026 22:02:03 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[07-Feb-2026 22:03:14 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[07-Feb-2026 22:03:34 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[07-Feb-2026 22:09:58 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[08-Feb-2026 02:13:33 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[08-Feb-2026 07:29:36 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[08-Feb-2026 21:58:37 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[08-Feb-2026 21:58:37 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[08-Feb-2026 23:52:43 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[09-Feb-2026 01:20:04 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[09-Feb-2026 01:21:31 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[09-Feb-2026 10:43:40 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[09-Feb-2026 10:44:15 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[09-Feb-2026 20:59:31 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[10-Feb-2026 04:47:09 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[10-Feb-2026 04:47:57 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[10-Feb-2026 16:08:55 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[10-Feb-2026 18:07:46 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[10-Feb-2026 18:16:51 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[10-Feb-2026 22:26:47 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[11-Feb-2026 15:10:32 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[11-Feb-2026 15:10:34 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[11-Feb-2026 22:03:08 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[12-Feb-2026 04:27:21 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[12-Feb-2026 09:32:44 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[12-Feb-2026 17:01:56 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[12-Feb-2026 19:55:09 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[13-Feb-2026 02:24:59 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[13-Feb-2026 09:35:49 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
+[13-Feb-2026 09:35:49 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/maestrot/public_html/home/fakealert.php on line 2
