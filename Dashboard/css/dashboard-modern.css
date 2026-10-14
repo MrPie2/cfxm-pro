@@ -188,3 +188,53 @@ html[data-theme="light"] .vh-stock-marquee{background:var(--cfxm-surface,#fff)}
   .vh-performance-panel .vh-panel-heading { margin-bottom:6px; }
   .vh-performance-panel .vh-chart-empty { min-height:100px; padding:8px; }
 }
+
+
+/* Featured Tesla investment carousel */
+.vh-investment-catalog { margin: 24px 0 22px; min-width: 0; }
+.vh-investment-catalog-head { display:flex; align-items:flex-end; justify-content:space-between; gap:16px; margin-bottom:14px; }
+.vh-investment-catalog-head h2 { margin:0 0 5px; color:var(--text-color,#142b36); font-size:clamp(20px,2.2vw,25px); font-weight:800; letter-spacing:-.035em; }
+.vh-investment-catalog-head p { margin:0; color:var(--vh-muted); font-size:13px; line-height:1.5; }
+.vh-carousel-controls { display:flex; gap:8px; flex-shrink:0; }
+.vh-carousel-btn { display:grid; place-items:center; width:38px; height:38px; border:1px solid var(--vh-border); border-radius:12px; color:var(--vh-brand-primary); background:var(--card-bg,#fff); cursor:pointer; transition:background .2s,color .2s,transform .2s; }
+.vh-carousel-btn:hover { background:var(--vh-brand-primary); color:#fff; transform:translateY(-1px); }
+.vh-investment-track { display:flex; gap:16px; overflow-x:auto; overscroll-behavior-x:contain; scroll-snap-type:x mandatory; scroll-padding:2px; padding:2px 2px 13px; scrollbar-width:thin; scrollbar-color:rgba(73,36,126,.35) transparent; }
+.vh-investment-track::-webkit-scrollbar { height:5px; }
+.vh-investment-track::-webkit-scrollbar-thumb { background:rgba(73,36,126,.35); border-radius:999px; }
+.vh-investment-card { flex:0 0 280px; min-width:0; overflow:hidden; border:1px solid var(--vh-border); border-radius:18px; background:var(--card-bg,#fff); box-shadow:0 8px 28px rgba(17,39,51,.055); scroll-snap-align:start; transition:transform .2s,box-shadow .2s,border-color .2s; }
+.vh-investment-card:hover { transform:translateY(-3px); box-shadow:0 14px 32px rgba(17,39,51,.11); border-color:rgba(119,72,188,.35); }
+.vh-investment-company-art { height:156px; display:grid; place-items:center; position:relative; overflow:hidden; color:#fff; background:radial-gradient(circle at 70% 20%,rgba(119,72,188,.65),transparent 38%),linear-gradient(135deg,#101729,#12225c 55%,#49247e); }
+.vh-tesla-mark { font-family:Arial,sans-serif; font-size:76px; font-weight:900; font-style:italic; line-height:1; letter-spacing:-.13em; transform:translateX(-4px); z-index:1; text-shadow:0 8px 28px rgba(0,0,0,.3); }
+.vh-company-orbit { position:absolute; width:190px; height:190px; right:-55px; bottom:-120px; border:1px solid rgba(255,255,255,.22); border-radius:50%; box-shadow:0 0 0 18px rgba(255,255,255,.035),0 0 0 38px rgba(255,255,255,.025); }
+.vh-vehicle-image-wrap { height:156px; position:relative; overflow:hidden; background:#e7eaf0; }
+.vh-vehicle-image-wrap img { display:block; width:100%; height:100%; object-fit:cover; object-position:center; transition:transform .45s; }
+.vh-investment-card:hover .vh-vehicle-image-wrap img { transform:scale(1.045); }
+.vh-vehicle-image-shade { position:absolute; inset:35% 0 0; background:linear-gradient(180deg,transparent,rgba(8,13,27,.5)); pointer-events:none; }
+.vh-asset-pill { display:inline-flex; align-items:center; border-radius:999px; padding:5px 8px; background:rgba(73,36,126,.1); color:var(--vh-brand-primary); font-size:9px; line-height:1.2; font-weight:800; letter-spacing:.08em; }
+.vh-asset-pill-image { position:absolute; left:13px; bottom:12px; background:rgba(15,21,40,.72); color:#fff; backdrop-filter:blur(8px); }
+.vh-investment-card-body { padding:15px; }
+.vh-investment-card-meta { display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:8px; }
+.vh-asset-symbol { color:var(--vh-muted); font-size:10px; font-weight:800; letter-spacing:.06em; }
+.vh-investment-card-body h3 { margin:0 0 5px; color:var(--text-color,#142b36); font-size:17px; font-weight:800; letter-spacing:-.025em; }
+.vh-investment-card-body p { min-height:36px; margin:0 0 14px; color:var(--vh-muted); font-size:12px; line-height:1.5; }
+.vh-invest-now { display:flex; align-items:center; justify-content:center; gap:9px; width:100%; min-height:42px; padding:10px 12px; border:0; border-radius:11px; background:linear-gradient(110deg,#49247e,#7748bc); color:#fff!important; font-size:12px; font-weight:800; text-decoration:none!important; cursor:pointer; transition:filter .2s,transform .2s; }
+.vh-invest-now:hover { color:#fff!important; filter:brightness(1.08); transform:translateY(-1px); }
+.vh-invest-now.is-disabled { opacity:.55; cursor:not-allowed; background:#7d8492; }
+.vh-investment-disclaimer { display:flex; align-items:flex-start; gap:8px; margin:9px 2px 0; color:var(--vh-muted); font-size:11px; line-height:1.55; }
+.vh-investment-disclaimer i { margin-top:2px; color:var(--vh-brand-primary); }
+@media (min-width:1200px) { .vh-investment-card { flex-basis:300px; } }
+@media (max-width:760px) {
+  .vh-investment-catalog { margin:19px 0 18px; }
+  .vh-investment-catalog-head { align-items:center; gap:10px; }
+  .vh-investment-catalog-head h2 { font-size:21px; }
+  .vh-investment-catalog-head p { max-width:245px; font-size:12px; }
+  .vh-carousel-btn { width:34px; height:34px; border-radius:10px; }
+  .vh-investment-track { gap:12px; margin-right:-13px; padding-right:13px; }
+  .vh-investment-card { flex:0 0 68%; max-width:300px; border-radius:16px; }
+  .vh-investment-company-art,.vh-vehicle-image-wrap { height:132px; }
+  .vh-investment-card-body { padding:12px; }
+  .vh-investment-card-body h3 { font-size:15px; }
+  .vh-investment-card-body p { min-height:36px; margin-bottom:11px; font-size:11px; }
+  .vh-investment-disclaimer { font-size:10px; }
+}
+@media (max-width:390px) { .vh-investment-card { flex-basis:72%; } .vh-investment-catalog-head p { max-width:200px; } }
