@@ -76,7 +76,10 @@
             track.setAttribute('aria-label', 'Up to 10 US stock prices. Scroll horizontally to see each card.');
         } catch (error) {
             if (!track.classList.contains('is-ready')) {
-                track.innerHTML = '<div class="vh-stock-loading">US stock quotes are temporarily unavailable. Please check the server API configuration.</div>';
+                const message = error && typeof error.message === 'string' && error.message.trim()
+                    ? error.message
+                    : 'Stock quotes are temporarily unavailable. Please check the server API configuration.';
+                track.innerHTML = '<div class="vh-stock-loading">' + esc(message) + '</div>';
             }
             updated.textContent = 'Quotes unavailable';
         }
