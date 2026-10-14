@@ -1,0 +1,161 @@
+<?php
+/**
+ * Same-origin stock data proxy for the dashboard marquee.
+ * Configure FINNHUB_API_KEY in the PHP/server environment; never expose it in JavaScript.
+ */
+session_start();
+header('Content-Type: application/json; charset=utf-8');
+header('Cache-Control: no-store, max-age=0');
+
+if (empty($_SESSION['User_id'])) {
+    http_response_code(401);
+    echo json_encode(array('error' => 'Authentication required.'));
+    exit;
+}
+
+$apiKey = getenv('FINNHUB_API_KEY');
+if (!$apiKey) {
+    http_response_code(503);
+    echo json_encode(array('error' => 'Stock data is not configured yet. Set FINNHUB_API_KEY on the server.'));
+    exit;
+}
+if (!function_exists('curl_init') || !function_exists('curl_multi_init')) {
+    http_response_code(503);
+    echo json_encode(array('error' => 'The PHP cURL extension is required for stock data.'));
+    exit;
+}
+
+$stocks = array(
+    array('symbol' => 'AAPL', 'name' => 'Apple'),
+    array('symbol' => 'MSFT', 'name' => 'Microsoft'),
+    array('symbol' => 'NVDA', 'name' => 'NVIDIA'),
+    array('symbol' => 'AMZN', 'name' => 'Amazon'),
+    array('symbol' => 'GOOGL', 'name' => 'Alphabet'),
+    array('symbol' => 'META', 'name' => 'Meta'),
+    array('symbol' => 'BRK.B', 'name' => 'Berkshire Hathaway'),
+    array('symbol' => 'JPM', 'name' => 'JPMorgan Chase'),
+    array('symbol' => 'AVGO', 'name' => 'Broadcom'),
+    array('symbol' => 'LLY', 'name' => 'Eli Lilly'),
+    array('symbol' => 'WMT', 'name' => 'Walmart'),
+    array('symbol' => 'V', 'name' => 'Visa'),
+    array('symbol' => 'XOM', 'name' => 'Exxon Mobil'),
+    array('symbol' => 'MA', 'name' => 'Mastercard'),
+    array('symbol' => 'COST', 'name' => 'Costco'),
+    array('symbol' => 'ORCL', 'name' => 'Oracle'),
+    array('symbol' => 'NFLX', 'name' => 'Netflix'),
+    array('symbol' => 'JNJ', 'name' => 'Johnson & Johnson'),
+    array('symbol' => 'PG', 'name' => 'Procter & Gamble'),
+    array('symbol' => 'TSLA', 'name' => 'Tesla')
+);
+
+$cacheFile = rtrim(sys_get_temp_dir(), DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR . 'cfxm-stock-marquee-cache.json';
+$cacheTtl = 120;
+if (is_file($cacheFile) && (time() - filemtime($cacheFile)) < $cacheTtl) {
+    $cached = file_get_contents($cacheFile);
+    if ($cached !== false && $cached !== '') {
+        echo $cached;
+        exit;
+    }
+}
+
+$to = time();
+$from = $to - 86400;
+$requests = array();
+foreach ($stocks as $stock) {
+    $symbol = rawurlencode($stock['symbol']);
+    $requests[] = array(
+        'symbol' => $stock['symbol'],
+        'kind' => 'quote',
+        'url' => 'https://finnhub.io/api/v1/quote?symbol=' . $symbol . '&token=' . rawurlencode($apiKey)
+    );
+    $requests[] = array(
+        'symbol' => $stock['symbol'],
+        'kind' => 'candle',
+        'url' => 'https://finnhub.io/api/v1/stock/candle?symbol=' . $symbol . '&resolution=5&from=' . $from . '&to=' . $to . '&token=' . rawurlencode($apiKey)
+    );
+}
+
+$multi = curl_multi_init();
+$handles = array();
+foreach ($requests as $index => $request) {
+    $handle = curl_init($request['url']);
+    curl_setopt_array($handle, array(
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_CONNECTTIMEOUT => 5,
+        CURLOPT_TIMEOUT => 12,
+        CURLOPT_FOLLOWLOCATION => false,
+        CURLOPT_SSL_VERIFYPEER => true,
+        CURLOPT_HTTPHEADER => array('Accept: application/json', 'User-Agent: CFXM-StockMarquee/1.0')
+    ));
+    curl_multi_add_handle($multi, $handle);
+    $handles[$index] = $handle;
+}
+
+$running = null;
+do {
+    $status = curl_multi_exec($multi, $running);
+    if ($running && $status === CURLM_OK) {
+        $selected = curl_multi_select($multi, 1.0);
+        if ($selected === -1) { usleep(100000); }
+    }
+} while ($running && $status === CURLM_OK);
+
+$raw = array();
+foreach ($handles as $index => $handle) {
+    $body = curl_multi_getcontent($handle);
+    $statusCode = (int) curl_getinfo($handle, CURLINFO_HTTP_CODE);
+    $decoded = json_decode((string) $body, true);
+    $raw[$index] = ($statusCode >= 200 && $statusCode < 300 && is_array($decoded)) ? $decoded : null;
+    curl_multi_remove_handle($multi, $handle);
+    curl_close($handle);
+}
+curl_multi_close($multi);
+
+$bySymbol = array();
+foreach ($stocks as $stock) {
+    $bySymbol[$stock['symbol']] = array('quote' => null, 'candle' => null, 'meta' => $stock);
+}
+foreach ($requests as $index => $request) {
+    if (isset($bySymbol[$request['symbol']])) {
+        $bySymbol[$request['symbol']][$request['kind']] = $raw[$index];
+    }
+}
+
+$result = array();
+foreach ($bySymbol as $symbol => $data) {
+    $quote = $data['quote'];
+    $candle = $data['candle'];
+    if (!is_array($quote) || !isset($quote['c'], $quote['dp']) || !is_numeric($quote['c']) || !is_numeric($quote['dp']) || (float)$quote['c'] <= 0) {
+        continue;
+    }
+    $values = array();
+    if (is_array($candle) && isset($candle['s']) && $candle['s'] === 'ok' && isset($candle['c']) && is_array($candle['c'])) {
+        foreach ($candle['c'] as $close) {
+            if (is_numeric($close) && is_finite((float)$close)) {
+                $values[] = (float)$close;
+            }
+        }
+    }
+    $result[] = array(
+        'symbol' => $symbol,
+        'name' => $data['meta']['name'],
+        'price' => (float)$quote['c'],
+        'change' => (float)$quote['dp'],
+        'values' => $values
+    );
+}
+
+if (!$result) {
+    http_response_code(502);
+    echo json_encode(array('error' => 'The stock provider returned no usable quotes. Check the API key, plan access, and server connectivity.'));
+    exit;
+}
+
+$output = json_encode(array('stocks' => $result, 'updatedAt' => time()), JSON_UNESCAPED_SLASHES);
+if ($output === false) {
+    http_response_code(500);
+    echo json_encode(array('error' => 'Could not encode stock data.'));
+    exit;
+}
+file_put_contents($cacheFile, $output, LOCK_EX);
+echo $output;
