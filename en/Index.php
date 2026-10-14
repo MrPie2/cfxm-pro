@@ -827,7 +827,9 @@
         <!-- TrustBox script -->
         <script type="text/javascript"src="https://www.forex.com//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
         <!-- End TrustBox script -->
-        <link rel="stylesheet" href="/en/landing-modern.css?v=2" />
+        <link rel="stylesheet" href="/en/site-theme.css?v=1" />
+        <script>document.documentElement.setAttribute("data-theme", localStorage.getItem("theme") || "dark");</script>
+        <link rel="stylesheet" href="/en/landing-modern.css?v=3" />
 
 </head>
 
@@ -2335,7 +2337,7 @@ Get Started      </span>
                                 </div>
 
 <section style="overflow: hidden">
-    <div class="container component col-12 full-width" style="width: 1000px; height: 400px;">
+    <div class="container component col-12 full-width" style="width: 100%; max-width: 1200px; height: 520px; margin: 0 auto; box-sizing: border-box;">
         <!-- TradingView Widget BEGIN -->
 <div class="tradingview-widget-container">
  
@@ -2355,10 +2357,10 @@ Get Started      </span>
   "save_image": true,
   "style": "1",
   "symbol": "BITSTAMP:BTCUSD",
-  "theme": "light",
+  "theme": "dark",
   "timezone": "Etc/UTC",
-  "backgroundColor": "#ffffff",
-  "gridColor": "rgba(46, 46, 46, 0.06)",
+  "backgroundColor": "#121f27",
+  "gridColor": "rgba(223, 208, 184, 0.08)",
   "watchlist": [],
   "withdateranges": false,
   "compareSymbols": [],
