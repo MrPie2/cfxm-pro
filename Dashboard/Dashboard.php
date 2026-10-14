@@ -169,7 +169,7 @@ window.smartsupp||(function(d) {
             </div>
             <div class="vh-chart-wrap"><canvas id="vhPerformanceChart" aria-label="Cumulative investment history chart" role="img"></canvas></div>
             <div class="vh-chart-empty" id="vhPerformanceEmpty" <?php echo count($dashboardTimelineLabels) ? 'hidden' : ''; ?>>
-                <i class="fas fa-chart-area"></i><strong>Your performance chart will appear here</strong><span>Investment history will populate this chart when you have recorded contracts.</span>
+                <i class="fas fa-chart-area"></i><strong>No investment yet</strong><span>Your investment activity will appear here after you make your first investment.</span>
             </div>
         </section>
         <section class="vh-panel vh-allocation-panel">
