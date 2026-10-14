@@ -158,6 +158,8 @@ window.smartsupp||(function(d) {
         </div>
     </div>
 
+    <?php include __DIR__ . '/cryptocurrency.php'; ?>
+
     <div class="vh-chart-grid">
         <section class="vh-panel vh-performance-panel">
             <div class="vh-panel-heading">
