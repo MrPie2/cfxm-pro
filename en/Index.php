@@ -2582,7 +2582,66 @@ Get Started      </span>
 
 
 
-                                <div class="component container col-12 container-dark-background full-width">
+                                <!-- Featured Tesla investment carousel -->
+<section class="cfxm-tesla-section" aria-labelledby="cfxmTeslaHeading">
+  <div class="cfxm-tesla-inner">
+    <div class="cfxm-tesla-heading">
+      <div>
+        <span class="cfxm-tesla-eyebrow">FEATURED OPPORTUNITY</span>
+        <h2 id="cfxmTeslaHeading">Explore Tesla</h2>
+        <p>Discover Tesla Inc. shares and explore the vehicles behind the brand.</p>
+      </div>
+      <div class="cfxm-tesla-controls" aria-label="Tesla investment carousel controls">
+        <button type="button" class="cfxm-tesla-arrow" id="cfxmTeslaPrev" aria-label="Scroll investments left"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+        <button type="button" class="cfxm-tesla-arrow" id="cfxmTeslaNext" aria-label="Scroll investments right"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
+      </div>
+    </div>
+    <div class="cfxm-tesla-track" id="cfxmTeslaTrack" tabindex="0" role="region" aria-label="Featured Tesla investments. Scroll horizontally to view more">
+      <article class="cfxm-tesla-card">
+        <div class="cfxm-tesla-company-art" aria-hidden="true"><span class="cfxm-tesla-mark">T</span><span class="cfxm-tesla-orbit"></span><span class="cfxm-tesla-art-label">MARKET OPPORTUNITY</span></div>
+        <div class="cfxm-tesla-card-body">
+          <div class="cfxm-tesla-meta"><span class="cfxm-tesla-pill">EQUITY</span><span class="cfxm-tesla-symbol">TSLA</span></div>
+          <h3>Tesla, Inc.</h3>
+          <p>Explore an investment linked to Tesla Inc. shares.</p>
+          <a class="cfxm-tesla-cta" href="../Dashboard/Stock_Market.php?Symbol=TSLA&amp;Vehicle=company">Invest now <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </article>
+      <article class="cfxm-tesla-card">
+        <div class="cfxm-tesla-image"><img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Modern electric sedan on the road" loading="lazy"><span class="cfxm-tesla-image-shade"></span><span class="cfxm-tesla-image-label">TESLA COLLECTION</span></div>
+        <div class="cfxm-tesla-card-body"><div class="cfxm-tesla-meta"><span class="cfxm-tesla-symbol">TSLA · TESLA INC.</span></div><h3>Model S</h3><p>Electric luxury sedan.</p><a class="cfxm-tesla-cta" href="../Dashboard/Stock_Market.php?Symbol=TSLA&amp;Vehicle=Model%20S">Invest in Tesla <i class="fas fa-arrow-right" aria-hidden="true"></i></a></div>
+      </article>
+      <article class="cfxm-tesla-card">
+        <div class="cfxm-tesla-image"><img src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Electric sedan viewed from the front" loading="lazy"><span class="cfxm-tesla-image-shade"></span><span class="cfxm-tesla-image-label">TESLA COLLECTION</span></div>
+        <div class="cfxm-tesla-card-body"><div class="cfxm-tesla-meta"><span class="cfxm-tesla-symbol">TSLA · TESLA INC.</span></div><h3>Model 3</h3><p>Electric sport sedan.</p><a class="cfxm-tesla-cta" href="../Dashboard/Stock_Market.php?Symbol=TSLA&amp;Vehicle=Model%203">Invest in Tesla <i class="fas fa-arrow-right" aria-hidden="true"></i></a></div>
+      </article>
+      <article class="cfxm-tesla-card">
+        <div class="cfxm-tesla-image"><img src="https://images.unsplash.com/photo-1568844293986-8d0400bd4745?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Premium electric vehicle exterior" loading="lazy"><span class="cfxm-tesla-image-shade"></span><span class="cfxm-tesla-image-label">TESLA COLLECTION</span></div>
+        <div class="cfxm-tesla-card-body"><div class="cfxm-tesla-meta"><span class="cfxm-tesla-symbol">TSLA · TESLA INC.</span></div><h3>Model X</h3><p>Electric performance SUV.</p><a class="cfxm-tesla-cta" href="../Dashboard/Stock_Market.php?Symbol=TSLA&amp;Vehicle=Model%20X">Invest in Tesla <i class="fas fa-arrow-right" aria-hidden="true"></i></a></div>
+      </article>
+      <article class="cfxm-tesla-card">
+        <div class="cfxm-tesla-image"><img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Electric vehicle in a clean studio setting" loading="lazy"><span class="cfxm-tesla-image-shade"></span><span class="cfxm-tesla-image-label">TESLA COLLECTION</span></div>
+        <div class="cfxm-tesla-card-body"><div class="cfxm-tesla-meta"><span class="cfxm-tesla-symbol">TSLA · TESLA INC.</span></div><h3>Model Y</h3><p>Electric crossover.</p><a class="cfxm-tesla-cta" href="../Dashboard/Stock_Market.php?Symbol=TSLA&amp;Vehicle=Model%20Y">Invest in Tesla <i class="fas fa-arrow-right" aria-hidden="true"></i></a></div>
+      </article>
+    </div>
+    <p class="cfxm-tesla-disclaimer"><i class="fas fa-info-circle" aria-hidden="true"></i> Vehicle cards are visual entry points to Tesla Inc. shares, not investments in or ownership of physical cars. Availability depends on the stock catalogue configured on the platform.</p>
+  </div>
+</section>
+<script>
+(function () {
+  var track = document.getElementById('cfxmTeslaTrack');
+  if (!track || track.dataset.ready) return;
+  track.dataset.ready = '1';
+  function scrollCards(direction) {
+    var card = track.querySelector('.cfxm-tesla-card');
+    track.scrollBy({left: direction * ((card ? card.getBoundingClientRect().width : 280) + 16), behavior: 'smooth'});
+  }
+  document.getElementById('cfxmTeslaPrev').addEventListener('click', function () { scrollCards(-1); });
+  document.getElementById('cfxmTeslaNext').addEventListener('click', function () { scrollCards(1); });
+})();
+</script>
+<!-- End featured Tesla investment carousel -->
+
+<div class="component container col-12 container-dark-background full-width">
                                     <div class="component-content">
                                         <div class="row">
 
