@@ -33,3 +33,40 @@ body { color:var(--cfxm-text); background:var(--cfxm-bg); }
 a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
   outline:3px solid var(--cfxm-focus) !important; outline-offset:3px;
 }
+
+
+/* Shared components: the same controls and surfaces on public and authenticated pages. */
+body .btn-primary,
+body .btn-oxblood,
+body a.button-primary,
+body .button-primary a {
+  color: #fff !important;
+  border: 1px solid transparent !important;
+  border-radius: 999px !important;
+  background: linear-gradient(135deg, var(--cfxm-purple), var(--cfxm-purple-2)) !important;
+  font-weight: 700;
+  box-shadow: 0 8px 22px rgba(73,36,126,.2);
+}
+body .btn-primary:hover,
+body .btn-oxblood:hover,
+body a.button-primary:hover,
+body .button-primary a:hover {
+  color: #fff !important;
+  background: linear-gradient(135deg, var(--cfxm-purple-hover), var(--cfxm-purple)) !important;
+}
+body .card {
+  color: var(--cfxm-text);
+  background: var(--cfxm-surface);
+  border: 1px solid var(--cfxm-line);
+  border-radius: var(--cfxm-radius);
+}
+body .table { color: var(--cfxm-text); }
+body .table td, body .table th { border-color: var(--cfxm-line); }
+body input, body select, body textarea {
+  color: var(--cfxm-text);
+  border-color: var(--cfxm-line);
+}
+html[data-theme="light"] body .card {
+  color: var(--cfxm-text);
+  background: var(--cfxm-surface);
+}
