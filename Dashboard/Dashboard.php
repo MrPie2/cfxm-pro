@@ -44,6 +44,51 @@ window.location.href='Notification.php?id=".$id."';
          $Equitee=number_format($roww['Buy_Price']*$roww['Margin']*$roww['Total_Units'], 2, '.',',');
         $StockEarning+=$Equitee;
     }
+
+    // Modern dashboard summaries: read-only aggregates from existing investor records.
+    $dashboardTotalInvested = 0;
+    $dashboardTotalROI = 0;
+    $dashboardActiveCount = 0;
+    $dashboardCompletedCount = 0;
+    $dashboardPortfolio = array();
+    $dashboardTimeline = array();
+    $dashboardHistoryQuery = mysqli_query($Conn, "SELECT Plan_Type, Amount, ROI, Date_Entered, Status FROM contracts WHERE Investor_id='$Investor_id' ORDER BY Date_Entered ASC");
+    if ($dashboardHistoryQuery) {
+        while ($dashboardRow = mysqli_fetch_assoc($dashboardHistoryQuery)) {
+            $dashboardAmount = (float)$dashboardRow['Amount'];
+            $dashboardROI = (float)$dashboardRow['ROI'];
+            $dashboardPlan = (string)$dashboardRow['Plan_Type'];
+            $dashboardDate = (string)$dashboardRow['Date_Entered'];
+            $dashboardStatus = (int)$dashboardRow['Status'];
+            $dashboardTotalInvested += $dashboardAmount;
+            $dashboardTotalROI += $dashboardROI;
+            if ($dashboardStatus === 1) { $dashboardActiveCount++; }
+            if ($dashboardStatus === 2) { $dashboardCompletedCount++; }
+            if (!isset($dashboardPortfolio[$dashboardPlan])) { $dashboardPortfolio[$dashboardPlan] = 0; }
+            $dashboardPortfolio[$dashboardPlan] += $dashboardAmount;
+            if ($dashboardDate !== '') {
+                if (!isset($dashboardTimeline[$dashboardDate])) { $dashboardTimeline[$dashboardDate] = 0; }
+                $dashboardTimeline[$dashboardDate] += $dashboardAmount;
+            }
+        }
+    }
+    $dashboardPortfolioLabels = array_keys($dashboardPortfolio);
+    $dashboardPortfolioValues = array_values($dashboardPortfolio);
+    $dashboardTimelineLabels = array();
+    $dashboardTimelineValues = array();
+    $dashboardRunningTotal = 0;
+    foreach ($dashboardTimeline as $dashboardDate => $dashboardDailyAmount) {
+        $dashboardRunningTotal += $dashboardDailyAmount;
+        $dashboardTimelineLabels[] = date('d M Y', strtotime($dashboardDate));
+        $dashboardTimelineValues[] = round($dashboardRunningTotal * (float)$exchangerate, 2);
+    }
+    $dashboardPortfolioValues = array_map(function($value) use ($exchangerate) {
+        return round((float)$value * (float)$exchangerate, 2);
+    }, $dashboardPortfolioValues);
+    $dashboardTotalInvestedDisplay = $dashboardTotalInvested * (float)$exchangerate;
+    $dashboardTotalROIDisplay = $dashboardTotalROI * (float)$exchangerate;
+    $dashboardWalletDisplay = (float)$userDetails['Fin_Asset'] * (float)$exchangerate;
+
 ?>
 <style>
     .card-dark{
@@ -68,15 +113,90 @@ window.smartsupp||(function(d) {
 })(document);
 </script>
 <noscript>Powered by <a href="https://www.smartsupp.com" target="_blank">Smartsupp</a></noscript>
-   <div class="" align="center">
-                <div class="col-md-12 align-self-center" style="background: var(--body-bg); display: flex; justify-content: center">
-                    <h1 class="" style="color: var(--liner-text-color)"><small style="font-size: 12pt">Total Wallet Balance</small><br><?php $account=$exchangerate*$userDetails['Fin_Asset']; echo $userDetails['First_Name']." - ".$curAbbr."".number_format($account, 2, '.',','); ?></h1> </div>
-               <div class="top3nav">
-                   <div><a href="Deposit.php"><i class="fas fa-arrow-alt-circle-down"></i><br><span>Deposit</span></a></div>
-                    <div><a href="Withdrawal.php"><i class="fas fa-arrow-alt-circle-right"></i><br><span>Withdraw</span></a></div>
-                    <div><a href="Deposit.php"><i class="fa fa-refresh"></i><br><span>Convert</span></a></div>
-               </div>
+   
+<section class="vh-dashboard">
+    <div class="vh-dashboard-heading">
+        <div>
+            <span class="vh-eyebrow">INVESTOR OVERVIEW</span>
+            <h1>Welcome back, <?php echo htmlspecialchars($userDetails['First_Name'] ?? 'Investor', ENT_QUOTES, 'UTF-8'); ?></h1>
+            <p>Your portfolio at a glance. Review your balance, investment activity and history.</p>
+        </div>
+        <div class="vh-updated"><span class="vh-live-dot"></span> Account snapshot</div>
+    </div>
+
+    <div class="vh-hero-grid">
+        <div class="vh-balance-card">
+            <div class="vh-balance-top">
+                <span>Total wallet balance</span>
+                <span class="vh-balance-icon"><i class="fas fa-wallet"></i></span>
             </div>
+            <div class="vh-balance-amount"><?php echo htmlspecialchars($curAbbr, ENT_QUOTES, 'UTF-8') . number_format($dashboardWalletDisplay, 2, '.', ','); ?></div>
+            <div class="vh-balance-caption">Available account balance</div>
+            <div class="vh-quick-actions">
+                <a href="Deposit.php"><i class="fas fa-plus"></i> Deposit</a>
+                <a href="Withdrawal.php"><i class="fas fa-arrow-up"></i> Withdraw</a>
+                <a href="Transfer.php"><i class="fas fa-exchange-alt"></i> Transfer</a>
+            </div>
+        </div>
+        <div class="vh-stat-card">
+            <span class="vh-stat-icon vh-icon-teal"><i class="fas fa-chart-line"></i></span>
+            <span class="vh-stat-label">Total invested</span>
+            <strong><?php echo htmlspecialchars($curAbbr, ENT_QUOTES, 'UTF-8') . number_format($dashboardTotalInvestedDisplay, 2, '.', ','); ?></strong>
+            <small>Across recorded investments</small>
+        </div>
+        <div class="vh-stat-card">
+            <span class="vh-stat-icon vh-icon-green"><i class="fas fa-coins"></i></span>
+            <span class="vh-stat-label">Recorded ROI</span>
+            <strong><?php echo htmlspecialchars($curAbbr, ENT_QUOTES, 'UTF-8') . number_format($dashboardTotalROIDisplay, 2, '.', ','); ?></strong>
+            <small>ROI values from your contracts</small>
+        </div>
+        <div class="vh-stat-card">
+            <span class="vh-stat-icon vh-icon-purple"><i class="fas fa-layer-group"></i></span>
+            <span class="vh-stat-label">Active investments</span>
+            <strong><?php echo number_format($dashboardActiveCount); ?></strong>
+            <small><?php echo number_format($dashboardCompletedCount); ?> completed</small>
+        </div>
+    </div>
+
+    <div class="vh-chart-grid">
+        <section class="vh-panel vh-performance-panel">
+            <div class="vh-panel-heading">
+                <div><h2>Portfolio performance</h2><p>Cumulative invested amount from your recorded contracts</p></div>
+                <span class="vh-chart-badge"><i class="fas fa-wave-square"></i> Account data</span>
+            </div>
+            <div class="vh-chart-wrap"><canvas id="vhPerformanceChart" aria-label="Cumulative investment history chart" role="img"></canvas></div>
+            <div class="vh-chart-empty" id="vhPerformanceEmpty" <?php echo count($dashboardTimelineLabels) ? 'hidden' : ''; ?>>
+                <i class="fas fa-chart-area"></i><strong>Your performance chart will appear here</strong><span>Investment history will populate this chart when you have recorded contracts.</span>
+            </div>
+        </section>
+        <section class="vh-panel vh-allocation-panel">
+            <div class="vh-panel-heading">
+                <div><h2>Portfolio allocation</h2><p>Invested amount by plan type</p></div>
+            </div>
+            <div class="vh-doughnut-wrap"><canvas id="vhAllocationChart" aria-label="Portfolio allocation by investment plan" role="img"></canvas></div>
+            <div class="vh-chart-empty vh-allocation-empty" id="vhAllocationEmpty" <?php echo count($dashboardPortfolioLabels) ? 'hidden' : ''; ?>>
+                <i class="fas fa-chart-pie"></i><strong>No portfolio allocation yet</strong><span>Your plan mix will appear here after your first investment.</span>
+            </div>
+            <div id="vhAllocationLegend" class="vh-allocation-legend"></div>
+        </section>
+    </div>
+
+    <script type="application/json" id="vhDashboardChartData"><?php
+        echo json_encode(array(
+            'currency' => $curAbbr,
+            'timelineLabels' => $dashboardTimelineLabels,
+            'timelineValues' => $dashboardTimelineValues,
+            'portfolioLabels' => $dashboardPortfolioLabels,
+            'portfolioValues' => $dashboardPortfolioValues
+        ), JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_AMP | JSON_HEX_QUOT);
+    ?></script>
+</section>
+<div class="vh-legacy-shortcuts" aria-label="Quick navigation">
+    <a href="Deposit.php"><i class="fas fa-arrow-circle-down"></i><span>Deposit</span></a>
+    <a href="Withdrawal.php"><i class="fas fa-arrow-circle-up"></i><span>Withdraw</span></a>
+    <a href="Account.php"><i class="fas fa-wallet"></i><span>Profit record</span></a>
+    <a href="Profile.php"><i class="fas fa-user"></i><span>Profile</span></a>
+</div>
 
             <!-- Container fluid  -->
             <div class="container-fluid">
@@ -465,6 +585,8 @@ header('location: LoginContainer.php');
 ?>         <!-- End footer -->
       
     <!-- End Wrapper -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+    <script src="js/dashboard-modern.js"></script>
     <!-- All Jquery -->
     <script src="js/lib/jquery/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
