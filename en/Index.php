@@ -4374,7 +4374,9 @@ Get Started      </span>
                         i.addEventListener ? i.addEventListener(l, b, !1) : i.attachEvent("on" + l, b);
                         var q = function() {
                             function b() {
-                                return ["<head></head><", c, ' onload="var d=', n, ";d.getElementsByTagName('head')[0].", d, "(d.", g, "('script')).", i, "='", a.l, "'\"></", c, ">"].join("")
+                                return ["<head>    <link rel="stylesheet" href="landing-modern.css?v=1" />
+
+</head><", c, ' onload="var d=', n, ";d.getElementsByTagName('head')[0].", d, "(d.", g, "('script')).", i, "='", a.l, "'\"></", c, ">"].join("")
                             }
                             var c = "body",
                                 e = h[c];
