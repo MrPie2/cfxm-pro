@@ -1,6 +1,6 @@
 <?php
 /**
- * Same-origin stock data proxy for the dashboard marquee.
+ * Same-origin US stock quote proxy for dashboard stock cards.
  * Configure FINNHUB_API_KEY in the PHP/server environment; never expose it in JavaScript.
  */
 session_start();
@@ -35,20 +35,10 @@ $stocks = array(
     array('symbol' => 'BRK.B', 'name' => 'Berkshire Hathaway'),
     array('symbol' => 'JPM', 'name' => 'JPMorgan Chase'),
     array('symbol' => 'AVGO', 'name' => 'Broadcom'),
-    array('symbol' => 'LLY', 'name' => 'Eli Lilly'),
-    array('symbol' => 'WMT', 'name' => 'Walmart'),
-    array('symbol' => 'V', 'name' => 'Visa'),
-    array('symbol' => 'XOM', 'name' => 'Exxon Mobil'),
-    array('symbol' => 'MA', 'name' => 'Mastercard'),
-    array('symbol' => 'COST', 'name' => 'Costco'),
-    array('symbol' => 'ORCL', 'name' => 'Oracle'),
-    array('symbol' => 'NFLX', 'name' => 'Netflix'),
-    array('symbol' => 'JNJ', 'name' => 'Johnson & Johnson'),
-    array('symbol' => 'PG', 'name' => 'Procter & Gamble'),
-    array('symbol' => 'TSLA', 'name' => 'Tesla')
+    array('symbol' => 'LLY', 'name' => 'Eli Lilly')
 );
 
-$cacheFile = rtrim(sys_get_temp_dir(), DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR . 'cfxm-stock-marquee-cache.json';
+$cacheFile = rtrim(sys_get_temp_dir(), DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR . 'cfxm-stock-cards-cache.json';
 $cacheTtl = 120;
 if (is_file($cacheFile) && (time() - filemtime($cacheFile)) < $cacheTtl) {
     $cached = file_get_contents($cacheFile);
@@ -58,8 +48,6 @@ if (is_file($cacheFile) && (time() - filemtime($cacheFile)) < $cacheTtl) {
     }
 }
 
-$to = time();
-$from = $to - 86400;
 $requests = array();
 foreach ($stocks as $stock) {
     $symbol = rawurlencode($stock['symbol']);
@@ -67,11 +55,6 @@ foreach ($stocks as $stock) {
         'symbol' => $stock['symbol'],
         'kind' => 'quote',
         'url' => 'https://finnhub.io/api/v1/quote?symbol=' . $symbol . '&token=' . rawurlencode($apiKey)
-    );
-    $requests[] = array(
-        'symbol' => $stock['symbol'],
-        'kind' => 'candle',
-        'url' => 'https://finnhub.io/api/v1/stock/candle?symbol=' . $symbol . '&resolution=5&from=' . $from . '&to=' . $to . '&token=' . rawurlencode($apiKey)
     );
 }
 
@@ -113,35 +96,30 @@ curl_multi_close($multi);
 
 $bySymbol = array();
 foreach ($stocks as $stock) {
-    $bySymbol[$stock['symbol']] = array('quote' => null, 'candle' => null, 'meta' => $stock);
+    $bySymbol[$stock['symbol']] = array('quote' => null, 'meta' => $stock);
 }
 foreach ($requests as $index => $request) {
     if (isset($bySymbol[$request['symbol']])) {
-        $bySymbol[$request['symbol']][$request['kind']] = $raw[$index];
+        $bySymbol[$request['symbol']]['quote'] = $raw[$index];
     }
 }
 
 $result = array();
+foreach $result = array();
 foreach ($bySymbol as $symbol => $data) {
     $quote = $data['quote'];
-    $candle = $data['candle'];
     if (!is_array($quote) || !isset($quote['c'], $quote['dp']) || !is_numeric($quote['c']) || !is_numeric($quote['dp']) || (float)$quote['c'] <= 0) {
         continue;
     }
-    $values = array();
-    if (is_array($candle) && isset($candle['s']) && $candle['s'] === 'ok' && isset($candle['c']) && is_array($candle['c'])) {
-        foreach ($candle['c'] as $close) {
-            if (is_numeric($close) && is_finite((float)$close)) {
-                $values[] = (float)$close;
-            }
-        }
-    }
+    $changeAmount = isset($quote['d']) && is_numeric($quote['d'])
+        ? (float)$quote['d']
+        : ((isset($quote['pc']) && is_numeric($quote['pc'])) ? (float)$quote['c'] - (float)$quote['pc'] : 0);
     $result[] = array(
         'symbol' => $symbol,
         'name' => $data['meta']['name'],
         'price' => (float)$quote['c'],
-        'change' => (float)$quote['dp'],
-        'values' => $values
+        'changeAmount' => $changeAmount,
+        'change' => (float)$quote['dp']
     );
 }
 
