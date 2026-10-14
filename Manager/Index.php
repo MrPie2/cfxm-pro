@@ -113,6 +113,7 @@ function managerTool($href, $icon, $title, $description, $extra = '') {
 (function($){
   if (!$) return;
   $(function(){
+    <?php if ($isManager): ?>
     function getNumber(){
       $.ajax({url:'getNumber.php',method:'GET',cache:false,success:function(data){$('.ViewNumber').text(data);}});
     }
@@ -133,6 +134,7 @@ function managerTool($href, $icon, $title, $description, $extra = '') {
         error:function(){ alert('Could not connect to the server. Please try again.'); }
       });
     });
+    <?php endif; ?>
   });
 })(window.jQuery);
 </script>
