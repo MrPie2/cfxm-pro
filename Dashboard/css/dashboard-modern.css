@@ -142,7 +142,7 @@ html[data-theme="dark"] .vh-chart-badge { background: rgba(185, 155, 232, .12); 
  .vh-stock-marquee-head strong{font-size:9px}
  .vh-stock-updated{font-size:9px}
  .vh-stock-marquee-track{gap:5px;padding:7px}
- .vh-stock-ticker{width:calc((100vw - 60px)/4);min-width:62px;max-width:88px;padding:8px 5px;border-radius:9px}
+ .vh-stock-ticker{width:calc((100vw - 60px)/3);min-width:0;max-width:140px;padding:9px 7px;border-radius:9px}
  .vh-stock-ticker-top{gap:4px}
  .vh-stock-company-icon{flex-basis:20px;width:20px;height:20px;border-radius:6px;font-size:10px}
  .vh-stock-symbol{font-size:9px}
