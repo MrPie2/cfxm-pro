@@ -90,6 +90,15 @@ window.location.href='Notification.php?id=".$id."';
     }
     $dashboardReferralEarningsDisplay = $dashboardReferralEarnings * (float)$exchangerate;
 
+    // Tesla cards link to the real TSLA entry in the existing stock catalogue.
+    // Vehicle cards are visual entry points to Tesla Inc. shares, not claims of vehicle ownership.
+    $teslaStock = null;
+    $teslaStockQuery = mysqli_query($Conn, "SELECT * FROM stock WHERE CompanyName LIKE '%Tesla%' OR tradingview LIKE '%TSLA%' ORDER BY CASE WHEN tradingview LIKE '%TSLA%' THEN 0 ELSE 1 END, id ASC LIMIT 1");
+    if ($teslaStockQuery && mysqli_num_rows($teslaStockQuery) > 0) {
+        $teslaStock = mysqli_fetch_assoc($teslaStockQuery);
+    }
+
+
 ?>
 <style>
     .card-dark{
@@ -120,9 +129,7 @@ window.smartsupp||(function(d) {
         <div>
             <span class="vh-eyebrow">INVESTOR OVERVIEW</span>
             <h1>Welcome back, <?php echo htmlspecialchars($userDetails['First_Name'] ?? 'Investor', ENT_QUOTES, 'UTF-8'); ?></h1>
-            <p>Your portfolio at a glance. Review your balance, investment activity and history.</p>
         </div>
-        <div class="vh-updated"><span class="vh-live-dot"></span> Account snapshot</div>
     </div>
 
     <div class="vh-hero-grid">
@@ -164,6 +171,78 @@ window.smartsupp||(function(d) {
             <small>Available referral rewards</small>
         </div>
     </div>
+
+    <section class="vh-investment-catalog" aria-labelledby="vhTeslaHeading">
+        <div class="vh-investment-catalog-head">
+            <div>
+                <span class="vh-eyebrow">FEATURED OPPORTUNITY</span>
+                <h2 id="vhTeslaHeading">Explore Tesla</h2>
+                <p>Explore Tesla Inc. shares alongside the vehicles behind the brand.</p>
+            </div>
+            <div class="vh-carousel-controls" aria-label="Featured investment carousel controls">
+                <button type="button" class="vh-carousel-btn" id="vhTeslaPrev" aria-label="Scroll featured investments left"><i class="fas fa-chevron-left"></i></button>
+                <button type="button" class="vh-carousel-btn" id="vhTeslaNext" aria-label="Scroll featured investments right"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+        <div class="vh-investment-track" id="vhTeslaTrack" tabindex="0" role="region" aria-label="Tesla investment cards. Scroll horizontally to view more">
+            <article class="vh-investment-card vh-investment-company-card">
+                <div class="vh-investment-company-art" aria-hidden="true"><span class="vh-tesla-mark">T</span><span class="vh-company-orbit"></span></div>
+                <div class="vh-investment-card-body">
+                    <div class="vh-investment-card-meta"><span class="vh-asset-pill">EQUITY</span><span class="vh-asset-symbol">TSLA</span></div>
+                    <h3>Tesla, Inc.</h3>
+                    <p>Explore an investment linked to Tesla Inc. shares.</p>
+                    <?php if ($teslaStock): ?>
+                    <a class="vh-invest-now" href="Stock_Market.php?Stock_id=<?php echo (int)$teslaStock['id']; ?>&amp;Type=Stock&amp;Min=<?php echo rawurlencode((string)$teslaStock['Unit']); ?>&amp;Vehicle=company">Invest now <i class="fas fa-arrow-right"></i></a>
+                    <?php else: ?>
+                    <button class="vh-invest-now is-disabled" type="button" disabled title="Tesla must be configured in the stock catalogue first">Trading coming soon</button>
+                    <?php endif; ?>
+                </div>
+            </article>
+            <?php
+            $teslaVehicles = array(
+                array('name' => 'Model S', 'tagline' => 'Electric luxury sedan', 'image' => 'https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=900&q=85', 'alt' => 'Modern electric sedan on the road'),
+                array('name' => 'Model 3', 'tagline' => 'Electric sport sedan', 'image' => 'https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=900&q=85', 'alt' => 'Electric sedan viewed from the front'),
+                array('name' => 'Model X', 'tagline' => 'Electric performance SUV', 'image' => 'https://images.unsplash.com/photo-1568844293986-8d0400bd4745?auto=format&fit=crop&w=900&q=85', 'alt' => 'Premium electric vehicle exterior'),
+                array('name' => 'Model Y', 'tagline' => 'Electric crossover', 'image' => 'https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=900&q=85', 'alt' => 'Electric vehicle in a clean studio setting')
+            );
+            foreach ($teslaVehicles as $vehicle):
+                $vehicleName = $vehicle['name'];
+                $vehicleHref = $teslaStock ? 'Stock_Market.php?Stock_id=' . (int)$teslaStock['id'] . '&amp;Type=Stock&amp;Min=' . rawurlencode((string)$teslaStock['Unit']) . '&amp;Vehicle=' . rawurlencode($vehicleName) : '';
+            ?>
+            <article class="vh-investment-card vh-vehicle-card">
+                <div class="vh-vehicle-image-wrap">
+                    <img src="<?php echo htmlspecialchars($vehicle['image'], ENT_QUOTES, 'UTF-8'); ?>" alt="<?php echo htmlspecialchars($vehicle['alt'], ENT_QUOTES, 'UTF-8'); ?>" loading="lazy">
+                    <span class="vh-vehicle-image-shade"></span>
+                    <span class="vh-asset-pill vh-asset-pill-image">TESLA COLLECTION</span>
+                </div>
+                <div class="vh-investment-card-body">
+                    <div class="vh-investment-card-meta"><span class="vh-asset-symbol">TSLA · TESLA INC.</span></div>
+                    <h3><?php echo htmlspecialchars($vehicleName, ENT_QUOTES, 'UTF-8'); ?></h3>
+                    <p><?php echo htmlspecialchars($vehicle['tagline'], ENT_QUOTES, 'UTF-8'); ?></p>
+                    <?php if ($teslaStock): ?>
+                    <a class="vh-invest-now" href="<?php echo $vehicleHref; ?>">Invest in Tesla <i class="fas fa-arrow-right"></i></a>
+                    <?php else: ?>
+                    <button class="vh-invest-now is-disabled" type="button" disabled title="Tesla must be configured in the stock catalogue first">Trading coming soon</button>
+                    <?php endif; ?>
+                </div>
+            </article>
+            <?php endforeach; ?>
+        </div>
+        <p class="vh-investment-disclaimer"><i class="fas fa-info-circle" aria-hidden="true"></i> Vehicle cards are informational entry points. Any transaction is for Tesla Inc. shares through the configured stock catalogue, not ownership of a car. Prices and availability depend on your platform configuration.</p>
+    </section>
+    <script>
+    (function () {
+        const track = document.getElementById('vhTeslaTrack');
+        if (!track || track.dataset.ready) return;
+        track.dataset.ready = '1';
+        const scrollByCard = direction => {
+            const card = track.querySelector('.vh-investment-card');
+            track.scrollBy({ left: direction * ((card ? card.getBoundingClientRect().width : 280) + 16), behavior: 'smooth' });
+        };
+        document.getElementById('vhTeslaPrev')?.addEventListener('click', () => scrollByCard(-1));
+        document.getElementById('vhTeslaNext')?.addEventListener('click', () => scrollByCard(1));
+    })();
+    </script>
 
     <?php include __DIR__ . '/cryptocurrency.php'; ?>
 
