@@ -11,8 +11,8 @@
     </table>
 </div>
 <style>
-.vh-crypto-table-wrap{width:100%;min-width:0;overflow-x:auto;margin:0 0 24px}
-.vh-crypto-table{width:100%;min-width:480px;border-collapse:collapse;color:var(--cfxm-text,#DFD0B8);font-size:12px}
+.vh-crypto-table-wrap{width:100%;min-width:0;overflow-x:hidden;margin:0 0 24px}
+.vh-crypto-table{width:100%;min-width:0;table-layout:fixed;border-collapse:collapse;color:var(--cfxm-text,#DFD0B8);font-size:12px}
 .vh-crypto-table thead{background:var(--cfxm-surface-raised,#27313b)}
 .vh-crypto-table th{padding:12px 14px;color:var(--cfxm-muted,#a5b1ba);font-size:10px;font-weight:700;letter-spacing:.04em;text-align:left;white-space:nowrap}
 .vh-crypto-table td{padding:11px 14px;border-top:1px solid var(--cfxm-line,rgba(223,208,184,.1));white-space:nowrap}
@@ -31,7 +31,7 @@
 .vh-crypto-change.is-down{color:#f06b75}
 .vh-crypto-change.is-flat{color:var(--cfxm-muted,#a5b1ba)}
 .vh-crypto-message{padding:28px 16px!important;color:var(--cfxm-muted,#a5b1ba);text-align:center;white-space:normal!important}
-@media(max-width:600px){.vh-crypto-table th,.vh-crypto-table td{padding:10px 11px}}
+@media(max-width:600px){.vh-crypto-table th,.vh-crypto-table td{padding:9px 4px;font-size:10px}.vh-crypto-table th{font-size:9px;letter-spacing:0}.vh-crypto-table th:first-child,.vh-crypto-table td:first-child{width:7%}.vh-crypto-table th:nth-child(2),.vh-crypto-table td:nth-child(2){width:33%}.vh-crypto-table th:nth-child(3),.vh-crypto-table td:nth-child(3){width:31%}.vh-crypto-table th:nth-child(4),.vh-crypto-table td:nth-child(4){width:29%}.vh-crypto-asset{gap:5px;min-width:0}.vh-crypto-asset img{width:19px;height:19px;flex-basis:19px}.vh-crypto-asset-name strong{display:block;max-width:100%;overflow:hidden;text-overflow:ellipsis;font-size:10px}.vh-crypto-asset-name span{font-size:9px}.vh-crypto-price{font-size:10px}.vh-crypto-change{min-width:0;gap:2px;font-size:9px}.vh-crypto-change i{font-size:8px}.vh-crypto-number{text-align:right!important}}
 </style>
 <script>
 (function(){
