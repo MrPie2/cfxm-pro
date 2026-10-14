@@ -13,7 +13,7 @@ if (empty($_SESSION['User_id'])) {
     exit;
 }
 
-$apiKey = getenv('FINNHUB_API_KEY');
+$apiKey = "d7tisapr01qugn0ap8lgd7tisapr01qugn0ap8m0";
 if (!$apiKey) {
     http_response_code(503);
     echo json_encode(array('error' => 'Stock data is not configured yet. Set FINNHUB_API_KEY on the server.'));
