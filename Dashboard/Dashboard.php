@@ -106,7 +106,6 @@ window.smartsupp||(function(d) {
 <noscript>Powered by <a href="https://www.smartsupp.com" target="_blank">Smartsupp</a></noscript>
    
 <section class="vh-dashboard">
-    <?php include __DIR__ . '/stock-marquee.php'; ?>
     <div class="vh-dashboard-heading">
         <div>
             <span class="vh-eyebrow">INVESTOR OVERVIEW</span>
@@ -164,6 +163,8 @@ window.smartsupp||(function(d) {
             </div>
         </section>
     </div>
+
+    <?php include __DIR__ . '/stock-marquee.php'; ?>
 
     <script type="application/json" id="vhDashboardChartData"><?php
         echo json_encode(array(
