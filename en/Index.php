@@ -827,7 +827,9 @@
         <!-- TrustBox script -->
         <script type="text/javascript"src="https://www.forex.com//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
         <!-- End TrustBox script -->
-    </head>
+        <link rel="stylesheet" href="/en/landing-modern.css?v=2" />
+
+</head>
 
 
     <link rel="canonical" href="https://www.cfxm-pro.com/en/" />
