@@ -51,6 +51,7 @@ const label=typeof v==='number'&&Number.isFinite(v)?(positive?'+':'')+v.toFixed(
 const image=a.image?'<img src="'+esc(a.image)+'" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.visibility=\'hidden\'">':'';
 return '<tr><td class="vh-crypto-rank">'+(a.market_cap_rank||i+1)+'</td><td><div class="vh-crypto-asset">'+image+'<div class="vh-crypto-asset-name"><strong>'+esc(a.name)+'</strong><span>'+esc(a.symbol)+'</span></div></div></td><td class="vh-crypto-number vh-crypto-price">'+price(a.current_price)+'</td><td class="vh-crypto-number"><span class="vh-crypto-change '+css+'"><i class="fas '+icon+'" aria-hidden="true"></i>'+label+'</span></td></tr>';
 }).join('');
+rows.dataset.loaded='true';
 }
 async function load(){
 try{
@@ -60,7 +61,7 @@ const assets=await response.json();
 if(!Array.isArray(assets)||!assets.length)throw new Error('No market data was returned.');
 render(assets);
 }catch(error){
-if(!rows.querySelector('tr[data-loaded="true"]'))rows.innerHTML='<tr><td colspan="4" class="vh-crypto-message">Cryptocurrency prices are temporarily unavailable.</td></tr>';
+if(!rows.dataset.loaded)rows.innerHTML='<tr><td colspan="4" class="vh-crypto-message">Cryptocurrency prices are temporarily unavailable.</td></tr>';
 console.error('Cryptocurrency market load failed:',error);
 }
 }
