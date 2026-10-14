@@ -233,6 +233,85 @@ body.professional:not(.on-page-editor) #wrapper #footer a:not(.geo-ip-modal__lin
   border-radius: 16px 16px 0 0;
 }
 #wrapper .live-chat-button { z-index: 1000; }
+/* Home hero: retain its existing image and copy, while adding legibility and spacing. */
+#wrapper #hpheader {
+  position: relative;
+  isolation: isolate;
+  min-height: clamp(520px, 56vw, 700px);
+  display: flex;
+  align-items: center;
+  padding-block: clamp(54px, 8vw, 110px) !important;
+  background-position: center !important;
+}
+#wrapper #hpheader::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(19, 12, 35, .88) 0%, rgba(30, 16, 53, .72) 48%, rgba(30, 16, 53, .14) 100%);
+}
+#wrapper #hpheader .two-column-callout,
+#wrapper #hpheader .callout-body {
+  width: 100%;
+}
+#wrapper #hpheader .callout-body {
+  max-width: 680px;
+  padding: clamp(12px, 2vw, 26px);
+}
+#wrapper #hpheader .callout-body h1 {
+  max-width: 680px;
+  font-size: clamp(2.8rem, 6.2vw, 5.4rem) !important;
+  letter-spacing: -.055em;
+  line-height: 1.02 !important;
+}
+#wrapper #hpheader .callout-body p:not(.p-sm) {
+  max-width: 600px !important;
+  font-size: clamp(1rem, 1.5vw, 1.2rem) !important;
+  line-height: 1.75 !important;
+}
+#wrapper #hpheader .hpherobuttons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 28px !important;
+}
+#wrapper #hpheader .hpherobuttons > .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  margin: 0 !important;
+  padding: 0 22px;
+}
+#wrapper #hpheader .hpherobuttons > .button a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+}
+#wrapper #hpheader .button-bordered-secondary {
+  border-color: rgba(255,255,255,.6) !important;
+  background: rgba(255,255,255,.1) !important;
+  backdrop-filter: blur(10px);
+}
+#wrapper #hpheader .button-bordered-secondary a { color: #fff !important; }
+#wrapper #content .component.container[style*="width: 1000px"] {
+  width: min(100% - 32px, 1200px) !important;
+  max-width: 1200px !important;
+  height: clamp(340px, 48vw, 560px) !important;
+  margin-inline: auto;
+}
+#wrapper .tradingview-widget-container {
+  width: 100%;
+  min-height: 320px;
+}
+#wrapper .tradingview-widget-container iframe {
+  width: 100% !important;
+}
+#wrapper #forex-table .pricing-tabs-wrapper {
+  border-radius: 16px 16px 0 0;
+}
 @media (min-width: 992px) {
   #wrapper #header { position: sticky; top: 0; }
   #wrapper .cta-cards { align-items: stretch; }
