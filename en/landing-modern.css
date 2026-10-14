@@ -1,3 +1,5 @@
+@import url("/en/site-theme.css?v=1");
+
 /* CFXM-PRO modern landing-page layer
    Visual-only overrides. Existing page content, URLs, widgets and event handlers remain intact. */
 :root {
@@ -349,5 +351,171 @@ body.professional:not(.on-page-editor) #wrapper .cta-with-cards a.button {
     animation-duration: .01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: .01ms !important;
+  }
+}
+
+
+/* Shared dark-first visual system: keep the public landing page aligned with the dashboard. */
+html:not([data-theme="light"]), html[data-theme="dark"] {
+  color-scheme: dark;
+  --cfxm-ink: #DFD0B8;
+  --cfxm-muted: #a5b1ba;
+  --cfxm-surface: #222831;
+  --cfxm-page: #121f27;
+  --cfxm-line: rgba(223,208,184,.14);
+  --cfxm-shadow: 0 18px 44px rgba(0,0,0,.24);
+}
+html:not([data-theme="light"]) body,
+html[data-theme="dark"] body,
+html:not([data-theme="light"]) #wrapper,
+html[data-theme="dark"] #wrapper {
+  color: #DFD0B8 !important;
+  background: #121f27 !important;
+}
+html:not([data-theme="light"]) #wrapper .header-with-megamenu.new-header,
+html[data-theme="dark"] #wrapper .header-with-megamenu.new-header {
+  background: rgba(18,31,39,.94) !important;
+  border-bottom-color: rgba(223,208,184,.12) !important;
+}
+html:not([data-theme="light"]) #wrapper .stx-megamenu__item--main label,
+html:not([data-theme="light"]) #wrapper .stx-umbrella__link-icon,
+html:not([data-theme="light"]) #wrapper .stx-megamenu__item--main > a,
+html[data-theme="dark"] #wrapper .stx-megamenu__item--main label,
+html[data-theme="dark"] #wrapper .stx-umbrella__link-icon,
+html[data-theme="dark"] #wrapper .stx-megamenu__item--main > a {
+  color: #DFD0B8 !important;
+}
+html:not([data-theme="light"]) #wrapper .container-clean-background,
+html:not([data-theme="light"]) #wrapper .container-white-background,
+html:not([data-theme="light"]) #wrapper .card-simple,
+html:not([data-theme="light"]) #wrapper .card-simple-light,
+html:not([data-theme="light"]) #wrapper .card-simple-dark,
+html:not([data-theme="light"]) #wrapper .pricing-component,
+html:not([data-theme="light"]) #wrapper .market-prices__content,
+html[data-theme="dark"] #wrapper .container-clean-background,
+html[data-theme="dark"] #wrapper .container-white-background,
+html[data-theme="dark"] #wrapper .card-simple,
+html[data-theme="dark"] #wrapper .card-simple-light,
+html[data-theme="dark"] #wrapper .card-simple-dark,
+html[data-theme="dark"] #wrapper .pricing-component,
+html[data-theme="dark"] #wrapper .market-prices__content {
+  color: #DFD0B8 !important;
+  background: #222831 !important;
+  border-color: rgba(223,208,184,.14) !important;
+}
+html:not([data-theme="light"]) #wrapper h1,
+html:not([data-theme="light"]) #wrapper h2,
+html:not([data-theme="light"]) #wrapper h3,
+html:not([data-theme="light"]) #wrapper h4,
+html:not([data-theme="light"]) #wrapper p,
+html:not([data-theme="light"]) #wrapper li,
+html:not([data-theme="light"]) #wrapper .card-title,
+html[data-theme="dark"] #wrapper h1,
+html[data-theme="dark"] #wrapper h2,
+html[data-theme="dark"] #wrapper h3,
+html[data-theme="dark"] #wrapper h4,
+html[data-theme="dark"] #wrapper p,
+html[data-theme="dark"] #wrapper li,
+html[data-theme="dark"] #wrapper .card-title {
+  color: #DFD0B8;
+}
+html:not([data-theme="light"]) #wrapper .card-desc,
+html:not([data-theme="light"]) #wrapper .cta-description,
+html[data-theme="dark"] #wrapper .card-desc,
+html[data-theme="dark"] #wrapper .cta-description { color: #a5b1ba !important; }
+html:not([data-theme="light"]) #wrapper .container-gray-background,
+html[data-theme="dark"] #wrapper .container-gray-background { background: #17232c !important; }
+html:not([data-theme="light"]) #wrapper .pricing-tabs-wrapper,
+html[data-theme="dark"] #wrapper .pricing-tabs-wrapper {
+  background: linear-gradient(120deg, #12225c, #49247e 60%, #7748bc) !important;
+}
+html:not([data-theme="light"]) #wrapper #forex-table .market-prices__content,
+html[data-theme="dark"] #wrapper #forex-table .market-prices__content {
+  box-shadow: 0 18px 44px rgba(0,0,0,.24);
+}
+html:not([data-theme="light"]) #wrapper #forex-table,
+html[data-theme="dark"] #wrapper #forex-table { color: #DFD0B8; }
+html:not([data-theme="light"]) #wrapper #forex-table input,
+html:not([data-theme="light"]) #wrapper input,
+html:not([data-theme="light"]) #wrapper select,
+html:not([data-theme="light"]) #wrapper textarea,
+html[data-theme="dark"] #wrapper #forex-table input,
+html[data-theme="dark"] #wrapper input,
+html[data-theme="dark"] #wrapper select,
+html[data-theme="dark"] #wrapper textarea {
+  color: #DFD0B8 !important;
+  background: #17232c !important;
+  border-color: rgba(223,208,184,.18) !important;
+}
+html:not([data-theme="light"]) #wrapper #hpheader,
+html[data-theme="dark"] #wrapper #hpheader { background-color: #0b161c; }
+html:not([data-theme="light"]) #wrapper #hpheader::before,
+html[data-theme="dark"] #wrapper #hpheader::before {
+  background: linear-gradient(90deg, rgba(11,22,28,.92) 0%, rgba(18,31,39,.78) 52%, rgba(18,31,39,.25) 100%);
+}
+html:not([data-theme="light"]) #wrapper #footer,
+html[data-theme="dark"] #wrapper #footer { background: #0b161c !important; }
+html:not([data-theme="light"]) #wrapper .tradingview-widget-container,
+html[data-theme="dark"] #wrapper .tradingview-widget-container {
+  display: block;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0;
+  height: 100% !important;
+  min-height: 360px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid rgba(223,208,184,.12);
+  border-radius: 16px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+html:not([data-theme="light"]) #wrapper section:has(.tradingview-widget-container),
+html[data-theme="dark"] #wrapper section:has(.tradingview-widget-container) {
+  width: 100%;
+  max-width: 100%;
+  padding-inline: clamp(12px, 3vw, 32px);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+html:not([data-theme="light"]) #wrapper section:has(.tradingview-widget-container) > .container,
+html[data-theme="dark"] #wrapper section:has(.tradingview-widget-container) > .container {
+  width: 100% !important;
+  max-width: 1200px !important;
+  height: clamp(360px, 48vw, 560px) !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  box-sizing: border-box;
+}
+html:not([data-theme="light"]) #wrapper .tradingview-widget-container iframe,
+html[data-theme="dark"] #wrapper .tradingview-widget-container iframe {
+  display: block;
+  width: 100% !important;
+  min-width: 0 !important;
+  height: 100% !important;
+  border: 0 !important;
+}
+html[data-theme="light"] body,
+html[data-theme="light"] #wrapper { color: #202438 !important; background: #f5f6fa !important; }
+html[data-theme="light"] #wrapper .container-clean-background,
+html[data-theme="light"] #wrapper .container-white-background,
+html[data-theme="light"] #wrapper .card-simple,
+html[data-theme="light"] #wrapper .card-simple-light,
+html[data-theme="light"] #wrapper .card-simple-dark,
+html[data-theme="light"] #wrapper .pricing-component,
+html[data-theme="light"] #wrapper .market-prices__content {
+  color: #202438 !important; background: #fff !important; border-color: rgba(26,35,55,.12) !important;
+}
+html[data-theme="light"] #wrapper h1,
+html[data-theme="light"] #wrapper h2,
+html[data-theme="light"] #wrapper h3,
+html[data-theme="light"] #wrapper h4,
+html[data-theme="light"] #wrapper p,
+html[data-theme="light"] #wrapper li,
+html[data-theme="light"] #wrapper .card-title { color: #202438; }
+@media (max-width: 767px) {
+  html:not([data-theme="light"]) #wrapper section:has(.tradingview-widget-container) > .container,
+  html[data-theme="dark"] #wrapper section:has(.tradingview-widget-container) > .container {
+    height: 390px !important;
   }
 }
