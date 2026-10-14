@@ -138,3 +138,72 @@ html[data-theme="dark"] .vh-chart-badge { background: rgba(185, 155, 232, .12); 
 @media(max-width:600px){.vh-stock-marquee{margin-bottom:20px;border-radius:12px}.vh-stock-marquee-head{padding:11px 12px}.vh-stock-market-caption{display:none}.vh-stock-marquee-head strong{font-size:9px}.vh-stock-updated{font-size:9px}.vh-stock-marquee-track{gap:8px;padding:9px}.vh-stock-ticker{width:170px;min-width:170px;padding:10px}.vh-stock-price{font-size:15px}.vh-stock-marquee-note{padding:0 12px 10px}}
 @media(prefers-reduced-motion:reduce){.vh-stock-marquee-track.is-ready{animation:none;flex-wrap:wrap;width:100%}.vh-stock-marquee-track.is-ready .vh-stock-ticker:nth-child(n+21){display:none}}
 html[data-theme="light"] .vh-stock-marquee{background:var(--cfxm-surface,#fff)}
+
+
+/* Keep dashboard chart cards compact and ensure their visual content stays inside. */
+.vh-chart-grid {
+    align-items: stretch;
+}
+.vh-chart-grid > .vh-panel {
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+}
+.vh-performance-panel .vh-chart-wrap {
+    height: 220px;
+    min-height: 0;
+}
+.vh-allocation-panel {
+    display: flex;
+    flex-direction: column;
+}
+.vh-allocation-panel .vh-panel-heading {
+    flex: 0 0 auto;
+    margin-bottom: 10px;
+}
+.vh-allocation-panel .vh-doughnut-wrap {
+    flex: 0 0 auto;
+    width: min(100%, 190px);
+    height: 160px;
+    margin: 0 auto 6px;
+}
+.vh-allocation-panel .vh-allocation-legend {
+    width: 100%;
+    max-height: 126px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-top: 6px;
+    padding-right: 4px;
+    scrollbar-width: thin;
+}
+.vh-allocation-panel .vh-legend-row {
+    gap: 8px;
+    min-width: 0;
+    font-size: 11px;
+    line-height: 1.35;
+}
+.vh-allocation-panel .vh-legend-label {
+    flex: 1 1 auto;
+}
+.vh-allocation-panel .vh-legend-row > strong {
+    flex: 0 0 auto;
+    max-width: 48%;
+    overflow-wrap: anywhere;
+    text-align: right;
+    font-size: 11px;
+}
+.vh-allocation-panel .vh-chart-empty {
+    min-height: 140px;
+}
+@media (max-width: 760px) {
+    .vh-performance-panel .vh-chart-wrap {
+        height: 205px;
+    }
+    .vh-allocation-panel .vh-doughnut-wrap {
+        width: min(100%, 180px);
+        height: 150px;
+    }
+    .vh-allocation-panel .vh-allocation-legend {
+        max-height: 118px;
+    }
+}
