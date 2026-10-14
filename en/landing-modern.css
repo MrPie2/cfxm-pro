@@ -103,7 +103,7 @@ body.professional:not(.on-page-editor) #wrapper #footer a:not(.geo-ip-modal__lin
 #wrapper .container-gray-background {
   border-radius: 0;
 }
-#wrapper .container-dark-background {
+#wrapper .container-dark-background:not(#hpheader) {
   background: linear-gradient(135deg, #17122b 0%, #2a1747 55%, #49247e 100%) !important;
   color: #fff !important;
 }
