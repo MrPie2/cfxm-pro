@@ -180,7 +180,6 @@ li a{
                     <ul class="navbar-nav mr-auto mt-md-0">
                         <!-- This is  -->
                         <li class="nav-item"> <a class="nav-link toggle-nav hidden-md-up text-muted  " href="javascript:void(0)"><i class="mdi mdi-menu" style="color: var(--liner-text-color); font-size: 20pt"></i></a> </li>
-                        <li class="nav-item m-l-10"> <a class="nav-link sidebartoggle hidden-sm-down text-muted  " href="javascript:void(0)"><i class="ti-menu" style="color: var(--liner-text-color)"></i></a> </li>
                         <!-- Messages -->
                   
                         <!-- End Messages -->
