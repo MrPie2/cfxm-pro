@@ -28,7 +28,7 @@ $earnersFetchByStatus = static function (int $status, ?int $investorId = null) u
                    i.First_Name
             FROM withdrawals AS w
             LEFT JOIN investors AS i ON i.Investor_id = w.Investor_id
-            WHERE w.Status = ?";
+            WHERE w.Status = ? AND w.Amount_Withdrawn > 0";
     if ($status === 0) {
         $sql .= " AND w.Investor_id = ?";
     }
