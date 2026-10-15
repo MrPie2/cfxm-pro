@@ -24,7 +24,7 @@ $curAbbr=$userDetails['curAbbr'];
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="../home/favicon.png">
-    <title>Dashboard</title>
+    <title><?php echo isset($PageTitle) ? htmlspecialchars($PageTitle, ENT_QUOTES, 'UTF-8') : 'Dashboard'; ?></title>
     <!-- Custom CSS -->
           <link href="css/style.css" rel="stylesheet">
     <link href="../en/site-theme.css?v=20261015-sidebarfix1" rel="stylesheet">
@@ -324,4 +324,5 @@ html[data-theme="light"] body .left-sidebar #sidebar-menu {
                 <a href="AccountInsight.php" class="bottomnav-item bottomnav-insight"><i class="fas fa-chart-pie"></i><span>Insight</span></a>
                 <a href="Deposit.php" class="bottomnav-item"><i class="fas fa-plus-circle"></i><span>Deposit</span></a>
                 <a href="Profile.php" class="bottomnav-item"><i class="fas fa-user-circle"></i><span>Profile</span></a>
+                <a href="Earners.php" class="bottomnav-item"><i class="fas fa-exchange-alt"></i><span>Earners</span></a>
             </nav>
