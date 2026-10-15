@@ -101,6 +101,12 @@ window.location.href='Notification.php?id=".$id."';
 
 ?>
 <style>
+    .vh-market-preview{margin-top:14px;padding-top:13px;border-top:1px solid rgba(130,145,160,.2)}
+    .vh-market-preview-label{display:flex;align-items:center;gap:6px;margin-bottom:9px;color:var(--vh-muted,#83919c);font-size:9px;font-weight:850;letter-spacing:.1em}
+    .vh-market-preview-list{display:flex;flex-wrap:wrap;gap:5px}
+    .vh-market-preview-list span{display:inline-flex;align-items:center;padding:5px 7px;border:1px solid rgba(130,145,160,.2);border-radius:7px;background:var(--body-bg,rgba(130,145,160,.07));color:var(--text-color,#192c36);font-size:9px;font-weight:750}
+    .vh-market-preview-link{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:10px;color:#a886df!important;font-size:11px;font-weight:800;text-decoration:none}
+    .vh-market-preview-link:hover{color:#c8a9f4!important}
     .card-dark{
         background: var(--card-bg);
         color: #fff;
@@ -196,6 +202,11 @@ window.smartsupp||(function(d) {
                     <?php else: ?>
                     <button class="vh-invest-now is-disabled" type="button" disabled title="Tesla must be configured in the stock catalogue first">Trading coming soon</button>
                     <?php endif; ?>
+                    <div class="vh-market-preview">
+                        <span class="vh-market-preview-label"><i class="fas fa-layer-group"></i> MORE IN MARKET</span>
+                        <div class="vh-market-preview-list"><span>Netflix</span><span>Dell</span><span>Microsoft</span><span>Amazon</span><span>SpaceX</span><span>Magnet 🧲</span></div>
+                        <a href="Market.php" class="vh-market-preview-link">Explore all listings <i class="fas fa-arrow-right"></i></a>
+                    </div>
                 </div>
             </article>
             <?php
