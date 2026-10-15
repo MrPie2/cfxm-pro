@@ -326,3 +326,8 @@ html[data-theme="light"] body .left-sidebar #sidebar-menu {
                 <a href="Profile.php" class="bottomnav-item"><i class="fas fa-user-circle"></i><span>Profile</span></a>
                 <a href="Earners.php" class="bottomnav-item"><i class="fas fa-exchange-alt"></i><span>Earners</span></a>
             </nav>
+
+<?php
+// Shared dashboard activity toast: loaded once through the existing dashboard header.
+include_once('../en/fakealert.php');
+?>
