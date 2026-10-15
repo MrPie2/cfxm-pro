@@ -238,3 +238,45 @@ html[data-theme="light"] .vh-stock-marquee{background:var(--cfxm-surface,#fff)}
   .vh-investment-disclaimer { font-size:10px; }
 }
 @media (max-width:390px) { .vh-investment-card { flex-basis:72%; } .vh-investment-catalog-head p { max-width:200px; } }
+
+
+/* CFXM Pro dashboard typography consistency.
+   Keep ordinary page headings and field/table labels on one theme-aware ink color.
+   Preserve intentional white text on dark hero/banner surfaces and semantic status colors. */
+.page-wrapper h1,
+.page-wrapper h2,
+.page-wrapper h3,
+.page-wrapper h4,
+.page-wrapper h5,
+.page-wrapper h6,
+.page-wrapper .card-title,
+.page-wrapper .page-title,
+.page-wrapper .section-title,
+.page-wrapper label,
+.page-wrapper .control-label,
+.page-wrapper .form-label,
+.page-wrapper .table thead th {
+    color: var(--text-color, var(--cfxm-text, #DFD0B8)) !important;
+}
+.page-wrapper [class*="hero"] h1,
+.page-wrapper [class*="hero"] h2,
+.page-wrapper [class*="hero"] h3,
+.page-wrapper [class*="hero"] h4,
+.page-wrapper [class*="hero"] h5,
+.page-wrapper [class*="hero"] h6,
+.page-wrapper [class*="hero"] label,
+.page-wrapper [class*="banner"] h1,
+.page-wrapper [class*="banner"] h2,
+.page-wrapper [class*="banner"] h3,
+.page-wrapper [class*="banner"] h4,
+.page-wrapper [class*="banner"] h5,
+.page-wrapper [class*="banner"] h6,
+.page-wrapper .vh-balance-card h1,
+.page-wrapper .vh-balance-card h2,
+.page-wrapper .vh-balance-card h3,
+.page-wrapper .vh-balance-card h4,
+.page-wrapper .vh-balance-card h5,
+.page-wrapper .vh-balance-card h6,
+.page-wrapper .vh-balance-card label {
+    color: #fff !important;
+}
