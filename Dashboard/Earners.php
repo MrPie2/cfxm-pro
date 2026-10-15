@@ -35,12 +35,12 @@ html[data-theme="light"] body{--er-bg:var(--cfxm-bg,#f5f6fa);--er-panel:var(--cf
 </style>
 <div class="container-fluid earners-shell">
 <header class="er-hero"><span class="er-eyebrow"><i class="fas fa-shield-alt"></i> Platform activity</span><h1>Real activity. Clear status.</h1><p>Explore recent withdrawal activity recorded on the platform. Completed withdrawals reflect records marked successful, while pending requests are still awaiting processing.</p><div class="er-trust-strip"><span><i class="fas fa-database"></i> Live database records</span><span><i class="fas fa-user-secret"></i> Names shortened for privacy</span><span><i class="fas fa-calendar-alt"></i> Newest activity first</span></div></header>
-<section class="er-stats" aria-label="Recent activity counts"><article class="er-stat"><span class="er-stat-icon"><i class="fas fa-check-circle"></i></span><div><span>Completed withdrawals shown</span><strong id="er-completed-stat"><?php echo number_format($earnersCompletedCount); ?></strong></div></article><article class="er-stat"><span class="er-stat-icon"><i class="fas fa-hourglass-half"></i></span><div><span>Pending requests shown</span><strong><?php echo number_format($earnersPendingCount); ?></strong></div></article></section>
+<section class="er-stats" aria-label="Recent activity counts"><article class="er-stat"><span class="er-stat-icon"><i class="fas fa-check-circle"></i></span><div><span>Completed withdrawals shown</span><strong id="er-completed-stat"><?php echo number_format($earnersCompletedCount); ?></strong></div></article><article class="er-stat"><span class="er-stat-icon"><i class="fas fa-hourglass-half"></i></span><div><span>Pending requests shown</span><strong id="er-pending-stat"><?php echo number_format($earnersPendingCount); ?></strong></div></article></section>
 <section aria-labelledby="completedTitle"><div class="er-section-head"><div><h2 id="completedTitle">Recently completed withdrawals</h2><p>Up to 20 real records, newest first.</p></div><span class="er-count" id="er-completed-count"><?php echo $earnersCompletedCount; ?> records</span></div><div class="er-list" id="er-completed-list" aria-live="polite">
 <?php if (!$earnersCompleted): ?><div class="er-empty"><i class="fas fa-receipt"></i>No completed withdrawals are available to display yet.</div><?php else: foreach ($earnersCompleted as $item): ?>
 <article class="er-row"><div class="er-person"><span class="er-avatar"><?php echo $earnersEscape($earnersInitials($item['Public_Name'])); ?></span><div><strong><?php echo $earnersEscape($item['Public_Name']); ?></strong><small>Withdrawal completed</small></div></div><div class="er-amount"><?php echo $earnersEscape($earnersFormatAmount($item['Amount_Withdrawn'])); ?></div><div class="er-meta"><time class="er-date"><?php echo $earnersEscape($earnersFormatDate($item['Date'] ?? '')); ?></time><span class="er-status complete">Completed</span></div></article>
 <?php endforeach; endif; ?></div></section>
-<section aria-labelledby="pendingTitle"><div class="er-section-head"><div><h2 id="pendingTitle">Waiting to be processed</h2><p>Requests currently marked pending in the withdrawal database.</p></div><span class="er-count"><?php echo $earnersPendingCount; ?> records</span></div><div class="er-list">
+<section aria-labelledby="pendingTitle"><div class="er-section-head"><div><h2 id="pendingTitle">Waiting to be processed</h2><p>Requests currently marked pending in the withdrawal database.</p></div><span class="er-count" id="er-pending-count"><?php echo $earnersPendingCount; ?> records</span></div><div class="er-list">
 <?php if (!$earnersPending): ?><div class="er-empty"><i class="fas fa-check-double"></i>There are no pending withdrawal requests to display right now.</div><?php else: foreach ($earnersPending as $item): ?>
 <article class="er-row"><div class="er-person"><span class="er-avatar"><?php echo $earnersEscape($earnersInitials($item['Public_Name'])); ?></span><div><strong><?php echo $earnersEscape($item['Public_Name']); ?></strong><small>Withdrawal request received</small></div></div><div class="er-amount"><?php echo $earnersEscape($earnersFormatAmount($item['Amount_Withdrawn'])); ?></div><div class="er-meta"><time class="er-date"><?php echo $earnersEscape($earnersFormatDate($item['Date'] ?? '')); ?></time><span class="er-status pending">Pending</span></div></article>
 <?php endforeach; endif; ?></div></section>
@@ -60,9 +60,142 @@ html[data-theme="light"] body{--er-bg:var(--cfxm-bg,#f5f6fa);--er-panel:var(--cf
 <script src="js/custom.min.js"></script>
 <script>
 (function () {
-    window.setInterval(function () {
-        if (document.visibilityState === 'visible') window.location.reload();
-    }, 30000);
+    'use strict';
+
+    const feedUrl = 'EarnersFeed.php';
+    const completedList = document.getElementById('er-completed-list');
+    const pendingList = document.getElementById('er-pending-list');
+    const completedStat = document.getElementById('er-completed-stat');
+    const pendingStat = document.getElementById('er-pending-stat');
+    const completedCount = document.getElementById('er-completed-count');
+    const pendingCount = document.getElementById('er-pending-count');
+    const refreshEveryMs = 30000;
+    let requestInFlight = false;
+
+    function formatAmount(value) {
+        return '
+</body>
+</html>
+ + Number(value || 0).toLocaleString('en-US', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        });
+    }
+
+    function formatDate(value) {
+        if (!value) return 'Date not recorded';
+        const date = new Date(String(value).replace(' ', 'T'));
+        if (Number.isNaN(date.getTime())) return String(value);
+        return date.toLocaleDateString('en-US', {
+            month: 'short',
+            day: 'numeric',
+            year: 'numeric'
+        });
+    }
+
+    function initials(name) {
+        return String(name || 'Platform member').trim().split(/\\s+/).filter(Boolean)
+            .slice(0, 2).map(part => part.charAt(0).toUpperCase()).join('') || 'M';
+    }
+
+    function createEmpty(message, iconClass) {
+        const empty = document.createElement('div');
+        empty.className = 'er-empty';
+        const icon = document.createElement('i');
+        icon.className = iconClass;
+        icon.setAttribute('aria-hidden', 'true');
+        const text = document.createElement('span');
+        text.textContent = message;
+        empty.append(icon, text);
+        return empty;
+    }
+
+    function createRow(item, isCompleted) {
+        const row = document.createElement('article');
+        row.className = 'er-row';
+
+        const person = document.createElement('div');
+        person.className = 'er-person';
+        const avatar = document.createElement('span');
+        avatar.className = 'er-avatar';
+        avatar.textContent = initials(item.name);
+        avatar.setAttribute('aria-hidden', 'true');
+
+        const details = document.createElement('div');
+        const name = document.createElement('strong');
+        name.textContent = item.name || 'Platform member';
+        const note = document.createElement('small');
+        note.textContent = isCompleted ? 'Withdrawal completed' : 'Withdrawal request received';
+        details.append(name, note);
+        person.append(avatar, details);
+
+        const amount = document.createElement('div');
+        amount.className = 'er-amount';
+        amount.textContent = formatAmount(item.amount);
+
+        const meta = document.createElement('div');
+        meta.className = 'er-meta';
+        const date = document.createElement('time');
+        date.className = 'er-date';
+        date.textContent = formatDate(item.date);
+        const status = document.createElement('span');
+        status.className = 'er-status ' + (isCompleted ? 'complete' : 'pending');
+        status.textContent = isCompleted ? 'Completed' : 'Pending';
+        meta.append(date, status);
+
+        row.append(person, amount, meta);
+        return row;
+    }
+
+    function renderList(container, rows, isCompleted) {
+        if (!container) return;
+        const fragment = document.createDocumentFragment();
+        if (!Array.isArray(rows) || rows.length === 0) {
+            fragment.appendChild(createEmpty(
+                isCompleted
+                    ? 'No completed withdrawals are available to display yet.'
+                    : 'There are no pending withdrawal requests to display right now.',
+                isCompleted ? 'fas fa-receipt' : 'fas fa-check-double'
+            ));
+        } else {
+            rows.forEach(item => fragment.appendChild(createRow(item, isCompleted)));
+        }
+        container.replaceChildren(fragment);
+    }
+
+    async function refreshActivity() {
+        if (requestInFlight || document.visibilityState !== 'visible') return;
+        requestInFlight = true;
+        try {
+            const response = await fetch(feedUrl, {
+                method: 'GET',
+                credentials: 'same-origin',
+                cache: 'no-store',
+                headers: { 'Accept': 'application/json', 'X-Requested-With': 'XMLHttpRequest' }
+            });
+            if (response.status === 401) return;
+            if (!response.ok) throw new Error('Activity feed returned HTTP ' + response.status);
+            const data = await response.json();
+            if (!data || data.success !== true) throw new Error('Invalid activity feed response');
+
+            renderList(completedList, data.completed, true);
+            renderList(pendingList, data.pending, false);
+
+            if (completedStat) completedStat.textContent = Number(data.completedCount || 0).toLocaleString('en-US');
+            if (pendingStat) pendingStat.textContent = Number(data.pendingCount || 0).toLocaleString('en-US');
+            if (completedCount) completedCount.textContent = (data.completed || []).length + ' records';
+            if (pendingCount) pendingCount.textContent = (data.pending || []).length + ' records';
+        } catch (error) {
+            // Keep the last successfully rendered activity visible if a temporary request fails.
+            console.warn('Unable to refresh earners activity:', error);
+        } finally {
+            requestInFlight = false;
+        }
+    }
+
+    window.setInterval(refreshActivity, refreshEveryMs);
+    window.addEventListener('online', refreshActivity);
+    refreshActivity();
 })();
 </script>
 </body>
