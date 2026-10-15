@@ -75,6 +75,15 @@
        color: var(--cfxm-purple, #49247e) !important;
    }
 
+   /* Profile identity uses a purple gradient even in light mode: keep the member name white. */
+   html[data-theme="light"] .profile-page .pf-identity h2,
+   html[data-theme="light"] .profile-page .pf-identity .pf-username,
+   html[data-theme="light"] .profile-page .pf-identity .pf-member,
+   html[data-theme="light"] .profile-page .pf-identity .pf-fact span,
+   html[data-theme="light"] .profile-page .pf-identity .pf-fact strong {
+       color: #fff !important;
+   }
+
    /* Purple surfaces keep white foreground text in light mode for contrast. */
    html[data-theme="light"] .bg-purple h1,
    html[data-theme="light"] .bg-purple h2,
