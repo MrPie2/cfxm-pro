@@ -12,7 +12,6 @@ if (!isset($_SESSION['User_id'])) {
     exit;
 }
 
-require_once __DIR__ . '/Header.php';
 require_once __DIR__ . '/EarnersController.php';
 
 $formatRows = static function (array $rows): array {
