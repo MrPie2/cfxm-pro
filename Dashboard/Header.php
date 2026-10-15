@@ -223,6 +223,45 @@ li a{
             .sidebar-nav #sidebar-menu>li>a.nav-logout{color:#c44d60}
             .sidebar-nav #sidebar-menu>li>a.nav-logout i{color:inherit}
             .sidebar-nav .nav-item-tag{margin-left:auto;padding:4px 6px;border-radius:6px;background:rgba(119,72,188,.1);color:#7748bc;font-size:8px;font-weight:850;letter-spacing:.05em}
+
+            /* Keep the shared sidebar and mobile navigation synchronized with the selected theme. */
+            html[data-theme="light"] .left-sidebar{background:#fff;border-right-color:rgba(26,35,55,.12)}
+            html[data-theme="dark"] .left-sidebar{background:#222831;border-right-color:rgba(223,208,184,.12)}
+            html[data-theme="light"] .sidebar-nav #sidebar-menu .nav-label{color:#687184}
+            html[data-theme="dark"] .sidebar-nav #sidebar-menu .nav-label{color:#a5b1ba}
+            html[data-theme="light"] .sidebar-nav #sidebar-menu>li>a{color:#202438}
+            html[data-theme="dark"] .sidebar-nav #sidebar-menu>li>a{color:#DFD0B8}
+            html[data-theme="light"] .sidebar-nav #sidebar-menu>li>a i{color:#687184}
+            html[data-theme="dark"] .sidebar-nav #sidebar-menu>li>a i{color:#a5b1ba}
+            html[data-theme="light"] .sidebar-nav #sidebar-menu>li>a:hover,
+            html[data-theme="light"] .sidebar-nav #sidebar-menu>li>a:focus-visible,
+            html[data-theme="light"] .sidebar-nav #sidebar-menu>li.active>a,
+            html[data-theme="light"] .sidebar-nav #sidebar-menu>li>a.active{background:rgba(73,36,126,.08);color:#49247e}
+            html[data-theme="dark"] .sidebar-nav #sidebar-menu>li>a:hover,
+            html[data-theme="dark"] .sidebar-nav #sidebar-menu>li>a:focus-visible,
+            html[data-theme="dark"] .sidebar-nav #sidebar-menu>li.active>a,
+            html[data-theme="dark"] .sidebar-nav #sidebar-menu>li>a.active{background:rgba(185,155,232,.13);color:#c8a9f4}
+            html[data-theme="light"] .sidebar-nav #sidebar-menu>li>a:hover i,
+            html[data-theme="light"] .sidebar-nav #sidebar-menu>li>a:focus-visible i,
+            html[data-theme="light"] .sidebar-nav #sidebar-menu>li.active>a i,
+            html[data-theme="light"] .sidebar-nav #sidebar-menu>li>a.active i{color:#49247e}
+            html[data-theme="dark"] .sidebar-nav #sidebar-menu>li>a:hover i,
+            html[data-theme="dark"] .sidebar-nav #sidebar-menu>li>a:focus-visible i,
+            html[data-theme="dark"] .sidebar-nav #sidebar-menu>li.active>a i,
+            html[data-theme="dark"] .sidebar-nav #sidebar-menu>li>a.active i{color:#c8a9f4}
+            html[data-theme="light"] .sidebar-nav .nav-item-tag{background:rgba(73,36,126,.1);color:#49247e}
+            html[data-theme="dark"] .sidebar-nav .nav-item-tag{background:rgba(185,155,232,.14);color:#c8a9f4}
+            html[data-theme="light"] .bottomnav{background:rgba(255,255,255,.97);border-top-color:rgba(26,35,55,.12);box-shadow:0 -10px 30px rgba(23,27,44,.08)}
+            html[data-theme="dark"] .bottomnav{background:rgba(34,40,49,.97);border-top-color:rgba(223,208,184,.12);box-shadow:0 -10px 30px rgba(0,0,0,.22)}
+            html[data-theme="light"] .bottomnav .bottomnav-item{color:#687184}
+            html[data-theme="dark"] .bottomnav .bottomnav-item{color:#a5b1ba}
+            html[data-theme="light"] .bottomnav .bottomnav-item:hover,
+            html[data-theme="light"] .bottomnav .bottomnav-item:focus-visible{background:rgba(73,36,126,.08);color:#49247e}
+            html[data-theme="dark"] .bottomnav .bottomnav-item:hover,
+            html[data-theme="dark"] .bottomnav .bottomnav-item:focus-visible{background:rgba(185,155,232,.13);color:#c8a9f4}
+            html[data-theme="light"] .sidebar-nav #sidebar-menu>li>a.nav-logout{color:#c44d60}
+            html[data-theme="dark"] .sidebar-nav #sidebar-menu>li>a.nav-logout{color:#ff8d9b}
+            html[data-theme="dark"] .sidebar-nav #sidebar-menu>li>a.nav-logout i{color:inherit}
             .page-wrapper{padding-bottom:92px}
             @media(min-width:768px){.bottomnav{display:none}.page-wrapper{padding-bottom:20px}}
             @media(max-width:380px){.bottomnav{padding-left:4px;padding-right:4px}.bottomnav .bottomnav-item{font-size:9px}.bottomnav .bottomnav-item i{font-size:17px}.bottomnav .bottomnav-item span{font-size:9px}}
