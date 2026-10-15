@@ -74,6 +74,48 @@
    html[data-theme="light"] .table thead th {
        color: var(--cfxm-purple, #49247e) !important;
    }
+
+   /* Purple surfaces keep white foreground text in light mode for contrast. */
+   html[data-theme="light"] .bg-purple h1,
+   html[data-theme="light"] .bg-purple h2,
+   html[data-theme="light"] .bg-purple h3,
+   html[data-theme="light"] .bg-purple h4,
+   html[data-theme="light"] .bg-purple h5,
+   html[data-theme="light"] .bg-purple h6,
+   html[data-theme="light"] .bg-purple label,
+   html[data-theme="light"] .bg-purple .control-label,
+   html[data-theme="light"] .bg-purple .form-label,
+   html[data-theme="light"] .bg-purple .table thead th,
+   html[data-theme="light"] [class*="purple"] h1,
+   html[data-theme="light"] [class*="purple"] h2,
+   html[data-theme="light"] [class*="purple"] h3,
+   html[data-theme="light"] [class*="purple"] h4,
+   html[data-theme="light"] [class*="purple"] h5,
+   html[data-theme="light"] [class*="purple"] h6,
+   html[data-theme="light"] [class*="purple"] label,
+   html[data-theme="light"] [class*="purple"] .control-label,
+   html[data-theme="light"] [class*="purple"] .form-label,
+   html[data-theme="light"] [class*="purple"] .table thead th {
+       color: #fff !important;
+   }
+
+   /* Explicit utility/class hooks for cards that use the shared purple palette. */
+   html[data-theme="light"] .card[style*="#49247e"] h1,
+   html[data-theme="light"] .card[style*="#49247e"] h2,
+   html[data-theme="light"] .card[style*="#49247e"] h3,
+   html[data-theme="light"] .card[style*="#49247e"] h4,
+   html[data-theme="light"] .card[style*="#49247e"] h5,
+   html[data-theme="light"] .card[style*="#49247e"] h6,
+   html[data-theme="light"] .card[style*="#49247e"] label,
+   html[data-theme="light"] .card[style*="#7748bc"] h1,
+   html[data-theme="light"] .card[style*="#7748bc"] h2,
+   html[data-theme="light"] .card[style*="#7748bc"] h3,
+   html[data-theme="light"] .card[style*="#7748bc"] h4,
+   html[data-theme="light"] .card[style*="#7748bc"] h5,
+   html[data-theme="light"] .card[style*="#7748bc"] h6,
+   html[data-theme="light"] .card[style*="#7748bc"] label {
+       color: #fff !important;
+   }
    </style>
    </head>
 <div class="theme-switcher">
