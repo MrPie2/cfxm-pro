@@ -80,7 +80,7 @@ html[data-theme="light"] .cfxm-toast-subtitle,html[data-theme="light"] .cfxm-toa
   var closeButton = document.getElementById('cfxm-toast-close');
   var timeoutId = null;
   var cycleId = null;
-  var recordIndex = 0;
+  var lastRecordIndex = -1;
   var dismissed = false;
 
   function money(value) {
@@ -88,8 +88,14 @@ html[data-theme="light"] .cfxm-toast-subtitle,html[data-theme="light"] .cfxm-toa
   }
   function showToast() {
     if (document.visibilityState !== 'visible' || dismissed || !records.length) return;
-    var record = records[recordIndex % records.length];
-    recordIndex++;
+    // Randomly select one of the real successful withdrawal records.
+    // Avoid an immediate repeat when more than one record is available.
+    var recordIndex = Math.floor(Math.random() * records.length);
+    if (records.length > 1 && recordIndex === lastRecordIndex) {
+      recordIndex = (recordIndex + 1) % records.length;
+    }
+    lastRecordIndex = recordIndex;
+    var record = records[recordIndex];
     document.getElementById('cfxm-toast-subtitle').textContent = (record.name || 'Platform member') + ' received a successful withdrawal.';
     document.getElementById('cfxm-toast-amount').textContent = money(record.amount);
     document.getElementById('cfxm-toast-date').textContent = record.date || 'Date not recorded';
