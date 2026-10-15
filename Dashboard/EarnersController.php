@@ -21,8 +21,7 @@ $earnersMaskName = static function ($firstName, $lastName): string {
     if ($firstName === '') {
         return substr($lastName, 0, 1) . '.';
     }
-    $first = substr($firstName, 0, 1);
-    $lastInitial = $lastName !== '' ? ' ' . mb_substr($lastName, 0, 1) . '.' : '';
+    $lastInitial = $lastName !== '' ? ' ' . substr($lastName, 0, 1) . '.' : '';
     return $firstName . $lastInitial;
 };
 
@@ -37,20 +36,36 @@ $earnersFetchByStatus = static function (int $status) use ($Conn, $earnersMaskNa
             LIMIT 20";
     $stmt = mysqli_prepare($Conn, $sql);
     if (!$stmt) {
+        // Keep the public page available if the database schema differs; log details server-side.
+        error_log('CFXM Earners: withdrawal query prepare failed: ' . mysqli_error($Conn));
         return $rows;
     }
+
     mysqli_stmt_bind_param($stmt, 'i', $status);
     if (mysqli_stmt_execute($stmt)) {
-        $result = mysqli_stmt_get_result($stmt);
-        if ($result) {
-            while ($row = mysqli_fetch_assoc($result)) {
-                $row['Public_Name'] = $earnersMaskName(
-                    $row['First_Name'] ?? '',
-                    $row['Last_Name'] ?? ''
-                );
-                $rows[] = $row;
-            }
+        // Use bind_result rather than mysqli_stmt_get_result so mysqlnd is not required.
+        mysqli_stmt_bind_result(
+            $stmt,
+            $withdrawalId,
+            $investorId,
+            $amountWithdrawn,
+            $withdrawalDate,
+            $withdrawalStatus,
+            $firstName,
+            $lastName
+        );
+        while (mysqli_stmt_fetch($stmt)) {
+            $rows[] = [
+                'id' => $withdrawalId,
+                'Investor_id' => $investorId,
+                'Amount_Withdrawn' => $amountWithdrawn,
+                'Date' => $withdrawalDate,
+                'Status' => $withdrawalStatus,
+                'Public_Name' => $earnersMaskName($firstName, $lastName),
+            ];
         }
+    } else {
+        error_log('CFXM Earners: withdrawal query execute failed: ' . mysqli_stmt_error($stmt));
     }
     mysqli_stmt_close($stmt);
     return $rows;
