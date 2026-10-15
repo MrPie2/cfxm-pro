@@ -30,15 +30,6 @@ $formatRows = static function (array $rows): array {
 echo json_encode([
     'success' => true,
     'updatedAt' => gmdate('c'),
-    'demoTransactions' => array_map(static function (array $row): array {
-        return [
-            'id' => (string)($row['id'] ?? ''),
-            'name' => (string)($row['name'] ?? 'Demo Member'),
-            'amount' => (float)($row['amount'] ?? 0),
-            'date' => (string)($row['date'] ?? ''),
-            'demo' => true,
-        ];
-    }, $earnersDemoTransactions),
     'completedCount' => (int)$earnersCompletedCount,
     'pendingCount' => (int)$earnersPendingCount,
     'completed' => $formatRows($earnersCompleted),
