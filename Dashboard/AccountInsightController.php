@@ -89,7 +89,8 @@ if ($insightReferralQuery) {
 
 usort($insight['activity'], function ($a, $b) { return strtotime((string)$b['date']) <=> strtotime((string)$a['date']); });
 $insight['activity'] = array_slice($insight['activity'], 0, 7);
-$insight['monthly'] = array_slice(array_reverse($insight['monthly'], true), -6, 6, true);
+$insight['monthly'] = array_slice($insight['monthly'], -6, 6, true);
+uksort($insight['monthly'], function ($a, $b) { return strtotime('01 '.$a) <=> strtotime('01 '.$b); });
 $insightTotalAssets = max(0, $insight['wallet']) + max(0, $insight['invested']) + max(0, $insight['stockValue']);
 $insightAllocation = array(
     'wallet' => $insightTotalAssets > 0 ? round(max(0, $insight['wallet']) / $insightTotalAssets * 100) : 0,
