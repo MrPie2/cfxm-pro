@@ -12,23 +12,15 @@ $earnersEscape = static function ($value): string {
     return htmlspecialchars((string)$value, ENT_QUOTES, 'UTF-8');
 };
 
-$earnersMaskName = static function ($firstName, $lastName): string {
+$earnersMaskName = static function ($firstName): string {
     $firstName = trim((string)$firstName);
-    $lastName = trim((string)$lastName);
-    if ($firstName === '' && $lastName === '') {
-        return 'Platform member';
-    }
-    if ($firstName === '') {
-        return substr($lastName, 0, 1) . '.';
-    }
-    $lastInitial = $lastName !== '' ? ' ' . substr($lastName, 0, 1) . '.' : '';
-    return $firstName . $lastInitial;
+    return $firstName !== '' ? $firstName : 'Platform member';
 };
 
 $earnersFetchByStatus = static function (int $status) use ($Conn, $earnersMaskName): array {
     $rows = [];
     $sql = "SELECT w.id, w.Investor_id, w.Amount_Withdrawn, w.Date, w.Status,
-                   i.First_Name, i.Last_Name
+                   i.First_Name
             FROM withdrawals AS w
             LEFT JOIN investors AS i ON i.Investor_id = w.Investor_id
             WHERE w.Status = ?
@@ -51,8 +43,7 @@ $earnersFetchByStatus = static function (int $status) use ($Conn, $earnersMaskNa
             $amountWithdrawn,
             $withdrawalDate,
             $withdrawalStatus,
-            $firstName,
-            $lastName
+            $firstName
         );
         while (mysqli_stmt_fetch($stmt)) {
             $rows[] = [
@@ -61,7 +52,7 @@ $earnersFetchByStatus = static function (int $status) use ($Conn, $earnersMaskNa
                 'Amount_Withdrawn' => $amountWithdrawn,
                 'Date' => $withdrawalDate,
                 'Status' => $withdrawalStatus,
-                'Public_Name' => $earnersMaskName($firstName, $lastName),
+                'Public_Name' => $earnersMaskName($firstName),
             ];
         }
     } else {
