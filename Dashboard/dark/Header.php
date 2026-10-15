@@ -125,7 +125,7 @@ $row=mysqli_fetch_array($query, MYSQLI_ASSOC);
                         <li class="nav-devider"></li>
                         <li class="nav-label">WORKSPACE</li>
                         <li><a href="Dashboard.php"><i class="fas fa-th-large"></i><span class="hide-menu">Overview</span></a></li>
-                        <li><a href="AccountInsight.php"><i class="fas fa-chart-line"></i><span class="hide-menu">Account insight</span></a></li>
+                        <li><a href="../AccountInsight.php"><i class="fas fa-chart-line"></i><span class="hide-menu">Account insight</span></a></li>
                         <li><a href="Account.php"><i class="fas fa-wallet"></i><span class="hide-menu">Wallet &amp; portfolio</span></a></li>
                         <li class="nav-label">MONEY</li>
                         <li><a href="Deposit.php"><i class="fas fa-plus-circle"></i><span class="hide-menu">Deposit</span></a></li>
@@ -165,7 +165,7 @@ $row=mysqli_fetch_array($query, MYSQLI_ASSOC);
         <div class="dark-bottomnav" aria-label="Primary mobile navigation">
             <a href="Dashboard.php"><i class="fas fa-th-large"></i><span>Home</span></a>
             <a href="Account.php"><i class="fas fa-wallet"></i><span>Wallet</span></a>
-            <a href="AccountInsight.php" class="dark-insight"><i class="fas fa-chart-pie"></i><span>Insight</span></a>
+            <a href="../AccountInsight.php" class="dark-insight"><i class="fas fa-chart-pie"></i><span>Insight</span></a>
             <a href="Deposit.php"><i class="fas fa-plus-circle"></i><span>Deposit</span></a>
             <a href="Profile.php"><i class="fas fa-user-circle"></i><span>Profile</span></a>
         </div>
