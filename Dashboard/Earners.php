@@ -53,5 +53,15 @@ html[data-theme="light"] body{--er-bg:var(--cfxm-bg,#f5f6fa);--er-panel:var(--cf
 <aside class="er-disclaimer"><i class="fas fa-info-circle"></i><span><strong style="color:var(--er-ink)">Please note:</strong> This page displays actual withdrawal records, not forecasts or guarantees. Pending requests are not proof of payment and can take time to review. Names are abbreviated to reduce exposure of members' financial activity. Displayed totals and records may change as requests are updated.</span></aside>
 <footer class="er-footer"><span>&copy; <?php echo date('Y'); ?> CFXM Pro. All rights reserved.</span><span><a href="../en/Index.php">Home</a> &nbsp;·&nbsp; <a href="LoginContainer.php">Sign in</a></span></footer>
 </div>
+<script>
+(function () {
+    var refreshInterval = 30000;
+    window.setInterval(function () {
+        if (document.visibilityState === 'visible') {
+            window.location.reload();
+        }
+    }, refreshInterval);
+})();
+</script>
 </body>
 </html>
