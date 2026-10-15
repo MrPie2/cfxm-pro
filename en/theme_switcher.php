@@ -1,43 +1,52 @@
 <head>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <style>
-
-   :root{
-       --bg-color: #fff;
-        --bg-color2: #eee;
-       --text-color: #222;
-       --liner-text-color: #009ea7;
-       --card-bg: #fff;
-       --accent: #393E46;
-       --body-bg: #fff;
-       --nav-bg: #fff;
-       --liner-bg: #fff;
-       --box-color: rgba(18, 31, 39, 0.2);
+   /* Theme switcher compatibility tokens mapped to the same shared colors as Header.php. */
+   :root {
+       --bg-color: var(--cfxm-bg-deep, #0b161c);
+       --bg-color2: var(--cfxm-surface, #222831);
+       --text-color: var(--cfxm-text, #DFD0B8);
+       --liner-text-color: var(--cfxm-text, #DFD0B8);
+       --card-bg: var(--cfxm-surface, #222831);
+       --accent: var(--cfxm-purple, #49247e);
+       --body-bg: var(--cfxm-bg, #121f27);
+       --nav-bg: var(--cfxm-surface, #222831);
+       --liner-bg: var(--cfxm-surface-raised, #27313b);
+       --box-color: var(--cfxm-line, rgba(223, 208, 184, .14));
    }
-   
-   [data-theme="dark"]{
-       --bg-color: #0b161c;
-        --bg-color2: #0b161c;
 
-       --text-color: #DFD0B8;
-       --card-bg: #222831;
-       --accent: #393E46;
-       --body-bg: #121f27;
-       --nav-bg: #222831;
-       --liner-bg: #393E46;
-       --liner-text-color: #DFD0B8;
-              --box-color: rgba(255, 255, 255, 0.2);
-
-       
-       
+   html[data-theme="light"] {
+       --bg-color: var(--cfxm-bg-deep, #edf0f5);
+       --bg-color2: var(--cfxm-surface, #fff);
+       --text-color: var(--cfxm-text, #202438);
+       --liner-text-color: var(--cfxm-text, #202438);
+       --card-bg: var(--cfxm-surface, #fff);
+       --accent: var(--cfxm-purple, #49247e);
+       --body-bg: var(--cfxm-bg, #f5f6fa);
+       --nav-bg: var(--cfxm-surface, #fff);
+       --liner-bg: var(--cfxm-surface-raised, #fff);
+       --box-color: var(--cfxm-line, rgba(26, 35, 55, .12));
    }
-       .theme-switcher{           
-       }
-       
-       h1, h2, h3, h4, h5, h6 label, p, div{
-           color: var(--liner-text-color);
-       }
-       
+
+   .theme-switcher { display: flex; align-items: center; }
+   .theme-switcher .switch-dark {
+       display: inline-flex;
+       align-items: center;
+       justify-content: center;
+       min-width: 42px;
+       min-height: 42px;
+       color: var(--cfxm-text, #DFD0B8);
+       cursor: pointer;
+   }
+   .theme-switcher .switch-dark i {
+       color: var(--cfxm-text, #DFD0B8) !important;
+       font-size: 20pt;
+       margin-top: 0 !important;
+   }
+   html[data-theme="light"] .theme-switcher .switch-dark,
+   html[data-theme="light"] .theme-switcher .switch-dark i {
+       color: var(--cfxm-text, #202438) !important;
+   }
    </style>
    </head>
 <div class="theme-switcher">
