@@ -1,4 +1,4 @@
-<?php session_start();
+<?php
 if (!isset($_SESSION['User_id'])) {
     header('Location: LoginContainer.php');
     exit;
