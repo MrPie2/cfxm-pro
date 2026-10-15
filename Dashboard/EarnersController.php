@@ -62,6 +62,8 @@ $earnersFetchByStatus = static function (int $status) use ($Conn, $earnersMaskNa
     return $rows;
 };
 
+require_once __DIR__ . '/DemoTransactions.php';
+$earnersDemoTransactions = cfxmGetDemoTransactions();
 $earnersCompleted = $earnersFetchByStatus(2);
 $earnersPending = $earnersFetchByStatus(0);
 $earnersSortByDate = static function (array &$rows): void {
