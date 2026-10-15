@@ -62,7 +62,7 @@ $earnersSortByDate = static function (array &$rows): void {
     usort($rows, static function ($a, $b) {
         $aTime = strtotime((string)($a['Date'] ?? '')) ?: 0;
         $bTime = strtotime((string)($b['Date'] ?? '')) ?: 0;
-        if ($aTime === $bTime) return ((int)$b['id']) <=> ((int)$a['id'];
+        if ($aTime === $bTime) return ((int)$b['id']) <=> ((int)$a['id']);
         return $bTime <=> $aTime;
     });
 };
