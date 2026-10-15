@@ -54,9 +54,10 @@ html[data-theme="light"] .cfx-money-page{--mp-panel:#fff;--mp-raised:#f6f7fb;--m
   </section>
   <div class="mp-note"><i class="fas fa-shield-alt"></i><span><strong style="color:var(--mp-ink)">Before you withdraw.</strong> Double-check your destination details and review any applicable verification requirements, processing times and fees. A pending request has not yet been recorded as successful.</span></div>
 </div>
+
+<?php include('Footer.php'); ?>
+<script src="js/lib/jquery/jquery.min.js"></script><script src="js/lib/bootstrap/js/popper.min.js"></script><script src="js/lib/bootstrap/js/bootstrap.min.js"></script><script src="js/jquery.slimscroll.js"></script><script src="js/sidebarmenu.js"></script><script src="js/lib/sticky-kit-master/dist/sticky-kit.min.js"></script><script src="js/custom.min.js"></script>
 <script>
 (function($){$('#withdrawSearch').on('input',function(){var term=String($(this).val()||'').toLowerCase().trim(),visible=0;$('#withdrawTable tbody tr').each(function(){var match=String($(this).attr('data-search')||'').indexOf(term)!==-1;$(this).toggle(match);if(match)visible++;});$('#withdrawNoMatch').toggle(visible===0&&$('#withdrawTable tbody tr').length>0);});})(jQuery);
 </script>
-<?php include('Footer.php'); ?>
-<script src="js/lib/jquery/jquery.min.js"></script><script src="js/lib/bootstrap/js/popper.min.js"></script><script src="js/lib/bootstrap/js/bootstrap.min.js"></script><script src="js/jquery.slimscroll.js"></script><script src="js/sidebarmenu.js"></script><script src="js/lib/sticky-kit-master/dist/sticky-kit.min.js"></script><script src="js/custom.min.js"></script>
 </body></html>
