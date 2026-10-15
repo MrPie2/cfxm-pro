@@ -101,6 +101,23 @@ window.location.href='Notification.php?id=".$id."';
 
 ?>
 <style>
+    .vh-featured-company-card .vh-investment-company-art{position:relative;display:flex;align-items:center;justify-content:center;gap:13px;overflow:hidden;padding:18px;min-height:150px}
+    .vh-featured-company-card .vh-company-brand-mark{position:relative;z-index:1;display:grid;place-items:center;width:64px;height:64px;border-radius:18px;background:rgba(255,255,255,.94);color:#20242b;font-size:37px;font-weight:900;box-shadow:0 10px 30px rgba(0,0,0,.18)}
+    .vh-featured-company-card .vh-company-brand-name{position:relative;z-index:1;color:#fff;font-size:clamp(15px,1.7vw,22px);font-weight:850;letter-spacing:-.04em;text-shadow:0 2px 12px rgba(0,0,0,.3)}
+    .vh-featured-company-card .vh-company-orbit{position:absolute;right:-28px;bottom:-70px;width:190px;height:190px;border:1px solid rgba(255,255,255,.25);border-radius:50%}
+    .vh-company-art-netflix{background:radial-gradient(circle at 75% 20%,rgba(255,255,255,.18),transparent 30%),linear-gradient(130deg,#171717,#b20710)!important}
+    .vh-company-art-netflix .vh-company-brand-mark{background:#e50914;color:#fff;border-radius:12px}
+    .vh-company-art-dell{background:linear-gradient(130deg,#052e5c,#0872ce)!important}
+    .vh-company-art-dell .vh-company-brand-mark{color:#0872ce}
+    .vh-company-art-microsoft{background:linear-gradient(130deg,#263746,#526779)!important}
+    .vh-company-art-microsoft .vh-company-brand-mark{color:#f35325}
+    .vh-company-art-spacex{background:linear-gradient(130deg,#05090e,#273849)!important}
+    .vh-company-art-spacex .vh-company-brand-mark{background:#111820;color:#fff}
+    .vh-company-art-magnet{background:linear-gradient(130deg,#42205f,#9861c7)!important}
+    .vh-company-art-magnet .vh-company-brand-mark{background:#f3e8ff;color:#6b21a8;font-size:31px}
+    .vh-company-art-amazon{background:linear-gradient(130deg,#111827,#34404e)!important}
+    .vh-company-art-amazon .vh-company-brand-mark{background:#111827;color:#ffb84d}
+    @media(max-width:600px){.vh-featured-company-card .vh-investment-company-art{min-height:124px}.vh-featured-company-card .vh-company-brand-mark{width:52px;height:52px;font-size:29px}.vh-featured-company-card .vh-company-brand-name{font-size:16px}}
     .vh-market-preview{margin-top:14px;padding-top:13px;border-top:1px solid rgba(130,145,160,.2)}
     .vh-market-preview-label{display:flex;align-items:center;gap:6px;margin-bottom:9px;color:var(--vh-muted,#83919c);font-size:9px;font-weight:850;letter-spacing:.1em}
     .vh-market-preview-list{display:flex;flex-wrap:wrap;gap:5px}
@@ -182,15 +199,15 @@ window.smartsupp||(function(d) {
         <div class="vh-investment-catalog-head">
             <div>
                 <span class="vh-eyebrow">FEATURED OPPORTUNITY</span>
-                <h2 id="vhTeslaHeading">Explore Tesla</h2>
-                <p>Explore Tesla Inc. shares alongside the vehicles behind the brand.</p>
+                <h2 id="vhTeslaHeading">Explore the market</h2>
+                <p>Discover Tesla and six featured companies, each with its own investment card.</p>
             </div>
             <div class="vh-carousel-controls" aria-label="Featured investment carousel controls">
                 <button type="button" class="vh-carousel-btn" id="vhTeslaPrev" aria-label="Scroll featured investments left"><i class="fas fa-chevron-left"></i></button>
                 <button type="button" class="vh-carousel-btn" id="vhTeslaNext" aria-label="Scroll featured investments right"><i class="fas fa-chevron-right"></i></button>
             </div>
         </div>
-        <div class="vh-investment-track" id="vhTeslaTrack" tabindex="0" role="region" aria-label="Tesla investment cards. Scroll horizontally to view more">
+        <div class="vh-investment-track" id="vhTeslaTrack" tabindex="0" role="region" aria-label="Featured company investment cards. Scroll horizontally to view more">
             <article class="vh-investment-card vh-investment-company-card">
                 <div class="vh-investment-company-art" aria-hidden="true"><span class="vh-tesla-mark">T</span><span class="vh-company-orbit"></span></div>
                 <div class="vh-investment-card-body">
@@ -210,36 +227,52 @@ window.smartsupp||(function(d) {
                 </div>
             </article>
             <?php
-            $teslaVehicles = array(
-                array('name' => 'Model S', 'tagline' => 'Electric luxury sedan', 'image' => 'https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=900&q=85', 'alt' => 'Modern electric sedan on the road'),
-                array('name' => 'Model 3', 'tagline' => 'Electric sport sedan', 'image' => 'https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=900&q=85', 'alt' => 'Electric sedan viewed from the front'),
-                array('name' => 'Model X', 'tagline' => 'Electric performance SUV', 'image' => 'https://images.unsplash.com/photo-1568844293986-8d0400bd4745?auto=format&fit=crop&w=900&q=85', 'alt' => 'Premium electric vehicle exterior'),
-                array('name' => 'Model Y', 'tagline' => 'Electric crossover', 'image' => 'https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=900&q=85', 'alt' => 'Electric vehicle in a clean studio setting')
+            // Each company gets a separate card and is matched to the configured stock catalogue.
+            $featuredCompanies = array(
+                array('name' => 'Netflix', 'symbol' => 'NFLX', 'mark' => 'N', 'class' => 'netflix', 'category' => 'ENTERTAINMENT', 'description' => 'Explore Netflix and its global streaming entertainment business.', 'match' => array('Netflix', 'NFLX')),
+                array('name' => 'Dell Technologies', 'symbol' => 'DELL', 'mark' => 'D', 'class' => 'dell', 'category' => 'TECHNOLOGY', 'description' => 'Explore Dell Technologies and its computer and infrastructure portfolio.', 'match' => array('Dell', 'DELL')),
+                array('name' => 'Microsoft', 'symbol' => 'MSFT', 'mark' => 'M', 'class' => 'microsoft', 'category' => 'TECHNOLOGY', 'description' => 'Explore Microsoft’s software, cloud and productivity ecosystem.', 'match' => array('Microsoft', 'MSFT')),
+                array('name' => 'SpaceX', 'symbol' => 'PRIVATE', 'mark' => 'X', 'class' => 'spacex', 'category' => 'AEROSPACE', 'description' => 'SpaceX is privately held; any available offering must be explicitly configured.', 'match' => array('SpaceX', 'SPACEX')),
+                array('name' => 'Magnet 🧲', 'symbol' => 'MAGNET', 'mark' => '🧲', 'class' => 'magnet', 'category' => 'MARKET OPPORTUNITY', 'description' => 'Review the Magnet opportunity when its listing is configured in the catalogue.', 'match' => array('Magnet', 'MAGNET')),
+                array('name' => 'Amazon', 'symbol' => 'AMZN', 'mark' => 'a', 'class' => 'amazon', 'category' => 'CONSUMER & CLOUD', 'description' => 'Explore Amazon’s e-commerce, logistics and cloud businesses.', 'match' => array('Amazon', 'AMZN'))
             );
-            foreach ($teslaVehicles as $vehicle):
-                $vehicleName = $vehicle['name'];
-                $vehicleHref = $teslaStock ? 'Stock_Market.php?Stock_id=' . (int)$teslaStock['id'] . '&amp;Type=Stock&amp;Min=' . rawurlencode((string)$teslaStock['Unit']) . '&amp;Vehicle=' . rawurlencode($vehicleName) : '';
+            foreach ($featuredCompanies as &$company) {
+                $company['stock'] = null;
+                $stockConditions = array();
+                foreach ($company['match'] as $term) {
+                    $safeTerm = mysqli_real_escape_string($Conn, $term);
+                    $stockConditions[] = "CompanyName LIKE '%" . $safeTerm . "%'";
+                    $stockConditions[] = "tradingview LIKE '%" . $safeTerm . "%'";
+                }
+                $companyQuery = mysqli_query($Conn, "SELECT * FROM stock WHERE " . implode(' OR ', $stockConditions) . " ORDER BY id ASC LIMIT 1");
+                if ($companyQuery && mysqli_num_rows($companyQuery) > 0) {
+                    $company['stock'] = mysqli_fetch_assoc($companyQuery);
+                }
+            }
+            unset($company);
+            foreach ($featuredCompanies as $company):
+                $companyStock = $company['stock'];
             ?>
-            <article class="vh-investment-card vh-vehicle-card">
-                <div class="vh-vehicle-image-wrap">
-                    <img src="<?php echo htmlspecialchars($vehicle['image'], ENT_QUOTES, 'UTF-8'); ?>" alt="<?php echo htmlspecialchars($vehicle['alt'], ENT_QUOTES, 'UTF-8'); ?>" loading="lazy">
-                    <span class="vh-vehicle-image-shade"></span>
-                    <span class="vh-asset-pill vh-asset-pill-image">TESLA COLLECTION</span>
+            <article class="vh-investment-card vh-investment-company-card vh-featured-company-card">
+                <div class="vh-investment-company-art vh-company-art-<?php echo htmlspecialchars($company['class'], ENT_QUOTES, 'UTF-8'); ?>" aria-hidden="true">
+                    <span class="vh-company-brand-mark"><?php echo htmlspecialchars($company['mark'], ENT_QUOTES, 'UTF-8'); ?></span>
+                    <span class="vh-company-orbit"></span>
+                    <span class="vh-company-brand-name"><?php echo htmlspecialchars($company['name'], ENT_QUOTES, 'UTF-8'); ?></span>
                 </div>
                 <div class="vh-investment-card-body">
-                    <div class="vh-investment-card-meta"><span class="vh-asset-symbol">TSLA · TESLA INC.</span></div>
-                    <h3><?php echo htmlspecialchars($vehicleName, ENT_QUOTES, 'UTF-8'); ?></h3>
-                    <p><?php echo htmlspecialchars($vehicle['tagline'], ENT_QUOTES, 'UTF-8'); ?></p>
-                    <?php if ($teslaStock): ?>
-                    <a class="vh-invest-now" href="<?php echo $vehicleHref; ?>">Invest in Tesla <i class="fas fa-arrow-right"></i></a>
+                    <div class="vh-investment-card-meta"><span class="vh-asset-pill"><?php echo htmlspecialchars($company['category'], ENT_QUOTES, 'UTF-8'); ?></span><span class="vh-asset-symbol"><?php echo htmlspecialchars($company['symbol'], ENT_QUOTES, 'UTF-8'); ?></span></div>
+                    <h3><?php echo htmlspecialchars($company['name'], ENT_QUOTES, 'UTF-8'); ?></h3>
+                    <p><?php echo htmlspecialchars($company['description'], ENT_QUOTES, 'UTF-8'); ?></p>
+                    <?php if ($companyStock): ?>
+                    <a class="vh-invest-now" href="Stock_Market.php?Stock_id=<?php echo (int)$companyStock['id']; ?>&amp;Type=Stock&amp;Min=<?php echo rawurlencode((string)$companyStock['Unit']); ?>&amp;Vehicle=company">Invest now <i class="fas fa-arrow-right"></i></a>
                     <?php else: ?>
-                    <button class="vh-invest-now is-disabled" type="button" disabled title="Tesla must be configured in the stock catalogue first">Trading coming soon</button>
+                    <button class="vh-invest-now is-disabled" type="button" disabled title="This company needs a matching entry in the stock catalogue first">Coming soon</button>
                     <?php endif; ?>
                 </div>
             </article>
             <?php endforeach; ?>
         </div>
-        <p class="vh-investment-disclaimer"><i class="fas fa-info-circle" aria-hidden="true"></i> Vehicle cards are informational entry points. Any transaction is for Tesla Inc. shares through the configured stock catalogue, not ownership of a car. Prices and availability depend on your platform configuration.</p>
+        <p class="vh-investment-disclaimer"><i class="fas fa-info-circle" aria-hidden="true"></i> Each card links to the matching configured stock catalogue entry. SpaceX is privately held, and Magnet needs a clearly defined listing. A company card alone does not mean CFXM Pro holds shares in that company.</p>
     </section>
     <script>
     (function () {
