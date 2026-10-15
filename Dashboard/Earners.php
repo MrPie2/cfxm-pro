@@ -94,7 +94,7 @@ html[data-theme="light"] body{--er-bg:var(--cfxm-bg,#f5f6fa);--er-panel:var(--cf
     }
 
     function initials(name) {
-        return String(name || 'Platform member').trim().split(/\\s+/).filter(Boolean)
+        return String(name || 'Platform member').trim().split(/\s+/).filter(Boolean)
             .slice(0, 2).map(part => part.charAt(0).toUpperCase()).join('') || 'M';
     }
 
