@@ -88,6 +88,71 @@ li a{
 .table-responsive::-webkit-scrollbar {
   display: none;
 }
+
+/* Keep the top header controls aligned on one horizontal line on mobile. */
+@media (max-width: 767.98px) {
+    .header .top-navbar {
+        display: flex !important;
+        align-items: center !important;
+        min-height: 56px;
+        padding: 0 10px;
+    }
+    .header .top-navbar .navbar-collapse {
+        display: flex !important;
+        flex: 1 1 auto;
+        align-items: center !important;
+        justify-content: space-between;
+        min-width: 0;
+        width: 100%;
+    }
+    .header .top-navbar .navbar-nav {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 8px;
+        margin: 0 !important;
+        padding: 0;
+    }
+    .header .top-navbar .navbar-nav > li,
+    .header .top-navbar .navbar-nav > li.nav-item {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center;
+        flex: 0 0 auto;
+        margin: 0 !important;
+        padding: 0 !important;
+        line-height: 1;
+    }
+    .header .top-navbar .navbar-nav > li > a.nav-link,
+    .header .top-navbar .navbar-nav > li > .theme-switcher {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center;
+        min-height: 42px;
+        padding: 6px !important;
+        margin: 0 !important;
+        line-height: 1 !important;
+    }
+    .header .top-navbar .navbar-nav > li > a.nav-link i,
+    .header .top-navbar .navbar-nav > li > a.nav-link .fa-bell {
+        margin-top: 0 !important;
+        vertical-align: middle;
+        line-height: 1 !important;
+    }
+    .header .top-navbar .navbar-nav > li > img.thumbnail {
+        display: block;
+        width: 36px !important;
+        height: 36px !important;
+        margin: 0 !important;
+        object-fit: cover;
+        align-self: center;
+    }
+    .header .top-navbar .navbar-nav.my-lg-0 {
+        flex: 0 0 auto;
+        gap: 6px;
+        margin-left: auto !important;
+    }
+}
 </style>
 </head>
 
