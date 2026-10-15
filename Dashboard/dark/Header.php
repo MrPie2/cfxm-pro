@@ -127,6 +127,7 @@ $row=mysqli_fetch_array($query, MYSQLI_ASSOC);
                         <li><a href="Dashboard.php"><i class="fas fa-th-large"></i><span class="hide-menu">Overview</span></a></li>
                         <li><a href="../AccountInsight.php"><i class="fas fa-chart-line"></i><span class="hide-menu">Account insight</span></a></li>
                         <li><a href="Account.php"><i class="fas fa-wallet"></i><span class="hide-menu">Wallet &amp; portfolio</span></a></li>
+                        <li><a href="../Market.php"><i class="fas fa-chart-bar"></i><span class="hide-menu">Market</span></a></li>
                         <li class="nav-label">MONEY</li>
                         <li><a href="Deposit.php"><i class="fas fa-plus-circle"></i><span class="hide-menu">Deposit</span></a></li>
                         <li><a href="Withdrawal.php"><i class="fas fa-arrow-circle-up"></i><span class="hide-menu">Withdrawal</span></a></li>
