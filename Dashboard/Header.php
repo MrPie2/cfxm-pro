@@ -27,7 +27,7 @@ $curAbbr=$userDetails['curAbbr'];
     <title><?php echo isset($PageTitle) ? htmlspecialchars($PageTitle, ENT_QUOTES, 'UTF-8') : 'Dashboard'; ?></title>
     <!-- Custom CSS -->
           <link href="css/style.css" rel="stylesheet">
-    <link href="../en/site-theme.css?v=20261015-sidebarfix1" rel="stylesheet">
+    <link href="../en/site-theme.css?v=20261015-heading-colors1" rel="stylesheet">
     <link href="css/dashboard-modern.css?v=20261015-sidebarfix1" rel="stylesheet">
 <link href="css/lib/sweetalert/sweetalert.css" rel="stylesheet">
 <link href="css/lib/toastr/toastr.min.css" rel="stylesheet">
