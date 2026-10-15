@@ -41,7 +41,11 @@ $earnersFetchByStatus = static function (int $status, ?int $investorId = null) u
         return $rows;
     }
 
-    if ($status === 0) {\n        mysqli_stmt_bind_param($stmt, 'ii', $status, $investorId);\n    } else {\n        mysqli_stmt_bind_param($stmt, 'i', $status);\n    }
+    if ($status === 0) {
+        mysqli_stmt_bind_param($stmt, 'ii', $status, $investorId);
+    } else {
+        mysqli_stmt_bind_param($stmt, 'i', $status);
+    }
     if (mysqli_stmt_execute($stmt)) {
         // Use bind_result rather than mysqli_stmt_get_result so mysqlnd is not required.
         mysqli_stmt_bind_result(
@@ -71,7 +75,8 @@ $earnersFetchByStatus = static function (int $status, ?int $investorId = null) u
 };
 
 $earnersCompleted = $earnersFetchByStatus(2);
-$earnersCurrentUserId = isset($_SESSION['User_id']) && is_numeric($_SESSION['User_id']) ? (int)$_SESSION['User_id'] : null;\n$earnersPending = $earnersFetchByStatus(0, $earnersCurrentUserId);
+$earnersCurrentUserId = isset($_SESSION['User_id']) && is_numeric($_SESSION['User_id']) ? (int)$_SESSION['User_id'] : null;
+$earnersPending = $earnersFetchByStatus(0, $earnersCurrentUserId);
 $earnersSortByDate = static function (array &$rows): void {
     usort($rows, static function ($a, $b) {
         $aTime = strtotime((string)($a['Date'] ?? '')) ?: 0;
