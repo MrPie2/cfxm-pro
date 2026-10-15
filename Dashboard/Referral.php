@@ -1,12 +1,12 @@
 <?php
 session_start();
-include('Header.php');
 
 if (!isset($_SESSION['User_id'])) {
     header('Location: LoginContainer.php');
     exit;
 }
 
+include('Header.php');
 $Investor_id = (string) $_SESSION['User_id'];
 $referralRows = [];
 $availableEarnings = 0.0;
@@ -179,7 +179,7 @@ html[data-theme="light"] .ref-claim-card{background:linear-gradient(145deg,rgba(
 
     <section class="ref-hero" aria-labelledby="ref-hero-title">
         <div class="ref-hero-copy">
-            <span class="ref-hero-label"><i class="fas fa-sparkles"></i> Share the opportunity</span>
+            <span class="ref-hero-label"><i class="fas fa-star"></i> Share the opportunity</span>
             <h2 id="ref-hero-title">Grow your network.<br>Earn referral rewards.</h2>
             <p>Share your unique invitation link with people you know. When a referred member registers and meets the platform's qualifying deposit requirements, eligible referral earnings can appear in your account.</p>
             <div class="ref-hero-actions">
