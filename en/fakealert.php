@@ -29,7 +29,7 @@ $fakeAlertPendingAmount = 0;
 if ($fakeAlertPendingItem) {
     $fakeAlertFirstName = trim((string)($fakeAlertPendingItem['First_Name'] ?? ''));
     if ($fakeAlertFirstName !== '') {
-        $fakeAlertPendingName = htmlspecialchars($fakeAlertFirstName, ENT_QUOTES, 'UTF-8');
+        $fakeAlertPendingName = $fakeAlertFirstName;
     }
     $fakeAlertPendingAmount = (float)($fakeAlertPendingItem['Amount_Withdrawn'] ?? 0);
     $fakeAlertTimestamp = strtotime((string)($fakeAlertPendingItem['Date'] ?? ''));
@@ -52,7 +52,7 @@ if ($fakeAlertPendingItem) {
 .cfxm-toast-details{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 16px 14px;padding:11px 12px;border:1px solid var(--cfxm-line,rgba(223,208,184,.14));border-radius:12px;background:rgba(255,255,255,.035)}
 .cfxm-toast-amount-label{display:block;color:var(--cfxm-muted,#a5b1ba);font-size:9px;font-weight:700}
 .cfxm-toast-amount{display:block;margin-top:3px;color:var(--cfxm-text,#f4eee3);font-size:17px;font-weight:900;letter-spacing:-.025em}
-.cfxm-toast-date{color:var(--cfxm-muted,#a5b1ba);font-size:10px;text-align:right;line-height:1.5}
+.cfxm-toast-date{color:var(--cfxm-muted,#a5b1ba);font-size:10px;text-align:right;line-height:1.5;white-space:pre-line}
 .cfxm-toast-foot{padding:9px 16px;background:rgba(119,72,188,.1);color:var(--cfxm-muted,#a5b1ba);font-size:9px;line-height:1.55}
 .cfxm-toast-foot strong{color:var(--cfxm-text,#f4eee3)}
 .cfxm-toast-progress{height:3px;background:rgba(255,255,255,.07)}
