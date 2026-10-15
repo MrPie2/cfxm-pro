@@ -19,14 +19,14 @@ $earnersMaskName = static function ($firstName, $lastName): string {
         return 'Platform member';
     }
     if ($firstName === '') {
-        return mb_substr($lastName, 0, 1) . '.';
+        return substr($lastName, 0, 1) . '.';
     }
-    $first = mb_substr($firstName, 0, 1);
+    $first = substr($firstName, 0, 1);
     $lastInitial = $lastName !== '' ? ' ' . mb_substr($lastName, 0, 1) . '.' : '';
     return $firstName . $lastInitial;
 };
 
-$earnersFetchByStatus = static function (int $status) use ($Conn): array {
+$earnersFetchByStatus = static function (int $status) use ($Conn, $earnersMaskName): array {
     $rows = [];
     $sql = "SELECT w.id, w.Investor_id, w.Amount_Withdrawn, w.Date, w.Status,
                    i.First_Name, i.Last_Name
@@ -44,7 +44,7 @@ $earnersFetchByStatus = static function (int $status) use ($Conn): array {
         $result = mysqli_stmt_get_result($stmt);
         if ($result) {
             while ($row = mysqli_fetch_assoc($result)) {
-                $row['Public_Name'] = $GLOBALS['earnersMaskName'](
+                $row['Public_Name'] = $earnersMaskName(
                     $row['First_Name'] ?? '',
                     $row['Last_Name'] ?? ''
                 );
