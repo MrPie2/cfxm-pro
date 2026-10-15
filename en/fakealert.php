@@ -32,8 +32,8 @@ if (isset($Conn) && $Conn instanceof mysqli) {
 }
 ?>
 <style>
-.cfxm-activity-toast{position:fixed;z-index:999999;top:12px;left:16px;bottom:auto;width:min(360px,calc(100vw - 32px));max-height:150px;padding:0;border:1px solid rgba(34,197,94,.28);border-radius:13px;overflow:hidden;background:var(--cfxm-surface,#19252e);color:var(--cfxm-text,#f4eee3);box-shadow:0 12px 32px rgba(0,0,0,.18);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;opacity:0;transform:translateY(-8px) scale(.99);pointer-events:none;transition:opacity .22s ease,transform .22s ease}
-.cfxm-activity-toast.is-visible{opacity:1;transform:translateY(0) scale(1);pointer-events:auto}
+.cfxm-activity-toast{position:fixed;z-index:999999;top:50%;left:50%;right:auto;bottom:auto;width:min(360px,calc(100vw - 32px));max-height:150px;padding:0;border:1px solid rgba(34,197,94,.28);border-radius:13px;overflow:hidden;background:var(--cfxm-surface,#19252e);color:var(--cfxm-text,#f4eee3);box-shadow:0 12px 32px rgba(0,0,0,.18);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;opacity:0;transform:translate(-50%,calc(-50% - 8px)) scale(.99);pointer-events:none;transition:opacity .22s ease,transform .22s ease}
+.cfxm-activity-toast.is-visible{opacity:1;transform:translate(-50%,-50%) scale(1);pointer-events:auto}
 .cfxm-toast-top{display:flex;align-items:center;gap:9px;padding:9px 10px 6px}
 .cfxm-toast-icon{display:grid;place-items:center;width:32px;height:32px;flex:0 0 32px;border-radius:10px;background:rgba(34,197,94,.14);color:#22c55e;font-size:14px}
 .cfxm-toast-content{min-width:0;flex:1}
@@ -53,7 +53,7 @@ if (isset($Conn) && $Conn instanceof mysqli) {
 html[data-theme="light"] .cfxm-activity-toast{background:#fff;color:#202438;border-color:rgba(34,197,94,.22);box-shadow:0 20px 45px rgba(23,27,44,.13)}
 html[data-theme="light"] .cfxm-toast-title{color:#202438}
 html[data-theme="light"] .cfxm-toast-subtitle,html[data-theme="light"] .cfxm-toast-date,html[data-theme="light"] .cfxm-toast-amount-label{color:#687184}
-@media(max-width:767px){.cfxm-activity-toast{top:8px;left:10px;bottom:auto;width:min(340px,calc(100vw - 20px));max-height:150px}}
+@media(max-width:767px){.cfxm-activity-toast{top:50%;left:50%;right:auto;bottom:auto;width:min(340px,calc(100vw - 24px));max-height:150px}}
 @media(prefers-reduced-motion:reduce){.cfxm-activity-toast{transition:none}.cfxm-activity-toast.is-visible .cfxm-toast-progress span{animation:none}}
 </style>
 
