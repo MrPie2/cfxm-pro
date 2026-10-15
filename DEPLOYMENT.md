@@ -55,3 +55,7 @@ This repository includes `deploy-webhook.php` for the production checkout at `~/
 ## Testing a deployment
 
 After configuring the webhook secret and saving the GitHub webhook, push a small documentation change to `main`. In **Settings → Webhooks → Recent Deliveries**, the push delivery should return HTTP `200` with `Production updated from main`. A `202` means the handler intentionally skipped that event or branch; a `401 Invalid signature` means the signature did not match the configured secret.
+
+## Non-interactive SSH troubleshooting
+
+The webhook runs Git from PHP, so it may not inherit the interactive terminal's SSH-agent environment. If manual `git pull` succeeds but a webhook deployment fails with `Permission denied (publickey)`, verify the SSH key and GitHub host key for the same hosting account that runs the checkout. Do not put a private key or passphrase in this repository. After fixing authentication, push a new commit to `main` to trigger another deployment and inspect `~/.cfxm-pro-deploy.log` plus GitHub Webhooks → Recent Deliveries.
