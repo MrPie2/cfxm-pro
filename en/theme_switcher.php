@@ -47,6 +47,33 @@
    html[data-theme="light"] .theme-switcher .switch-dark i {
        color: var(--cfxm-text, #202438) !important;
    }
+
+   /* Keep headings and form labels readable in both themes, overriding legacy page styles. */
+   html[data-theme="dark"] h1,
+   html[data-theme="dark"] h2,
+   html[data-theme="dark"] h3,
+   html[data-theme="dark"] h4,
+   html[data-theme="dark"] h5,
+   html[data-theme="dark"] h6,
+   html[data-theme="dark"] label,
+   html[data-theme="dark"] .control-label,
+   html[data-theme="dark"] .form-label,
+   html[data-theme="dark"] .table thead th {
+       color: #fff !important;
+   }
+
+   html[data-theme="light"] h1,
+   html[data-theme="light"] h2,
+   html[data-theme="light"] h3,
+   html[data-theme="light"] h4,
+   html[data-theme="light"] h5,
+   html[data-theme="light"] h6,
+   html[data-theme="light"] label,
+   html[data-theme="light"] .control-label,
+   html[data-theme="light"] .form-label,
+   html[data-theme="light"] .table thead th {
+       color: var(--cfxm-text, #202438) !important;
+   }
    </style>
    </head>
 <div class="theme-switcher">
