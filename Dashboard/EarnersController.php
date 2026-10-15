@@ -17,15 +17,23 @@ $earnersMaskName = static function ($firstName): string {
     return $firstName !== '' ? $firstName : 'Platform member';
 };
 
-$earnersFetchByStatus = static function (int $status) use ($Conn, $earnersMaskName): array {
+$earnersFetchByStatus = static function (int $status, ?int $investorId = null) use ($Conn, $earnersMaskName): array {
     $rows = [];
+
+    // Pending withdrawals are private: only return the authenticated user's own records.
+    if ($status === 0 && (!$investorId || $investorId < 1)) {
+        return $rows;
+    }
+
     $sql = "SELECT w.id, w.Investor_id, w.Amount_Withdrawn, w.Date, w.Status,
                    i.First_Name
             FROM withdrawals AS w
             LEFT JOIN investors AS i ON i.Investor_id = w.Investor_id
-            WHERE w.Status = ?
-            ORDER BY w.id DESC
-            LIMIT 20";
+            WHERE w.Status = ?";
+    if ($status === 0) {
+        $sql .= " AND w.Investor_id = ?";
+    }
+    $sql .= " ORDER BY w.id DESC LIMIT 20";
     $stmt = mysqli_prepare($Conn, $sql);
     if (!$stmt) {
         // Keep the public page available if the database schema differs; log details server-side.
@@ -33,7 +41,7 @@ $earnersFetchByStatus = static function (int $status) use ($Conn, $earnersMaskNa
         return $rows;
     }
 
-    mysqli_stmt_bind_param($stmt, 'i', $status);
+    if ($status === 0) {\n        mysqli_stmt_bind_param($stmt, 'ii', $status, $investorId);\n    } else {\n        mysqli_stmt_bind_param($stmt, 'i', $status);\n    }
     if (mysqli_stmt_execute($stmt)) {
         // Use bind_result rather than mysqli_stmt_get_result so mysqlnd is not required.
         mysqli_stmt_bind_result(
@@ -63,7 +71,7 @@ $earnersFetchByStatus = static function (int $status) use ($Conn, $earnersMaskNa
 };
 
 $earnersCompleted = $earnersFetchByStatus(2);
-$earnersPending = $earnersFetchByStatus(0);
+$earnersCurrentUserId = isset($_SESSION['User_id']) && is_numeric($_SESSION['User_id']) ? (int)$_SESSION['User_id'] : null;\n$earnersPending = $earnersFetchByStatus(0, $earnersCurrentUserId);
 $earnersSortByDate = static function (array &$rows): void {
     usort($rows, static function ($a, $b) {
         $aTime = strtotime((string)($a['Date'] ?? '')) ?: 0;
