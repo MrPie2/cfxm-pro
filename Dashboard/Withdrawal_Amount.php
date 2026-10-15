@@ -31,9 +31,9 @@ html[data-theme="light"] .withdraw-amount-page{--wa-panel:#fff;--wa-raised:#f6f7
       <div class="wa-body">
         <div class="wa-destination"><span class="wa-destination-icon"><i class="fas <?php echo $type === 'Wallet' ? 'fa-coins' : 'fa-university'; ?>"></i></span><span><strong><?php echo $escape($destinationLabel); ?></strong><small><?php echo $escape($maskedDestination !== '' ? $maskedDestination : 'Destination details were not supplied'); ?><?php if ($type === 'Wallet' && $network !== '') echo ' · ' . $escape($network); ?></small></span></div>
         <label class="wa-label" for="withdrawAmount">Amount to withdraw</label>
-        <div class="wa-amount-wrap"><span class="wa-currency"><?php echo $escape($currency !== '' ? $currency : 'Amount'); ?></span><input id="withdrawAmount" type="number" class="wa-amount Amount" min="0.01" step="0.01" inputmode="decimal" placeholder="0.00" value="<?php echo $escape($initialAmount); ?>" aria-describedby="amountHint amountError"></div>
-        <p class="wa-hint" id="amountHint"><i class="fas fa-info-circle"></i><span>Use the amount you intend to request. Available funds and eligibility are checked by the server when you submit.</span></p>
-        <p class="wa-error" id="amountError" role="alert">Enter a valid amount greater than zero.</p>
+        <div class="wa-amount-wrap"><span class="wa-currency"><?php echo $escape($currency !== '' ? $currency : 'Amount'); ?></span><input id="withdrawAmount" type="number" class="wa-amount Amount" min="200" step="0.01" inputmode="decimal" placeholder="0.00" value="<?php echo $escape($initialAmount); ?>" aria-describedby="amountHint amountError"></div>
+        <p class="wa-hint" id="amountHint"><i class="fas fa-info-circle"></i><span>Minimum withdrawal: $200.00 USD. Available funds and eligibility are checked by the server when you submit.</span></p>
+        <p class="wa-error" id="amountError" role="alert">The minimum withdrawal amount is $200.00.</p>
         <button type="button" class="wa-primary wa-submit Withdraw"><i class="fas fa-lock"></i> Submit withdrawal request <i class="fas fa-arrow-right"></i></button>
         <a class="wa-back" href="Withdraw.php?<?php echo $escape(http_build_query(array('Location'=>$location, 'Amount'=>$initialAmount))); ?>"><i class="fas fa-arrow-left"></i> Change destination</a>
         <div class="wa-secure"><i class="fas fa-check-circle"></i><span>Submitting sends a request for server-side verification. A success message means the request was accepted, not necessarily that funds have already arrived.</span></div>
@@ -55,7 +55,7 @@ html[data-theme="light"] .withdraw-amount-page{--wa-panel:#fff;--wa-raised:#f6f7
   $('.Withdraw').on('click',function(){
     if(submitting)return;
     var amountText=$.trim($('.Amount').val()||''),amount=Number(amountText);
-    if(!amountText||!Number.isFinite(amount)||amount<=0){$('#amountError').show();$('.Amount').trigger('focus');return;}
+    if(!amountText||!Number.isFinite(amount)||amount<200){$('#amountError').show();$('.Amount').trigger('focus');return;}
     $('#amountError').hide();
     if(context.Type==='Wallet'&&(!context.Account||!context.BOP)){notify('Destination missing','Please go back and select a valid wallet destination.','error');return;}
     submitting=true;
@@ -86,7 +86,7 @@ html[data-theme="light"] .withdraw-amount-page{--wa-panel:#fff;--wa-raised:#f6f7
         submitting=false;button.prop('disabled',false).html(original);
       });
   });
-  $('.Amount').on('input',function(){var amount=Number($(this).val());if($(this).val()!==''&&Number.isFinite(amount)&&amount>0)$('#amountError').hide();});
+  $('.Amount').on('input',function(){var amount=Number($(this).val());if($(this).val()!==''&&Number.isFinite(amount)&&amount>=200)$('#amountError').hide();});
 })(jQuery);
 </script>
 </body></html>
