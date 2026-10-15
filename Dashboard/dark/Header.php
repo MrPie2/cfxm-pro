@@ -132,6 +132,7 @@ $row=mysqli_fetch_array($query, MYSQLI_ASSOC);
                         <li><a href="Withdrawal.php"><i class="fas fa-arrow-circle-up"></i><span class="hide-menu">Withdrawal</span></a></li>
                         <li><a href="Transfer.php"><i class="fas fa-exchange-alt"></i><span class="hide-menu">Peer to peer</span></a></li>
                         <li><a href="Referral.php"><i class="fas fa-user-friends"></i><span class="hide-menu">Referral earnings</span></a></li>
+                        <li><a href="Earners.php"><i class="fas fa-users"></i><span class="hide-menu">Earners activity</span></a></li>
                         <li class="nav-label">ACCOUNT</li>
                         <li><a href="Verification.php"><i class="fas fa-shield-alt"></i><span class="hide-menu">Verification &amp; limits</span></a></li>
                         <li><a href="Profile.php"><i class="fas fa-user-circle"></i><span class="hide-menu">Profile settings</span></a></li>
