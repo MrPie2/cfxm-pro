@@ -11,9 +11,23 @@ $stockRow = null;
 $stockQuery = null;
 if ($stockId > 0) {
     $stockQuery = mysqli_query($Conn, "SELECT * FROM stock WHERE id=" . $stockId . " LIMIT 1");
-} elseif (isset($_GET['Symbol']) && strtoupper(trim((string)$_GET['Symbol'])) === 'TSLA') {
-    // Public landing-page links resolve Tesla against the live stock catalogue.
-    $stockQuery = mysqli_query($Conn, "SELECT * FROM stock WHERE CompanyName LIKE '%Tesla%' OR tradingview LIKE '%TSLA%' ORDER BY CASE WHEN tradingview LIKE '%TSLA%' THEN 0 ELSE 1 END, id ASC LIMIT 1");
+} elseif (isset($_GET['Company']) || isset($_GET['Symbol'])) {
+    // Resolve featured company links against the configured catalogue; never invent a unit price.
+    $requestedCompany = trim((string)($_GET['Company'] ?? ''));
+    $requestedSymbol = strtoupper(trim((string)($_GET['Symbol'] ?? '')));
+    if ($requestedCompany !== '' || $requestedSymbol !== '') {
+        $safeCompany = mysqli_real_escape_string($Conn, $requestedCompany);
+        $safeSymbol = mysqli_real_escape_string($Conn, $requestedSymbol);
+        $conditions = array();
+        if ($safeCompany !== '') { $conditions[] = "CompanyName LIKE '%" . $safeCompany . "%'"; }
+        if ($safeSymbol !== '') {
+            $conditions[] = "tradingview LIKE '%" . $safeSymbol . "%'";
+            $conditions[] = "CompanyName LIKE '%" . $safeSymbol . "%'";
+        }
+        if ($conditions) {
+            $stockQuery = mysqli_query($Conn, "SELECT * FROM stock WHERE " . implode(' OR ', $conditions) . " ORDER BY id ASC LIMIT 1");
+        }
+    }
 }
 if ($stockQuery && mysqli_num_rows($stockQuery) > 0) {
     $stockRow = mysqli_fetch_assoc($stockQuery);
@@ -22,8 +36,10 @@ if ($stockQuery && mysqli_num_rows($stockQuery) > 0) {
 $vehicle = isset($_GET['Vehicle']) ? trim((string)$_GET['Vehicle']) : '';
 $allowedVehicles = array('company', 'Model S', 'Model 3', 'Model X', 'Model Y');
 if (!in_array($vehicle, $allowedVehicles, true)) { $vehicle = 'company'; }
-$stockName = $stockRow ? (string)$stockRow['CompanyName'] : 'Tesla, Inc.';
-$stockSymbol = $stockRow ? (string)$stockRow['tradingview'] : 'NASDAQ:TSLA';
+$requestedCompanyName = trim((string)($_GET['Company'] ?? ''));
+$requestedSymbolName = trim((string)($_GET['Symbol'] ?? ''));
+$stockName = $stockRow ? (string)$stockRow['CompanyName'] : ($requestedCompanyName !== '' ? $requestedCompanyName : 'Tesla, Inc.');
+$stockSymbol = $stockRow ? (string)$stockRow['tradingview'] : ($requestedSymbolName !== '' ? $requestedSymbolName : 'NASDAQ:TSLA');
 $stockPrice = $stockRow ? (float)$stockRow['Unit'] : 0;
 $minimumAmount = isset($_GET['Min']) ? (float)$_GET['Min'] : $stockPrice;
 $minimumAmountDisplay = $minimumAmount * (float)$exchangerate;
@@ -81,7 +97,7 @@ $chartSymbol = $stockSymbol !== '' ? $stockSymbol : 'NASDAQ:TSLA';
     <?php if (!$stockRow): ?>
         <div class="vh-stock-unavailable">
             <h3>Investment currently unavailable</h3>
-            <p>The selected stock is not configured in the platform catalogue. Please return to the dashboard or contact support.</p>
+            <p><?php echo htmlspecialchars($stockName, ENT_QUOTES, 'UTF-8'); ?> does not yet have a configured unit price in the platform stock catalogue. The investment amount and confirmation flow can only be enabled after an administrator configures the listing and its price. No price has been guessed or fabricated.</p>
             <a href="Dashboard.php" class="btn btn-oxblood">Back to dashboard</a>
         </div>
     <?php else: ?>
