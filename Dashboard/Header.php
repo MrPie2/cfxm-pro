@@ -89,8 +89,18 @@ li a{
   display: none;
 }
 
-/* Keep the top header controls aligned on one horizontal line on mobile. */
+/* Keep one menu button on mobile: use the touch-sized mobile toggle only. */
 @media (max-width: 767.98px) {
+    .header .top-navbar .navbar-nav .sidebartoggle {
+        display: none !important;
+    }
+    .header .top-navbar .navbar-nav .toggle-nav {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    /* Keep the top header controls aligned on one horizontal line on mobile. */
     .header .top-navbar {
         display: flex !important;
         align-items: center !important;
