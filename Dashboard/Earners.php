@@ -76,6 +76,256 @@ html[data-theme="light"] body{--er-bg:var(--cfxm-bg,#f5f6fa);--er-panel:var(--cf
 
     function formatAmount(value) {
         return '
+        if (!value) return 'Date not recorded';
+        const date = new Date(String(value).replace(' ', 'T'));
+        if (Number.isNaN(date.getTime())) return String(value);
+        return date.toLocaleDateString('en-US', {
+            month: 'short',
+            day: 'numeric',
+            year: 'numeric'
+        });
+    }
+
+    function initials(name) {
+        return String(name || 'Platform member').trim().split(/\s+/).filter(Boolean)
+            .slice(0, 2).map(part => part.charAt(0).toUpperCase()).join('') || 'M';
+    }
+
+    function createEmpty(message, iconClass) {
+        const empty = document.createElement('div');
+        empty.className = 'er-empty';
+        const icon = document.createElement('i');
+        icon.className = iconClass;
+        icon.setAttribute('aria-hidden', 'true');
+        const text = document.createElement('span');
+        text.textContent = message;
+        empty.append(icon, text);
+        return empty;
+    }
+
+    function createRow(item, isCompleted) {
+        const row = document.createElement('article');
+        row.className = 'er-row';
+
+        const person = document.createElement('div');
+        person.className = 'er-person';
+        const avatar = document.createElement('span');
+        avatar.className = 'er-avatar';
+        avatar.textContent = initials(item.name);
+        avatar.setAttribute('aria-hidden', 'true');
+
+        const details = document.createElement('div');
+        const name = document.createElement('strong');
+        name.textContent = item.name || 'Platform member';
+        const note = document.createElement('small');
+        note.textContent = isCompleted ? 'Withdrawal completed' : 'Withdrawal request received';
+        details.append(name, note);
+        person.append(avatar, details);
+
+        const amount = document.createElement('div');
+        amount.className = 'er-amount';
+        amount.textContent = formatAmount(item.amount);
+
+        const meta = document.createElement('div');
+        meta.className = 'er-meta';
+        const date = document.createElement('time');
+        date.className = 'er-date';
+        date.textContent = formatDate(item.date);
+        const status = document.createElement('span');
+        status.className = 'er-status ' + (isCompleted ? 'complete' : 'pending');
+        status.textContent = isCompleted ? 'Completed' : 'Pending';
+        meta.append(date, status);
+
+        row.append(person, amount, meta);
+        return row;
+    }
+
+    function renderList(container, rows, isCompleted) {
+        if (!container) return;
+        const fragment = document.createDocumentFragment();
+        if (!Array.isArray(rows) || rows.length === 0) {
+            fragment.appendChild(createEmpty(
+                isCompleted
+                    ? 'No completed withdrawals are available to display yet.'
+                    : 'There are no pending withdrawal requests to display right now.',
+                isCompleted ? 'fas fa-receipt' : 'fas fa-check-double'
+            ));
+        } else {
+            rows.forEach(item => fragment.appendChild(createRow(item, isCompleted)));
+        }
+        container.replaceChildren(fragment);
+    }
+
+    async function refreshActivity() {
+        if (requestInFlight || document.visibilityState !== 'visible') return;
+        requestInFlight = true;
+        try {
+            const response = await fetch(feedUrl, {
+                method: 'GET',
+                credentials: 'same-origin',
+                cache: 'no-store',
+                headers: { 'Accept': 'application/json', 'X-Requested-With': 'XMLHttpRequest' }
+            });
+            if (response.status === 401) return;
+            if (!response.ok) throw new Error('Activity feed returned HTTP ' + response.status);
+            const data = await response.json();
+            if (!data || data.success !== true) throw new Error('Invalid activity feed response');
+
+            renderList(completedList, data.completed, true);
+            renderList(pendingList, data.pending, false);
+
+            const hasPending = Array.isArray(data.pending) && data.pending.length > 0;
+            if (pendingSection) pendingSection.hidden = !hasPending;
+            if (pendingStatCard) pendingStatCard.hidden = !hasPending;
+
+            if (completedStat) completedStat.textContent = Number(data.completedCount || 0).toLocaleString('en-US');
+            if (pendingStat) pendingStat.textContent = Number(data.pendingCount || 0).toLocaleString('en-US');
+            if (completedCount) completedCount.textContent = (data.completed || []).length + ' records';
+            if (pendingCount) pendingCount.textContent = (data.pending || []).length + ' records';
+        } catch (error) {
+            // Keep the last successfully rendered activity visible if a temporary request fails.
+            console.warn('Unable to refresh earners activity:', error);
+        } finally {
+            requestInFlight = false;
+        }
+    }
+
+    window.setInterval(refreshActivity, refreshEveryMs);
+    window.addEventListener('online', refreshActivity);
+    refreshActivity();
+})();
+</script>
+</body>
+</html>
+ + Number(value || 0).toLocaleString('en-US', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        });
+    }
+
+    function formatDate(value) {
+        if (!value) return 'Date not recorded';
+        const date = new Date(String(value).replace(' ', 'T'));
+        if (Number.isNaN(date.getTime())) return String(value);
+        return date.toLocaleDateString('en-US', {
+            month: 'short',
+            day: 'numeric',
+            year: 'numeric'
+        });
+    }
+
+    function initials(name) {
+        return String(name || 'Platform member').trim().split(/\s+/).filter(Boolean)
+            .slice(0, 2).map(part => part.charAt(0).toUpperCase()).join('') || 'M';
+    }
+
+    function createEmpty(message, iconClass) {
+        const empty = document.createElement('div');
+        empty.className = 'er-empty';
+        const icon = document.createElement('i');
+        icon.className = iconClass;
+        icon.setAttribute('aria-hidden', 'true');
+        const text = document.createElement('span');
+        text.textContent = message;
+        empty.append(icon, text);
+        return empty;
+    }
+
+    function createRow(item, isCompleted, isDemo) {
+        const row = document.createElement('article');
+        row.className = 'er-row';
+
+        const person = document.createElement('div');
+        person.className = 'er-person';
+        const avatar = document.createElement('span');
+        avatar.className = 'er-avatar';
+        avatar.textContent = initials(item.name);
+        avatar.setAttribute('aria-hidden', 'true');
+
+        const details = document.createElement('div');
+        const name = document.createElement('strong');
+        name.textContent = item.name || 'Platform member';
+        const note = document.createElement('small');
+        note.textContent = isDemo ? 'Demo transaction · Not a real payment' : (isCompleted ? 'Withdrawal completed' : 'Withdrawal request received');
+        details.append(name, note);
+        person.append(avatar, details);
+
+        const amount = document.createElement('div');
+        amount.className = 'er-amount';
+        amount.textContent = formatAmount(item.amount);
+
+        const meta = document.createElement('div');
+        meta.className = 'er-meta';
+        const date = document.createElement('time');
+        date.className = 'er-date';
+        date.textContent = formatDate(item.date);
+        const status = document.createElement('span');
+        status.className = 'er-status ' + (isDemo ? 'pending' : (isCompleted ? 'complete' : 'pending'));
+        status.textContent = isDemo ? 'Demo only' : (isCompleted ? 'Completed' : 'Pending');
+        meta.append(date, status);
+
+        row.append(person, amount, meta);
+        return row;
+    }
+
+    function renderList(container, rows, isCompleted, isDemo) {
+        if (!container) return;
+        const fragment = document.createDocumentFragment();
+        if (!Array.isArray(rows) || rows.length === 0) {
+            fragment.appendChild(createEmpty(
+                isCompleted
+                    ? 'No completed withdrawals are available to display yet.'
+                    : 'There are no pending withdrawal requests to display right now.',
+                isCompleted ? 'fas fa-receipt' : 'fas fa-check-double'
+            ));
+        } else {
+            rows.forEach(item => fragment.appendChild(createRow(item, isCompleted, Boolean(isDemo))));
+        }
+        container.replaceChildren(fragment);
+    }
+
+    async function refreshActivity() {
+        if (requestInFlight || document.visibilityState !== 'visible') return;
+        requestInFlight = true;
+        try {
+            const response = await fetch(feedUrl, {
+                method: 'GET',
+                credentials: 'same-origin',
+                cache: 'no-store',
+                headers: { 'Accept': 'application/json', 'X-Requested-With': 'XMLHttpRequest' }
+            });
+            if (response.status === 401) return;
+            if (!response.ok) throw new Error('Activity feed returned HTTP ' + response.status);
+            const data = await response.json();
+            if (!data || data.success !== true) throw new Error('Invalid activity feed response');
+
+            renderList(completedList, data.completed, true);
+            renderList(pendingList, data.pending, false);
+
+            if (completedStat) completedStat.textContent = Number(data.completedCount || 0).toLocaleString('en-US');
+            if (pendingStat) pendingStat.textContent = Number(data.pendingCount || 0).toLocaleString('en-US');
+            if (completedCount) completedCount.textContent = (data.completed || []).length + ' records';
+            if (pendingCount) pendingCount.textContent = (data.pending || []).length + ' records';
+        } catch (error) {
+            // Keep the last successfully rendered activity visible if a temporary request fails.
+            console.warn('Unable to refresh earners activity:', error);
+        } finally {
+            requestInFlight = false;
+        }
+    }
+
+    window.setInterval(refreshActivity, refreshEveryMs);
+    window.addEventListener('online', refreshActivity);
+    refreshActivity();
+})();
+</script>
+</body>
+</html>
+ + Number(value || 0).toLocaleString('en-US', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        });
+    }
 
     function formatDate(value) {
         if (!value) return 'Date not recorded';
