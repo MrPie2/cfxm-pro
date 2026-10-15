@@ -51,3 +51,7 @@ This repository includes `deploy-webhook.php` for the production checkout at `~/
 - If deployment fails, check that log and GitHub's Recent Deliveries. Common causes are SSH authentication, disabled PHP `proc_open`, or local production changes that prevent a fast-forward pull.
 - Keep the production checkout clean and deploy through GitHub. Do not edit tracked files directly on production.
 - The webhook can only deploy after the initial one-time setup above. Merges and pushes to branches other than `main` do not deploy.
+
+## Testing a deployment
+
+After configuring the webhook secret and saving the GitHub webhook, push a small documentation change to `main`. In **Settings → Webhooks → Recent Deliveries**, the push delivery should return HTTP `200` with `Production updated from main`. A `202` means the handler intentionally skipped that event or branch; a `401 Invalid signature` means the signature did not match the configured secret.
