@@ -184,6 +184,7 @@ li a{
                         <li><a href="Withdrawal.php"><i class="fas fa-arrow-circle-up"></i><span>Withdrawal</span></a></li>
                         <li><a href="Transfer.php"><i class="fas fa-exchange-alt"></i><span>Peer to peer</span></a></li>
                         <li><a href="Referral.php"><i class="fas fa-user-friends"></i><span>Referral earnings</span></a></li>
+                        <li><a href="Earners.php"><i class="fas fa-users"></i><span>Earners activity</span></a></li>
                         <li class="nav-label">ACCOUNT</li>
                         <li><a href="Verification.php"><i class="fas fa-shield-alt"></i><span>Verification &amp; limits</span></a></li>
                         <li><a href="Profile.php"><i class="fas fa-user-circle"></i><span>Profile settings</span></a></li>
