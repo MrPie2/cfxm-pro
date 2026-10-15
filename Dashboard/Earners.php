@@ -15,7 +15,7 @@ $earnersInitials = static function ($name): string {
     $parts = preg_split('/\s+/', trim((string)$name));
     $initials = '';
     foreach (array_slice($parts ?: [], 0, 2) as $part) {
-        if ($part !== '') $initials .= mb_strtoupper(mb_substr($part, 0, 1));
+        if ($part !== '') $initials .= strtoupper(substr($part, 0, 1));
     }
     return $initials !== '' ? $initials : 'M';
 };
