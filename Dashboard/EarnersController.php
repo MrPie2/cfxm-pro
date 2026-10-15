@@ -5,7 +5,7 @@
  * Names are shortened to protect account holders' financial privacy.
  */
 if (!isset($Conn) || !($Conn instanceof mysqli)) {
-    require_once __DIR__ . '/../Connect.php';
+    require_once '../Connect.php';
 }
 
 $earnersEscape = static function ($value): string {
