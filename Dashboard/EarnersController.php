@@ -19,11 +19,6 @@ $earnersMaskName = static function ($firstName): string {
 
 $earnersFetchByStatus = static function (int $status, ?int $investorId = null) use ($Conn, $earnersMaskName): array {
     $rows = [];
-    // Completed activity should be recent: show only records dated this calendar year
-    // and never display future-dated records as completed activity.
-    $currentYearStart = date('Y-01-01 00:00:00');
-    $currentDateTime = date('Y-m-d H:i:s');
-
     // Pending withdrawals are private: only return the authenticated user's own records.
     if ($status === 0 && (!$investorId || $investorId < 1)) {
         return $rows;
@@ -36,8 +31,6 @@ $earnersFetchByStatus = static function (int $status, ?int $investorId = null) u
             WHERE w.Status = ?";
     if ($status === 0) {
         $sql .= " AND w.Investor_id = ?";
-    } elseif ($status === 2) {
-        $sql .= " AND w.Date >= ? AND w.Date <= ?";
     }
     $sql .= " ORDER BY w.Date DESC, w.id DESC LIMIT 20";
     $stmt = mysqli_prepare($Conn, $sql);
@@ -49,8 +42,6 @@ $earnersFetchByStatus = static function (int $status, ?int $investorId = null) u
 
     if ($status === 0) {
         mysqli_stmt_bind_param($stmt, 'ii', $status, $investorId);
-    } elseif ($status === 2) {
-        mysqli_stmt_bind_param($stmt, 'iss', $status, $currentYearStart, $currentDateTime);
     } else {
         mysqli_stmt_bind_param($stmt, 'i', $status);
     }
