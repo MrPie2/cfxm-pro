@@ -100,7 +100,7 @@ $marketEscape = static function ($value) {
                 <?php if ($asset['stock']): ?>
                 <a class="cfxm-market-invest" href="Stock_Market.php?Stock_id=<?php echo (int)$asset['stock']['id']; ?>&amp;Type=Stock&amp;Min=<?php echo rawurlencode((string)$asset['stock']['Unit']); ?>&amp;Vehicle=company">Invest <i class="fas fa-arrow-right"></i></a>
                 <?php else: ?>
-                <a class="cfxm-market-invest disabled" href="Manager/AddStock.php" title="This opportunity needs a stock catalogue entry before investments can be reviewed.">Listing setup needed <i class="fas fa-lock"></i></a>
+                <button class="cfxm-market-invest disabled" type="button" disabled title="This opportunity needs a stock catalogue entry before investments can be reviewed.">Coming soon <i class="fas fa-lock"></i></button>
                 <?php endif; ?>
             </div>
         </article>
