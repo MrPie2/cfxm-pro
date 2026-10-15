@@ -133,17 +133,23 @@ li a{
         padding: 0 !important;
         line-height: 1;
     }
-    /* Keep the notification signal attached to the bell, overlapping its top-right edge. */
-    .header .top-navbar .navbar-nav > li.nav-item.dropdown > a.nav-link.dropdown-toggle {
+    /* Anchor the notification signal directly to the bell icon itself. */
+    .header .top-navbar .navbar-nav .bell-notify-wrap {
         position: relative !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        line-height: 1 !important;
     }
-    .header .top-navbar .navbar-nav > li.nav-item.dropdown > a.nav-link.dropdown-toggle .notify {
+    .header .top-navbar .navbar-nav .bell-notify-wrap .notify {
         position: absolute !important;
-        top: 5px !important;
-        right: 3px !important;
-        transform: translate(35%, -20%);
+        top: -5px !important;
+        right: -5px !important;
+        left: auto !important;
+        bottom: auto !important;
+        transform: none !important;
         pointer-events: none;
-        z-index: 2;
+        z-index: 5;
     }
 
     .header .top-navbar .navbar-nav > li > a.nav-link,
@@ -203,8 +209,8 @@ li a{
                         </li>
                         <!-- Comment -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i style="color: var(--liner-text-color); margin-top: 10px; font-size: 20pt" class="fa fa-bell"></i>
-                                <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
+                            <a class="nav-link dropdown-toggle text-muted text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span class="bell-notify-wrap"><i style="color: var(--liner-text-color); font-size: 20pt" class="fa fa-bell"></i>
+                                <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right mailbox animated slideInRight">
                                 <ul>
