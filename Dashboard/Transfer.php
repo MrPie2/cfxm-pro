@@ -101,12 +101,13 @@ html[data-theme="light"] .cfx-money-page{--mp-panel:#fff;--mp-raised:#f6f7fb;--m
   </section>
   <div class="mp-note"><i class="fas fa-shield-alt"></i><span><strong style="color:var(--mp-ink)">Stay safe.</strong> Verify the recipient and amount before confirming an incoming transfer. If an outgoing transfer remains unresolved, use the dispute option where available. Never share your password or verification codes.</span></div>
 </div>
+
+<?php include('Footer.php'); ?>
+<script src="js/lib/jquery/jquery.min.js"></script><script src="js/lib/bootstrap/js/popper.min.js"></script><script src="js/lib/bootstrap/js/bootstrap.min.js"></script><script src="js/jquery.slimscroll.js"></script><script src="js/sidebarmenu.js"></script><script src="js/lib/sticky-kit-master/dist/sticky-kit.min.js"></script><script src="js/custom.min.js"></script>
 <script>
 (function($){
   $('#transferSearch').on('input',function(){var term=String($(this).val()||'').toLowerCase().trim(),visible=0;$('#transferTable tbody tr').each(function(){var match=String($(this).attr('data-search')||'').indexOf(term)!==-1;$(this).toggle(match);if(match)visible++;});$('#transferNoMatch').toggle(visible===0&&$('#transferTable tbody tr').length>0);});
   $(document).on('click','.ConfirmTransaction',function(){var btn=$(this),amount=btn.attr('data-amount'),receiver=btn.attr('data-receiver'),transferer=btn.attr('data-transferer');if(!window.confirm('Confirm receipt of this transfer? Please verify the amount before continuing.'))return;btn.prop('disabled',true).text('Confirming…');$.ajax({url:'ConfirmTransaction.php',method:'POST',data:{Amount:amount,Receiver:receiver,Transferer:transferer}}).done(function(data){if(String(data).trim()==='1'){if(window.swal){swal({title:'Transfer confirmed',icon:'success',text:'The transaction has been confirmed.'}).then(function(){location.reload();});}else{alert('Transfer confirmed.');location.reload();}}else{if(window.swal){swal({title:'Unable to confirm',icon:'error',text:'Please try again in a few minutes.'});}else{alert('Unable to confirm. Please try again.');}btn.prop('disabled',false).html('<i class="fas fa-check-circle"></i> Confirm');}}).fail(function(){alert('A network error occurred. Please try again.');btn.prop('disabled',false).html('<i class="fas fa-check-circle"></i> Confirm');});});
 })(jQuery);
 </script>
-<?php include('Footer.php'); ?>
-<script src="js/lib/jquery/jquery.min.js"></script><script src="js/lib/bootstrap/js/popper.min.js"></script><script src="js/lib/bootstrap/js/bootstrap.min.js"></script><script src="js/jquery.slimscroll.js"></script><script src="js/sidebarmenu.js"></script><script src="js/lib/sticky-kit-master/dist/sticky-kit.min.js"></script><script src="js/custom.min.js"></script>
 </body></html>
