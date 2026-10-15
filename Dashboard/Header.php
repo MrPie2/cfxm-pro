@@ -133,6 +133,19 @@ li a{
         padding: 0 !important;
         line-height: 1;
     }
+    /* Keep the notification signal attached to the bell, overlapping its top-right edge. */
+    .header .top-navbar .navbar-nav > li.nav-item.dropdown > a.nav-link.dropdown-toggle {
+        position: relative !important;
+    }
+    .header .top-navbar .navbar-nav > li.nav-item.dropdown > a.nav-link.dropdown-toggle .notify {
+        position: absolute !important;
+        top: 5px !important;
+        right: 3px !important;
+        transform: translate(35%, -20%);
+        pointer-events: none;
+        z-index: 2;
+    }
+
     .header .top-navbar .navbar-nav > li > a.nav-link,
     .header .top-navbar .navbar-nav > li > .theme-switcher {
         display: inline-flex !important;
