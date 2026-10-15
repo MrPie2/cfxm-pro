@@ -2,7 +2,12 @@
 session_start();
 include('../Connect.php');
 include('UserInfo.php');
-$AmountToWithdraw=$_POST['Amount'];
+$AmountToWithdraw = isset($_POST['Amount']) && is_numeric($_POST['Amount']) ? (float) $_POST['Amount'] : 0;
+if ($AmountToWithdraw < 200) {
+    http_response_code(400);
+    echo 'Minimum withdrawal amount is $200.00 USD.';
+    exit;
+}
 $PayTo=$_POST['PayTo'];
 $Destination="Refferal Bonus";
 $convertAmountWithdrawn=$AmountToWithdraw/$exchangerate;
