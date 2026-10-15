@@ -1,4 +1,4 @@
-<?php session_start();
+<?php
 include('../Connect.php');
 
 include('../Manager/SiteConfig.php');
