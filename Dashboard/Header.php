@@ -322,7 +322,6 @@ html[data-theme="light"] body .left-sidebar #sidebar-menu {
                 <a href="Dashboard.php" class="bottomnav-item"><i class="fas fa-th-large"></i><span>Home</span></a>
                 <a href="Account.php" class="bottomnav-item"><i class="fas fa-wallet"></i><span>Wallet</span></a>
                 <a href="AccountInsight.php" class="bottomnav-item bottomnav-insight"><i class="fas fa-chart-pie"></i><span>Insight</span></a>
-                <a href="Deposit.php" class="bottomnav-item"><i class="fas fa-plus-circle"></i><span>Deposit</span></a>
                 <a href="Profile.php" class="bottomnav-item"><i class="fas fa-user-circle"></i><span>Profile</span></a>
                 <a href="Earners.php" class="bottomnav-item"><i class="fas fa-exchange-alt"></i><span>Earners</span></a>
             </nav>
