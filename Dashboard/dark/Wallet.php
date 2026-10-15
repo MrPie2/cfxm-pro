@@ -1,240 +1,49 @@
 <?php
 session_start();
-include('Header.php'); 
-if(isset($_SESSION['User_id'])){
-
+if (!isset($_SESSION['User_id'])) { header('Location:LoginContainer.php'); exit; }
+include('Header.php');
+function wallet_h($value){ return htmlspecialchars((string)$value, ENT_QUOTES, 'UTF-8'); }
 ?>
-
-
 <style>
-
-.hidden{
-display: none;
-}
+.wallet-page{--wb:#c8a9f4;--wb2:#7748bc;--wi:var(--text-color,#f0eaf8);--wm:#a9a2b7;--wl:rgba(255,255,255,.1);--ws:var(--card-bg,#171522);max-width:1450px;margin:auto;padding:24px 14px 30px;color:var(--wi)}.wallet-page *{box-sizing:border-box}.wallet-hero{position:relative;overflow:hidden;padding:clamp(22px,4vw,36px);border-radius:22px;color:#fff;background:radial-gradient(circle at 90% 10%,rgba(255,255,255,.17),transparent 27%),linear-gradient(125deg,#0f0e25,#49247e 58%,#7748bc);box-shadow:0 16px 36px rgba(73,36,126,.2);margin-bottom:20px}.wallet-hero:after{content:"";position:absolute;width:230px;height:230px;border:1px solid #ffffff24;border-radius:50%;right:-70px;bottom:-150px;box-shadow:0 0 0 25px #ffffff09,0 0 0 50px #ffffff06;pointer-events:none}.wallet-eyebrow{display:inline-flex;gap:8px;font-size:11px;letter-spacing:.13em;text-transform:uppercase;font-weight:800;color:#ffffffc2;margin-bottom:12px}.wallet-hero h1{font-size:clamp(25px,3.2vw,36px);font-weight:850;letter-spacing:-.04em;line-height:1.15;color:#fff;margin:0 0 11px}.wallet-hero p{max-width:660px;color:#ffffffc9;font-size:13px;line-height:1.7;margin:0}.wallet-hero-note{display:flex;gap:9px;margin-top:18px;font-size:11px;font-weight:700;color:#fff}.wallet-layout{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(280px,.7fr);gap:18px;align-items:start}.wallet-panel{min-width:0;background:var(--ws);border:1px solid var(--wl);border-radius:18px;padding:22px;box-shadow:0 8px 25px #11273309;margin-bottom:18px}.wallet-panel-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:17px}.wallet-panel-head h2{font-size:16px;font-weight:800;letter-spacing:-.02em;color:var(--wi);margin:0 0 5px}.wallet-panel-head p{font-size:12px;line-height:1.6;color:var(--wm);margin:0}.wallet-count{display:grid;place-items:center;min-width:30px;height:30px;padding:0 9px;border-radius:10px;background:#7748bc1c;color:var(--wb);font-size:11px;font-weight:850}.wallet-address-list,.wallet-exchange-list{display:grid;gap:12px}.wallet-address-card{min-width:0;padding:16px;border:1px solid var(--wl);border-radius:14px;background:linear-gradient(135deg,#7748bc0b,transparent 70%)}.wallet-address-top{display:flex;align-items:center;gap:11px;margin-bottom:13px}.wallet-currency-icon{display:grid;place-items:center;flex:0 0 40px;width:40px;height:40px;border-radius:13px;background:#49247e19;color:var(--wb);font-size:16px}.wallet-address-title{font-size:13px;font-weight:800;color:var(--wi);overflow-wrap:anywhere}.wallet-network{font-size:11px;color:var(--wm);margin-top:4px}.wallet-address-value{padding:12px;border:1px dashed var(--wl);border-radius:10px;background:#7d94a20e;color:var(--wi);font:12px/1.65 ui-monospace,SFMono-Regular,Menlo,monospace;overflow-wrap:anywhere;word-break:break-word}.wallet-address-actions{display:flex;justify-content:flex-end;margin-top:10px}.wallet-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:40px;padding:10px 14px;border:1px solid transparent;border-radius:10px;font-size:12px;font-weight:800;line-height:1.2;cursor:pointer;text-decoration:none!important;transition:transform .18s,filter .18s}.wallet-btn:hover{transform:translateY(-1px);filter:brightness(1.04)}.wallet-btn-primary{background:linear-gradient(110deg,#49247e,#7748bc);color:#fff!important}.wallet-btn-soft{background:#7748bc17;color:var(--wb)!important;border-color:#7748bc26}.wallet-empty{padding:25px 16px;text-align:center;border:1px dashed var(--wl);border-radius:14px;color:var(--wm)}.wallet-empty i{font-size:25px;color:var(--wb);margin-bottom:9px}.wallet-empty strong{display:block;color:var(--wi);font-size:13px;margin-bottom:5px}.wallet-empty p{font-size:12px;margin:0}.wallet-steps{display:grid;gap:15px;margin:0;padding:0;list-style:none}.wallet-step{display:flex;gap:11px;align-items:flex-start}.wallet-step-num{display:grid;place-items:center;flex:0 0 28px;width:28px;height:28px;border-radius:9px;background:#7748bc1c;color:var(--wb);font-size:11px;font-weight:850}.wallet-step strong{display:block;color:var(--wi);font-size:12px;margin-bottom:4px}.wallet-step span{display:block;color:var(--wm);font-size:11px;line-height:1.55}.wallet-security{display:flex;gap:11px;padding:14px;border-radius:13px;background:#0e69370d;border:1px solid #0e693726;color:var(--wm);font-size:11px;line-height:1.6}.wallet-security i{color:#16824a;font-size:16px;margin-top:2px}.wallet-security strong{display:block;color:var(--wi);margin-bottom:3px}.wallet-exchange-toggle{width:100%;justify-content:space-between}.wallet-exchange-panel{margin-top:13px}.wallet-exchange-panel[hidden]{display:none}.wallet-exchange-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px;border:1px solid var(--wl);border-radius:12px}.wallet-exchange-row strong{font-size:12px;color:var(--wi);overflow-wrap:anywhere}.wallet-upload-drop{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:8px;min-height:155px;padding:20px;border:1.5px dashed #7748bc66;border-radius:14px;background:#7748bc09;cursor:pointer;transition:background .2s,border-color .2s}.wallet-upload-drop:hover,.wallet-upload-drop.is-dragging{background:#7748bc18;border-color:var(--wb)}.wallet-upload-icon{display:grid;place-items:center;width:42px;height:42px;border-radius:14px;background:#7748bc1c;color:var(--wb);font-size:18px}.wallet-upload-drop strong{font-size:13px;color:var(--wi)}.wallet-upload-drop span{font-size:11px;color:var(--wm);line-height:1.5}.wallet-file-input{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}.wallet-file-name{display:block;margin-top:9px;font-size:11px;color:var(--wm);overflow-wrap:anywhere}.wallet-submit{width:100%;margin-top:14px;min-height:45px}.wallet-submit:disabled{opacity:.65;cursor:wait;transform:none}.wallet-alert{display:none;margin-top:12px;padding:11px 12px;border-radius:10px;font-size:12px;line-height:1.5}.wallet-alert.is-visible{display:block}.wallet-alert.is-error{background:#be2a3c14;color:#c02c43}.wallet-alert.is-success{background:#0e693712;color:#16824a}.wallet-upload-help{font-size:11px;color:var(--wm);line-height:1.6;margin:12px 0 0}html[data-theme="dark"] .wallet-address-card{background:#ffffff06}html[data-theme="dark"] .wallet-address-value{background:#0002}html[data-theme="dark"] .wallet-count,html[data-theme="dark"] .wallet-btn-soft{color:#c8a9f4!important}html[data-theme="dark"] .wallet-security{background:#0e69371a;color:var(--wm)}html[data-theme="dark"] .wallet-alert.is-error{background:#be2a3c26;color:#ff9aa6}html[data-theme="dark"] .wallet-alert.is-success{background:#0e693726;color:#7ee0ad}@media(max-width:900px){.wallet-layout{grid-template-columns:minmax(0,1fr)}.wallet-right-column{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.wallet-right-column .wallet-panel{margin-bottom:0}}@media(max-width:600px){.wallet-page{padding:17px 10px 25px}.wallet-hero{padding:22px 18px;border-radius:17px}.wallet-layout{gap:12px}.wallet-panel{padding:16px;border-radius:15px;margin-bottom:12px}.wallet-right-column{grid-template-columns:1fr;gap:12px}.wallet-address-card{padding:12px}.wallet-address-value{font-size:11px}.wallet-btn{min-height:42px}.wallet-panel-head{margin-bottom:13px}}@media(prefers-reduced-motion:reduce){.wallet-btn{transition:none}}
 </style>
-            
-            <div class="container-fluid">
-                <!-- Start Page Content -->
-                <div class="row">
-                    <div class="col-12">
 
-<div class="card">
-<div class="card-title"><h4>Deposit/Payment</h4></div>
-<p class="text-info lead" style="font-size: 10pt"> Below are the company's addresses copy and make payment into any of the addresses below using our Affiliate Exchange Platforms or References and your account will be credited right away</p>
-
-<p class="text-danger lead" style="font-size: 10pt"> Also make sure to upload payment proof after you have successfully made payment</p>
-
-<?php 
-
-$sql="select * from walletaddress";
-$query=mysqli_query($Conn, $sql);
-
-
-$table='<div class="card-body">
-<div class="table-responsive">
-<table class="table table-striped">
-<tbody>';
-$sn=0;
-while($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
-$sn++;
-
-$table.='<tr><th>'.$row['Wallet_Type'].'</th></tr>
-<tr><th style="word-wrap: break-word">'.$row['WalletAddress'].'</th></tr>';
-
-if($row['Network']==""){
-}else{
-$table.="<tr><th>Network: ".$row['Network']."</th></tr>";
-
-}
-$table.='<tr><th><button class="btn btn-success btn-sm" id="copy_address" address="'.$row['WalletAddress'].'">Copy Address</button></th>    
-                                            </tr><tr><td><br></td></tr>';
-}
-    
-$table.='</tbody></table></div>';
-
-echo $table;
-?>
-                            </div>
-</div>
-                   
-
-
-<section>
-
-<div class="card">
-<div class="card-body">
-<div class="form-group">
-<button class="btn btn-danger  ShowExchanges">Deposit Now</button></div>
-
-<div class="form-group"><p class="text-danger lead" style="font-size: 10pt">Deposit now using our Affiliate Exchange(s) or References</p></div>
-</div>
-
-
-</div>
-
-</section>
-     <div class="card hidden Exchange">
-                            <div class="card-title">
-                                <h4>Our Affiliate Exchange</h4>
-     </div>
-<?php 
-
-$sql="select * from exchange";
-$query=mysqli_query($Conn, $sql);
-
-
-$table='<div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table">
-                                       
-                                        <tbody>';
-$sn=0;
-while($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
-$sn++;
-
-$table.='<tr>
-                                                <th scope="row">'.$sn.'</th>
-<td class="color-primary">'.$row['Name'].'</td>
-                                                <td><a class="btn btn-success btn-sm" href="https://'.$row['url'].'">Deposit</a></td></tr>';
-
-}
-                                           
-                             $table.='</tbody></table></div>';
-
-echo $table;
-?>
-                      
-                            </div>
-                        </div>
-
-
-<section>
- <div class="card"><div class="card-title"><h4>Upload Payment Proof</h4> </div><p class="text-info lead" style="font-size: 10pt">Upload payment proof of your deposit, so we can verify and credit your account accordingly</p>
-<div class="card-body"><form id="uploadImageForm">
-       <div class="form-group"><input type="file" name="ProofImage" class="form-control" required/>
-</div>
-<div class="form-group"><input type="submit" class="btn btn-primary btn-md"/></div>
-   </form> </div></div>
-</section>
-                    </div>
-                    <!-- /# column -->
-
-
-
-
-
-                </div>
-                <!-- /# row -->
-                <!-- End PAge Content -->
-            </div>
-            <!-- End Container fluid  -->
-            <!-- footer -->
-            <?php include('Footer.php'); ?>
-            <!-- End footer -->
-        </div>
-        <!-- End Page wrapper  -->
-    </div>
-    <!-- End Wrapper -->
-    <!-- All Jquery -->
-    <script src="js/lib/jquery/jquery.min.js"></script>
-    <!-- Bootstrap tether Core JavaScript -->
-    <script src="js/lib/bootstrap/js/popper.min.js"></script>
-    <script src="js/lib/bootstrap/js/bootstrap.min.js"></script>
-    <!-- slimscrollbar scrollbar JavaScript -->
-    <script src="js/jquery.slimscroll.js"></script>
-    <!--Menu sidebar -->
-    <script src="js/sidebarmenu.js"></script>
-    <!--stickey kit -->
-    <script src="js/lib/sticky-kit-master/dist/sticky-kit.min.js"></script>
-    <!--Custom JavaScript -->
-    <script src="js/custom.min.js"></script>
-
-<script>
-
-$("#uploadImageForm").unbind('submit').bind('submit', function() {
-
-				var form = $(this);
-				var formData = new FormData($(this)[0]);
-
-				$.ajax({
-					url: 'uploadProof.php',
-					type: 'POST',
-					data: formData,
-					dataType: 'json',
-					cache: false,
-					contentType: false,
-					processData: false,
-					async: false,
-					success:function(response) {
-						if(response== 1) {
-					toastr.success('Proof uploaded Be patient while we verify your deposit',
-'Upload Successful',{ timeOut: 5000, "closeButton": true, "debug": false, "newestOnTop": true, "progressBar": true, "positionClass": "toast-top-right", "preventDuplicates": true, "onclick": null, "showDuration": "300", "hideDuration": "1000", "extendedTimeOut": "1000", "showEasing": "swing", "hideEasing": "linear", "showMethod": "fadeIn", "hideMethod": "fadeOut", "tapToDismiss": false });
-
-						}else if(response==0){
-							alert('Error Somewhere');
-						}
-					}
-
-				});
-return false;
-
-			});
-
-
-
-$('.ShowExchanges').click(function(){
-$('.Exchange').toggleClass('hidden');
-})
-
-
-
-
-function copyToClipboard(text) {
-            if (window.clipboardData && window.clipboardData.setData) {
-                // Internet Explorer-specific code path to prevent textarea being shown while dialog is visible.
-                return clipboardData.setData("Text", text);
-
-            } else if (document.queryCommandSupported && document.queryCommandSupported("copy")) {
-                var textarea = document.createElement("textarea");
-                textarea.textContent = text;
-                textarea.style.position = "fixed"; // Prevent scrolling to bottom of page in Microsoft Edge.
-                document.body.appendChild(textarea);
-                textarea.select();
-                try {
-                    return document.execCommand("copy"); // Security exception may be thrown by some browsers.
-                } catch (ex) {
-                    //console.warn("Copy to clipboard failed.", ex);
-                    return false;
-                } finally {
-                    document.body.removeChild(textarea);
-                }
-            }
-        }
-
-
-$(document).on('click','#copy_address', function(){
-var address=$(this).attr('address');
-copyToClipboard(address);
- toastr.success('Wallet Address Copied',
-'Successful',{ timeOut: 5000, "closeButton": true, "debug": false, "newestOnTop": true, "progressBar": true, "positionClass": "toast-top-right", "preventDuplicates": true, "onclick": null, "showDuration": "300", "hideDuration": "1000", "extendedTimeOut": "1000", "showEasing": "swing", "hideEasing": "linear", "showMethod": "fadeIn", "hideMethod": "fadeOut", "tapToDismiss": false });
-        })
-
-
-</script>
-
-</body>
-
-</html>
-
+<div class="wallet-page">
+<section class="wallet-hero"><div class="wallet-eyebrow"><i class="fas fa-shield-alt"></i> Secure funding centre</div><h1>Fund your wallet</h1><p>Choose an available payment address or use one of our affiliate exchanges. After completing your transfer, submit payment proof so the team can review it.</p><div class="wallet-hero-note"><i class="fas fa-lock"></i> Always verify the network and address before sending funds.</div></section>
+<div class="wallet-layout"><div class="wallet-left-column">
+<section class="wallet-panel"><div class="wallet-panel-head"><div><h2>Payment addresses</h2><p>Select an address matching the asset and network you are sending.</p></div><span class="wallet-count"><i class="fas fa-wallet"></i></span></div><div class="wallet-address-list">
 <?php
-}else{
-Header('Location:LoginContainer.php');
-
-}
-
-?>
-
-
-<script src="js/lib/toastr/toastr.min.js"></script>
-    <!-- scripit init-->
-    <script src="js/lib/toastr/toastr.init.js"></script>
+$walletQuery=mysqli_query($Conn,"SELECT * FROM walletaddress"); $walletCount=0;
+if($walletQuery){while($wallet=mysqli_fetch_assoc($walletQuery)){$walletCount++;$walletType=wallet_h($wallet['Wallet_Type']??'Payment address');$walletAddress=(string)($wallet['WalletAddress']??'');$walletNetwork=wallet_h($wallet['Network']??'');?>
+<article class="wallet-address-card"><div class="wallet-address-top"><div class="wallet-currency-icon"><i class="fas fa-coins" aria-hidden="true"></i></div><div><div class="wallet-address-title"><?php echo $walletType; ?></div><?php if($walletNetwork!==''){?><div class="wallet-network"><i class="fas fa-project-diagram"></i> Network: <?php echo $walletNetwork; ?></div><?php }?></div></div><div class="wallet-address-value"><?php echo wallet_h($walletAddress); ?></div><div class="wallet-address-actions"><button type="button" class="wallet-btn wallet-btn-soft js-copy-wallet" data-address="<?php echo wallet_h($walletAddress); ?>"><i class="far fa-copy"></i> Copy address</button></div></article>
+<?php }} if($walletCount===0){?><div class="wallet-empty"><i class="fas fa-wallet"></i><strong>No payment addresses available</strong><p>Please check back later or contact support for help with funding.</p></div><?php }?>
+</div></section>
+<section class="wallet-panel"><div class="wallet-panel-head"><div><h2>Affiliate exchanges</h2><p>Open a listed exchange or payment reference to continue your deposit.</p></div><span class="wallet-count"><i class="fas fa-external-link-alt"></i></span></div><button type="button" class="wallet-btn wallet-btn-soft wallet-exchange-toggle" id="walletExchangeToggle" aria-expanded="false" aria-controls="walletExchangePanel"><span><i class="fas fa-exchange-alt"></i> View available exchanges</span><i class="fas fa-chevron-down" id="walletExchangeChevron"></i></button><div class="wallet-exchange-panel" id="walletExchangePanel" hidden><div class="wallet-exchange-list">
+<?php
+$exchangeQuery=mysqli_query($Conn,"SELECT * FROM exchange");$exchangeCount=0;
+if($exchangeQuery){while($exchange=mysqli_fetch_assoc($exchangeQuery)){$exchangeCount++;$exchangeName=wallet_h($exchange['Name']??'Exchange');$exchangeUrl=trim((string)($exchange['url']??''));if($exchangeUrl!==''&&!preg_match('~^https?://~i',$exchangeUrl)){$exchangeUrl='https://'.$exchangeUrl;}$safeExchangeUrl=filter_var($exchangeUrl,FILTER_VALIDATE_URL)?$exchangeUrl:'';?>
+<div class="wallet-exchange-row"><strong><i class="fas fa-globe" style="color:var(--wb);margin-right:7px"></i><?php echo $exchangeName; ?></strong><?php if($safeExchangeUrl!==''){?><a class="wallet-btn wallet-btn-primary" href="<?php echo wallet_h($safeExchangeUrl); ?>" target="_blank" rel="noopener noreferrer">Continue <i class="fas fa-external-link-alt"></i></a><?php }else{?><span class="wallet-network">Link unavailable</span><?php }?></div>
+<?php }} if($exchangeCount===0){echo '<div class="wallet-empty"><strong>No exchanges listed</strong><p>Please use an available payment address.</p></div>';}?>
+</div></div></section></div>
+<div class="wallet-right-column">
+<section class="wallet-panel"><div class="wallet-panel-head"><div><h2>Submit payment proof</h2><p>Already made a transfer? Upload a screenshot or receipt for verification.</p></div><span class="wallet-count"><i class="fas fa-file-upload"></i></span></div>
+<form id="uploadImageForm" enctype="multipart/form-data"><label class="wallet-upload-drop" id="walletUploadDrop" for="walletProofImage"><span class="wallet-upload-icon"><i class="fas fa-cloud-upload-alt"></i></span><strong>Choose your payment proof</strong><span>Tap to browse files on your device</span><span>Make sure transaction details are readable.</span></label><input type="file" name="ProofImage" id="walletProofImage" class="wallet-file-input" required><span class="wallet-file-name" id="walletFileName" aria-live="polite">No file selected</span><button type="submit" class="wallet-btn wallet-btn-primary wallet-submit" id="walletSubmitBtn"><i class="fas fa-paper-plane"></i> Submit payment proof</button><div class="wallet-alert" id="walletUploadAlert" role="status" aria-live="polite"></div><p class="wallet-upload-help">Your deposit is subject to verification. Submitting a receipt does not itself mean the payment has been approved.</p></form></section>
+<section class="wallet-panel"><div class="wallet-panel-head"><div><h2>How it works</h2><p>Follow these steps to help your deposit get reviewed.</p></div></div><ol class="wallet-steps"><li class="wallet-step"><span class="wallet-step-num">01</span><div><strong>Choose a payment method</strong><span>Select a listed address and confirm the correct network.</span></div></li><li class="wallet-step"><span class="wallet-step-num">02</span><div><strong>Complete your transfer</strong><span>Check destination details carefully before sending.</span></div></li><li class="wallet-step"><span class="wallet-step-num">03</span><div><strong>Upload your receipt</strong><span>Submit readable proof and allow time for verification.</span></div></li></ol></section>
+<div class="wallet-security"><i class="fas fa-shield-alt"></i><div><strong>Security reminder</strong>Never share your password or one-time codes. If a payment address or network looks different from what you expect, pause and contact support before transferring.</div></div>
+</div></div></div>
+<?php include('Footer.php'); ?>
+</div></div></div>
+<script src="js/lib/jquery/jquery.min.js"></script><script src="js/lib/bootstrap/js/popper.min.js"></script><script src="js/lib/bootstrap/js/bootstrap.min.js"></script><script src="js/jquery.slimscroll.js"></script><script src="js/sidebarmenu.js"></script><script src="js/lib/sticky-kit-master/dist/sticky-kit.min.js"></script><script src="js/custom.min.js"></script><script src="js/lib/toastr/toastr.min.js"></script><script src="js/lib/toastr/toastr.init.js"></script>
+<script>
+(function($){'use strict';
+$('#walletExchangeToggle').on('click',function(){var open=$(this).attr('aria-expanded')==='true';$(this).attr('aria-expanded',String(!open));$('#walletExchangePanel').prop('hidden',open);$('#walletExchangeChevron').toggleClass('fa-chevron-down',open).toggleClass('fa-chevron-up',!open);});
+function alertWallet(msg,type){$('#walletUploadAlert').removeClass('is-error is-success').addClass('is-visible '+(type==='success'?'is-success':'is-error')).text(msg);}
+function copyText(text){if(navigator.clipboard&&window.isSecureContext)return navigator.clipboard.writeText(text);return new Promise(function(resolve,reject){var el=document.createElement('textarea');el.value=text;el.setAttribute('readonly','');el.style.position='fixed';el.style.opacity='0';document.body.appendChild(el);el.select();var ok=false;try{ok=document.execCommand('copy');}catch(e){}document.body.removeChild(el);ok?resolve():reject(new Error('Copy failed'));});}
+$(document).on('click','.js-copy-wallet',function(){var btn=this;copyText(btn.getAttribute('data-address')||'').then(function(){if(window.toastr)toastr.success('Wallet address copied','Copied');else btn.innerHTML='<i class="fas fa-check"></i> Copied';}).catch(function(){alertWallet('Copy is unavailable in this browser. Please select and copy the address manually.','error');});});
+var input=document.getElementById('walletProofImage'),name=document.getElementById('walletFileName'),drop=document.getElementById('walletUploadDrop');
+if(input)input.addEventListener('change',function(){name.textContent=input.files&&input.files.length?input.files[0].name:'No file selected';});
+if(drop&&input){['dragenter','dragover'].forEach(function(n){drop.addEventListener(n,function(e){e.preventDefault();drop.classList.add('is-dragging');});});['dragleave','drop'].forEach(function(n){drop.addEventListener(n,function(e){e.preventDefault();drop.classList.remove('is-dragging');});});drop.addEventListener('drop',function(e){if(e.dataTransfer&&e.dataTransfer.files&&e.dataTransfer.files.length){try{input.files=e.dataTransfer.files;}catch(err){}name.textContent=e.dataTransfer.files[0].name;}});}
+$('#uploadImageForm').on('submit',function(e){e.preventDefault();if(!input||!input.files||!input.files.length){alertWallet('Please choose your payment proof file first.','error');return;}var form=this,$btn=$('#walletSubmitBtn');$btn.prop('disabled',true).html('<i class="fas fa-spinner fa-spin"></i> Uploading…');$('#walletUploadAlert').removeClass('is-visible is-error is-success').text('');
+$.ajax({url:'uploadProof.php',type:'POST',data:new FormData(form),dataType:'json',cache:false,contentType:false,processData:false}).done(function(response){if(response==1){alertWallet('Payment proof submitted successfully. Please allow time for verification.','success');if(window.toastr)toastr.success('Your receipt has been submitted for review.','Upload successful');form.reset();name.textContent='No file selected';}else{alertWallet('The upload could not be completed. Please check the file and try again.','error');}}).fail(function(){alertWallet('We could not reach the upload service. Please try again in a moment.','error');}).always(function(){$btn.prop('disabled',false).html('<i class="fas fa-paper-plane"></i> Submit payment proof');});});
+})(jQuery);
+</script></body></html>
