@@ -10,15 +10,20 @@ if (isset($Conn) && $Conn instanceof mysqli) {
                         FROM withdrawals AS w
                         LEFT JOIN investors AS i ON i.Investor_id = w.Investor_id
                         WHERE w.Status = 2
+                          AND w.Amount_Withdrawn > 0
                         ORDER BY w.id DESC
                         LIMIT 20";
     $paymentToastResult = @mysqli_query($Conn, $paymentToastSql);
     if ($paymentToastResult) {
         while ($paymentToastRow = mysqli_fetch_assoc($paymentToastResult)) {
+            $paymentToastAmount = (float)($paymentToastRow['Amount_Withdrawn'] ?? 0);
+            if ($paymentToastAmount <= 0) {
+                continue;
+            }
             $paymentToastDate = strtotime((string)($paymentToastRow['Date'] ?? ''));
             $paymentToastRecords[] = [
                 'name' => trim((string)($paymentToastRow['First_Name'] ?? '')) ?: 'Platform member',
-                'amount' => (float)($paymentToastRow['Amount_Withdrawn'] ?? 0),
+                'amount' => $paymentToastAmount,
                 'date' => $paymentToastDate !== false ? date('M j, Y', $paymentToastDate) : 'Date not recorded'
             ];
         }
