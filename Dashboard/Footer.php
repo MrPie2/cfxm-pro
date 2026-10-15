@@ -1,6 +1,6 @@
 
 <?php 
-include('SiteConfig.php');
+include('../Manager/SiteConfig.php');
 echo '<div class="footer" style="padding: 20px; text-align: center; color: '.$Color.'; background: var(--body-bg)"> © '.$Establishment_Year.' - <script>var dat=new Date(); var dt=dat.getFullYear(); document.write(dt);</script> '.$SiteName.'  All Right Reserved.</div>'; 
 
 echo $LiveChat;
