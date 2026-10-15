@@ -1,5 +1,5 @@
 # Production auto-deployment (GitHub webhook)
-ttt west
+ttt west fhfjf
 This repository includes `deploy-webhook.php` for the production checkout at `~/public_html`. It is a **GitHub webhook listener**, not a local filesystem watcher: GitHub notifies the endpoint when `main` receives a push, and PHP runs a fast-forward-only `git pull`.
 
 ## One-time production setup
