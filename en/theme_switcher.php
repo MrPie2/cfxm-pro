@@ -72,7 +72,7 @@
    html[data-theme="light"] .control-label,
    html[data-theme="light"] .form-label,
    html[data-theme="light"] .table thead th {
-       color: var(--cfxm-text, #202438) !important;
+       color: var(--cfxm-purple, #49247e) !important;
    }
    </style>
    </head>
