@@ -141,7 +141,7 @@ html[data-theme="light"] #exampleModal .modal-header{background:var(--cfxm-bg-de
                 <div class="vh-deal-content">
                     <ol class="vh-deal-steps">
                         <li><span class="vh-deal-step-icon"><i class="fas fa-file-alt"></i></span><div><strong>Review the order</strong>Make sure the details above match your intended investment.</div></li>
-                        <li><span class="vh-deal-step-icon"><i class="fas fa-scale-balanced"></i></span><div><strong>Read the terms</strong>Review the current terms and conditions before proceeding.</div></li>
+                        <li><span class="vh-deal-step-icon"><i class="fas fa-balance-scale"></i></span><div><strong>Read the terms</strong>Review the current terms and conditions before proceeding.</div></li>
                         <li><span class="vh-deal-step-icon"><i class="fas fa-wallet"></i></span><div><strong>Confirm your balance</strong>Your available balance will be checked before the order is submitted.</div></li>
                     </ol>
                     <button type="button" id="openDealTerms" class="vh-deal-primary" data-toggle="modal" data-target="#exampleModal">Review terms &amp; close deal <i class="fas fa-arrow-right"></i></button>
@@ -224,7 +224,8 @@ html[data-theme="light"] #exampleModal .modal-header{background:var(--cfxm-bg-de
         }).done(function (data) {
             const balance = Number.parseFloat(String(data).trim());
             if (!Number.isFinite(balance)) {
-                throw new Error('Unable to verify your wallet balance. Please try again.');
+                showSubmissionError('We could not verify your wallet balance. Please try again.');
+                return;
             }
             if (order.amount > balance) {
                 if (window.swal) {
