@@ -175,23 +175,20 @@ li a{
                 <nav class="sidebar-nav">
                     <ul id="sidebar-menu">
                         <li class="nav-devider"></li>
-                        <li class="nav-label">Menu</li>
-                        <li><a href="Dashboard.php"><i class='fa fa-laptop'></i> Dashboard</a></li>
-                        <li><a href="../en/Index.php"><i class='fa fa-home'></i> Homepage</a></li>
-
-
-                    <li> <a href="Account.php"><i class='fa fa-money'></i> Profit Record</a></li>
-                    <li><a href="Deposit.php"><i class='fa fa-bank'></i> Deposit</a></li>
-                    <li><a href="Withdrawal.php"><i class='fa fa-credit-card'></i> Withdrawal</a></li>
-                    <li><a href="Transfer.php"><i class='fa fa-users'></i> Peer 2 Peer</a></li>
-                    <li><a href="Referral.php"><i class='fa fa-share-alt'></i> Referral Earning</a></li>
-                    <li><a href="../en/Index.php?#FAQ"><i class='fa fa-question-circle'></i> FAQ</a></li>
-                    <li><a href="Verification.php"><i class='fa fa-lock'></i> Verification/Limit</a></li>
-                    <li><a href="Profile.php"><i class='fa fa-user'></i> Profile</a></li>
-                    <li><a href="Logout.php"><i class='fa fa-power-off'></i> Logout</a></li>
-                            </ul>
-                        </li>
-                       
+                        <li class="nav-label">WORKSPACE</li>
+                        <li><a href="Dashboard.php"><i class="fas fa-th-large"></i><span>Overview</span></a></li>
+                        <li><a href="AccountInsight.php"><i class="fas fa-chart-line"></i><span>Account insight</span><span class="nav-item-tag">NEW</span></a></li>
+                        <li><a href="Account.php"><i class="fas fa-wallet"></i><span>Wallet &amp; portfolio</span></a></li>
+                        <li class="nav-label">MONEY</li>
+                        <li><a href="Deposit.php"><i class="fas fa-plus-circle"></i><span>Deposit</span></a></li>
+                        <li><a href="Withdrawal.php"><i class="fas fa-arrow-circle-up"></i><span>Withdrawal</span></a></li>
+                        <li><a href="Transfer.php"><i class="fas fa-exchange-alt"></i><span>Peer to peer</span></a></li>
+                        <li><a href="Referral.php"><i class="fas fa-user-friends"></i><span>Referral earnings</span></a></li>
+                        <li class="nav-label">ACCOUNT</li>
+                        <li><a href="Verification.php"><i class="fas fa-shield-alt"></i><span>Verification &amp; limits</span></a></li>
+                        <li><a href="Profile.php"><i class="fas fa-user-circle"></i><span>Profile settings</span></a></li>
+                        <li><a href="../en/Index.php#FAQ"><i class="fas fa-life-ring"></i><span>Help &amp; FAQ</span></a></li>
+                        <li><a href="Logout.php" class="nav-logout"><i class="fas fa-sign-out-alt"></i><span>Sign out</span></a></li>
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->
@@ -201,59 +198,34 @@ li a{
         <!-- End Left Sidebar  -->
         <!-- Page wrapper  -->
         <style>
-            .top3nav{
-                display: flex;
-                justify-content: center;
-            }
-            .top3nav div{
-                  display: flex;
-                justify-content: center;
-                padding: 10px;
-            }
-            
-            .top3nav div a{
-                font-size: 11pt;
-                color: var(--text-color);
-            }
-            .top3nav div a i{
-                padding: 20px;
-                border-radius: 50%;
-                background: var(--liner-text-color);
-                color: var(--bg-color);
-                font-size: 15pt;
-            }
-            
-            .bottomnav{
-                display: flex;
-                justify-content: center;
-                position: fixed;
-                z-index: 99999;
-                width: 100vw;
-                bottom: 0px;
-                background: var(--nav-bg);
-                gap: 20px;
-                text-align: center;
-            }
-            .bottomnav div{
-                padding: 10px;
-            }
-            
-            .bottomnav div a{
-                font-size: 13pt;
-                text-align: center;
-                color: var(--text-color);
-            }
-            
-            .bottomnav div a i{
-                color: var(--liner-text-color);
-                font-size: 25pt;
-            }
-            
-            .bottomnav div a span{
-             font-size: 9pt; 
-             text-align: center;
-             margin-top: -20px;
-            }
+            .top3nav{display:flex;justify-content:center}
+            .top3nav div{display:flex;justify-content:center;padding:10px}
+            .top3nav div a{font-size:11pt;color:var(--text-color)}
+            .top3nav div a i{padding:20px;border-radius:50%;background:var(--liner-text-color);color:var(--bg-color);font-size:15pt}
+            /* Modern, full-width mobile navigation: five equal destinations stay visible. */
+            .bottomnav{position:fixed;left:0;right:0;bottom:0;z-index:99999;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;width:100%;padding:8px max(8px,env(safe-area-inset-left)) calc(8px + env(safe-area-inset-bottom)) max(8px,env(safe-area-inset-right));background:var(--nav-bg,rgba(255,255,255,.96));border-top:1px solid rgba(130,145,160,.22);box-shadow:0 -10px 30px rgba(15,25,45,.08);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+            .bottomnav .bottomnav-item{display:flex;min-width:0;min-height:48px;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:5px 2px;border-radius:13px;color:var(--vh-muted,#81909b);text-decoration:none;font-size:10px;font-weight:700;line-height:1.1;white-space:nowrap}
+            .bottomnav .bottomnav-item i{font-size:18px;color:inherit;line-height:1}
+            .bottomnav .bottomnav-item span{font-size:10px;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+            .bottomnav .bottomnav-item:hover,.bottomnav .bottomnav-item:focus-visible{background:rgba(119,72,188,.09);color:var(--vh-brand-secondary,#7748bc);outline:none}
+            .bottomnav .bottomnav-insight{background:linear-gradient(145deg,#49247e,#7748bc);color:#fff;box-shadow:0 5px 14px rgba(73,36,126,.25)}
+            .bottomnav .bottomnav-insight i{color:#fff}
+            .left-sidebar{background:var(--nav-bg,var(--card-bg,#fff));border-right:1px solid rgba(130,145,160,.16)}
+            .sidebar-nav{padding:16px 12px}
+            .sidebar-nav #sidebar-menu{padding:0;margin:0}
+            .sidebar-nav #sidebar-menu .nav-label{padding:18px 13px 8px;color:var(--vh-muted,#8795a2);font-size:9px;font-weight:850;letter-spacing:.15em;text-transform:uppercase}
+            .sidebar-nav #sidebar-menu>li:not(.nav-label):not(.nav-devider){margin:3px 0}
+            .sidebar-nav #sidebar-menu>li>a{position:relative;display:flex;align-items:center;gap:12px;min-height:44px;padding:11px 13px;border:1px solid transparent;border-radius:12px;color:var(--text-color,#354451);font-size:12px;font-weight:650;letter-spacing:0;text-transform:none;transition:background .18s ease,color .18s ease,transform .18s ease}
+            .sidebar-nav #sidebar-menu>li>a i{width:18px;flex:0 0 18px;text-align:center;color:var(--vh-muted,#8493a0);font-size:15px}
+            .sidebar-nav #sidebar-menu>li>a span{min-width:0}
+            .sidebar-nav #sidebar-menu>li>a:hover,.sidebar-nav #sidebar-menu>li>a:focus-visible{background:rgba(119,72,188,.08);color:var(--vh-brand-secondary,#7748bc);outline:none}
+            .sidebar-nav #sidebar-menu>li>a:hover i,.sidebar-nav #sidebar-menu>li>a:focus-visible i{color:var(--vh-brand-secondary,#7748bc)}
+            .sidebar-nav #sidebar-menu>li>a.nav-logout{color:#c44d60}
+            .sidebar-nav #sidebar-menu>li>a.nav-logout i{color:inherit}
+            .sidebar-nav .nav-item-tag{margin-left:auto;padding:4px 6px;border-radius:6px;background:rgba(119,72,188,.1);color:#7748bc;font-size:8px;font-weight:850;letter-spacing:.05em}
+            .page-wrapper{padding-bottom:92px}
+            @media(min-width:768px){.bottomnav{display:none}.page-wrapper{padding-bottom:20px}}
+            @media(max-width:380px){.bottomnav{padding-left:4px;padding-right:4px}.bottomnav .bottomnav-item{font-size:9px}.bottomnav .bottomnav-item i{font-size:17px}.bottomnav .bottomnav-item span{font-size:9px}}
         </style>
         <div class="page-wrapper" style="background: var(--body-bg)">
             <!-- Bread crumb -->
@@ -261,9 +233,10 @@ li a{
             
             <!-- End Bread crumb -->
             
-            <div class="bottomnav">
-                   <div><a href="Dashboard.php"><i class="fas fa-home"></i><br><span>Home</span></a></div>
-                    <div><a href="Account.php"><i class="fas fa-wallet"></i><br><span>Wallet</span></a></div>
-                    <div><a href="Account.php"><i class="fas fa-briefcase"></i><br><span>Portfolio</span></a></div>
-                    <div><a href="Profile.php"><i class="fa fa-user"></i><br><span>Profile</span></a></div>
-               </div>
+            <nav class="bottomnav" aria-label="Primary mobile navigation">
+                <a href="Dashboard.php" class="bottomnav-item"><i class="fas fa-th-large"></i><span>Home</span></a>
+                <a href="Account.php" class="bottomnav-item"><i class="fas fa-wallet"></i><span>Wallet</span></a>
+                <a href="AccountInsight.php" class="bottomnav-item bottomnav-insight"><i class="fas fa-chart-pie"></i><span>Insight</span></a>
+                <a href="Deposit.php" class="bottomnav-item"><i class="fas fa-plus-circle"></i><span>Deposit</span></a>
+                <a href="Profile.php" class="bottomnav-item"><i class="fas fa-user-circle"></i><span>Profile</span></a>
+            </nav>

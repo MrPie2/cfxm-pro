@@ -28,7 +28,7 @@ $row=mysqli_fetch_array($query, MYSQLI_ASSOC);
 </head>
 
 
-<body class="header-fix fix-sidebar">
+<body class="header-fix fix-sidebar dark-nav-polish">
     <!-- Main wrapper  -->
     <div id="main-wrapper">
         <!-- header header  -->
@@ -123,61 +123,20 @@ $row=mysqli_fetch_array($query, MYSQLI_ASSOC);
                 <nav class="sidebar-nav">
                     <ul id="sidebar-menu">
                         <li class="nav-devider"></li>
-                        <li class="nav-label">Menu</li>
-                        <li> <a class="has-arrow  " href="../../../Index.php" aria-expanded="false"><i class="fa fa-tachometer"></i><span class="hide-menu">Homepage</span></a>
-                            
-                        </li>
-                        <li class="nav-label">Finance</li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-columns"></i><span class="hide-menu">Account</span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="Account.php">Earnings</a></li>
-                                <li><a href="Deposit.php">Deposit</a></li>
-                                <li><a href="Withdrawal.php">Withdrawal</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-label">Others</li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-envelope"></i><span class="hide-menu">Referal</span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="Referral.php">Earnings</a></li>
-                            </ul>
-                        </li>
-
-<li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-envelope"></i><span class="hide-menu">Help/Support</span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="../../../faq.php">FAQ</a></li>
-                                <li><a href="Support.php">Support</a></li>
-                            </ul>
-                        </li>
-                     
-                        <li class="nav-label">Investment</li>
-                      
-
-<li> <a class="" href="InvestmentPlans.php" aria-expanded="false"><i class="fa fa-wpforms"></i><span class="hide-menu">Invest Now</span></a></li>
-
-                        
-<li> <a class="" href="#" aria-expanded="false"><i class="fa fa-wpforms"></i><span class="hide-menu">Previous Investments</span></a>
-                            
-                        </li>
-                       
-                        
-
-                        
-<li class="nav-label">EXTRA</li>
-                    <li><a href="Verification.php">Verification/Limit</a></li>
-
-
-                                <li><a href="../../../Logout.php">Logout</a>
-                                 
-                                </li>
-
-
-                            </ul>
-                        </li>
-                       
- 
-
-
-                        
+                        <li class="nav-label">WORKSPACE</li>
+                        <li><a href="Dashboard.php"><i class="fas fa-th-large"></i><span class="hide-menu">Overview</span></a></li>
+                        <li><a href="AccountInsight.php"><i class="fas fa-chart-line"></i><span class="hide-menu">Account insight</span></a></li>
+                        <li><a href="Account.php"><i class="fas fa-wallet"></i><span class="hide-menu">Wallet &amp; portfolio</span></a></li>
+                        <li class="nav-label">MONEY</li>
+                        <li><a href="Deposit.php"><i class="fas fa-plus-circle"></i><span class="hide-menu">Deposit</span></a></li>
+                        <li><a href="Withdrawal.php"><i class="fas fa-arrow-circle-up"></i><span class="hide-menu">Withdrawal</span></a></li>
+                        <li><a href="Transfer.php"><i class="fas fa-exchange-alt"></i><span class="hide-menu">Peer to peer</span></a></li>
+                        <li><a href="Referral.php"><i class="fas fa-user-friends"></i><span class="hide-menu">Referral earnings</span></a></li>
+                        <li class="nav-label">ACCOUNT</li>
+                        <li><a href="Verification.php"><i class="fas fa-shield-alt"></i><span class="hide-menu">Verification &amp; limits</span></a></li>
+                        <li><a href="Profile.php"><i class="fas fa-user-circle"></i><span class="hide-menu">Profile settings</span></a></li>
+                        <li><a href="Support.php"><i class="fas fa-life-ring"></i><span class="hide-menu">Help &amp; support</span></a></li>
+                        <li><a href="../../../Logout.php"><i class="fas fa-sign-out-alt"></i><span class="hide-menu">Sign out</span></a></li>
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->
@@ -186,6 +145,30 @@ $row=mysqli_fetch_array($query, MYSQLI_ASSOC);
         </div>
         <!-- End Left Sidebar  -->
         <!-- Page wrapper  -->
+        <style>
+        .dark-nav-polish .left-sidebar{background:var(--nav-bg,var(--card-bg,#fff));border-right:1px solid rgba(130,145,160,.16)}
+        .dark-nav-polish .sidebar-nav{padding:16px 12px}
+        .dark-nav-polish #sidebar-menu .nav-label{padding:18px 13px 8px;color:var(--vh-muted,#8795a2);font-size:9px;font-weight:850;letter-spacing:.15em;text-transform:uppercase}
+        .dark-nav-polish #sidebar-menu>li:not(.nav-label):not(.nav-devider){margin:3px 0}
+        .dark-nav-polish #sidebar-menu>li>a{display:flex;align-items:center;gap:12px;min-height:43px;padding:11px 13px;border:1px solid transparent;border-radius:12px;color:var(--text-color,#354451);font-size:12px;font-weight:650;letter-spacing:0;text-transform:none;transition:background .18s ease,color .18s ease}
+        .dark-nav-polish #sidebar-menu>li>a i{width:18px;flex:0 0 18px;text-align:center;color:var(--vh-muted,#8493a0);font-size:15px}
+        .dark-nav-polish #sidebar-menu>li>a:hover,.dark-nav-polish #sidebar-menu>li>a:focus-visible{background:rgba(119,72,188,.09);color:#7748bc;outline:none}
+        .dark-nav-polish .page-wrapper{padding-bottom:90px}
+        .dark-bottomnav{position:fixed;left:0;right:0;bottom:0;z-index:99999;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;width:100%;padding:8px max(8px,env(safe-area-inset-left)) calc(8px + env(safe-area-inset-bottom)) max(8px,env(safe-area-inset-right));background:var(--nav-bg,rgba(255,255,255,.96));border-top:1px solid rgba(130,145,160,.22);box-shadow:0 -10px 30px rgba(15,25,45,.08);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+        .dark-bottomnav a{display:flex;min-width:0;min-height:48px;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:5px 2px;border-radius:13px;color:var(--vh-muted,#81909b);text-decoration:none;font-size:10px;font-weight:700;line-height:1.1;white-space:nowrap}
+        .dark-bottomnav a i{font-size:18px;color:inherit}.dark-bottomnav a span{font-size:10px;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+        .dark-bottomnav a:hover,.dark-bottomnav a:focus-visible{background:rgba(119,72,188,.09);color:#7748bc;outline:none}
+        .dark-bottomnav a.dark-insight{background:linear-gradient(145deg,#49247e,#7748bc);color:#fff;box-shadow:0 5px 14px rgba(73,36,126,.25)}
+        @media(min-width:768px){.dark-bottomnav{display:none}.dark-nav-polish .page-wrapper{padding-bottom:20px}}
+        @media(max-width:380px){.dark-bottomnav{padding-left:4px;padding-right:4px}.dark-bottomnav a,.dark-bottomnav a span{font-size:9px}.dark-bottomnav a i{font-size:17px}}
+        </style>
+        <div class="dark-bottomnav" aria-label="Primary mobile navigation">
+            <a href="Dashboard.php"><i class="fas fa-th-large"></i><span>Home</span></a>
+            <a href="Account.php"><i class="fas fa-wallet"></i><span>Wallet</span></a>
+            <a href="AccountInsight.php" class="dark-insight"><i class="fas fa-chart-pie"></i><span>Insight</span></a>
+            <a href="Deposit.php"><i class="fas fa-plus-circle"></i><span>Deposit</span></a>
+            <a href="Profile.php"><i class="fas fa-user-circle"></i><span>Profile</span></a>
+        </div>
         <div class="page-wrapper">
             <!-- Bread crumb -->
             <div class="row page-titles">
