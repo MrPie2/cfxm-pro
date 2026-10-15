@@ -174,6 +174,8 @@ $progress = $levelCount > 0 ? (int)round(($verifiedCount / $levelCount) * 100) :
   </section>
 </div>
 
+<?php include('Footer.php'); ?>
+
 <script>
 (function($) {
   'use strict';
@@ -269,4 +271,5 @@ $progress = $levelCount > 0 ? (int)round(($verifiedCount / $levelCount) * 100) :
 })(window.jQuery);
 </script>
 
-<?php include('Footer.php'); ?>
+</body>
+</html>
