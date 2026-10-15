@@ -143,13 +143,26 @@ li a{
     }
     .header .top-navbar .navbar-nav .bell-notify-wrap .notify {
         position: absolute !important;
-        top: -5px !important;
-        right: -5px !important;
+        top: 1px !important;
+        right: 1px !important;
         left: auto !important;
         bottom: auto !important;
+        width: 0 !important;
+        height: 0 !important;
+        margin: 0 !important;
         transform: none !important;
         pointer-events: none;
         z-index: 5;
+    }
+    /* The legacy stylesheet offsets these two pieces away from the icon;
+       reset those offsets so the blue signal visibly overlaps the bell. */
+    .header .top-navbar .navbar-nav .bell-notify-wrap .notify .heartbit {
+        top: -7px !important;
+        right: -7px !important;
+    }
+    .header .top-navbar .navbar-nav .bell-notify-wrap .notify .point {
+        top: -2px !important;
+        right: -2px !important;
     }
 
     .header .top-navbar .navbar-nav > li > a.nav-link,
