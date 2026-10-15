@@ -285,6 +285,7 @@ li a{
                         <li><a href="Dashboard.php"><i class="fas fa-th-large"></i><span>Overview</span></a></li>
                         <li><a href="AccountInsight.php"><i class="fas fa-chart-line"></i><span>Account insight</span><span class="nav-item-tag">NEW</span></a></li>
                         <li><a href="Account.php"><i class="fas fa-wallet"></i><span>Wallet &amp; portfolio</span></a></li>
+                        <li><a href="Market.php"><i class="fas fa-chart-bar"></i><span>Market</span><span class="nav-item-tag">NEW</span></a></li>
                         <li class="nav-label">MONEY</li>
                         <li><a href="Deposit.php"><i class="fas fa-plus-circle"></i><span>Deposit</span></a></li>
                         <li><a href="Withdrawal.php"><i class="fas fa-arrow-circle-up"></i><span>Withdrawal</span></a></li>
