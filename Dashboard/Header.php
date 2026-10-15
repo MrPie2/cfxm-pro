@@ -27,8 +27,8 @@ $curAbbr=$userDetails['curAbbr'];
     <title>Dashboard</title>
     <!-- Custom CSS -->
           <link href="css/style.css" rel="stylesheet">
-    <link href="../en/site-theme.css?v=1" rel="stylesheet">
-    <link href="css/dashboard-modern.css?v=20261014-tesla-carousel1" rel="stylesheet">
+    <link href="../en/site-theme.css?v=20261015-sidebarfix1" rel="stylesheet">
+    <link href="css/dashboard-modern.css?v=20261015-sidebarfix1" rel="stylesheet">
 <link href="css/lib/sweetalert/sweetalert.css" rel="stylesheet">
 <link href="css/lib/toastr/toastr.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
@@ -268,6 +268,45 @@ li a{
             html[data-theme="light"] .bottomnav .bottomnav-item:hover,
             html[data-theme="light"] .bottomnav .bottomnav-item:focus-visible{background:rgba(73,36,126,.08);color:var(--cfxm-purple,#49247e)}
             html[data-theme="light"] .sidebar-nav #sidebar-menu>li>a.nav-logout{color:#c44d60}
+
+/* Hard override legacy CoinDash sidebar backgrounds after all legacy theme rules. */
+html[data-theme="dark"] body .left-sidebar,
+html[data-theme="dark"] body .left-sidebar .scroll-sidebar,
+html[data-theme="dark"] body .left-sidebar .sidebar-nav,
+html[data-theme="dark"] body .left-sidebar #sidebar-menu {
+    background: #121f27 !important;
+    background-color: #121f27 !important;
+    color: #DFD0B8 !important;
+}
+html[data-theme="dark"] body .left-sidebar {
+    border-right: 1px solid rgba(223,208,184,.14) !important;
+}
+html[data-theme="dark"] body .left-sidebar #sidebar-menu > li > a {
+    background-color: transparent !important;
+    color: #DFD0B8 !important;
+}
+html[data-theme="dark"] body .left-sidebar #sidebar-menu > li > a:hover,
+html[data-theme="dark"] body .left-sidebar #sidebar-menu > li > a:focus-visible,
+html[data-theme="dark"] body .left-sidebar #sidebar-menu > li.active > a,
+html[data-theme="dark"] body .left-sidebar #sidebar-menu > li > a.active {
+    background: rgba(119,72,188,.18) !important;
+    color: #c8a9f4 !important;
+}
+html[data-theme="dark"] body .left-sidebar #sidebar-menu .nav-label,
+html[data-theme="dark"] body .left-sidebar #sidebar-menu > li > a i {
+    color: #a5b1ba !important;
+}
+html[data-theme="dark"] body .left-sidebar #sidebar-menu > li > a:hover i,
+html[data-theme="dark"] body .left-sidebar #sidebar-menu > li.active > a i {
+    color: #c8a9f4 !important;
+}
+html[data-theme="light"] body .left-sidebar,
+html[data-theme="light"] body .left-sidebar .scroll-sidebar,
+html[data-theme="light"] body .left-sidebar .sidebar-nav,
+html[data-theme="light"] body .left-sidebar #sidebar-menu {
+    background: #f5f6fa !important;
+    background-color: #f5f6fa !important;
+}
 .page-wrapper{padding-bottom:92px}
             @media(min-width:768px){.bottomnav{display:none}.page-wrapper{padding-bottom:20px}}
             @media(max-width:380px){.bottomnav{padding-left:4px;padding-right:4px}.bottomnav .bottomnav-item{font-size:9px}.bottomnav .bottomnav-item i{font-size:17px}.bottomnav .bottomnav-item span{font-size:9px}}
