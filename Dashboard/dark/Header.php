@@ -123,61 +123,20 @@ $row=mysqli_fetch_array($query, MYSQLI_ASSOC);
                 <nav class="sidebar-nav">
                     <ul id="sidebar-menu">
                         <li class="nav-devider"></li>
-                        <li class="nav-label">Menu</li>
-                        <li> <a class="has-arrow  " href="../../../Index.php" aria-expanded="false"><i class="fa fa-tachometer"></i><span class="hide-menu">Homepage</span></a>
-                            
-                        </li>
-                        <li class="nav-label">Finance</li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-columns"></i><span class="hide-menu">Account</span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="Account.php">Earnings</a></li>
-                                <li><a href="Deposit.php">Deposit</a></li>
-                                <li><a href="Withdrawal.php">Withdrawal</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-label">Others</li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-envelope"></i><span class="hide-menu">Referal</span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="Referral.php">Earnings</a></li>
-                            </ul>
-                        </li>
-
-<li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-envelope"></i><span class="hide-menu">Help/Support</span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="../../../faq.php">FAQ</a></li>
-                                <li><a href="Support.php">Support</a></li>
-                            </ul>
-                        </li>
-                     
-                        <li class="nav-label">Investment</li>
-                      
-
-<li> <a class="" href="InvestmentPlans.php" aria-expanded="false"><i class="fa fa-wpforms"></i><span class="hide-menu">Invest Now</span></a></li>
-
-                        
-<li> <a class="" href="#" aria-expanded="false"><i class="fa fa-wpforms"></i><span class="hide-menu">Previous Investments</span></a>
-                            
-                        </li>
-                       
-                        
-
-                        
-<li class="nav-label">EXTRA</li>
-                    <li><a href="Verification.php">Verification/Limit</a></li>
-
-
-                                <li><a href="../../../Logout.php">Logout</a>
-                                 
-                                </li>
-
-
-                            </ul>
-                        </li>
-                       
- 
-
-
-                        
+                        <li class="nav-label">WORKSPACE</li>
+                        <li><a href="Dashboard.php"><i class="fas fa-th-large"></i><span class="hide-menu">Overview</span></a></li>
+                        <li><a href="AccountInsight.php"><i class="fas fa-chart-line"></i><span class="hide-menu">Account insight</span></a></li>
+                        <li><a href="Account.php"><i class="fas fa-wallet"></i><span class="hide-menu">Wallet &amp; portfolio</span></a></li>
+                        <li class="nav-label">MONEY</li>
+                        <li><a href="Deposit.php"><i class="fas fa-plus-circle"></i><span class="hide-menu">Deposit</span></a></li>
+                        <li><a href="Withdrawal.php"><i class="fas fa-arrow-circle-up"></i><span class="hide-menu">Withdrawal</span></a></li>
+                        <li><a href="Transfer.php"><i class="fas fa-exchange-alt"></i><span class="hide-menu">Peer to peer</span></a></li>
+                        <li><a href="Referral.php"><i class="fas fa-user-friends"></i><span class="hide-menu">Referral earnings</span></a></li>
+                        <li class="nav-label">ACCOUNT</li>
+                        <li><a href="Verification.php"><i class="fas fa-shield-alt"></i><span class="hide-menu">Verification &amp; limits</span></a></li>
+                        <li><a href="Profile.php"><i class="fas fa-user-circle"></i><span class="hide-menu">Profile settings</span></a></li>
+                        <li><a href="Support.php"><i class="fas fa-life-ring"></i><span class="hide-menu">Help &amp; support</span></a></li>
+                        <li><a href="../../../Logout.php"><i class="fas fa-sign-out-alt"></i><span class="hide-menu">Sign out</span></a></li>
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->
