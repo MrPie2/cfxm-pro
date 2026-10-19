@@ -2896,68 +2896,7 @@ Why Trade with Us?      </span>
 
 
 
-                                            <div class="component container col-12 mobile-only container-dark-background full-width">
-                                                <div class="component-content">
-                                                    <div class="row">
-
-
-
-                                                        <div class="component container col-12 spacing-m-t-15 px-0">
-                                                            <div class="component-content">
-                                                                <div class="row">
-                                                                    <div class="component two-column-callout col-12 spacing-m-t-15 mobile-reverse-cols reverse-cols" id="spreads">
-                                                                        <div class="component-content">
-                                                                            <div class="additional-content">
-                                                                                <div class="row">
-                                                                                    <div class="component image file-type-icon-media-link col-12">
-                                                                                        <div class="component-content">
-                                                                                            <img loading="lazy"src="https://www.forex.com/en-us/-/media/project/gain-capital/forex/feature-images/home/fxca/raw-pricing-module-text-desktop.svg?iar=0&amp;extension=webp" alt="RAW Pricing Module Text Desktop" data-variantitemid="{A794613C-04EB-4882-903B-39D41803E7C5}"
-                                                                                                data-variantfieldname="Image" /><span class="image-caption field-imagecaption"></span>                                                                                            </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="callout-body">
-                                                                                <div class="callout-desc field-callouttext">
-                                                                                    <!-- -- H tags removed from the desktop version so as not to have duplicated heading tags ---->
-                                                                                    <div class="desktop-only">
-                                                                                        <span style="color: #fff!important;">
-<p class="custom" style="font-size:36px; margin-bottom: 0.5em;">Pushing Your Trading Forward</p>
-<br />
-<p class="custom" style="font-size:28px; margin-bottom: 0.5em;">Next-Gen Pricing Model</p>
-<br />
-<p>Take control of your trading needs with super-tight spreads as low as 0.0 for major pairs with a $7 USD commission per $100k USD traded.</p>
-<p>Explore the advantages of our RAW Spread pricing.</p>
-</span>
-                                                                                    </div>
-                                                                                    <div class="mobile-only">
-                                                                                        <span style="color: #fff!important;">
-<h2>Pushing Your Trading Forward</h2>
-<br />
-<h3>Next-Gen Pricing Model</h3>
-<br />
-<p>Take control of your trading needs with super-tight spreads as low as 0.0 for major pairs with a $7 USD commission per $100k USD traded.</p>
-<p>Explore the advantages of our RAW Spread pricing.</p>
-</span>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="button button-solid button-primary">
-                                                                                    <a gtmLinkName="Open a RAW Pricing Account" href="/en/InfoPage.php?page=plans" title="open an account" gtmLinkContext="main" target="_blank">Open a RAW Pricing Account</a>
-                                                                                </div>
-
-
-
-                                                                                <div class="py-xs button button-bordered-secondary">
-                                                                                    Learn about RAW Pricing
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            
                                         </div>
                                     </div>
                                 </div>
