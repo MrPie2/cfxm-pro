@@ -231,10 +231,6 @@ window.smartsupp||(function(d) {
             <span class="vh-stat-label">Bot profit</span>
             <strong><?php echo htmlspecialchars($curAbbr, ENT_QUOTES, 'UTF-8') . number_format($dashboardBotProfitDisplay, 2, '.', ','); ?></strong>
             <small>Earned from your bot records</small>
-            <div class="vh-bot-profit-details">
-                <span><b>Bot rate</b><strong><?php echo htmlspecialchars($curAbbr, ENT_QUOTES, 'UTF-8') . number_format($dashboardBotDailyRateDisplay, 2, '.', ','); ?>/day</strong></span>
-                <span><b>Daily percentage</b><strong><?php echo number_format($dashboardBotDailyPercentage, 4, '.', ','); ?>%</strong></span>
-            </div>
         </div>
     </div>
 
