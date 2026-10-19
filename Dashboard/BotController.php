@@ -115,7 +115,7 @@ try {
 
     mysqli_commit($Conn);
     unset($_SESSION['bot_csrf']);
-     $walletLabel = ($walletColumn === 'Fin_Asset') ? 'Wallet Balance' : 'Deposit Balance';
+    $walletLabel = ($walletColumn === 'Fin_Asset') ? 'Wallet Balance' : 'Deposit Balance';
     bot_json(200, true, $plan['name'] . ' was purchased and simulated mining is active for 7 days at ' . number_format($dailyRate, 4) . '% per day. 
 } catch (Throwable $e) {
     mysqli_rollback($Conn);
