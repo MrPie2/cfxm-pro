@@ -2715,176 +2715,83 @@ Why Trade with Us?      </span>
 
 
 
-                                <div class="component container col-12 full-width container-white-background">
-                                    <div class="component-content">
-                                        <div class="row">
+                                <!-- CFXM-PRO AI bot plans -->
+<section id="bot-plans" class="cfxm-bot-plans" aria-labelledby="cfxm-bot-plans-title">
+  <style>
+    .cfxm-bot-plans{--bot-purple:#9b5de5;--bot-deep:#211638;--bot-ink:#211638;background:linear-gradient(135deg,#f8f5ff 0%,#fff 55%,#f1e8ff 100%);padding:clamp(48px,7vw,88px) 20px;color:var(--bot-ink);overflow:hidden}
+    .cfxm-bot-plans *{box-sizing:border-box}
+    .cfxm-bot-plans .bot-plans-inner{max-width:1240px;margin:0 auto}
+    .cfxm-bot-plans .bot-plans-heading{text-align:center;max-width:760px;margin:0 auto 34px}
+    .cfxm-bot-plans .bot-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border:1px solid #e4d4ff;border-radius:999px;background:#fff;color:#7138bd;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+    .cfxm-bot-plans h2{margin:18px 0 12px;font-size:clamp(30px,4vw,48px);line-height:1.12;font-weight:750;color:#211638}
+    .cfxm-bot-plans .bot-plans-heading p{margin:0;color:#665d75;font-size:16px;line-height:1.7}
+    .cfxm-bot-plans .bot-plans-track{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px;align-items:stretch}
+    .cfxm-bot-plans .bot-plan-card{display:flex;flex-direction:column;min-width:0;padding:22px 18px 20px;border:1px solid #e8e0f2;border-radius:20px;background:#fff;box-shadow:0 12px 35px rgba(45,20,77,.07);transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+    .cfxm-bot-plans .bot-plan-card:hover{transform:translateY(-5px);border-color:#c7a6f5;box-shadow:0 18px 42px rgba(75,35,125,.13)}
+    .cfxm-bot-plans .bot-plan-tag{align-self:flex-start;padding:5px 9px;border-radius:7px;background:#f1e8ff;color:#7138bd;font-size:10px;font-weight:800;letter-spacing:.1em}
+    .cfxm-bot-plans .bot-plan-card h3{margin:15px 0 7px;color:#211638;font-size:19px;line-height:1.25}
+    .cfxm-bot-plans .bot-plan-strategy{min-height:42px;color:#796d88;font-size:12px;line-height:1.5}
+    .cfxm-bot-plans .bot-plan-price{margin:17px 0 4px;font-size:clamp(23px,2vw,30px);font-weight:800;letter-spacing:-.04em;color:#4c1d95;white-space:nowrap}
+    .cfxm-bot-plans .bot-plan-label{font-size:11px;color:#847a91}
+    .cfxm-bot-plans .bot-plan-description{min-height:78px;margin:16px 0;color:#675d75;font-size:13px;line-height:1.65}
+    .cfxm-bot-plans .bot-plan-features{list-style:none;padding:0;margin:0 0 22px;display:grid;gap:10px}
+    .cfxm-bot-plans .bot-plan-features li{display:flex;gap:8px;align-items:flex-start;color:#51465f;font-size:12px;line-height:1.5}
+    .cfxm-bot-plans .bot-plan-features li:before{content:"✓";flex:0 0 auto;color:#8b42d6;font-weight:800}
+    .cfxm-bot-plans .bot-plan-buy{display:block;margin-top:auto;text-align:center;padding:12px 10px;border-radius:10px;background:#7138bd;color:#fff!important;font-size:13px;font-weight:750;text-decoration:none!important;transition:background .2s ease}
+    .cfxm-bot-plans .bot-plan-buy:hover,.cfxm-bot-plans .bot-plan-buy:focus{background:#4c1d95}
+    .cfxm-bot-plans .bot-plans-note{max-width:940px;margin:26px auto 0;text-align:center;color:#81768e;font-size:11px;line-height:1.7}
+    @media(max-width:1050px){.cfxm-bot-plans .bot-plans-track{grid-template-columns:repeat(3,minmax(220px,1fr))}.cfxm-bot-plans .bot-plan-description{min-height:0}}
+    @media(max-width:700px){.cfxm-bot-plans{padding:48px 0}.cfxm-bot-plans .bot-plans-heading{padding:0 20px;margin-bottom:25px}.cfxm-bot-plans .bot-plans-heading p{font-size:14px}.cfxm-bot-plans .bot-plans-track{display:flex;overflow-x:auto;gap:12px;padding:4px 20px 18px;scroll-snap-type:x mandatory;scroll-padding-left:20px;-webkit-overflow-scrolling:touch}.cfxm-bot-plans .bot-plan-card{flex:0 0 60vw;width:60vw;max-width:280px;padding:19px 16px;border-radius:17px;scroll-snap-align:start}.cfxm-bot-plans .bot-plan-card h3{font-size:17px}.cfxm-bot-plans .bot-plan-price{font-size:25px}.cfxm-bot-plans .bot-plan-description{min-height:0}.cfxm-bot-plans .bot-plan-strategy{min-height:0}.cfxm-bot-plans .bot-plans-note{padding:0 20px}}
+    @media(prefers-reduced-motion:reduce){.cfxm-bot-plans .bot-plan-card,.cfxm-bot-plans .bot-plan-buy{transition:none}}
+  </style>
+  <div class="bot-plans-inner">
+    <div class="bot-plans-heading">
+      <span class="bot-eyebrow">CFXM-PRO · AI BOT PLANS</span>
+      <h2 id="cfxm-bot-plans-title">Choose your trading bot</h2>
+      <p>Explore strategy profiles designed for different levels of market coverage and analytical tools. Select a plan to continue in your account.</p>
+    </div>
+    <div class="bot-plans-track" aria-label="Available AI trading bot plans">
+      <article class="bot-plan-card">
+        <span class="bot-plan-tag">STARTER</span><h3>AI Scout</h3><div class="bot-plan-strategy">Spot trend &amp; momentum</div>
+        <div class="bot-plan-price">$2,000</div><div class="bot-plan-label">Plan price</div>
+        <p class="bot-plan-description">A focused strategy profile for major crypto assets with conservative signal filters.</p>
+        <ul class="bot-plan-features"><li>Up to 3 markets</li><li>Trend and momentum signals</li><li>Basic volatility filters</li><li>Daily performance summary</li></ul>
+        <a class="bot-plan-buy" href="../Dashboard/BotPlans.php">Buy Bot</a>
+      </article>
+      <article class="bot-plan-card">
+        <span class="bot-plan-tag">ACTIVE</span><h3>Momentum AI</h3><div class="bot-plan-strategy">Momentum &amp; breakout</div>
+        <div class="bot-plan-price">$5,000</div><div class="bot-plan-label">Plan price</div>
+        <p class="bot-plan-description">Scans more markets for trend continuation and breakout setups.</p>
+        <ul class="bot-plan-features"><li>Up to 8 markets</li><li>Multi-timeframe signals</li><li>Breakout confirmation</li><li>Stop-loss and take-profit rules</li></ul>
+        <a class="bot-plan-buy" href="../Dashboard/BotPlans.php">Buy Bot</a>
+      </article>
+      <article class="bot-plan-card">
+        <span class="bot-plan-tag">ADVANCED</span><h3>Quant Matrix</h3><div class="bot-plan-strategy">Quantitative &amp; mean reversion</div>
+        <div class="bot-plan-price">$10,000</div><div class="bot-plan-label">Plan price</div>
+        <p class="bot-plan-description">Combines statistical signals with market-regime filters and position limits.</p>
+        <ul class="bot-plan-features"><li>Up to 15 markets</li><li>Quant signal scoring</li><li>Regime-aware filters</li><li>Portfolio exposure limits</li></ul>
+        <a class="bot-plan-buy" href="../Dashboard/BotPlans.php">Buy Bot</a>
+      </article>
+      <article class="bot-plan-card">
+        <span class="bot-plan-tag">PRO</span><h3>Neural Trader</h3><div class="bot-plan-strategy">Ensemble AI signals</div>
+        <div class="bot-plan-price">$25,000</div><div class="bot-plan-label">Plan price</div>
+        <p class="bot-plan-description">A multi-strategy profile designed to evaluate signals across supported markets.</p>
+        <ul class="bot-plan-features"><li>Up to 25 markets</li><li>Ensemble signal ranking</li><li>Advanced risk controls</li><li>Detailed trade journal</li></ul>
+        <a class="bot-plan-buy" href="../Dashboard/BotPlans.php">Buy Bot</a>
+      </article>
+      <article class="bot-plan-card">
+        <span class="bot-plan-tag">ELITE</span><h3>Apex Autonomous</h3><div class="bot-plan-strategy">Multi-market adaptive execution</div>
+        <div class="bot-plan-price">$50,000</div><div class="bot-plan-label">Plan price</div>
+        <p class="bot-plan-description">The highest-capacity profile, intended for a connected and monitored trading engine.</p>
+        <ul class="bot-plan-features"><li>Up to 40 markets</li><li>Adaptive strategy selection</li><li>Expanded market coverage</li><li>Priority monitoring tools</li></ul>
+        <a class="bot-plan-buy" href="../Dashboard/BotPlans.php">Buy Bot</a>
+      </article>
+    </div>
+    <p class="bot-plans-note">Bot plans describe available strategy profiles and tools; they do not guarantee returns or eliminate trading risk. Market losses are possible. Live trading depends on the availability and configuration of a connected trading engine.</p>
+  </div>
+</section>
 
-
-
-                                            <div class="component container col-12 spacing-m-t-15 spacing-m-b-15 px-0">
-                                                <div class="component-content">
-                                                    <div class="row">
-                                                        <div class="component two-column-callout col-12 spacing-m-t-15 spacing-m-b-15 mobile-reverse-cols" id="financialstrength">
-                                                            <div class="component-content">
-                                                                <div class="additional-content">
-                                                                    <div class="row">
-                                                                        <div class="component image file-type-icon-media-link col-12">
-                                                                            <div class="component-content">
-                                                                                <img loading="lazy"src="https://www.forex.com/en-us/-/media/project/gain-capital/forex/vectors-logos-and-graphics/logos/about-us/stonex-logo-bl-new.svg?iar=0&amp;extension=webp" alt="StoneX Logo" data-variantitemid="{5B9D7D33-1FF6-425E-83A3-518C05964030}" data-variantfieldname="Image"
-                                                                                /><span class="image-caption field-imagecaption"></span> </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="callout-body">
-
-                                                                    <div class="callout-title field-callouttitle">
-                                                                        Financial strength you can depend on
-                                                                    </div>
-                                                                    <div class="callout-desc field-callouttext">
-                                                                        <p>We are a wholly-owned subsidiary of StoneX Group Inc. (NASDAQ: SNEX), a publicly traded company. We hold ourselves to the highest standards of corporate governance, financial reporting
-                                                                            and disclosure.</p>
-
-                                                                        <div class="button button-bordered-primary">
-                                                                            <a href="https://www.stonex.com/about/" rel="noopener noreferrer" target="_blank">About StoneX</a>
-                                                                        </div>
-                                                                    </div>
-
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-
-                                <div class="component container col-12 desktop-only container-dark-background full-width" style="background-image: url('https://www.forex.com/en-us/-/media/project/gain-capital/forex/feature-images/home/fxus/fxus-raw-pricing-module-background.jpg?extension=webp'); background-position: calc(50% + 0px) calc(50% + 0px); background-repeat: no-repeat; background-size: cover;">
-                                    <div class="component-content">
-                                        <div class="row">
-
-
-
-                                            <div class="component container col-12 spacing-m-t-15 spacing-m-b-15 px-0">
-                                                <div class="component-content">
-                                                    <div class="row">
-                                                        <div class="component two-column-callout col-12 spacing-m-t-15 spacing-m-b-15 mobile-reverse-cols reverse-cols" id="spreads">
-                                                            <div class="component-content">
-                                                                <div class="additional-content">
-                                                                    <div class="row">
-                                                                        <div class="component image file-type-icon-media-link col-12">
-                                                                            <div class="component-content">
-                                                                                <img loading="lazy"src="https://www.forex.com/en-us/-/media/project/gain-capital/forex/feature-images/home/fxca/raw-pricing-module-text-desktop-v3.svg?iar=0&amp;extension=webp" alt="RAW Pricing Module Text Desktop v3" data-variantitemid="{43C3EB86-7B25-456D-8A20-BD42580B451A}"
-                                                                                    data-variantfieldname="Image" /><span class="image-caption field-imagecaption"></span> </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="callout-body">
-                                                                    <div class="callout-desc field-callouttext">
-                                                                        <!-- -- H tags removed from the desktop version so as not to have duplicated heading tags ---->
-                                                                        <div class="desktop-only">
-                                                                            <span style="color: #fff!important;">
-<p class="custom" style="font-size:36px; margin-bottom: 0.5em;">Pushing Your Trading Forward</p>
-<br />
-<p class="custom" style="font-size:28px; margin-bottom: 0.5em;">Next-Gen Pricing Model</p>
-<br />
-<p>Take control of your trading needs with super-tight spreads as low as 0.0 for major pairs with a $7 USD commission per $100k USD traded.</p>
-<p>Explore the advantages of our RAW Spread pricing.</p>
-</span>
-                                                                        </div>
-                                                                        <div class="mobile-only">
-                                                                            <span style="color: #fff!important;">
-<h2>Pushing Your Trading Forward</h2>
-<br />
-<h3>Next-Gen Pricing Model</h3>
-<br />
-<p>Take control of your trading needs with super-tight spreads as low as 0.0 for major pairs with a $7 USD commission per $100k USD traded.</p>
-<p>Explore the advantages of our RAW Spread pricing.</p>
-</span>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="button button-solid button-primary">
-                                                                        <a gtmLinkName="Open a RAW Pricing Account" href="/en/InfoPage.php?page=plans" title="open an account" gtmLinkContext="main" target="_blank">Open a RAW Pricing Account</a>
-                                                                    </div>
-
-
-
-                                                                    <div class="py-xs button button-bordered-secondary">
-                                                                        Learn about RAW Pricing
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-
-                                <div class="component container col-12 full-width">
-                                    <div class="component-content">
-                                        <div class="row">
-
-
-
-                                            <div class="component container mobile-center-align full-width px-0 py-lg surface-one-background">
-                                                <div class="component-content">
-                                                    <div class="row">
-
-
-
-                                                        <div class="component container col-12 mobile-center-align px-0 py-lg">
-                                                            <div class="component-content">
-                                                                <div class="row">
-
-                                                                    <div class="component reusable-title col-12 position-center mobile-center-align">
-                                                                        <div class="component-content">
-                                                                            <h2 class="field-title">Tight spreads backed by quality execution</h2>
-                                                                        </div>
-                                                                    </div>
-
-
-
-
-                                                                    <div class="component container col-12 py-sm">
-                                                                        <div class="component-content">
-                                                                            <div class="row"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="component pricing-component default col-12" id="forex-table">
-                                                                        <div class="component-content">
-
-
-                                                                            <div class="market-prices" data-widget="rates-table" data-settings='{"Fields":[{"Name":"Product","Label":"Name","Style":0},{"Name":"Bid","Label":"Sell","Style":0},{"Name":"Offer","Label":"Buy","Style":0},{"Name":"MedianSpread","Label":"Spread","Style":0}],"Tabs":[{"Code":"Commission","ProductType":"CFD","DisplayName":"Forex"}],"Watchlists":[],"DisableStreaming":false,"IsCondensed":false,"DesktopNumberOfItems":5,"MobileNumberOfItems":5,"MarketType":{"Code":null,"DisplayName":null},"ProductType":{"Code":"CFD","DisplayName":"CFD"},"IsGlobalInstrumentsSearch":false,"Urls":{"FX":"/en-us/forex-trading/","INDEX":null,"EquityCommonStock":null,"CRYPTOCURRENCY":null,"Metals":null,"Commission":"/en-us/forex-trading/"},"ChartsUrl":" https://standalonecharts.svc.cityindex.com/?&username=forexusbackendtestaccount@test.com&session=bd363f14-3bda-433e-a737-bb15f360b9b0","SiteId":"{753454D7-4EEA-4D0D-9A56-528127813A34}","StreamUrl":"https://rates-live.efxnow.com","UseNumericPagination":false,"DefaultProducts":["EUR USD","USD JPY","GBP USD","AUD USD","EUR GBP","GBP CAD","GBP AUD","EUR CNH","XAG USD","XAU USD"],"ShowOnlyDefaultProducts":false,"LanguageCode":"en","SearchBoxOptions":{"SearchCluster":"{5039C6FD-784C-4A94-B5A7-C13BF6114765}","SuggestionsCount":7,"SiteSearchPath":"","SearchResultsPageUrl":"/en-us/search-results/","SiteName":"FOREX US CD"}}'
-                                                                                data-desktop-number-of-items="5" data-mobile-number-of-items="5" data-condensed="" data-product-type="CFD" data-initial-market="" data-stream-url="https://rates-live.efxnow.com"
-                                                                                data-enable-stream="true" data-locales='{"SEARCH_PLACEHOLDER":"Search the instruments" ,"SHOW_MORE":"Show more","SORT_BY":"Sort by", "Live (indicative) updated:":"Indicative Pricing updated","No results found":"No Results Found","No search results":"No search results"}'></div>
-
-                                                                            <div class="rich-text my-lg field-disclaimer"></div>
-                                                                        </div>
-                                                                    </div>
-
-
-                                                                    <div class="component rich-text col-12">
-                                                                        <div class="component-content">
-                                                                            <p style="text-align: center; font-size: 12px;">During times of high volatility and/or low liquidity, spreads may be higher than the typical and as low as spreads published on the website. This can include, but is not limited
-                                                                                to the market open and around 5 pm EST during trading hours. Typical spreads may not be available for Managed Accounts and accounts referred by an Introducing Broker.</p>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-
-
-                                            <div class="component container col-12 full-width" id="vipcontainer" style="background-image: url('https://www.forex.com/en-us/-/media/project/gain-capital/forex/icons/professional/fxus-active-trader-refresh/fx-vip-dark-texture-hp.webp'); background-position: calc(50% + 0px) calc(50% + 0px); background-repeat: no-repeat; background-size: cover;">
+<div class="component container col-12 full-width" id="vipcontainer" style="background-image: url('https://www.forex.com/en-us/-/media/project/gain-capital/forex/icons/professional/fxus-active-trader-refresh/fx-vip-dark-texture-hp.webp'); background-position: calc(50% + 0px) calc(50% + 0px); background-repeat: no-repeat; background-size: cover;">
                                                 <div class="component-content">
                                                     <div class="row">
 
