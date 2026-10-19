@@ -5,7 +5,7 @@ declare(strict_types=1);
  * GitHub push webhook for deploying the production checkout in this directory.
  *
  * Security requirements:
- * - Keep the webhook secret in the account home directory, outside public_html.
+ * - Keep the webhook secret and SSH deploy key under the account's .ssh directory, outside public_html.
  * - Configure GitHub to send push events only.
  * - Only the MrPie2/cfxm-pro main branch is allowed to deploy.
  */
