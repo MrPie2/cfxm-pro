@@ -25,7 +25,7 @@ $processed = 0;
 $completed = 0;
 $failed = 0;
 
-$idsResult = mysqli_query($Conn, "SELECT id FROM user_trading_bots WHERE mining_status='active' AND starts_at IS NOT NULL AND due_at IS NOT NULL AND starts_at < NOW() ORDER BY id ASC");
+$idsResult = mysqli_query($Conn, "SELECT id FROM user_trading_bots WHERE mining_status='active' AND starts_at IS NOT NULL AND due_at IS NOT NULL ORDER BY id ASC");
 $ids = [];
 while ($row = mysqli_fetch_assoc($idsResult)) $ids[] = (int)$row['id'];
 
