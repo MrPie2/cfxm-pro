@@ -2743,7 +2743,53 @@ Why Trade with Us?      </span>
     @media(max-width:1050px){.cfxm-bot-plans .bot-plans-track{grid-template-columns:repeat(3,minmax(220px,1fr))}.cfxm-bot-plans .bot-plan-description{min-height:0}}
     @media(max-width:700px){.cfxm-bot-plans{padding:48px 0}.cfxm-bot-plans .bot-plans-heading{padding:0 20px;margin-bottom:25px}.cfxm-bot-plans .bot-plans-heading p{font-size:14px}.cfxm-bot-plans .bot-plans-track{display:flex;overflow-x:auto;gap:12px;padding:4px 20px 18px;scroll-snap-type:x mandatory;scroll-padding-left:20px;-webkit-overflow-scrolling:touch}.cfxm-bot-plans .bot-plan-card{flex:0 0 60vw;width:60vw;max-width:280px;padding:19px 16px;border-radius:17px;scroll-snap-align:start}.cfxm-bot-plans .bot-plan-card h3{font-size:17px}.cfxm-bot-plans .bot-plan-price{font-size:25px}.cfxm-bot-plans .bot-plan-description{min-height:0}.cfxm-bot-plans .bot-plan-strategy{min-height:0}.cfxm-bot-plans .bot-plans-note{padding:0 20px}}
     @media(prefers-reduced-motion:reduce){.cfxm-bot-plans .bot-plan-card,.cfxm-bot-plans .bot-plan-buy{transition:none}}
-  </style>
+  
+    /* Unified dark-purple footer to match the landing page */
+    #footer, footer, footer #footer,
+    footer #footer > .row {
+      background: #0b0814 !important;
+      color: #e8e0f5 !important;
+    }
+    footer #footer > .row > .component.container.container-dark-background,
+    footer #footer .container-dark-background {
+      background: linear-gradient(180deg, #100b1d 0%, #130d22 52%, #0b0814 100%) !important;
+      color: #e8e0f5 !important;
+    }
+    footer #footer .component,
+    footer #footer .component-content,
+    footer #footer .row {
+      border-color: rgba(167, 139, 250, .16);
+    }
+    footer #footer h2,
+    footer #footer h3,
+    footer #footer [data-as="h2"],
+    footer #footer [data-as="h3"],
+    footer #footer .custom,
+    footer #footer p {
+      color: #eee7fb !important;
+    }
+    footer #footer a,
+    footer #footer .field-link,
+    footer #footer li {
+      color: #bfb2d5 !important;
+    }
+    footer #footer a:hover,
+    footer #footer a:focus {
+      color: #c4b5fd !important;
+    }
+    footer #footer hr {
+      border-color: rgba(167, 139, 250, .24) !important;
+    }
+    footer #sticky-cta {
+      background: linear-gradient(90deg, #5b21b6 0%, #7c3aed 55%, #6d28d9 100%) !important;
+      border-color: transparent !important;
+      color: #fff !important;
+    }
+    footer #sticky-cta a,
+    footer #sticky-cta .component-content {
+      color: #fff !important;
+    }
+</style>
   <div class="bot-plans-inner">
     <div class="bot-plans-heading">
       <span class="bot-eyebrow">CFXM-PRO · AI BOT PLANS</span>
