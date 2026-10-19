@@ -115,11 +115,12 @@ try {
 
     mysqli_commit($Conn);
     unset($_SESSION['bot_csrf']);
-    bot_json(200, true, $plan['name'] . ' was purchased and simulated mining is active for 7 days at ' . number_format($dailyRate, 4) . '% per day. $' . number_format($plan['capital'], 2) . ' was deducted from ' . $walletColumn . '.', ['bot_id'=>$botId,'status'=>'active','capital'=>$plan['capital'],'daily_rate_percent'=>$dailyRate,'duration_days'=>7,'starts_at'=>$startsAt,'due_at'=>$dueAt,'wallet_source'=>$walletColumn,'wallet_balance'=>$newBalance]);
+    $walletLabel = ($walletColumn === 'Fin_Asset') ? 'Wallet Balance' : 'Deposit Balance';
+    bot_json(200, true, $plan['name'] . ' was purchased and simulated mining is active for 7 days at ' . number_format($dailyRate, 4) . '% per day. $' . number_format($plan['capital'], 2) . ' was deducted from your ' . $walletLabel . '.', ['bot_id'=>$botId,'status'=>'active','capital'=>$plan['capital'],'daily_rate_percent'=>$dailyRate,'duration_days'=>7,'starts_at'=>$startsAt,'due_at'=>$dueAt,'wallet_source'=>$walletColumn,'wallet_balance'=>$newBalance]);
 } catch (Throwable $e) {
     mysqli_rollback($Conn);
     if ($e->getMessage() === 'INSUFFICIENT_FUNDS') {
-        bot_json(422, false, 'Insufficient funds. You need at least $' . number_format($plan['capital'], 2) . ' in either your Fin_Asset or Total_Deposit balance to buy this bot.');
+        bot_json(422, false, 'Insufficient funds. You need at least $' . number_format($plan['capital'], 2) . ' in either your Wallet Balance or Deposit Balance to buy this bot.');
     }
     error_log('CFXM bot acquisition failed: ' . $e->getMessage());
     bot_json(500, false, 'The bot could not be acquired. No balance change was saved.');
