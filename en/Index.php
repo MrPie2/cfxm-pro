@@ -143,7 +143,7 @@
         }
 
         #forex-table .pricing-tabs-wrapper {
-            background: linear-gradient(244.81deg, #1E95CB 16%, #11377C 84%);
+            background: linear-gradient(244.81deg, #9b5de5 16%, #4c1d95 84%);
             margin: 0 -30px;
             padding: 30px 30px 1px 30px;
             border-radius: 10px 10px 0px 0px;
@@ -472,7 +472,7 @@
 
         .page-heading .button-primary a,
         #vip .button-bordered-primary a {
-            border: 2px solid #0F0E25;
+            border: 2px solid #1b1035;
             color: white;
             background: linear-gradient(90deg, #49247E 0%, #7748BC 100%) !important;
             transition: background-color .5s ease, color .5s ease, border .5s ease, box-shadow .5s ease;
@@ -480,7 +480,7 @@
 
         .page-heading .button-primary a:hover,
         #vip .button-bordered-primary a:hover {
-            border: 2px solid #0F0E25;
+            border: 2px solid #1b1035;
             background: linear-gradient(90deg, #412974 0%, #5B45A3 100%) !important;
         }
 
@@ -777,7 +777,7 @@
         }
 
         .dropdown .dropdown-composite-text .dropdown-composite-selected {
-            border: 2px solid #12225c !important;
+            border: 2px solid #2e1065 !important;
             border-radius: 20px;
             margin: 0px 5px;
         }
@@ -831,6 +831,14 @@
         <script>document.documentElement.setAttribute("data-theme", localStorage.getItem("theme") || "dark");</script>
         <link rel="stylesheet" href="/en/landing-modern.css?v=5" />
 
+
+<style id="cfxm-purple-theme">
+:root{--cfxm-purple-950:#1b1035;--cfxm-purple-900:#2e1065;--cfxm-purple-800:#4c1d95;--cfxm-purple-700:#6d28d9;--cfxm-purple-600:#7c3aed;--cfxm-purple-500:#9b5de5;--cfxm-lavender:#f3e8ff;--cfxm-ink:#211638}
+/* Harmonise remaining landing-page accents without changing status colours or market data. */
+a:focus-visible,button:focus-visible,[role=button]:focus-visible{outline:3px solid #c4b5fd!important;outline-offset:3px}
+.stx-megamenu__item.stx-megamenu__item--main.level-0:hover,.stx-megamenu__item.stx-megamenu__item--main.level-0:focus{background-color:#6d28d9!important;color:#fff!important}
+.stx-megamenu__item.stx-megamenu__item--main.level-0{accent-color:#7c3aed}
+</style>
 </head>
 
 
@@ -1022,7 +1030,7 @@ window.smartsupp||(function(d) {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #0f172a; /* match your theme */
+  background: #211638; /* match your theme */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2235,7 +2243,7 @@ Why Trade with Us?      </span>
                                                                                 }
                                                                                 #hpheader .button-bordered-secondary a:hover {
                                                                                     background: #fff !important;
-                                                                                    color: #12225c !important;
+                                                                                    color: #2e1065 !important;
                                                                                     padding: 11px 20px !important;
                                                                                 }
                                                                                 #hpheader .button-bordered-secondary a:hover::after {
@@ -2244,7 +2252,7 @@ Why Trade with Us?      </span>
                                                                                     position: relative;
                                                                                     width: 10px;
                                                                                     height: 10px;
-                                                                                    border-top: 2px solid #12225c;
+                                                                                    border-top: 2px solid #2e1065;
                                                                                     border-right: 2px solid #000;
                                                                                     transform: rotate(45deg);
                                                                                     margin-left: 10px;
@@ -3069,7 +3077,7 @@ Why Trade with Us?      </span>
                                                         <div class="component section-title col-12 spacing-m-t-50">
                                                             <div class="component-content">
                                                                 <div class="field-subtitle">
-                                                                    <h2 style="text-align: center;"><a style="color: #12225c; text-decoration: none" href="/en/InfoPage.php?page=platforms">Control, power, and speed. Our app and platforms give you every possible edge.</a></h2>
+                                                                    <h2 style="text-align: center;"><a style="color: #2e1065; text-decoration: none" href="/en/InfoPage.php?page=platforms">Control, power, and speed. Our app and platforms give you every possible edge.</a></h2>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -3231,11 +3239,11 @@ Why Trade with Us?      </span>
 
                                                         <div class="component rich-text col-12">
                                                             <div class="component-content">
-                                                                <h2 style="margin-bottom: 15px; color: #12225c;">Curate your FOREX.com experience</h2>
-                                                                <p class="desktop-only" style="font-size: 24px; margin-top: 5px; margin-bottom: -10px; color: #12225c;">What is your experience in trading?</p>
+                                                                <h2 style="margin-bottom: 15px; color: #2e1065;">Curate your FOREX.com experience</h2>
+                                                                <p class="desktop-only" style="font-size: 24px; margin-top: 5px; margin-bottom: -10px; color: #2e1065;">What is your experience in trading?</p>
                                                                 <p>
                                                                 </p>
-                                                                <p class="mobile-only" style="margin-bottom: 0px; color: #12225c;">What is your experience in trading?</p>
+                                                                <p class="mobile-only" style="margin-bottom: 0px; color: #2e1065;">What is your experience in trading?</p>
                                                                 <p> </p>
                                                             </div>
                                                         </div>
@@ -3297,7 +3305,7 @@ Why Trade with Us?      </span>
 
                                                                         <div class="dropdown-content">
                                                                             <div class="row">
-                                                                                <div class="component personalization-tabs col-12" id="forex-tabs" data-widget="personalization-tabs" data-component-key="{17DA36AF-31C0-43A6-8D9F-D85D3620242F}" data-settings="{&quot;isEdit&quot;:false,&quot;backgroundImage&quot;:null,&quot;tabs&quot;:[{&quot;key&quot;:&quot;756586ae-112e-4d1e-a057-d522b283e8da&quot;,&quot;icon&quot;:{&quot;src&quot;:&quot;https://www.cfxm-pro.com/en/-/media/project/gain-capital/forex/icons/platforms/icon-platformoverview-analysethemarket-colour.svg?h=16&amp;w=16&amp;extension=webp&amp;hash=9087739E64F4D77B81A0129C0614E316&quot;,&quot;alt&quot;:&quot;Analyse the market&quot;,&quot;height&quot;:&quot;&quot;,&quot;width&quot;:&quot;&quot;},&quot;iconActive&quot;:null,&quot;tabTitle&quot;:&quot;Introduction to the financial markets&quot;,&quot;contentTitle&quot;:&quot;Introduction to the financial markets&quot;,&quot;contentText&quot;:&quot;&lt;p&gt;Financial markets are how people and companies buy and sell assets: futures, options, shares, indices, currencies, commodities, and much more.&lt;/p&gt;\n&lt;p&gt;People have traded financial markets for hundreds of years. They grew out of a practical need: to help people buy and sell things more efficiently, and to help companies that need money to raise it quickly.&lt;br /&gt;\n&lt;br /&gt;\n&lt;/p&gt;&quot;,&quot;contentImage&quot;:{&quot;src&quot;:&quot;https://www.cfxm-pro.com/en/-/media/project/gain-capital/forex/feature-images/home/fxus/tabs/new/fxus-intro-to-forex-markets.jpg?h=410&amp;w=600&amp;extension=webp&amp;hash=62D0924F9DE1CD97BE234B349CAA420B&quot;,&quot;alt&quot;:&quot;Smartphone user with financial figures in the background&quot;,&quot;height&quot;:&quot;410&quot;,&quot;width&quot;:&quot;600&quot;},&quot;flipImageRight&quot;:&quot;1&quot;,&quot;link&quot;:{&quot;text&quot;:&quot;Discover financial markets&quot;,&quot;target&quot;:&quot;_blank&quot;,&quot;url&quot;:&quot;/en-us/trading-academy/courses/introduction-to-financial-markets/financial-markets-basics/&quot;},&quot;buttonClass&quot;:&quot;button button-bordered-primary&quot;,&quot;HeadingTag&quot;:&quot;div&quot;},{&quot;key&quot;:&quot;bef4febd-280a-4119-8521-97bcae7e3e37&quot;,&quot;icon&quot;:{&quot;src&quot;:&quot;https://www.cfxm-pro.com/en/-/media/project/gain-capital/forex/icons/home/fxall-what-is-forex-pound-dollar-bl.svg?h=410&amp;w=600&amp;extension=webp&amp;hash=D0DCCF6406E9EE85AE031E85082CF881&quot;,&quot;alt&quot;:&quot;White icon of $ and &#163; symbols&quot;,&quot;height&quot;:&quot;&quot;,&quot;width&quot;:&quot;&quot;},&quot;iconActive&quot;:null,&quot;tabTitle&quot;:&quot;What is forex? &quot;,&quot;contentTitle&quot;:&quot;What is forex? &quot;,&quot;contentText&quot;:&quot;&lt;p&gt;Forex trading is the buying and selling of global currencies. It’s how individuals, businesses, central banks and governments pay for goods and services in other economies.&lt;/p&gt;\n&lt;p&gt;However, the vast majority of forex trades aren’t for practical purposes. Speculative FX traders seek to profit from fluctuations in the exchange rates between currencies, speculating on whether one will go up or down in value compared to another.&lt;br /&gt;\n&lt;br /&gt;\n&lt;/p&gt;&quot;,&quot;contentImage&quot;:{&quot;src&quot;:&quot;https://www.cfxm-pro.com/en/-/media/project/gain-capital/forex/education/lessons/introduction-to-financial-markets/what-is-forex/forex-vs-stock-graphic-2023-new.jpg?h=754&amp;w=1280&amp;extension=webp&amp;hash=34D5F11AF541E5E367A82AB77172A07C&quot;,&quot;alt&quot;:&quot;Forex vs Stock Graphic 2023 new&quot;,&quot;height&quot;:&quot;754&quot;,&quot;width&quot;:&quot;1280&quot;},&quot;flipImageRight&quot;:&quot;1&quot;,&quot;link&quot;:{&quot;text&quot;:&quot;Intro to forex&quot;,&quot;target&quot;:&quot;_blank&quot;,&quot;url&quot;:&quot;/en-us/trading-academy/courses/introduction-to-financial-markets/what-is-forex/&quot;},&quot;buttonClass&quot;:&quot;button button-bordered-primary&quot;,&quot;HeadingTag&quot;:&quot;div&quot;},{&quot;key&quot;:&quot;c0a7afdf-be99-48e4-82c2-99f88e4a7f77&quot;,&quot;icon&quot;:{&quot;src&quot;:&quot;https://www.cfxm-pro.com/en/-/media/project/gain-capital/forex/icons/nav/fxall-meganav-platform-trading-tools-bl.svg?h=754&amp;w=1280&amp;extension=webp&amp;hash=91E4BD61CB4D4559EF442EAD4FCBEA4C&quot;,&quot;alt&quot;:&quot;Spanner and pencil icon in blue&quot;,&quot;height&quot;:&quot;&quot;,&quot;width&quot;:&quot;&quot;},&quot;iconActive&quot;:null,&quot;tabTitle&quot;:&quot;Tools overview&quot;,&quot;contentTitle&quot;:&quot;Tools overview&quot;,&quot;contentText&quot;:&quot;&lt;p&gt;Check out our advanced trading tools such as Performance Analytics and useful charting features.&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;&quot;,&quot;contentImage&quot;:{&quot;src&quot;:&quot;https://www.cfxm-pro.com/en/-/media/project/gain-capital/forex/feature-images/home/fxus/tabs/new/fxus-tools-overview.jpg?h=400&amp;w=600&amp;extension=webp&amp;hash=A441F745E9CD9B3BCD0FC0C14BE13B99&quot;,&quot;alt&quot;:&quot;Market chart Day trader by FOREX.com&quot;,&quot;height&quot;:&quot;400&quot;,&quot;width&quot;:&quot;600&quot;},&quot;flipImageRight&quot;:&quot;1&quot;,&quot;link&quot;:{&quot;text&quot;:&quot;Trading tools&quot;,&quot;target&quot;:&quot;_blank&quot;,&quot;url&quot;:&quot;/en-us/trading-tools/&quot;},&quot;buttonClass&quot;:&quot;button button-bordered-primary&quot;,&quot;HeadingTag&quot;:&quot;div&quot;},{&quot;key&quot;:&quot;ead5b8ba-a0a0-40a8-aad6-28fe57f16863&quot;,&quot;icon&quot;:{&quot;src&quot;:&quot;https://www.cfxm-pro.com/en/-/media/project/gain-capital/forex/icons/platforms/icon-platforms-compare-colour.svg?h=400&amp;w=600&amp;extension=webp&amp;hash=DFA90AC95D4BAA58E7164751E8B1B797&quot;,&quot;alt&quot;:&quot;Icon of two stacked screens in blue&quot;,&quot;height&quot;:&quot;&quot;,&quot;width&quot;:&quot;&quot;},&quot;iconActive&quot;:null,&quot;tabTitle&quot;:&quot;Platform comparison&quot;,&quot;contentTitle&quot;:&quot;Platform comparison&quot;,&quot;contentText&quot;:&quot;&lt;p&gt;Not sure which is the right FOREX.com platform for you? Check out our handy platform comparison table which will show you all the differences.&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;&quot;,&quot;contentImage&quot;:{&quot;src&quot;:&quot;https://www.cfxm-pro.com/en/-/media/project/gain-capital/forex/feature-images/home/fxus/tabs/new/fxus-platform-comparison.png?h=776&amp;w=1200&amp;extension=webp&amp;hash=C4542DC9572A6A285C265CEA2F52948B&quot;,&quot;alt&quot;:&quot;App screenshot of the FOREX.com platform on Web and mobile by FOREX.com&quot;,&quot;height&quot;:&quot;776&quot;,&quot;width&quot;:&quot;1200&quot;},&quot;flipImageRight&quot;:&quot;1&quot;,&quot;link&quot;:{&quot;text&quot;:&quot;See platform comparison table&quot;,&quot;target&quot;:&quot;_blank&quot;,&quot;url&quot;:&quot;/en-us/trading-platforms/compare-trading-platforms/&quot;},&quot;buttonClass&quot;:&quot;button button-bordered-primary&quot;,&quot;HeadingTag&quot;:&quot;div&quot;}]}">
+                                                                                <div class="component personalization-tabs col-12" id="forex-tabs" data-widget="personalization-tabs" data-component-key="{17DA36AF-31C0-43A6-8D9F-D85D3620242F}" data-settings="{&quot;isEdit&quot;:false,&quot;backgroundImage&quot;:null,&quot;tabs&quot;:[{&quot;key&quot;:&quot;756586ae-112e-4d1e-a057-d522b283e8da&quot;,&quot;icon&quot;:{&quot;src&quot;:&quot;https://www.cfxm-pro.com/en/-/media/project/gain-capital/forex/icons/platforms/icon-platformoverview-analysethemarket-colour.svg?h=16&amp;w=16&amp;extension=webp&amp;hash=9087739E64F4D77B81A0129C0614E316&quot;,&quot;alt&quot;:&quot;Analyse the market&quot;,&quot;height&quot;:&quot;&quot;,&quot;width&quot;:&quot;&quot;},&quot;iconActive&quot;:null,&quot;tabTitle&quot;:&quot;Introduction to the financial markets&quot;,&quot;contentTitle&quot;:&quot;Introduction to the financial markets&quot;,&quot;contentText&quot;:&quot;&lt;p&gt;Financial markets are how people and companies buy and sell assets: futures, options, shares, indices, currencies, commodities, and much more.&lt;/p&gt;\n&lt;p&gt;People have traded financial markets for hundreds of years. They grew out of a practical need: to help people buy and sell things more efficiently, and to help companies that need money to raise it quickly.&lt;br /&gt;\n&lt;br /&gt;\n&lt;/p&gt;&quot;,&quot;contentImage&quot;:{&quot;src&quot;:&quot;https://www.cfxm-pro.com/en/-/media/project/gain-capital/forex/feature-images/home/fxus/tabs/new/fxus-intro-to-forex-markets.jpg?h=410&amp;w=600&amp;extension=webp&amp;hash=62D0924F9DE1CD97BE234B349CAA420B&quot;,&quot;alt&quot;:&quot;Smartphone user with financial figures in the background&quot;,&quot;height&quot;:&quot;410&quot;,&quot;width&quot;:&quot;600&quot;},&quot;flipImageRight&quot;:&quot;1&quot;,&quot;link&quot;:{&quot;text&quot;:&quot;Discover financial markets&quot;,&quot;target&quot;:&quot;_blank&quot;,&quot;url&quot;:&quot;/en-us/trading-academy/courses/introduction-to-financial-markets/financial-markets-basics/&quot;},&quot;buttonClass&quot;:&quot;button button-bordered-primary&quot;,&quot;HeadingTag&quot;:&quot;div&quot;},{&quot;key&quot;:&quot;bef4febd-280a-4119-8521-97bcae7e3e37&quot;,&quot;icon&quot;:{&quot;src&quot;:&quot;https://www.cfxm-pro.com/en/-/media/project/gain-capital/forex/icons/home/fxall-what-is-forex-pound-dollar-bl.svg?h=410&amp;w=600&amp;extension=webp&amp;hash=D0DCCF6406E9EE85AE031E85082CF881&quot;,&quot;alt&quot;:&quot;White icon of $ and &#7c3aed; symbols&quot;,&quot;height&quot;:&quot;&quot;,&quot;width&quot;:&quot;&quot;},&quot;iconActive&quot;:null,&quot;tabTitle&quot;:&quot;What is forex? &quot;,&quot;contentTitle&quot;:&quot;What is forex? &quot;,&quot;contentText&quot;:&quot;&lt;p&gt;Forex trading is the buying and selling of global currencies. It’s how individuals, businesses, central banks and governments pay for goods and services in other economies.&lt;/p&gt;\n&lt;p&gt;However, the vast majority of forex trades aren’t for practical purposes. Speculative FX traders seek to profit from fluctuations in the exchange rates between currencies, speculating on whether one will go up or down in value compared to another.&lt;br /&gt;\n&lt;br /&gt;\n&lt;/p&gt;&quot;,&quot;contentImage&quot;:{&quot;src&quot;:&quot;https://www.cfxm-pro.com/en/-/media/project/gain-capital/forex/education/lessons/introduction-to-financial-markets/what-is-forex/forex-vs-stock-graphic-2023-new.jpg?h=754&amp;w=1280&amp;extension=webp&amp;hash=34D5F11AF541E5E367A82AB77172A07C&quot;,&quot;alt&quot;:&quot;Forex vs Stock Graphic 2023 new&quot;,&quot;height&quot;:&quot;754&quot;,&quot;width&quot;:&quot;1280&quot;},&quot;flipImageRight&quot;:&quot;1&quot;,&quot;link&quot;:{&quot;text&quot;:&quot;Intro to forex&quot;,&quot;target&quot;:&quot;_blank&quot;,&quot;url&quot;:&quot;/en-us/trading-academy/courses/introduction-to-financial-markets/what-is-forex/&quot;},&quot;buttonClass&quot;:&quot;button button-bordered-primary&quot;,&quot;HeadingTag&quot;:&quot;div&quot;},{&quot;key&quot;:&quot;c0a7afdf-be99-48e4-82c2-99f88e4a7f77&quot;,&quot;icon&quot;:{&quot;src&quot;:&quot;https://www.cfxm-pro.com/en/-/media/project/gain-capital/forex/icons/nav/fxall-meganav-platform-trading-tools-bl.svg?h=754&amp;w=1280&amp;extension=webp&amp;hash=91E4BD61CB4D4559EF442EAD4FCBEA4C&quot;,&quot;alt&quot;:&quot;Spanner and pencil icon in blue&quot;,&quot;height&quot;:&quot;&quot;,&quot;width&quot;:&quot;&quot;},&quot;iconActive&quot;:null,&quot;tabTitle&quot;:&quot;Tools overview&quot;,&quot;contentTitle&quot;:&quot;Tools overview&quot;,&quot;contentText&quot;:&quot;&lt;p&gt;Check out our advanced trading tools such as Performance Analytics and useful charting features.&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;&quot;,&quot;contentImage&quot;:{&quot;src&quot;:&quot;https://www.cfxm-pro.com/en/-/media/project/gain-capital/forex/feature-images/home/fxus/tabs/new/fxus-tools-overview.jpg?h=400&amp;w=600&amp;extension=webp&amp;hash=A441F745E9CD9B3BCD0FC0C14BE13B99&quot;,&quot;alt&quot;:&quot;Market chart Day trader by FOREX.com&quot;,&quot;height&quot;:&quot;400&quot;,&quot;width&quot;:&quot;600&quot;},&quot;flipImageRight&quot;:&quot;1&quot;,&quot;link&quot;:{&quot;text&quot;:&quot;Trading tools&quot;,&quot;target&quot;:&quot;_blank&quot;,&quot;url&quot;:&quot;/en-us/trading-tools/&quot;},&quot;buttonClass&quot;:&quot;button button-bordered-primary&quot;,&quot;HeadingTag&quot;:&quot;div&quot;},{&quot;key&quot;:&quot;ead5b8ba-a0a0-40a8-aad6-28fe57f16863&quot;,&quot;icon&quot;:{&quot;src&quot;:&quot;https://www.cfxm-pro.com/en/-/media/project/gain-capital/forex/icons/platforms/icon-platforms-compare-colour.svg?h=400&amp;w=600&amp;extension=webp&amp;hash=DFA90AC95D4BAA58E7164751E8B1B797&quot;,&quot;alt&quot;:&quot;Icon of two stacked screens in blue&quot;,&quot;height&quot;:&quot;&quot;,&quot;width&quot;:&quot;&quot;},&quot;iconActive&quot;:null,&quot;tabTitle&quot;:&quot;Platform comparison&quot;,&quot;contentTitle&quot;:&quot;Platform comparison&quot;,&quot;contentText&quot;:&quot;&lt;p&gt;Not sure which is the right FOREX.com platform for you? Check out our handy platform comparison table which will show you all the differences.&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;&quot;,&quot;contentImage&quot;:{&quot;src&quot;:&quot;https://www.cfxm-pro.com/en/-/media/project/gain-capital/forex/feature-images/home/fxus/tabs/new/fxus-platform-comparison.png?h=776&amp;w=1200&amp;extension=webp&amp;hash=C4542DC9572A6A285C265CEA2F52948B&quot;,&quot;alt&quot;:&quot;App screenshot of the FOREX.com platform on Web and mobile by FOREX.com&quot;,&quot;height&quot;:&quot;776&quot;,&quot;width&quot;:&quot;1200&quot;},&quot;flipImageRight&quot;:&quot;1&quot;,&quot;link&quot;:{&quot;text&quot;:&quot;See platform comparison table&quot;,&quot;target&quot;:&quot;_blank&quot;,&quot;url&quot;:&quot;/en-us/trading-platforms/compare-trading-platforms/&quot;},&quot;buttonClass&quot;:&quot;button button-bordered-primary&quot;,&quot;HeadingTag&quot;:&quot;div&quot;}]}">
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -4168,12 +4176,12 @@ Why Trade with Us?      </span>
             #hpheader .button-bordered-secondary a:hover,
             .cta-with-cards .button-bordered-secondary a:hover {
                 background: #fff !important;
-                color: #12225c !important;
+                color: #2e1065 !important;
                 padding: 11px 20px !important;
             }
             #hpheader .button-bordered-secondary a:hover:after,
             .cta-with-cards .button-bordered-secondary a:hover:after {
-                border-top: 2px solid #12225c;
+                border-top: 2px solid #2e1065;
                 border-right: 2px solid #000;
                 top: 1px;
             }
