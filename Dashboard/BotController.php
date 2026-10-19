@@ -13,6 +13,8 @@ if (!isset($_SESSION['bot_csrf']) || !isset($_POST['csrf']) || !hash_equals($_SE
 if (($_POST['action'] ?? '') !== 'acquire') bot_json(400, false, 'Unknown bot action.');
 
 require_once __DIR__ . '/../Connect.php';
+require_once __DIR__ . '/BotSchema.php';
+if (!cfxm_ensure_bot_tables($Conn)) bot_json(500, false, 'Bot mining storage is unavailable. Please contact support.');
 $investorId = (string)$_SESSION['User_id'];
 $investorEscaped = mysqli_real_escape_string($Conn, $investorId);
 $userQuery = mysqli_query($Conn, "SELECT Investor_id, V_Status, Fin_Asset, Total_Deposit FROM investors WHERE Investor_id='{$investorEscaped}' LIMIT 1");
@@ -21,11 +23,11 @@ $user = mysqli_fetch_assoc($userQuery);
 if ((int)($user['V_Status'] ?? 0) < 1) bot_json(403, false, 'Complete account verification before acquiring a trading bot.');
 
 $plans = [
- 'scout'=>['name'=>'AI Scout','capital'=>2000.00,'strategy'=>'Spot trend & momentum','capacity'=>3],
- 'momentum'=>['name'=>'Momentum AI','capital'=>5000.00,'strategy'=>'Momentum & breakout','capacity'=>8],
- 'quant'=>['name'=>'Quant Matrix','capital'=>10000.00,'strategy'=>'Quantitative & mean reversion','capacity'=>15],
- 'neural'=>['name'=>'Neural Trader','capital'=>25000.00,'strategy'=>'Ensemble AI signals','capacity'=>25],
- 'apex'=>['name'=>'Apex Autonomous','capital'=>50000.00,'strategy'=>'Multi-market adaptive execution','capacity'=>40],
+ 'scout'=>['name'=>'AI Scout','capital'=>2000.00,'strategy'=>'Spot trend & momentum','capacity'=>3,'rate'=>0.0300],
+ 'momentum'=>['name'=>'Momentum AI','capital'=>5000.00,'strategy'=>'Momentum & breakout','capacity'=>8,'rate'=>0.0800],
+ 'quant'=>['name'=>'Quant Matrix','capital'=>10000.00,'strategy'=>'Quantitative & mean reversion','capacity'=>15,'rate'=>0.1500],
+ 'neural'=>['name'=>'Neural Trader','capital'=>25000.00,'strategy'=>'Ensemble AI signals','capacity'=>25,'rate'=>0.2500],
+ 'apex'=>['name'=>'Apex Autonomous','capital'=>50000.00,'strategy'=>'Multi-market adaptive execution','capacity'=>40,'rate'=>0.4000],
 ];
 $planCode = (string)($_POST['plan'] ?? '');
 if (!isset($plans[$planCode])) bot_json(422, false, 'Select a valid bot plan.');
@@ -91,9 +93,13 @@ try {
     if (!mysqli_stmt_execute($balanceUpdate) || mysqli_stmt_affected_rows($balanceUpdate) !== 1) { mysqli_stmt_close($balanceUpdate); throw new Exception('Wallet update failed.'); }
     mysqli_stmt_close($balanceUpdate);
 
-    $botInsert = mysqli_prepare($Conn, "INSERT INTO user_trading_bots (investor_id,plan_code,plan_name,capital,strategy,market_capacity,status) VALUES (?,?,?,?,?,?,'pending_engine')");
+    $startsAt = date('Y-m-d H:i:s');
+    $dueAt = date('Y-m-d H:i:s', strtotime($startsAt . ' +7 days'));
+    $durationDays = 7;
+    $dailyRate = $plan['rate'];
+    $botInsert = mysqli_prepare($Conn, "INSERT INTO user_trading_bots (investor_id,plan_code,plan_name,capital,strategy,market_capacity,daily_rate_percent,duration_days,starts_at,due_at,status,mining_status) VALUES (?,?,?,?,?,?,?,?,?,?,'active','active')");
     if (!$botInsert) throw new Exception('Could not create bot acquisition.');
-    mysqli_stmt_bind_param($botInsert, 'sssdsi', $investorId, $planCode, $plan['name'], $plan['capital'], $plan['strategy'], $plan['capacity']);
+    mysqli_stmt_bind_param($botInsert, 'sssdsidiss', $investorId, $planCode, $plan['name'], $plan['capital'], $plan['strategy'], $plan['capacity'], $dailyRate, $durationDays, $startsAt, $dueAt);
     if (!mysqli_stmt_execute($botInsert)) { mysqli_stmt_close($botInsert); throw new Exception('Bot acquisition failed.'); }
     $botId = mysqli_insert_id($Conn);
     mysqli_stmt_close($botInsert);
@@ -102,14 +108,23 @@ try {
     $ledgerInsert = mysqli_prepare($Conn, "INSERT INTO trading_bot_ledger (investor_id,bot_id,entry_type,amount,reference,note) VALUES (?,?,'acquisition',?,?,?)");
     if (!$ledgerInsert) throw new Exception('Could not create wallet ledger entry.');
     $negativeCapital = -$plan['capital'];
-    $note = 'Bot plan acquisition; activation pending execution engine.';
+    $note = 'Bot purchase; seven-day simulated mining activated.';
     mysqli_stmt_bind_param($ledgerInsert, 'sidss', $investorId, $botId, $negativeCapital, $reference, $note);
     if (!mysqli_stmt_execute($ledgerInsert)) { mysqli_stmt_close($ledgerInsert); throw new Exception('Wallet ledger entry failed.'); }
     mysqli_stmt_close($ledgerInsert);
 
     mysqli_commit($Conn);
     unset($_SESSION['bot_csrf']);
-    bot_json(200, true, $plan['name'] . ' was acquired successfully. $' . number_format($plan['capital'], 2) . ' was deducted from ' . $walletColumn . '. Its status is pending engine connection; earnings will only be posted from reconciled realized trade results.', ['bot_id'=>$botId,'status'=>'pending_engine','capital'=>$plan['capital'],'wallet_source'=>$walletColumn,'wallet_balance'=>$newBalance]);
+    bot_json(200, true, $plan['name'] . ' was purchased and simulated mining is active for 7 days at ' . number_format($dailyRate, 4) . '% per day. 
+} catch (Throwable $e) {
+    mysqli_rollback($Conn);
+    if ($e->getMessage() === 'INSUFFICIENT_FUNDS') {
+        bot_json(422, false, 'Insufficient funds. You need at least $' . number_format($plan['capital'], 2) . ' in either your Fin_Asset or Total_Deposit balance to buy this bot.');
+    }
+    error_log('CFXM bot acquisition failed: ' . $e->getMessage());
+    bot_json(500, false, 'The bot could not be acquired. No balance change was saved.');
+}
+ . number_format($plan['capital'], 2) . ' was deducted from ' . $walletColumn . '.', ['bot_id'=>$botId,'status'=>'active','capital'=>$plan['capital'],'daily_rate_percent'=>$dailyRate,'duration_days'=>7,'starts_at'=>$startsAt,'due_at'=>$dueAt,'wallet_source'=>$walletColumn,'wallet_balance'=>$newBalance]);
 } catch (Throwable $e) {
     mysqli_rollback($Conn);
     if ($e->getMessage() === 'INSUFFICIENT_FUNDS') {
