@@ -280,3 +280,15 @@ html[data-theme="light"] .vh-stock-marquee{background:var(--cfxm-surface,#fff)}
 .page-wrapper .vh-balance-card label {
     color: #fff !important;
 }
+
+
+/* Bot profit card: show earned profit with the active bots' estimated daily rate. */
+.vh-bot-profit-card .vh-bot-profit-details { display:grid; gap:7px; width:100%; margin-top:10px; padding-top:9px; border-top:1px solid var(--vh-border); }
+.vh-bot-profit-card .vh-bot-profit-details span { display:flex; justify-content:space-between; align-items:baseline; gap:8px; width:100%; }
+.vh-bot-profit-card .vh-bot-profit-details b { color:var(--vh-muted); font-size:10px; font-weight:600; }
+.vh-bot-profit-card .vh-bot-profit-details strong { color:var(--text-color,#142b36); font-size:11px; text-align:right; overflow-wrap:anywhere; }
+@media(max-width:760px) {
+  .vh-bot-profit-card .vh-bot-profit-details { gap:5px; margin-top:8px; padding-top:7px; }
+  .vh-bot-profit-card .vh-bot-profit-details b { font-size:9px; }
+  .vh-bot-profit-card .vh-bot-profit-details strong { font-size:10px; }
+}
