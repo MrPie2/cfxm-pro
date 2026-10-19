@@ -40,7 +40,7 @@ if ($botQuery) while ($botRow = mysqli_fetch_assoc($botQuery)) $myBots[] = $botR
    var name=button.dataset.name, price=Number(button.dataset.price);
    var confirmed = await swal({
     title: 'Confirm bot purchase',
-    text: 'Buy ' + name + ' for 
+    text: 'Buy ' + name + ' for $' + price.toLocaleString() + '? The full amount will be deducted from either your Wallet Balance or Deposit Balance, whichever eligible balance can cover the purchase.',
     icon: 'warning',
     buttons: ['Cancel', 'Buy Bot'],
     dangerMode: false
