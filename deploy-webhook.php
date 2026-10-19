@@ -5,7 +5,7 @@ declare(strict_types=1);
  * GitHub push webhook for deploying the production checkout in this directory.
  *
  * Security requirements:
- * - Keep the webhook secret in the account home directory, outside public_html.
+ * - Keep the webhook secret and SSH deploy key under the account's .ssh directory, outside public_html.
  * - Configure GitHub to send push events only.
  * - Only the MrPie2/cfxm-pro main branch is allowed to deploy.
  */
@@ -39,9 +39,10 @@ if (!is_string($payload) || $payload === '' || strlen($payload) > 1048576) {
 }
 
 $home = dirname(__DIR__);
-$secretFile = $home . '/.cfxm-pro-deploy-secret';
+$sshDir = $home . '/.ssh';
+$secretFile = $sshDir . '/cfxmpro-webhook-secret';
 if (!is_file($secretFile) || !is_readable($secretFile)) {
-    deployLog('ERROR: webhook secret file is missing or unreadable');
+    deployLog('ERROR: webhook secret file is missing or unreadable at ' . $secretFile);
     respond(503, ['ok' => false, 'message' => 'Deployment is not configured']);
 }
 
@@ -90,6 +91,22 @@ if (!flock($lock, LOCK_EX | LOCK_NB)) {
     respond(409, ['ok' => false, 'message' => 'A deployment is already running']);
 }
 
+// Use the dedicated GitHub deploy PRIVATE key. The .pub file is only its public half.
+$deployKey = $sshDir . '/cfxm_pro_deploy_key';
+$knownHosts = $sshDir . '/known_hosts';
+if (!is_file($deployKey) || !is_readable($deployKey)) {
+    flock($lock, LOCK_UN);
+    fclose($lock);
+    deployLog('ERROR: GitHub deploy private key is missing or unreadable at ' . $deployKey);
+    respond(503, ['ok' => false, 'message' => 'Deployment SSH private key is not configured']);
+}
+if (!is_file($knownHosts) || !is_readable($knownHosts)) {
+    flock($lock, LOCK_UN);
+    fclose($lock);
+    deployLog('ERROR: SSH known_hosts is missing or unreadable at ' . $knownHosts);
+    respond(503, ['ok' => false, 'message' => 'SSH host verification is not configured']);
+}
+
 $command = 'git -C ' . escapeshellarg(__DIR__) . ' pull --ff-only origin main';
 $descriptors = [
     0 => ['pipe', 'r'],
@@ -100,6 +117,7 @@ $environment = [
     'HOME' => $home,
     'PATH' => '/usr/local/bin:/usr/bin:/bin',
     'GIT_TERMINAL_PROMPT' => '0',
+    'GIT_SSH_COMMAND' => 'ssh -i ' . escapeshellarg($deployKey) . ' -o IdentitiesOnly=yes -o BatchMode=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile=' . escapeshellarg($knownHosts),
 ];
 
 $process = @proc_open($command, $descriptors, $pipes, __DIR__, $environment);
