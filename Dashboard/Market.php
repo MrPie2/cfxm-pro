@@ -7,10 +7,15 @@ if (!isset($_SESSION['User_id'])) {
 include('Header.php');
 
 $marketAssets = array(
-    array('name'=>'NVIDIA','symbol'=>'NVDA','exchange'=>'NASDAQ','match'=>array('NVIDIA','NVDA'),'mark'=>'N','class'=>'nvidia','category'=>'Semiconductors','description'=>'Explore NVIDIA and its graphics, accelerated computing and AI platforms.'),
-    array('name'=>'Toyota Motor','symbol'=>'TM','exchange'=>'NYSE ADR','match'=>array('Toyota','TM'),'mark'=>'T','class'=>'toyota','category'=>'Japanese automotive','description'=>'Explore Toyota Motor and its global automotive and mobility business.'),
-    array('name'=>'Sony Group','symbol'=>'SONY','exchange'=>'NYSE ADR','match'=>array('Sony','SONY'),'mark'=>'S','class'=>'sony','category'=>'Japanese technology','description'=>'Explore Sony Group across entertainment, electronics, gaming and imaging.'),
-    array('name'=>'Honda Motor','symbol'=>'HMC','exchange'=>'NYSE ADR','match'=>array('Honda','HMC'),'mark'=>'H','class'=>'honda','category'=>'Japanese automotive','description'=>'Explore Honda Motor across automobiles, motorcycles and mobility technology.')
+    array('name'=>'NVIDIA','symbol'=>'NVDA','exchange'=>'NASDAQ','match'=>array('NVIDIA','NVDA'),'mark'=>'N','logo'=>'https://cdn.simpleicons.org/nvidia/76B900','class'=>'nvidia','category'=>'Semiconductors','description'=>'Explore NVIDIA and its graphics, accelerated computing and AI platforms.'),
+    array('name'=>'Toyota Motor','symbol'=>'TM','exchange'=>'NYSE ADR','match'=>array('Toyota','TM'),'mark'=>'T','logo'=>'https://cdn.simpleicons.org/toyota/EB0A1E','class'=>'toyota','category'=>'Japanese automotive','description'=>'Explore Toyota Motor and its global automotive and mobility business.'),
+    array('name'=>'Sony Group','symbol'=>'SONY','exchange'=>'NYSE ADR','match'=>array('Sony','SONY'),'mark'=>'S','logo'=>'https://cdn.simpleicons.org/sony/000000','class'=>'sony','category'=>'Japanese technology','description'=>'Explore Sony Group across entertainment, electronics, gaming and imaging.'),
+    array('name'=>'Honda Motor','symbol'=>'HMC','exchange'=>'NYSE ADR','match'=>array('Honda','HMC'),'mark'=>'H','logo'=>'https://cdn.simpleicons.org/honda/E40521','class'=>'honda','category'=>'Japanese automotive','description'=>'Explore Honda Motor across automobiles, motorcycles and mobility technology.'),
+    array('name'=>'Alphabet (Google)','symbol'=>'GOOGL','exchange'=>'NASDAQ','match'=>array('Alphabet','Google','GOOGL'),'mark'=>'G','logo'=>'https://cdn.simpleicons.org/google/4285F4','class'=>'google','category'=>'Technology','description'=>'Explore Alphabet and Google across search, cloud and digital services.'),
+    array('name'=>'Tesla','symbol'=>'TSLA','exchange'=>'NASDAQ','match'=>array('Tesla','TSLA'),'mark'=>'T','logo'=>'https://cdn.simpleicons.org/tesla/E82127','class'=>'tesla','category'=>'Electric vehicles','description'=>'Explore Tesla and its electric vehicles, energy storage and charging ecosystem.'),
+    array('name'=>'Microsoft','symbol'=>'MSFT','exchange'=>'NASDAQ','match'=>array('Microsoft','MSFT'),'mark'=>'M','logo'=>'https://cdn.simpleicons.org/microsoft/5E5E5E','class'=>'microsoft','category'=>'Technology','description'=>'Explore Microsoft across cloud, productivity, software and AI.'),
+    array('name'=>'BYD Company','symbol'=>'BYDDY','exchange'=>'OTC ADR','match'=>array('BYD','BYDDY'),'mark'=>'B','logo'=>'https://cdn.simpleicons.org/byd/ED1C24','class'=>'byd','category'=>'Electric vehicles','description'=>'Explore BYD, the Chinese electric vehicle and battery manufacturer.'),
+    array('name'=>'Apple','symbol'=>'AAPL','exchange'=>'NASDAQ','match'=>array('Apple','AAPL'),'mark'=>'A','logo'=>'https://cdn.simpleicons.org/apple/000000','class'=>'apple','category'=>'Technology','description'=>'Explore Apple across its devices, software and services ecosystem.')
 );
 
 foreach ($marketAssets as &$asset) {
@@ -50,7 +55,7 @@ $marketEscape = static function ($value) {
 .cfxm-market-card:hover{transform:translateY(-3px);border-color:rgba(119,72,188,.38);box-shadow:0 14px 34px rgba(15,25,45,.1)}
 .cfxm-market-card-top{display:flex;align-items:center;gap:13px;padding:19px 19px 14px}
 .cfxm-market-mark{display:grid;place-items:center;flex:0 0 50px;width:50px;height:50px;border:1px solid var(--cfxm-line,rgba(130,145,160,.2));border-radius:15px;background:var(--cfxm-bg,var(--body-bg,#f6f7fb));color:var(--cfxm-text,var(--text-color,#192c36));font-size:24px;font-weight:900}
-.cfxm-market-mark.netflix{background:#e50914;color:#fff;border-color:#e50914}.cfxm-market-mark.dell{background:#0872ce;color:#fff;border-color:#0872ce}.cfxm-market-mark.microsoft{background:linear-gradient(135deg,#f35325 0 48%,#81bc06 49% 100%);color:#fff;border-color:transparent}.cfxm-market-mark.spacex{background:#101820;color:#fff;border-color:#3b4650}.cfxm-market-mark.magnet{background:#f3e8ff;color:#6b21a8;border-color:#e9d5ff}.cfxm-market-mark.nvidia{background:#76b900;color:#fff;border-color:#76b900}.cfxm-market-mark.toyota{background:#d71920;color:#fff;border-color:#d71920}.cfxm-market-mark.sony{background:#111;color:#fff;border-color:#111}.cfxm-market-mark.honda{background:#d71920;color:#fff;border-color:#d71920}
+.cfxm-market-mark.netflix{background:#e50914;color:#fff;border-color:#e50914}.cfxm-market-mark.dell{background:#0872ce;color:#fff;border-color:#0872ce}.cfxm-market-mark.microsoft{background:linear-gradient(135deg,#f35325 0 48%,#81bc06 49% 100%);color:#fff;border-color:transparent}.cfxm-market-mark.spacex{background:#101820;color:#fff;border-color:#3b4650}.cfxm-market-mark.magnet{background:#f3e8ff;color:#6b21a8;border-color:#e9d5ff}.cfxm-market-mark.nvidia,.cfxm-market-mark.toyota,.cfxm-market-mark.sony,.cfxm-market-mark.honda,.cfxm-market-mark.google,.cfxm-market-mark.tesla,.cfxm-market-mark.microsoft,.cfxm-market-mark.byd,.cfxm-market-mark.apple{background:#fff;border-color:rgba(130,145,160,.25)}
 .cfxm-market-company{min-width:0;flex:1}
 .cfxm-market-company h3{overflow-wrap:anywhere;margin:0 0 5px;color:var(--cfxm-text,var(--text-color,#192c36));font-size:16px;font-weight:850;letter-spacing:-.025em}
 .cfxm-market-company p{margin:0;color:var(--cfxm-muted,#83919c);font-size:11px}
@@ -86,7 +91,7 @@ $marketEscape = static function ($value) {
         <?php foreach ($marketAssets as $asset): ?>
         <article class="cfxm-market-card">
             <div class="cfxm-market-card-top">
-                <div class="cfxm-market-mark <?php echo $marketEscape($asset['class']); ?>" aria-hidden="true"><?php echo $marketEscape($asset['mark']); ?></div>
+                <div class="cfxm-market-mark <?php echo $marketEscape($asset['class']); ?>" aria-hidden="true"><img src="<?php echo $marketEscape($asset['logo']); ?>" alt="" loading="lazy" style="width:30px;height:30px;object-fit:contain" onerror="this.style.display='none';this.parentElement.textContent=<?php echo json_encode($asset['mark']); ?>;"></div>
                 <div class="cfxm-market-company">
                     <h3><?php echo $marketEscape($asset['name']); ?></h3>
                     <p><?php echo $marketEscape($asset['exchange']); ?><?php if ($asset['stock'] && !empty($asset['stock']['tradingview'])): ?> · <?php echo $marketEscape($asset['stock']['tradingview']); ?><?php elseif ($asset['symbol'] !== 'PRIVATE' && $asset['symbol'] !== 'MAGNET'): ?> · <?php echo $marketEscape($asset['symbol']); ?><?php endif; ?></p>
@@ -105,7 +110,7 @@ $marketEscape = static function ($value) {
         <?php endforeach; ?>
     </section>
 
-    <div class="cfxm-market-note"><i class="fas fa-info-circle"></i><span>Market listings are connected to the platform's stock catalogue. NVIDIA is listed on NASDAQ; Toyota, Sony and Honda are represented by their US-listed ADR symbols. An investment button is enabled only when a matching catalogue entry exists. Displaying a company here does not itself mean that CFXM Pro holds shares in that company.</span></div>
+    <div class="cfxm-market-note"><i class="fas fa-info-circle"></i><span>Market listings are connected to the platform's stock catalogue. NVIDIA, Google, Tesla, Microsoft and Apple are listed in the US; Toyota, Sony and Honda are represented by their US-listed ADR symbols, while BYD is represented by its US OTC ADR symbol. An investment button is enabled only when a matching catalogue entry exists. Displaying a company here does not itself mean that CFXM Pro holds shares in that company.</span></div>
 </main>
 <?php include('Footer.php'); ?>
 </body>

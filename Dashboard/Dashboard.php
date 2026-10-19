@@ -148,6 +148,7 @@ window.location.href='Notification.php?id=".$id."';
     .vh-company-art-toyota{background:linear-gradient(130deg,#161c2b,#d71920)!important}.vh-company-art-toyota .vh-company-brand-mark{background:#fff;color:#d71920}
     .vh-company-art-sony{background:linear-gradient(130deg,#090909,#424242)!important}.vh-company-art-sony .vh-company-brand-mark{background:#fff;color:#111}
     .vh-company-art-honda{background:linear-gradient(130deg,#4b080d,#d71920)!important}.vh-company-art-honda .vh-company-brand-mark{background:#fff;color:#d71920}
+    .vh-company-art-google{background:linear-gradient(130deg,#16233a,#4285f4)!important}.vh-company-art-tesla{background:linear-gradient(130deg,#160b0c,#e82127)!important}.vh-company-art-microsoft{background:linear-gradient(130deg,#1e2b36,#5e5e5e)!important}.vh-company-art-byd{background:linear-gradient(130deg,#1c1720,#ed1c24)!important}.vh-company-art-apple{background:linear-gradient(130deg,#141414,#626262)!important}
     @media(max-width:600px){.vh-featured-company-card .vh-investment-company-art{min-height:124px}.vh-featured-company-card .vh-company-brand-mark{width:52px;height:52px;font-size:29px}.vh-featured-company-card .vh-company-brand-name{font-size:16px}}
     .card-dark{
         background: var(--card-bg);
@@ -236,10 +237,15 @@ window.smartsupp||(function(d) {
 
     <?php
     $featuredCompanies = array(
-        array('name'=>'NVIDIA','symbol'=>'NVDA','mark'=>'N','class'=>'nvidia','category'=>'SEMICONDUCTORS','description'=>'Explore NVIDIA and its graphics, accelerated computing and AI platforms.','match'=>array('NVIDIA','NVDA')),
-        array('name'=>'Toyota Motor','symbol'=>'TM','mark'=>'T','class'=>'toyota','category'=>'JAPANESE AUTOMOTIVE','description'=>'Explore Toyota Motor and its global automotive and mobility business.','match'=>array('Toyota','TM')),
-        array('name'=>'Sony Group','symbol'=>'SONY','mark'=>'S','class'=>'sony','category'=>'JAPANESE TECHNOLOGY','description'=>'Explore Sony Group across entertainment, electronics, gaming and imaging.','match'=>array('Sony','SONY')),
-        array('name'=>'Honda Motor','symbol'=>'HMC','mark'=>'H','class'=>'honda','category'=>'JAPANESE AUTOMOTIVE','description'=>'Explore Honda Motor across automobiles, motorcycles and mobility technology.','match'=>array('Honda','HMC'))
+        array('name'=>'NVIDIA','symbol'=>'NVDA','mark'=>'N','logo'=>'https://cdn.simpleicons.org/nvidia/76B900','class'=>'nvidia','category'=>'SEMICONDUCTORS','description'=>'Explore NVIDIA and its graphics, accelerated computing and AI platforms.','match'=>array('NVIDIA','NVDA')),
+        array('name'=>'Toyota Motor','symbol'=>'TM','mark'=>'T','logo'=>'https://cdn.simpleicons.org/toyota/EB0A1E','class'=>'toyota','category'=>'JAPANESE AUTOMOTIVE','description'=>'Explore Toyota Motor and its global automotive and mobility business.','match'=>array('Toyota','TM')),
+        array('name'=>'Sony Group','symbol'=>'SONY','mark'=>'S','logo'=>'https://cdn.simpleicons.org/sony/000000','class'=>'sony','category'=>'JAPANESE TECHNOLOGY','description'=>'Explore Sony Group across entertainment, electronics, gaming and imaging.','match'=>array('Sony','SONY')),
+        array('name'=>'Honda Motor','symbol'=>'HMC','mark'=>'H','logo'=>'https://cdn.simpleicons.org/honda/E40521','class'=>'honda','category'=>'JAPANESE AUTOMOTIVE','description'=>'Explore Honda Motor across automobiles, motorcycles and mobility technology.','match'=>array('Honda','HMC')),
+        array('name'=>'Alphabet (Google)','symbol'=>'GOOGL','mark'=>'G','logo'=>'https://cdn.simpleicons.org/google/4285F4','class'=>'google','category'=>'TECHNOLOGY','description'=>'Explore Alphabet and Google across search, cloud and digital services.','match'=>array('Alphabet','Google','GOOGL')),
+        array('name'=>'Tesla','symbol'=>'TSLA','mark'=>'T','logo'=>'https://cdn.simpleicons.org/tesla/E82127','class'=>'tesla','category'=>'ELECTRIC VEHICLES','description'=>'Explore Tesla and its electric vehicles, energy storage and charging ecosystem.','match'=>array('Tesla','TSLA')),
+        array('name'=>'Microsoft','symbol'=>'MSFT','mark'=>'M','logo'=>'https://cdn.simpleicons.org/microsoft/5E5E5E','class'=>'microsoft','category'=>'TECHNOLOGY','description'=>'Explore Microsoft across cloud, productivity, software and AI.','match'=>array('Microsoft','MSFT')),
+        array('name'=>'BYD Company','symbol'=>'BYDDY','mark'=>'B','logo'=>'https://cdn.simpleicons.org/byd/ED1C24','class'=>'byd','category'=>'ELECTRIC VEHICLES','description'=>'Explore BYD, the Chinese electric vehicle and battery manufacturer.','match'=>array('BYD','BYDDY')),
+        array('name'=>'Apple','symbol'=>'AAPL','mark'=>'A','logo'=>'https://cdn.simpleicons.org/apple/000000','class'=>'apple','category'=>'TECHNOLOGY','description'=>'Explore Apple across its devices, software and services ecosystem.','match'=>array('Apple','AAPL'))
     );
     foreach($featuredCompanies as &$company){
         $company['stock']=null; $stockConditions=array();
@@ -250,13 +256,13 @@ window.smartsupp||(function(d) {
     unset($company);
 ?>
 <section class="vh-investment-catalog" aria-labelledby="vhFeaturedStocksHeading">
-    <div class="vh-investment-catalog-head"><div><span class="vh-eyebrow">FEATURED STOCKS</span><h2 id="vhFeaturedStocksHeading">Explore the market</h2><p>Discover NVIDIA, Toyota, Sony and Honda through their company stock listings.</p></div>
+    <div class="vh-investment-catalog-head"><div><span class="vh-eyebrow">FEATURED STOCKS</span><h2 id="vhFeaturedStocksHeading">Explore the market</h2><p>Discover NVIDIA, Toyota, Sony, Honda, Google, Tesla, Microsoft, BYD and Apple.</p></div>
         <div class="vh-carousel-controls" aria-label="Featured stock carousel controls"><button type="button" class="vh-carousel-btn" id="vhFeaturedStocksPrev" aria-label="Scroll featured stocks left"><i class="fas fa-chevron-left"></i></button><button type="button" class="vh-carousel-btn" id="vhFeaturedStocksNext" aria-label="Scroll featured stocks right"><i class="fas fa-chevron-right"></i></button></div>
     </div>
     <div class="vh-investment-track" id="vhFeaturedStocksTrack" tabindex="0" role="region" aria-label="Featured company stocks. Scroll horizontally to view more">
         <?php foreach($featuredCompanies as $company): $companyStock=$company['stock']; ?>
         <article class="vh-investment-card vh-investment-company-card vh-featured-company-card">
-            <div class="vh-investment-company-art vh-company-art-<?php echo htmlspecialchars($company['class'],ENT_QUOTES,'UTF-8'); ?>" aria-hidden="true"><span class="vh-company-brand-mark"><?php echo htmlspecialchars($company['mark'],ENT_QUOTES,'UTF-8'); ?></span><span class="vh-company-orbit"></span><span class="vh-company-brand-name"><?php echo htmlspecialchars($company['name'],ENT_QUOTES,'UTF-8'); ?></span></div>
+            <div class="vh-investment-company-art vh-company-art-<?php echo htmlspecialchars($company['class'],ENT_QUOTES,'UTF-8'); ?>" aria-hidden="true"><span class="vh-company-brand-mark"><img src="<?php echo htmlspecialchars($company['logo'],ENT_QUOTES,'UTF-8'); ?>" alt="" loading="lazy" style="width:42px;height:42px;object-fit:contain;background:#fff;border-radius:10px;padding:7px" onerror="this.style.display='none';this.parentElement.textContent=<?php echo json_encode($company['mark']); ?>;"></span><span class="vh-company-orbit"></span><span class="vh-company-brand-name"><?php echo htmlspecialchars($company['name'],ENT_QUOTES,'UTF-8'); ?></span></div>
             <div class="vh-investment-card-body"><div class="vh-investment-card-meta"><span class="vh-asset-pill"><?php echo htmlspecialchars($company['category'],ENT_QUOTES,'UTF-8'); ?></span><span class="vh-asset-symbol"><?php echo htmlspecialchars($company['symbol'],ENT_QUOTES,'UTF-8'); ?></span></div>
                 <h3><?php echo htmlspecialchars($company['name'],ENT_QUOTES,'UTF-8'); ?></h3><p><?php echo htmlspecialchars($company['description'],ENT_QUOTES,'UTF-8'); ?></p>
                 <?php if($companyStock): ?><a class="vh-invest-now" href="Stock_Market.php?Stock_id=<?php echo (int)$companyStock['id']; ?>&amp;Type=Stock&amp;Min=<?php echo rawurlencode((string)$companyStock['Unit']); ?>&amp;Vehicle=company">Review stock <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
