@@ -323,3 +323,50 @@ html[data-theme="light"] .vh-stock-marquee{background:var(--cfxm-surface,#fff)}
   .vh-bot-profit-card .vh-bot-profit-details b,
   .vh-bot-profit-card .vh-bot-profit-details strong { display:block; text-align:left; font-size:9px; }
 }
+
+
+/* Mobile summary layout: full-width wallet followed by six cards in 3 columns x 2 rows. */
+@media (max-width:760px) {
+  .vh-hero-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 7px !important;
+  }
+  .vh-hero-grid > .vh-balance-card {
+    grid-column: 1 / -1 !important;
+  }
+  .vh-hero-grid > .vh-stat-card {
+    min-width: 0;
+    min-height: 0;
+    padding: 10px 7px;
+    border-radius: 11px;
+    overflow-wrap: anywhere;
+  }
+  .vh-hero-grid > .vh-stat-card .vh-stat-icon {
+    width: 26px;
+    height: 26px;
+    margin-bottom: 6px;
+    font-size: 11px;
+  }
+  .vh-hero-grid > .vh-stat-card .vh-stat-label {
+    font-size: 9px;
+    line-height: 1.25;
+  }
+  .vh-hero-grid > .vh-stat-card > strong {
+    font-size: clamp(11px, 3.3vw, 15px);
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+  }
+  .vh-hero-grid > .vh-stat-card small {
+    font-size: 8px;
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+  }
+  .vh-hero-grid > .vh-stat-card .vh-bot-profit-details span { display:block; }
+  .vh-hero-grid > .vh-stat-card .vh-bot-profit-details b,
+  .vh-hero-grid > .vh-stat-card .vh-bot-profit-details strong {
+    display:block;
+    text-align:left;
+    font-size:8px;
+    line-height:1.25;
+  }
+}
