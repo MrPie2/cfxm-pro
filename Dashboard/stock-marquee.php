@@ -51,10 +51,10 @@
         };
         const companyLogos = {
             'AAPL': 'https://cdn.simpleicons.org/apple/000000',
-            'MSFT': 'https://cdn.simpleicons.org/microsoft/5E5E5E',
+            'MSFT': 'https://www.google.com/s2/favicons?domain=microsoft.com&sz=128',
             'GOOGL': 'https://cdn.simpleicons.org/google/4285F4',
             'TSLA': 'https://cdn.simpleicons.org/tesla/E82127',
-            'BYDDY': 'https://cdn.simpleicons.org/byd/ED1C24',
+            'BYDDY': 'https://www.google.com/s2/favicons?domain=byd.com&sz=128',
             'NVDA': 'https://cdn.simpleicons.org/nvidia/76B900',
             'TM': 'https://cdn.simpleicons.org/toyota/EB0A1E',
             'SONY': 'https://cdn.simpleicons.org/sony/000000',

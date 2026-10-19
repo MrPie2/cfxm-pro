@@ -26,12 +26,12 @@ if (!function_exists('curl_init') || !function_exists('curl_multi_init')) {
 }
 
 $stocks = array(
-    array('symbol' => 'AAPL', 'name' => 'Apple'),
-    array('symbol' => 'MSFT', 'name' => 'Microsoft'),
-    array('symbol' => 'NVDA', 'name' => 'NVIDIA'),
     array('symbol' => 'GOOGL', 'name' => 'Alphabet (Google)'),
     array('symbol' => 'TSLA', 'name' => 'Tesla'),
+    array('symbol' => 'MSFT', 'name' => 'Microsoft'),
     array('symbol' => 'BYDDY', 'name' => 'BYD Company'),
+    array('symbol' => 'AAPL', 'name' => 'Apple'),
+    array('symbol' => 'NVDA', 'name' => 'NVIDIA'),
     array('symbol' => 'TM', 'name' => 'Toyota Motor'),
     array('symbol' => 'SONY', 'name' => 'Sony Group'),
     array('symbol' => 'HMC', 'name' => 'Honda Motor'),
