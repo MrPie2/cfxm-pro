@@ -237,15 +237,15 @@ window.smartsupp||(function(d) {
 
     <?php
     $featuredCompanies = array(
+        array('name'=>'Alphabet (Google)','symbol'=>'GOOGL','mark'=>'G','logo'=>'https://cdn.simpleicons.org/google/4285F4','class'=>'google','category'=>'TECHNOLOGY','description'=>'Explore Alphabet and Google across search, cloud and digital services.','match'=>array('Alphabet','Google','GOOGL')),
+        array('name'=>'Tesla','symbol'=>'TSLA','mark'=>'T','logo'=>'https://cdn.simpleicons.org/tesla/E82127','class'=>'tesla','category'=>'ELECTRIC VEHICLES','description'=>'Explore Tesla and its electric vehicles, energy storage and charging ecosystem.','match'=>array('Tesla','TSLA')),
+        array('name'=>'Microsoft','symbol'=>'MSFT','mark'=>'M','logo'=>'https://www.google.com/s2/favicons?domain=microsoft.com&sz=128','class'=>'microsoft','category'=>'TECHNOLOGY','description'=>'Explore Microsoft across cloud, productivity, software and AI.','match'=>array('Microsoft','MSFT')),
+        array('name'=>'BYD Company','symbol'=>'BYDDY','mark'=>'B','logo'=>'https://www.google.com/s2/favicons?domain=byd.com&sz=128','class'=>'byd','category'=>'ELECTRIC VEHICLES','description'=>'Explore BYD, the Chinese electric vehicle and battery manufacturer.','match'=>array('BYD','BYDDY')),
+        array('name'=>'Apple','symbol'=>'AAPL','mark'=>'A','logo'=>'https://cdn.simpleicons.org/apple/000000','class'=>'apple','category'=>'TECHNOLOGY','description'=>'Explore Apple across its devices, software and services ecosystem.','match'=>array('Apple','AAPL'))
         array('name'=>'NVIDIA','symbol'=>'NVDA','mark'=>'N','logo'=>'https://cdn.simpleicons.org/nvidia/76B900','class'=>'nvidia','category'=>'SEMICONDUCTORS','description'=>'Explore NVIDIA and its graphics, accelerated computing and AI platforms.','match'=>array('NVIDIA','NVDA')),
         array('name'=>'Toyota Motor','symbol'=>'TM','mark'=>'T','logo'=>'https://cdn.simpleicons.org/toyota/EB0A1E','class'=>'toyota','category'=>'JAPANESE AUTOMOTIVE','description'=>'Explore Toyota Motor and its global automotive and mobility business.','match'=>array('Toyota','TM')),
         array('name'=>'Sony Group','symbol'=>'SONY','mark'=>'S','logo'=>'https://cdn.simpleicons.org/sony/000000','class'=>'sony','category'=>'JAPANESE TECHNOLOGY','description'=>'Explore Sony Group across entertainment, electronics, gaming and imaging.','match'=>array('Sony','SONY')),
         array('name'=>'Honda Motor','symbol'=>'HMC','mark'=>'H','logo'=>'https://cdn.simpleicons.org/honda/E40521','class'=>'honda','category'=>'JAPANESE AUTOMOTIVE','description'=>'Explore Honda Motor across automobiles, motorcycles and mobility technology.','match'=>array('Honda','HMC')),
-        array('name'=>'Alphabet (Google)','symbol'=>'GOOGL','mark'=>'G','logo'=>'https://cdn.simpleicons.org/google/4285F4','class'=>'google','category'=>'TECHNOLOGY','description'=>'Explore Alphabet and Google across search, cloud and digital services.','match'=>array('Alphabet','Google','GOOGL')),
-        array('name'=>'Tesla','symbol'=>'TSLA','mark'=>'T','logo'=>'https://cdn.simpleicons.org/tesla/E82127','class'=>'tesla','category'=>'ELECTRIC VEHICLES','description'=>'Explore Tesla and its electric vehicles, energy storage and charging ecosystem.','match'=>array('Tesla','TSLA')),
-        array('name'=>'Microsoft','symbol'=>'MSFT','mark'=>'M','logo'=>'https://cdn.simpleicons.org/microsoft/5E5E5E','class'=>'microsoft','category'=>'TECHNOLOGY','description'=>'Explore Microsoft across cloud, productivity, software and AI.','match'=>array('Microsoft','MSFT')),
-        array('name'=>'BYD Company','symbol'=>'BYDDY','mark'=>'B','logo'=>'https://cdn.simpleicons.org/byd/ED1C24','class'=>'byd','category'=>'ELECTRIC VEHICLES','description'=>'Explore BYD, the Chinese electric vehicle and battery manufacturer.','match'=>array('BYD','BYDDY')),
-        array('name'=>'Apple','symbol'=>'AAPL','mark'=>'A','logo'=>'https://cdn.simpleicons.org/apple/000000','class'=>'apple','category'=>'TECHNOLOGY','description'=>'Explore Apple across its devices, software and services ecosystem.','match'=>array('Apple','AAPL'))
     );
     foreach($featuredCompanies as &$company){
         $company['stock']=null; $stockConditions=array();
@@ -256,7 +256,7 @@ window.smartsupp||(function(d) {
     unset($company);
 ?>
 <section class="vh-investment-catalog" aria-labelledby="vhFeaturedStocksHeading">
-    <div class="vh-investment-catalog-head"><div><span class="vh-eyebrow">FEATURED STOCKS</span><h2 id="vhFeaturedStocksHeading">Explore the market</h2><p>Discover NVIDIA, Toyota, Sony, Honda, Google, Tesla, Microsoft, BYD and Apple.</p></div>
+    <div class="vh-investment-catalog-head"><div><span class="vh-eyebrow">FEATURED STOCKS</span><h2 id="vhFeaturedStocksHeading">Explore the market</h2><p>Discover Google, Tesla, Microsoft, BYD, Apple, NVIDIA, Toyota, Sony and Honda.</p></div>
         <div class="vh-carousel-controls" aria-label="Featured stock carousel controls"><button type="button" class="vh-carousel-btn" id="vhFeaturedStocksPrev" aria-label="Scroll featured stocks left"><i class="fas fa-chevron-left"></i></button><button type="button" class="vh-carousel-btn" id="vhFeaturedStocksNext" aria-label="Scroll featured stocks right"><i class="fas fa-chevron-right"></i></button></div>
     </div>
     <div class="vh-investment-track" id="vhFeaturedStocksTrack" tabindex="0" role="region" aria-label="Featured company stocks. Scroll horizontally to view more">
