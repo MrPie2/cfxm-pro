@@ -1087,23 +1087,23 @@ window.smartsupp||(function(d) {
 
 
                                         <div class="stx-umbrella ">
-                                            <a gtmLinkName="Trading" href="https://www.cfxm-pro.com/en/" class="stx-umbrella__link-icon active internal" gtmLinkContext="header">Trading</a><a gtmLinkName="VIP" href="https://www.cfxm-pro.com/en/active-trader/" class="stx-umbrella__link-icon  internal"
+                                            <a gtmLinkName="Trading" href="/en/Index.php" class="stx-umbrella__link-icon active internal" gtmLinkContext="header">Trading</a><a gtmLinkName="VIP" href="/en/InfoPage.php?page=about" class="stx-umbrella__link-icon  internal"
                                                 gtmLinkContext="header">VIP</a><a gtmLinkName="Institutional" href="https://www.stonex.com/en/stonex-pro/" rel="noopener noreferrer" class="stx-umbrella__link-icon  external" gtmLinkContext="header" target="_blank">Institutional</a>                                            </div>
 
                                         <div class="stx-umbrella right">
                                             <div class="iconLinks ">
 
-                                                <a href="https://www.cfxm-pro.com/en/help-and-support/" class="stx-umbrella__link-icon internal">
+                                                <a href="/en/InfoPage.php?page=support" class="stx-umbrella__link-icon internal">
         <imgsrc="https://www.forex.com/en-us/-/media/project/gain-capital/forex/icons/core/umbrella/support-black.svg?iar=0&amp;extension=webp&amp;hash=2ED7B7D86822BB7CA990FC2A92A9FDE2" class="stx-umbrella__link internal" alt="Support" />
         Support
       </a>
                                             </div>
                                             <div class="iconLinks desktop-hidden">
 
-                                                <a href="https://www.cfxm-pro.com/en/search-results/" class="stx-umbrella__link-icon internal">
+                                                
         <imgsrc="https://www.forex.com/en-us/-/media/project/gain-capital/city-index/icons/mega-menu/search.svg?h=39&amp;iar=0&amp;w=51&amp;extension=webp&amp;hash=EAB222CF1B02B7FC04CB537D831B35B2" class="stx-umbrella__link internal" alt="Search" width="51" height="39" />
         Search
-      </a>
+      
                                             </div>
                                         </div>
 
@@ -1125,7 +1125,7 @@ window.smartsupp||(function(d) {
 
                                                 <span class="stx-regional-switcher__Description">Select your language to display the most appropriate content.</span>
 
-                                                <a gtmlinkname="English" href="https://www.cfxm-pro.com/en/" class="stx-regional-switcher__link active" gtmlinkcontext="header">English</a>
+                                                <a gtmlinkname="English" href="/en/Index.php" class="stx-regional-switcher__link active" gtmlinkcontext="header">English</a>
                                                 <a gtmlinkname="Espa&#241;ol" href="https://www.forex.com/es-us/" class="stx-regional-switcher__link" gtmlinkcontext="header">Espa&#241;ol</a>
                                                 <a gtmlinkname="中文" href="https://www.forex.com/zh-us/" class="stx-regional-switcher__link" gtmlinkcontext="header">中文</a>
                                             </div>
@@ -1137,7 +1137,7 @@ window.smartsupp||(function(d) {
 
 
 
-                                        <a href="https://www.cfxm-pro.com/en/" title="Home" class="stx-logo">
+                                        <a href="/en/Index.php" title="Home" class="stx-logo">
     <img src="../cfxm_logo_single.png" class="" alt="FX by SX logo-Dark-200" style="width:70px; height: 150px" />
     
 </a>
@@ -1156,7 +1156,7 @@ window.smartsupp||(function(d) {
 
 
                                                 <div class="stx-umbrella ">
-                                                    <a gtmLinkName="Trading" href="https://www.cfxm-pro.com/en/" class="stx-umbrella__link-icon active internal" gtmLinkContext="header">Trading</a><a gtmLinkName="VIP" href="https://www.cfxm-pro.com/en/active-trader/" class="stx-umbrella__link-icon  internal"
+                                                    <a gtmLinkName="Trading" href="/en/Index.php" class="stx-umbrella__link-icon active internal" gtmLinkContext="header">Trading</a><a gtmLinkName="VIP" href="/en/InfoPage.php?page=about" class="stx-umbrella__link-icon  internal"
                                                         gtmLinkContext="header">VIP</a><a gtmLinkName="Institutional" href="https://www.stonex.com/en/stonex-pro/" rel="noopener noreferrer" class="stx-umbrella__link-icon  external" gtmLinkContext="header"
                                                         target="_blank">Institutional</a> </div>
                                             </div>
@@ -1180,10 +1180,10 @@ window.smartsupp||(function(d) {
 
                                                             <div class="stx-main--megamenu__inner_iconlinks">
 
-                                                                <a gtmLinkName="Trade Markets" href="https://www.cfxm-pro.com/en/markets-to-trade/" class="button-with-image-gradient" gtmLinkContext="header">Trade Markets<imgsrc="https://www.forex.com/en-us/-/media/project/gain-capital/forex/icons/nav/fxall-meganav-markets-range-of-markets-barchart-wh.svg?iar=0&amp;extension=webp&amp;hash=3DAACA11196112124F6C80C3892BEC2D" alt="A white bar chart to represent trading menu options on FOREX.com" /></a>
+                                                                <a gtmLinkName="Trade Markets" href="/en/InfoPage.php?page=markets" class="button-with-image-gradient" gtmLinkContext="header">Trade Markets<imgsrc="https://www.forex.com/en-us/-/media/project/gain-capital/forex/icons/nav/fxall-meganav-markets-range-of-markets-barchart-wh.svg?iar=0&amp;extension=webp&amp;hash=3DAACA11196112124F6C80C3892BEC2D" alt="A white bar chart to represent trading menu options on FOREX.com" /></a>
                                                                 <a
-                                                                    gtmLinkName="Trade Prices" href="https://www.cfxm-pro.com/en/about-us/financial-transparency/trade-prices/" class="button-with-image-gradient" gtmLinkContext="header">Trade Prices<imgsrc="https://www.forex.com/en-us/-/media/project/gain-capital/forex/icons/nav/fxall-meganav-markets-pricing-and-charges-wh.svg?iar=0&amp;extension=webp&amp;hash=6528A0FD77F83D80829ADD1AB861BAD6"
-                                                                        alt="Icon of stacked coins in white" /></a><a gtmLinkName="Our Account Types" href="https://www.cfxm-pro.com/en/trading-accounts/" class="button-with-image-gradient" gtmLinkContext="header">Our Account Types<imgsrc="https://www.forex.com/en-us/-/media/project/gain-capital/forex/icons/nav/fxall-meganav-markets-account-types-wh.svg?iar=0&amp;extension=webp&amp;hash=E6A287541ACFC6257EACB58F0B05F732" alt="Account Types" /></a>
+                                                                    gtmLinkName="Trade Prices" href="/en/InfoPage.php?page=plans" class="button-with-image-gradient" gtmLinkContext="header">Trade Prices<imgsrc="https://www.forex.com/en-us/-/media/project/gain-capital/forex/icons/nav/fxall-meganav-markets-pricing-and-charges-wh.svg?iar=0&amp;extension=webp&amp;hash=6528A0FD77F83D80829ADD1AB861BAD6"
+                                                                        alt="Icon of stacked coins in white" /></a><a gtmLinkName="Our Account Types" href="/en/InfoPage.php?page=plans" class="button-with-image-gradient" gtmLinkContext="header">Our Account Types<imgsrc="https://www.forex.com/en-us/-/media/project/gain-capital/forex/icons/nav/fxall-meganav-markets-account-types-wh.svg?iar=0&amp;extension=webp&amp;hash=E6A287541ACFC6257EACB58F0B05F732" alt="Account Types" /></a>
                                                             </div>
 
                                                             <button class="stx-back-button" type="button">Back</button>
@@ -1193,13 +1193,13 @@ window.smartsupp||(function(d) {
 
                                                                 <div grp-tag="1" class="stx-megamenu__submenu stx-megamenu__submenu--nested">
                                                                     <span class="stx-megamenu__inner-title">
-<a href="https://www.cfxm-pro.com/en/markets-to-trade/" gtmLinkContext="header" gtmLinkName="Trade Markets">Trade Markets</a>      </span>
+<a href="/en/InfoPage.php?page=markets" gtmLinkContext="header" gtmLinkName="Trade Markets">Trade Markets</a>      </span>
 
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Forex" href="https://www.cfxm-pro.com/en/forex-trading/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Forex</a>
+                                                                        <a gtmLinkName="Forex" href="/en/InfoPage.php?page=markets" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Forex</a>
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Futures and Futures Options" href="https://www.cfxm-pro.com/en/futures-and-futures-options/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Futures and Futures Options</a>
+                                                                        <a gtmLinkName="Futures and Futures Options" href="/en/InfoPage.php?page=markets" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Futures and Futures Options</a>
                                                                     </div>
 
                                                                     <div grp-tag="1" class="stx-megamenu__submenu stx-megamenu__submenu--nested">
@@ -1207,7 +1207,7 @@ window.smartsupp||(function(d) {
 Investment Choices      </span>
 
                                                                         <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                            <a gtmLinkName="Wealth Management" href="https://www.cfxm-pro.com/en/stonex-wealth-management/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Wealth Management</a>
+                                                                            <a gtmLinkName="Wealth Management" href="/en/InfoPage.php?page=about" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Wealth Management</a>
                                                                         </div>
 
                                                                     </div>
@@ -1217,22 +1217,22 @@ Investment Choices      </span>
 Popular Markets      </span>
 
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="EUR USD" href="https://www.cfxm-pro.com/en/forex-trading/eur-usd/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">EUR/USD</a>
+                                                                        EUR/USD
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="USD CAD" href="https://www.cfxm-pro.com/en/forex-trading/usd-cad/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">USD/CAD</a>
+                                                                        USD/CAD
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="GBP USD" href="https://www.cfxm-pro.com/en/forex-trading/gbp-usd/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">GBP/USD</a>
+                                                                        GBP/USD
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="AUD USD" href="https://www.cfxm-pro.com/en/forex-trading/aud-usd/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">AUD/USD</a>
+                                                                        AUD/USD
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="USD JPY" href="https://www.cfxm-pro.com/en/forex-trading/usd-jpy/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">USD/JPY</a>
+                                                                        USD/JPY
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="NZD USD" href="https://www.cfxm-pro.com/en/forex-trading/nzd-usd/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">NZD/USD</a>
+                                                                        NZD/USD
                                                                     </div>
 
                                                                 </div>
@@ -1241,22 +1241,22 @@ Popular Markets      </span>
 Exotic Markets      </span>
 
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="USD THB" href="https://www.cfxm-pro.com/en/forex-trading/usd-thb/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">USD/THB</a>
+                                                                        USD/THB
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="USD TRY" href="https://www.cfxm-pro.com/en/forex-trading/usd-try/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">USD/TRY</a>
+                                                                        USD/TRY
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="USD MXN" href="https://www.cfxm-pro.com/en/forex-trading/usd-mxn/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">USD/MXN</a>
+                                                                        USD/MXN
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="USD SGD" href="https://www.cfxm-pro.com/en/forex-trading/usd-sgd/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">USD/SGD</a>
+                                                                        USD/SGD
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="USD HKD" href="https://www.cfxm-pro.com/en/forex-trading/usd-hkd/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">USD/HKD</a>
+                                                                        USD/HKD
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="USD ILS" href="https://www.cfxm-pro.com/en/forex-trading/usd-ils/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">USD/ILS</a>
+                                                                        USD/ILS
                                                                     </div>
 
                                                                 </div>
@@ -1279,12 +1279,11 @@ Exotic Markets      </span>
 
                                                             <div class="stx-main--megamenu__inner_iconlinks">
 
-                                                                <a gtmLinkName="Our Accounts" href="https://www.cfxm-pro.com/en/trading-accounts/" class="button-with-image-gradient" gtmLinkContext="header">Our Accounts<imgsrc="https://www.forex.com/en-us/-/media/project/gain-capital/forex/icons/nav/fxall-meganav-markets-account-types-wh.svg?iar=0&amp;extension=webp&amp;hash=E6A287541ACFC6257EACB58F0B05F732" alt="Account Types" /></a>
-                                                                <a
-                                                                    gtmLinkName="Compare Accounts" href="https://www.cfxm-pro.com/en/trading-accounts/compare-trading-accounts/" class="button-with-image-gradient" gtmLinkContext="header">Compare Accounts<imgsrc="https://www.forex.com/en-us/-/media/project/gain-capital/forex/icons/accounts/account-types/icon-accounttypes-compareaccounts-white.svg?iar=0&amp;extension=webp&amp;hash=CF65D12AB741474A8B4C9CD1142E88C9"
-                                                                        alt="Compare Accounts" /></a><a gtmLinkName="Current Promotions" href="https://www.cfxm-pro.com/en/promotions/" class="button-with-image-gradient" gtmLinkContext="header">Current Promotions<imgsrc="https://www.forex.com/en-us/-/media/project/gain-capital/forex/icons/about/icon-aboutus-priceimprovement-white.svg?iar=0&amp;extension=webp&amp;hash=3556035C1F0A1697B833FC95F3C70C88" alt="TIck" /></a>
+                                                                <a gtmLinkName="Our Accounts" href="/en/InfoPage.php?page=plans" class="button-with-image-gradient" gtmLinkContext="header">Our Accounts<imgsrc="https://www.forex.com/en-us/-/media/project/gain-capital/forex/icons/nav/fxall-meganav-markets-account-types-wh.svg?iar=0&amp;extension=webp&amp;hash=E6A287541ACFC6257EACB58F0B05F732" alt="Account Types" /></a>
+                                                                Compare Accounts<imgsrc="https://www.forex.com/en-us/-/media/project/gain-capital/forex/icons/accounts/account-types/icon-accounttypes-compareaccounts-white.svg?iar=0&amp;extension=webp&amp;hash=CF65D12AB741474A8B4C9CD1142E88C9"
+                                                                        alt="Compare Accounts" /><a gtmLinkName="Current Promotions" href="/en/InfoPage.php?page=plans" class="button-with-image-gradient" gtmLinkContext="header">Current Promotions<imgsrc="https://www.forex.com/en-us/-/media/project/gain-capital/forex/icons/about/icon-aboutus-priceimprovement-white.svg?iar=0&amp;extension=webp&amp;hash=3556035C1F0A1697B833FC95F3C70C88" alt="TIck" /></a>
                                                                     <a
-                                                                        gtmLinkName="FOREXcom VIP" href="https://www.cfxm-pro.com/en/active-trader/" class="button-with-image-gradient" gtmLinkContext="header">FOREX.com VIP<imgsrc="https://www.forex.com/en-us/-/media/project/gain-capital/forex/icons/professional/fxus-active-trader/fxus-active-trader-wh.svg?iar=0&amp;extension=webp&amp;hash=40EBAF520C333C7A4BF7F4369E35837A"
+                                                                        gtmLinkName="FOREXcom VIP" href="/en/InfoPage.php?page=about" class="button-with-image-gradient" gtmLinkContext="header">FOREX.com VIP<imgsrc="https://www.forex.com/en-us/-/media/project/gain-capital/forex/icons/professional/fxus-active-trader/fxus-active-trader-wh.svg?iar=0&amp;extension=webp&amp;hash=40EBAF520C333C7A4BF7F4369E35837A"
                                                                             alt="White Active Trader Icon" /></a>
                                                             </div>
 
@@ -1295,64 +1294,64 @@ Exotic Markets      </span>
 
                                                                 <div grp-tag="1" class="stx-megamenu__submenu stx-megamenu__submenu--nested">
                                                                     <span class="stx-megamenu__inner-title">
-<a href="https://www.cfxm-pro.com/en/trading-accounts/" gtmLinkContext="header" gtmLinkName="Account Types">Account Types</a>      </span>
+<a href="/en/InfoPage.php?page=plans" gtmLinkContext="header" gtmLinkName="Account Types">Account Types</a>      </span>
 
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Spread-Only Account" href="https://www.cfxm-pro.com/en/trading-accounts/spread-only-account/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Spread-Only Account</a>
+                                                                        Spread-Only Account
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="RAW Pricing Account" href="https://www.cfxm-pro.com/en/trading-accounts/raw-pricing-account/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">RAW Pricing Account</a>
+                                                                        RAW Pricing Account
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="MT5 Account" href="https://www.cfxm-pro.com/en/trading-accounts/mt5-trading-account/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">MT5 Account</a>
+                                                                        MT5 Account
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="MT4 Account" href="https://www.cfxm-pro.com/en/trading-accounts/mt4-trading-account/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">MT4 Account</a>
+                                                                        MT4 Account
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Corporate Account" href="https://www.cfxm-pro.com/en/trading-accounts/corporate-trading-account/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Corporate Account</a>
+                                                                        Corporate Account
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="IRA Account" href="https://www.cfxm-pro.com/en/help-and-support/forex-ira-account/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">IRA Account</a>
+                                                                        IRA Account
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Compare Accounts" href="https://www.cfxm-pro.com/en/trading-accounts/compare-trading-accounts/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Compare Accounts</a>
+                                                                        Compare Accounts
                                                                     </div>
 
                                                                 </div>
                                                                 <div grp-tag="2" class="stx-megamenu__submenu stx-megamenu__submenu--nested">
                                                                     <span class="stx-megamenu__inner-title">
-<a href="https://www.cfxm-pro.com/en/about-us/financial-transparency/" gtmLinkContext="header" gtmLinkName="Financial Transparency">Financial Transparency</a>      </span>
+Financial Transparency      </span>
 
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Execution" href="https://www.cfxm-pro.com/en/about-us/financial-transparency/trading-execution/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Execution</a>
+                                                                        Execution
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Margin Requirements" href="https://www.cfxm-pro.com/en/about-us/financial-transparency/margin-requirements/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Margin Requirements</a>
+                                                                        Margin Requirements
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Rollover Rates" href="https://www.cfxm-pro.com/en/about-us/financial-transparency/rollover-rates/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Rollover Rates</a>
+                                                                        Rollover Rates
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Trade Prices" href="https://www.cfxm-pro.com/en/about-us/financial-transparency/trade-prices/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Trade Prices</a>
+                                                                        <a gtmLinkName="Trade Prices" href="/en/InfoPage.php?page=plans" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Trade Prices</a>
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Trading Costs" href="https://www.cfxm-pro.com/en/about-us/financial-transparency/trading-costs/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Trading Costs</a>
+                                                                        Trading Costs
                                                                     </div>
 
                                                                 </div>
                                                                 <div grp-tag="3" class="stx-megamenu__submenu stx-megamenu__submenu--nested">
                                                                     <span class="stx-megamenu__inner-title">
-<a href="https://www.cfxm-pro.com/en/active-trader/" gtmLinkContext="header" gtmLinkName="FOREX.com VIP">FOREX.com VIP</a>      </span>
+<a href="/en/InfoPage.php?page=about" gtmLinkContext="header" gtmLinkName="FOREX.com VIP">FOREX.com VIP</a>      </span>
 
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Cash Rebates" href="https://www.cfxm-pro.com/en/active-trader/cash-rebates/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Cash Rebates</a>
+                                                                        Cash Rebates
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Relationship Managers" href="https://www.cfxm-pro.com/en/active-trader/relationship-manager/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Relationship Manager</a>
+                                                                        Relationship Manager
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Exclusive Events" href="https://www.cfxm-pro.com/en/active-trader/events/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Exclusive Events</a>
+                                                                        Exclusive Events
                                                                     </div>
 
                                                                     <div grp-tag="3" class="stx-megamenu__submenu stx-megamenu__submenu--nested">
@@ -1363,22 +1362,22 @@ Get Started      </span>
                                                                             <a gtmLinkName="Free Demo Account" href="../Dashboard/LoginContainer.php" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Free Demo Account</a>
                                                                         </div>
                                                                         <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                            <a gtmLinkName="Demo Raw Pricing" href="https://www.cfxm-pro.com/en/raw-pricing-demo-account/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Demo Raw Pricing</a>
+                                                                            Demo Raw Pricing
                                                                         </div>
                                                                         <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                            <a gtmLinkName="Demo MT5 Account" href="https://www.cfxm-pro.com/en/demo-mt5-account/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Demo MT5 Account</a>
+                                                                            Demo MT5 Account
                                                                         </div>
                                                                         <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                            <a gtmLinkName="Demo MT4 Account" href="https://www.cfxm-pro.com/en/demo-mt4-account/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Demo MT4 Account</a>
+                                                                            Demo MT4 Account
                                                                         </div>
                                                                         <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                            <a gtmLinkName="Create Live Account" href="https://www.cfxm-pro.com/en/trading-accounts/new-trading-account/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Create Live Account</a>
+                                                                            Create Live Account
                                                                         </div>
 
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <a href="https://www.cfxm-pro.com/en/lp/interest-promotion/" gtmLinkName="Earn Interest" class="stx-megamenu__marketing-image-link" gtmLinkContext="header"><imgsrc="https://www.forex.com/en-us/-/media/project/gain-capital/forex/feature-images/promotions/4-0pct-main-nav-image.jpg?h=307&amp;iar=0&amp;w=576&amp;extension=webp&amp;hash=B281996F051859A1273BDC07B2981761" alt="4-0pct Main Nav Image" width="576" height="307" /></a>                                                            </div>
+                                                            <imgsrc="https://www.forex.com/en-us/-/media/project/gain-capital/forex/feature-images/promotions/4-0pct-main-nav-image.jpg?h=307&amp;iar=0&amp;w=576&amp;extension=webp&amp;hash=B281996F051859A1273BDC07B2981761" alt="4-0pct Main Nav Image" width="576" height="307" />                                                            </div>
                                                     </div>
                                                 </div>
                                                 <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--main  level-0">
@@ -1396,13 +1395,11 @@ Get Started      </span>
 
                                                             <div class="stx-main--megamenu__inner_iconlinks">
 
-                                                                <a gtmLinkName="Our Trading Platforms" href="https://www.cfxm-pro.com/en/trading-platforms/" class="button-with-image-gradient" gtmLinkContext="header">Our Trading Platforms<imgsrc="https://www.forex.com/en-us/-/media/project/gain-capital/forex/icons/home/fxall-why-forex-platforms-wh.svg?iar=0&amp;extension=webp&amp;hash=78D2A90EDF9476AB0A2602EA5A3B0DE9" alt="White Icon of a computer screen with a mobile phone in the foreground" /></a>
-                                                                <a
-                                                                    gtmLinkName="Platform Comparison" href="https://www.cfxm-pro.com/en/trading-platforms/compare-trading-platforms/" class="button-with-image-gradient" gtmLinkContext="header">Platform Comparison<imgsrc="https://www.forex.com/en-us/-/media/project/gain-capital/forex/icons/platforms/icon-platforms-compare-white.svg?iar=0&amp;extension=webp&amp;hash=CD1B1D16098176E4DDB9613438A25485"
-                                                                        alt="Icon of two stacked screens in white" /></a><a gtmLinkName="Our Trading Tools" href="https://www.cfxm-pro.com/en/trading-tools/" class="button-with-image-gradient" gtmLinkContext="header">Our Trading Tools<imgsrc="https://www.forex.com/en-us/-/media/project/gain-capital/forex/icons/nav/fxall-meganav-platform-trading-tools-wh.svg?iar=0&amp;extension=webp&amp;hash=0BD62EB7DB5AD7874E4C5DADCDC0CBA0" alt="Spanner and pencil icon in white" /></a>
-                                                                    <a
-                                                                        gtmLinkName="Simulated Trading" href="https://www.cfxm-pro.com/en/trading-platforms/simulated-forex-trading/" class="button-with-image-gradient" gtmLinkContext="header">Simulated Trading<imgsrc="https://www.forex.com/en-us/-/media/project/gain-capital/forex/icons/home/fxall-what-is-forex-pound-dollar-wh.svg?iar=0&amp;extension=webp&amp;hash=AF564BAE3A35A567E9A2BD722BE69076"
-                                                                            alt="White icon of $ and £ symbols" /></a>
+                                                                <a gtmLinkName="Our Trading Platforms" href="/en/InfoPage.php?page=platforms" class="button-with-image-gradient" gtmLinkContext="header">Our Trading Platforms<imgsrc="https://www.forex.com/en-us/-/media/project/gain-capital/forex/icons/home/fxall-why-forex-platforms-wh.svg?iar=0&amp;extension=webp&amp;hash=78D2A90EDF9476AB0A2602EA5A3B0DE9" alt="White Icon of a computer screen with a mobile phone in the foreground" /></a>
+                                                                Platform Comparison<imgsrc="https://www.forex.com/en-us/-/media/project/gain-capital/forex/icons/platforms/icon-platforms-compare-white.svg?iar=0&amp;extension=webp&amp;hash=CD1B1D16098176E4DDB9613438A25485"
+                                                                        alt="Icon of two stacked screens in white" /><a gtmLinkName="Our Trading Tools" href="/en/InfoPage.php?page=platforms" class="button-with-image-gradient" gtmLinkContext="header">Our Trading Tools<imgsrc="https://www.forex.com/en-us/-/media/project/gain-capital/forex/icons/nav/fxall-meganav-platform-trading-tools-wh.svg?iar=0&amp;extension=webp&amp;hash=0BD62EB7DB5AD7874E4C5DADCDC0CBA0" alt="Spanner and pencil icon in white" /></a>
+                                                                    Simulated Trading<imgsrc="https://www.forex.com/en-us/-/media/project/gain-capital/forex/icons/home/fxall-what-is-forex-pound-dollar-wh.svg?iar=0&amp;extension=webp&amp;hash=AF564BAE3A35A567E9A2BD722BE69076"
+                                                                            alt="White icon of $ and £ symbols" />
                                                             </div>
 
                                                             <button class="stx-back-button" type="button">Back</button>
@@ -1412,16 +1409,16 @@ Get Started      </span>
 
                                                                 <div grp-tag="1" class="stx-megamenu__submenu stx-megamenu__submenu--nested">
                                                                     <span class="stx-megamenu__inner-title">
-<a href="https://www.cfxm-pro.com/en/trading-platforms/" gtmLinkContext="header" gtmLinkName="FOREX.com Platforms">FOREX.com Platforms</a>      </span>
+<a href="/en/InfoPage.php?page=platforms" gtmLinkContext="header" gtmLinkName="FOREX.com Platforms">FOREX.com Platforms</a>      </span>
 
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Mobile App" href="https://www.cfxm-pro.com/en/trading-platforms/mobile-trading/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Mobile App</a>
+                                                                        Mobile App
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Web Trader" href="https://www.cfxm-pro.com/en/trading-platforms/web-trader/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Web Trader</a>
+                                                                        Web Trader
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Platform Comparison" href="https://www.cfxm-pro.com/en/trading-platforms/compare-trading-platforms/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Platform Comparison</a>
+                                                                        Platform Comparison
                                                                     </div>
 
                                                                     <div grp-tag="1" class="stx-megamenu__submenu stx-megamenu__submenu--nested">
@@ -1429,29 +1426,29 @@ Get Started      </span>
 MetaTrader      </span>
 
                                                                         <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                            <a gtmLinkName="MetaTrader 5" href="https://www.cfxm-pro.com/en/trading-platforms/metatrader-5/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">MetaTrader 5</a>
+                                                                            MetaTrader 5
                                                                         </div>
                                                                         <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                            <a gtmLinkName="Expert Advisors" href="https://www.cfxm-pro.com/en/trading-platforms/expert-advisors/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Expert Advisors</a>
+                                                                            Expert Advisors
                                                                         </div>
                                                                         <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                            <a gtmLinkName="MT5 VPS Hosting" href="https://www.cfxm-pro.com/en/trading-platforms/mt5-vps-hosting/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">MT5 VPS Hosting</a>
+                                                                            MT5 VPS Hosting
                                                                         </div>
                                                                         <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                            <a gtmLinkName="MetaTrader 4" href="https://www.cfxm-pro.com/en/trading-platforms/metatrader-4/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">MetaTrader 4</a>
+                                                                            MetaTrader 4
                                                                         </div>
 
                                                                     </div>
                                                                 </div>
                                                                 <div grp-tag="2" class="stx-megamenu__submenu stx-megamenu__submenu--nested">
                                                                     <span class="stx-megamenu__inner-title">
-<a href="https://www.cfxm-pro.com/en/trading-platforms/tradingview/" gtmLinkContext="header" gtmLinkName="TradingView">TradingView</a>      </span>
+TradingView      </span>
 
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Advanced Charts" href="https://www.cfxm-pro.com/en/trading-tools/advanced-charts-trading/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Advanced Charts</a>
+                                                                        Advanced Charts
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="How to Connect" href="https://www.cfxm-pro.com/en/tradingview-login-instructions/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">How to Connect</a>
+                                                                        How to Connect
                                                                     </div>
 
                                                                     <div grp-tag="2" class="stx-megamenu__submenu stx-megamenu__submenu--nested">
@@ -1459,35 +1456,35 @@ MetaTrader      </span>
 Other ways to trade      </span>
 
                                                                         <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                            <a gtmLinkName="NinjaTrader" href="https://www.cfxm-pro.com/en/premium-trader-tools/ninjatrader/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">NinjaTrader</a>
+                                                                            NinjaTrader
                                                                         </div>
                                                                         <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                            <a gtmLinkName="API Trading" href="https://www.cfxm-pro.com/en/premium-trader-tools/api-trading/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">API Trading</a>
+                                                                            API Trading
                                                                         </div>
 
                                                                     </div>
                                                                 </div>
                                                                 <div grp-tag="3" class="stx-megamenu__submenu stx-megamenu__submenu--nested">
                                                                     <span class="stx-megamenu__inner-title">
-<a href="https://www.cfxm-pro.com/en/trading-tools/" gtmLinkContext="header" gtmLinkName="Trading Tools">Trading Tools</a>      </span>
+<a href="/en/InfoPage.php?page=platforms" gtmLinkContext="header" gtmLinkName="Trading Tools">Trading Tools</a>      </span>
 
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Performance Analytics" href="https://www.cfxm-pro.com/en/performance-analytics-hub/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Performance Analytics</a>
+                                                                        Performance Analytics
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Trader Sentiment" href="https://www.cfxm-pro.com/en/trading-tools/client-sentiment/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Trader Sentiment</a>
+                                                                        Trader Sentiment
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Trading Central" href="https://www.cfxm-pro.com/en/trading-tools/trading-central/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Trading Central</a>
+                                                                        Trading Central
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Pivot Points" href="https://www.cfxm-pro.com/en/trading-tools/pivot-points/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Pivot Points</a>
+                                                                        Pivot Points
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Currency Converter" href="https://www.cfxm-pro.com/en/help-and-support/currency-converter/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Currency Converter</a>
+                                                                        Currency Converter
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Margin and Pip Calculator" href="https://www.cfxm-pro.com/en/help-and-support/margin-pip-calculator/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Margin and Pip Calculator</a>
+                                                                        Margin and Pip Calculator
                                                                     </div>
 
                                                                     <div grp-tag="3" class="stx-megamenu__submenu stx-megamenu__submenu--nested">
@@ -1495,13 +1492,13 @@ Other ways to trade      </span>
 Get Started      </span>
 
                                                                         <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                            <a gtmLinkName="Download Platforms" href="https://www.cfxm-pro.com/en/trading-platforms/download-trading-platforms/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Download Platforms</a>
+                                                                            Download Platforms
                                                                         </div>
                                                                         <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                            <a gtmLinkName="Platform Tutorials" href="https://www.cfxm-pro.com/en/video-tutorials/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Video Tutorials</a>
+                                                                            Video Tutorials
                                                                         </div>
                                                                         <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                            <a gtmLinkName="Simulated Trading" href="https://www.cfxm-pro.com/en/trading-platforms/simulated-forex-trading/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Simulated Trading</a>
+                                                                            Simulated Trading
                                                                         </div>
 
                                                                     </div>
@@ -1525,13 +1522,11 @@ Get Started      </span>
 
                                                             <div class="stx-main--megamenu__inner_iconlinks">
 
-                                                                <a gtmLinkName="Latest Research" href="https://www.cfxm-pro.com/en/news-and-analysis/" class="button-with-image-gradient" gtmLinkContext="header">Latest Research<imgsrc="https://www.forex.com/en-us/-/media/project/gain-capital/forex/icons/nav/fxall-meganav-news-and-analysis-wh.svg?iar=0&amp;extension=webp&amp;hash=0F1C3D61707380BC3F8EB7D1167D435C" alt="Newspaper icon for main navigation - white transparent" /></a>
-                                                                <a
-                                                                    gtmLinkName="Trade Ideas" href="https://www.cfxm-pro.com/en/news-and-analysis/tags/trade-ideas/" class="button-with-image-gradient" gtmLinkContext="header">Trade Ideas<imgsrc="https://www.forex.com/en-us/-/media/project/gain-capital/forex/icons/nav/fxall-meganav-news-and-analysis-trade-ideas-wh.svg?iar=0&amp;extension=webp&amp;hash=EE86FA8838BDC15CD80C38AA1725D4C1"
-                                                                        alt="White icon of a lightblulb" /></a><a gtmLinkName="Our Research Experts" href="https://www.cfxm-pro.com/en/news-and-analysis/forex-com-analysts/" class="button-with-image-gradient" gtmLinkContext="header">Our Research Experts<imgsrc="https://www.forex.com/en-us/-/media/project/gain-capital/forex/icons/platforms/performance-analytics-hub-icons/fx-trading-plan-icon-white.svg?iar=0&amp;extension=webp&amp;hash=1BAD42BD1B26E49F5F55149EDDC94DE5" alt="FX Trading Plan Icon-White" /></a>
-                                                                    <a
-                                                                        gtmLinkName="Interactive Livestreams" href="https://www.cfxm-pro.com/en/trading-academy/webinars/" class="button-with-image-gradient" gtmLinkContext="header">Interactive Livestreams<imgsrc="https://www.forex.com/en-us/-/media/project/gain-capital/forex/icons/education-and-trading-academy/icon-academy-webinars-white.svg?iar=0&amp;extension=webp&amp;hash=619689FCF72DAF964D7AC5ADD3AFF5ED"
-                                                                            alt="Navigate to webinars" /></a>
+                                                                <a gtmLinkName="Latest Research" href="/en/InfoPage.php?page=insights" class="button-with-image-gradient" gtmLinkContext="header">Latest Research<imgsrc="https://www.forex.com/en-us/-/media/project/gain-capital/forex/icons/nav/fxall-meganav-news-and-analysis-wh.svg?iar=0&amp;extension=webp&amp;hash=0F1C3D61707380BC3F8EB7D1167D435C" alt="Newspaper icon for main navigation - white transparent" /></a>
+                                                                Trade Ideas<imgsrc="https://www.forex.com/en-us/-/media/project/gain-capital/forex/icons/nav/fxall-meganav-news-and-analysis-trade-ideas-wh.svg?iar=0&amp;extension=webp&amp;hash=EE86FA8838BDC15CD80C38AA1725D4C1"
+                                                                        alt="White icon of a lightblulb" />Our Research Experts<imgsrc="https://www.forex.com/en-us/-/media/project/gain-capital/forex/icons/platforms/performance-analytics-hub-icons/fx-trading-plan-icon-white.svg?iar=0&amp;extension=webp&amp;hash=1BAD42BD1B26E49F5F55149EDDC94DE5" alt="FX Trading Plan Icon-White" />
+                                                                    Interactive Livestreams<imgsrc="https://www.forex.com/en-us/-/media/project/gain-capital/forex/icons/education-and-trading-academy/icon-academy-webinars-white.svg?iar=0&amp;extension=webp&amp;hash=619689FCF72DAF964D7AC5ADD3AFF5ED"
+                                                                            alt="Navigate to webinars" />
                                                             </div>
 
                                                             <button class="stx-back-button" type="button">Back</button>
@@ -1541,37 +1536,37 @@ Get Started      </span>
 
                                                                 <div grp-tag="1" class="stx-megamenu__submenu stx-megamenu__submenu--nested">
                                                                     <span class="stx-megamenu__inner-title">
-<a href="https://www.cfxm-pro.com/en/news-and-analysis/" gtmLinkContext="header" gtmLinkName="News & Analysis">News &amp; Analysis</a>      </span>
+<a href="/en/InfoPage.php?page=insights" gtmLinkContext="header" gtmLinkName="News & Analysis">News &amp; Analysis</a>      </span>
 
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Forex Market" href="https://www.cfxm-pro.com/en/news-and-analysis/tags/forex/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Forex Market</a>
+                                                                        Forex Market
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Our Research Experts" href="https://www.cfxm-pro.com/en/news-and-analysis/forex-com-analysts/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Our Research Experts</a>
+                                                                        Our Research Experts
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Economic Calendar" href="https://www.cfxm-pro.com/en/trading-tools/economic-calendar/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Economic Calendar</a>
+                                                                        Economic Calendar
                                                                     </div>
 
                                                                 </div>
                                                                 <div grp-tag="2" class="stx-megamenu__submenu stx-megamenu__submenu--nested">
                                                                     <span class="stx-megamenu__inner-title">
-<a href="https://www.cfxm-pro.com/en/trading-academy/webinars/" gtmLinkContext="header" gtmLinkName="Interactive Livestreams">Interactive Livestreams</a>      </span>
+Interactive Livestreams      </span>
 
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Forex Price Action" href="https://www.cfxm-pro.com/en/trading-academy/webinars/series/price-action-webinar/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Forex Price Action</a>
+                                                                        Forex Price Action
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Forex Technical Focus" href="https://www.cfxm-pro.com/en/trading-academy/webinars/series/weekly-strategy-webinar/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Forex Technical Focus</a>
+                                                                        Forex Technical Focus
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Daily Squawk" href="https://www.cfxm-pro.com/en/lp/daily-squawk/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header" target="_blank">Daily Squawk</a>
+                                                                        Daily Squawk
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Live NFP Coverage" href="https://www.cfxm-pro.com/en/trading-academy/webinars/series/nfp-webinar/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Live NFP Coverage</a>
+                                                                        Live NFP Coverage
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Daily Market Update" href="https://www.cfxm-pro.com/en/trading-academy/webinars/series/daily-market-update/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Daily Market Update</a>
+                                                                        Daily Market Update
                                                                     </div>
 
                                                                 </div>
@@ -1580,13 +1575,13 @@ Get Started      </span>
 Popular Topics      </span>
 
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Middle East Conflict" href="https://www.cfxm-pro.com/en/lp/me-volatility/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Middle East Conflict</a>
+                                                                        Middle East Conflict
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Trump Tariffs" href="https://www.cfxm-pro.com/en/trump-trade-wars/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Trump Tariffs</a>
+                                                                        Trump Tariffs
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="China" href="https://www.cfxm-pro.com/en/news-and-analysis/tags/china/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">China</a>
+                                                                        China
                                                                     </div>
 
                                                                 </div>
@@ -1609,13 +1604,11 @@ Popular Topics      </span>
 
                                                             <div class="stx-main--megamenu__inner_iconlinks">
 
-                                                                <a gtmLinkName="Trading Academy" href="https://www.cfxm-pro.com/en/trading-academy/" class="button-with-image-gradient" gtmLinkContext="header">Trading Academy<imgsrc="https://www.forex.com/en-us/-/media/project/gain-capital/forex/icons/nav/fxall-meganav-academy-education-wh.svg?iar=0&amp;extension=webp&amp;hash=E4D59996773BBAE8C7FDED09CD085768" alt="Mortarboard icon in white" /></a>
-                                                                <a
-                                                                    gtmLinkName="Interactive Livestreams" href="https://www.cfxm-pro.com/en/trading-academy/webinars/" class="button-with-image-gradient" gtmLinkContext="header">Interactive Livestreams<imgsrc="https://www.forex.com/en-us/-/media/project/gain-capital/forex/icons/education-and-trading-academy/icon-academy-webinars-white.svg?iar=0&amp;extension=webp&amp;hash=619689FCF72DAF964D7AC5ADD3AFF5ED"
-                                                                        alt="Navigate to webinars" /></a><a gtmLinkName="Video Tutorials" href="https://www.cfxm-pro.com/en/video-tutorials/" class="button-with-image-gradient" gtmLinkContext="header">Video Tutorials<imgsrc="https://www.forex.com/en-us/-/media/project/gain-capital/forex/icons/platforms/icon-academy-platformtutorials-white.svg?iar=0&amp;extension=webp&amp;hash=539E10B082FBAE9785EFB4B03619D097" alt="Navigate to platform tutorials" /></a>
-                                                                    <a
-                                                                        gtmLinkName="The Traders Course" href="https://www.cfxm-pro.com/en/trading-academy/the-traders-course/" class="button-with-image-gradient" gtmLinkContext="header">The Trader&#39;s Course<imgsrc="https://www.forex.com/en-us/-/media/project/gain-capital/forex/icons/education-and-trading-academy/icon-academy-lessons-white.svg?iar=0&amp;extension=webp&amp;hash=70015534313069D1C48DEBC2B20DC325"
-                                                                            alt="White icon of crypto-currency book" /></a><a gtmLinkName="Glossary" href="https://www.cfxm-pro.com/en/glossary/" class="button-with-image-gradient" gtmLinkContext="header">Glossary<imgsrc="https://www.forex.com/en-us/-/media/project/gain-capital/forex/icons/education-and-trading-academy/icon-academy-glossary-white.svg?iar=0&amp;extension=webp&amp;hash=8188F1FB47555E80E657B94AEED8EF2A" alt="Glossary icon" /></a>
+                                                                <a gtmLinkName="Trading Academy" href="/en/InfoPage.php?page=education" class="button-with-image-gradient" gtmLinkContext="header">Trading Academy<imgsrc="https://www.forex.com/en-us/-/media/project/gain-capital/forex/icons/nav/fxall-meganav-academy-education-wh.svg?iar=0&amp;extension=webp&amp;hash=E4D59996773BBAE8C7FDED09CD085768" alt="Mortarboard icon in white" /></a>
+                                                                Interactive Livestreams<imgsrc="https://www.forex.com/en-us/-/media/project/gain-capital/forex/icons/education-and-trading-academy/icon-academy-webinars-white.svg?iar=0&amp;extension=webp&amp;hash=619689FCF72DAF964D7AC5ADD3AFF5ED"
+                                                                        alt="Navigate to webinars" />Video Tutorials<imgsrc="https://www.forex.com/en-us/-/media/project/gain-capital/forex/icons/platforms/icon-academy-platformtutorials-white.svg?iar=0&amp;extension=webp&amp;hash=539E10B082FBAE9785EFB4B03619D097" alt="Navigate to platform tutorials" />
+                                                                    The Trader&#39;s Course<imgsrc="https://www.forex.com/en-us/-/media/project/gain-capital/forex/icons/education-and-trading-academy/icon-academy-lessons-white.svg?iar=0&amp;extension=webp&amp;hash=70015534313069D1C48DEBC2B20DC325"
+                                                                            alt="White icon of crypto-currency book" />Glossary<imgsrc="https://www.forex.com/en-us/-/media/project/gain-capital/forex/icons/education-and-trading-academy/icon-academy-glossary-white.svg?iar=0&amp;extension=webp&amp;hash=8188F1FB47555E80E657B94AEED8EF2A" alt="Glossary icon" />
                                                             </div>
 
                                                             <button class="stx-back-button" type="button">Back</button>
@@ -1625,70 +1618,70 @@ Popular Topics      </span>
 
                                                                 <div grp-tag="1" class="stx-megamenu__submenu stx-megamenu__submenu--nested">
                                                                     <span class="stx-megamenu__inner-title">
-<a href="https://www.cfxm-pro.com/en/trading-academy/" gtmLinkContext="header" gtmLinkName="Academy">Academy</a>      </span>
+<a href="/en/InfoPage.php?page=education" gtmLinkContext="header" gtmLinkName="Academy">Academy</a>      </span>
 
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Courses" href="https://www.cfxm-pro.com/en/trading-academy/courses/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Courses</a>
+                                                                        Courses
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Lessons" href="https://www.cfxm-pro.com/en/trading-academy/lessons/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Lessons</a>
+                                                                        Lessons
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Self-Assessment Quiz" href="https://www.cfxm-pro.com/en/trading-academy/self-assessment/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Self-Assessment Quiz</a>
+                                                                        Self-Assessment Quiz
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="The Traders Course" href="https://www.cfxm-pro.com/en/trading-academy/the-traders-course/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">The Trader&#39;s Course</a>
+                                                                        The Trader&#39;s Course
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Glossary" href="https://www.cfxm-pro.com/en/glossary/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Glossary</a>
+                                                                        Glossary
                                                                     </div>
 
                                                                     <div grp-tag="1" class="stx-megamenu__submenu stx-megamenu__submenu--nested">
                                                                         <span class="stx-megamenu__inner-title">
-<a href="https://www.cfxm-pro.com/en/video-tutorials/" gtmLinkContext="header" gtmLinkName="Tutorials">Tutorials</a>      </span>
+Tutorials      </span>
 
                                                                         <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                            <a gtmLinkName="MetaTrader" href="https://www.cfxm-pro.com/en/video-tutorials/#tutorials_sxatags=Metatrader&amp;tutorials_e=0" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">MetaTrader</a>
+                                                                            MetaTrader
                                                                         </div>
                                                                         <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                            <a gtmLinkName="Mobile Apps" href="https://www.cfxm-pro.com/en/video-tutorials/#tutorials_sxatags=Mobile%20Apps&amp;tutorials_e=0" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Mobile Apps</a>
+                                                                            Mobile Apps
                                                                         </div>
                                                                         <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                            <a gtmLinkName="Web Trader" href="https://www.cfxm-pro.com/en/video-tutorials/#tutorials_sxatags=Web%20Trader&amp;tutorials_e=0" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Web Trader</a>
+                                                                            Web Trader
                                                                         </div>
 
                                                                     </div>
                                                                 </div>
                                                                 <div grp-tag="2" class="stx-megamenu__submenu stx-megamenu__submenu--nested">
                                                                     <span class="stx-megamenu__inner-title">
-<a href="https://www.cfxm-pro.com/en/trading-guides/" gtmLinkContext="header" gtmLinkName="Trading Guides (NEW)">Trading Guides (NEW)</a>      </span>
+<a href="/en/InfoPage.php?page=education" gtmLinkContext="header" gtmLinkName="Trading Guides (NEW)">Trading Guides (NEW)</a>      </span>
 
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Market Sentiment in Forex" href="https://www.cfxm-pro.com/en/news-and-analysis/how-to-use-market-sentiment-in-forex-trading/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Market Sentiment in Forex</a>
+                                                                        Market Sentiment in Forex
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="11 Chart Patterns You Should Know" href="https://www.cfxm-pro.com/en/learn-forex-trading/11-chart-patterns-you-should-know/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">11 Chart Patterns You Should Know</a>
+                                                                        11 Chart Patterns You Should Know
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Bullish and Bearish Flags" href="https://www.cfxm-pro.com/en/learn-forex-trading/bullish-and-bearish-flags/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Bullish and Bearish Flags</a>
+                                                                        Bullish and Bearish Flags
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Doji Candles" href="https://www.cfxm-pro.com/en/learn-forex-trading/doji-candle/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Doji Candles</a>
+                                                                        Doji Candles
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Hammer Candlesticks" href="https://www.cfxm-pro.com/en/learn-forex-trading/hammer-candlesticks/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Hammer Candlesticks</a>
+                                                                        Hammer Candlesticks
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Liquidity and Volatility" href="https://www.cfxm-pro.com/en/learn-forex-trading/liquidity-and-volatility-in-forex/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Liquidity and Volatility</a>
+                                                                        Liquidity and Volatility
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="What Is Options Trading" href="https://www.cfxm-pro.com/en/trading-guides/what-is-options-trading/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">What Is Options Trading?</a>
+                                                                        What Is Options Trading?
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Triangle Chart Patterns" href="https://www.cfxm-pro.com/en/learn-forex-trading/triangle-chart-patterns/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header" target="_blank">Triangle Chart Patterns</a>
+                                                                        Triangle Chart Patterns
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="What is a Pip" href="https://www.cfxm-pro.com/en/learn-forex-trading/what-is-a-pip/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">What is a Pip?</a>
+                                                                        What is a Pip?
                                                                     </div>
 
                                                                 </div>
@@ -1697,27 +1690,27 @@ Popular Topics      </span>
 Other Guides      </span>
 
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="5-3-1 Trading Strategy" href="https://www.cfxm-pro.com/en/learn-forex-trading/5-3-1-trading-strategy/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">5-3-1 Trading Strategy</a>
+                                                                        5-3-1 Trading Strategy
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Forex Regulations" href="https://www.cfxm-pro.com/en/learn-forex-trading/forex-regulations/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Forex Regulations</a>
+                                                                        Forex Regulations
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Symmetrical Triangles" href="https://www.cfxm-pro.com/en/learn-forex-trading/symmetrical-triangles/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Symmetrical Triangles</a>
+                                                                        Symmetrical Triangles
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Expert Advisor Installation Guide" href="https://www.cfxm-pro.com/en/trading-platforms/expert-advisors/ea-installation-guide/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Expert Advisor Installation Guide</a>
+                                                                        Expert Advisor Installation Guide
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Wide Ranging Bars" href="https://www.cfxm-pro.com/en/learn-forex-trading/wide-ranging-bars/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Wide Ranging Bars</a>
+                                                                        Wide Ranging Bars
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Central Banks" href="https://www.cfxm-pro.com/en/central-banks/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Central Banks</a>
+                                                                        Central Banks
                                                                     </div>
 
                                                                     <div grp-tag="3" class="stx-megamenu__submenu stx-megamenu__submenu--nested">
                                                                         <span class="stx-megamenu__inner-title">
-<a href="https://www.cfxm-pro.com/en/trading-academy/webinars/" gtmLinkContext="header" gtmLinkName="Interactive Livestreams">Interactive Livestreams</a>      </span>
+Interactive Livestreams      </span>
 
 
                                                                     </div>
@@ -1741,9 +1734,9 @@ Other Guides      </span>
 
                                                             <div class="stx-main--megamenu__inner_iconlinks">
 
-                                                                <a gtmLinkName="Why FOREXcom" href="https://www.cfxm-pro.com/en/about-us/why-us/" class="button-with-image-gradient" gtmLinkContext="header">Why FOREX.com?<imgsrc="https://www.forex.com/en-us/-/media/project/gain-capital/forex/icons/nav/fxall-meganav-about-forexcom-wh.svg?iar=0&amp;extension=webp&amp;hash=7E750F208F0757268058B9135B57856D" alt="About us icon of 3 towers in white" /></a>
+                                                                Why FOREX.com?<imgsrc="https://www.forex.com/en-us/-/media/project/gain-capital/forex/icons/nav/fxall-meganav-about-forexcom-wh.svg?iar=0&amp;extension=webp&amp;hash=7E750F208F0757268058B9135B57856D" alt="About us icon of 3 towers in white" />
                                                                 <a
-                                                                    gtmLinkName="Help and Support" href="https://www.cfxm-pro.com/en/help-and-support/" class="button-with-image-gradient" gtmLinkContext="header">Help &amp; Support<imgsrc="https://www.forex.com/en-us/-/media/project/gain-capital/forex/icons/nav/fxall-meganav-academy-support-wh.svg?iar=0&amp;extension=webp&amp;hash=67B8DACA0CA8380B61E8816F06125B4E" alt="White chat icon of 2 people and a speech bubble"
+                                                                    gtmLinkName="Help and Support" href="/en/InfoPage.php?page=support" class="button-with-image-gradient" gtmLinkContext="header">Help &amp; Support<imgsrc="https://www.forex.com/en-us/-/media/project/gain-capital/forex/icons/nav/fxall-meganav-academy-support-wh.svg?iar=0&amp;extension=webp&amp;hash=67B8DACA0CA8380B61E8816F06125B4E" alt="White chat icon of 2 people and a speech bubble"
                                                                     /></a><a gtmLinkName="StoneX Corp" href="https://www.stonex.com/en/" class="button-with-image-gradient" gtmLinkContext="header">StoneX Group Inc.<imgsrc="https://www.forex.com/en-us/-/media/project/gain-capital/forex/icons/about/icon-stonex-white.svg?iar=0&amp;extension=webp&amp;hash=0149F28E6AACC10FD612A1E69FA092FB" alt="StoneX" /></a>
                                                             </div>
 
@@ -1754,10 +1747,10 @@ Other Guides      </span>
 
                                                                 <div grp-tag="1" class="stx-megamenu__submenu stx-megamenu__submenu--nested">
                                                                     <span class="stx-megamenu__inner-title">
-<a href="https://www.cfxm-pro.com/en/about-us/" gtmLinkContext="header" gtmLinkName="About FOREX.com">About FOREX.com</a>      </span>
+<a href="/en/InfoPage.php?page=about" gtmLinkContext="header" gtmLinkName="About FOREX.com">About FOREX.com</a>      </span>
 
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Careers" href="https://www.cfxm-pro.com/en/about-us/careers/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Careers</a>
+                                                                        Careers
                                                                     </div>
 
                                                                     <div grp-tag="1" class="stx-megamenu__submenu stx-megamenu__submenu--nested">
@@ -1768,56 +1761,56 @@ Get Started      </span>
                                                                             <a gtmLinkName="Demo Account" href="../Dashboard/LoginContainer.php" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Demo Account</a>
                                                                         </div>
                                                                         <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                            <a gtmLinkName="Live Account" href="https://www.cfxm-pro.com/en/trading-accounts/new-trading-account/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Live Account</a>
+                                                                            Live Account
                                                                         </div>
                                                                         <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                            <a gtmLinkName="Current Promotions" href="https://www.cfxm-pro.com/en/promotions/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Current Promotions</a>
+                                                                            <a gtmLinkName="Current Promotions" href="/en/InfoPage.php?page=plans" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Current Promotions</a>
                                                                         </div>
 
                                                                     </div>
                                                                 </div>
                                                                 <div grp-tag="2" class="stx-megamenu__submenu stx-megamenu__submenu--nested">
                                                                     <span class="stx-megamenu__inner-title">
-<a href="https://www.cfxm-pro.com/en/about-us/why-us/" gtmLinkContext="header" gtmLinkName="Why Trade with Us?">Why Trade with Us?</a>      </span>
+Why Trade with Us?      </span>
 
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Costs and Charges" href="https://www.cfxm-pro.com/en/about-us/financial-transparency/trading-costs/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Costs &amp; Charges</a>
+                                                                        Costs &amp; Charges
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Execution" href="https://www.cfxm-pro.com/en/about-us/financial-transparency/trading-execution/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Execution</a>
+                                                                        Execution
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Strength and Security" href="https://www.cfxm-pro.com/en/about-us/strength-and-security/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Strength &amp; Security</a>
+                                                                        Strength &amp; Security
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Regulation" href="https://www.cfxm-pro.com/en/about-us/regulation/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Regulation</a>
+                                                                        Regulation
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Pricing" href="https://www.cfxm-pro.com/en/about-us/financial-transparency/trade-prices/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Pricing</a>
+                                                                        <a gtmLinkName="Pricing" href="/en/InfoPage.php?page=plans" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Pricing</a>
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Trading Support" href="https://www.cfxm-pro.com/en/about-us/trading-support/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Trading Support</a>
+                                                                        Trading Support
                                                                     </div>
 
                                                                 </div>
                                                                 <div grp-tag="3" class="stx-megamenu__submenu stx-megamenu__submenu--nested">
                                                                     <span class="stx-megamenu__inner-title">
-<a href="https://www.cfxm-pro.com/en/help-and-support/" gtmLinkContext="header" gtmLinkName="Help & Support">Help &amp; Support</a>      </span>
+<a href="/en/InfoPage.php?page=support" gtmLinkContext="header" gtmLinkName="Help & Support">Help &amp; Support</a>      </span>
 
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="FAQs" href="https://www.cfxm-pro.com/en/help-and-support/popular-faqs/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">FAQs</a>
+                                                                        FAQs
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Account Forms" href="https://www.cfxm-pro.com/en/help-and-support/account-forms/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Account Forms</a>
+                                                                        Account Forms
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Service Updates" href="https://www.cfxm-pro.com/en/help-and-support/service-updates/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Service Updates</a>
+                                                                        Service Updates
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Market Hours" href="https://www.cfxm-pro.com/en/help-and-support/market-trading-hours/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Market Hours</a>
+                                                                        Market Hours
                                                                     </div>
                                                                     <div tabindex="0" class="stx-megamenu__item stx-megamenu__item--nested  level-1">
-                                                                        <a gtmLinkName="Security Fraud" href="https://www.cfxm-pro.com/en/help-and-support/security-fraud/" class="stx-megamenu__link stx-nested--megamenu__link " gtmLinkContext="header">Security Fraud</a>
+                                                                        Security Fraud
                                                                     </div>
 
                                                                 </div>
@@ -1833,13 +1826,13 @@ Get Started      </span>
 
                                             <div class="stx-ctas">
                                                 <div class="stx-site-search">
-                                                    <a href="https://www.cfxm-pro.com/en/search-results/" title="search" class="stx-search-link">
+                                                    
             <imgsrc="https://www.forex.com/en-us/-/media/project/gain-capital/city-index/icons/mega-menu/search.svg?h=39&amp;iar=0&amp;w=51&amp;extension=webp&amp;hash=EAB222CF1B02B7FC04CB537D831B35B2" class="search-icon" alt="Search" width="51" height="39" />
-          </a>
+          
                                                 </div>
 
                                                 <div class="button button-bordered-primary">
-                                                    <a gtmLinkContext="header" href="https://www.cfxm-pro.com/en/account-login/" gtmLinkName="Log In">Log In</a>
+                                                    <a gtmLinkContext="header" href="/Dashboard/LoginContainer.php" gtmLinkName="Log In">Log In</a>
                                                 </div>
 
                                                 <div class="button button-solid button-primary">
@@ -1854,17 +1847,17 @@ Get Started      </span>
                                                 <div class="stx-umbrella right">
                                                     <div class="iconLinks ">
 
-                                                        <a href="https://www.cfxm-pro.com/en/help-and-support/" class="stx-umbrella__link-icon internal">
+                                                        <a href="/en/InfoPage.php?page=support" class="stx-umbrella__link-icon internal">
         <imgsrc="https://www.forex.com/en-us/-/media/project/gain-capital/forex/icons/core/umbrella/support-black.svg?iar=0&amp;extension=webp&amp;hash=2ED7B7D86822BB7CA990FC2A92A9FDE2" class="stx-umbrella__link internal" alt="Support" />
         Support
       </a>
                                                     </div>
                                                     <div class="iconLinks desktop-hidden">
 
-                                                        <a href="https://www.cfxm-pro.com/en/search-results/" class="stx-umbrella__link-icon internal">
+                                                        
         <imgsrc="https://www.forex.com/en-us/-/media/project/gain-capital/city-index/icons/mega-menu/search.svg?h=39&amp;iar=0&amp;w=51&amp;extension=webp&amp;hash=EAB222CF1B02B7FC04CB537D831B35B2" class="stx-umbrella__link internal" alt="Search" width="51" height="39" />
         Search
-      </a>
+      
                                                     </div>
                                                 </div>
 
@@ -1886,7 +1879,7 @@ Get Started      </span>
 
                                                         <span class="stx-regional-switcher__Description">Select your language to display the most appropriate content.</span>
 
-                                                        <a gtmlinkname="English" href="https://www.cfxm-pro.com/en/" class="stx-regional-switcher__link active" gtmlinkcontext="header">English</a>
+                                                        <a gtmlinkname="English" href="/en/Index.php" class="stx-regional-switcher__link active" gtmlinkcontext="header">English</a>
                                                         <a gtmlinkname="Espa&#241;ol" href="https://www.forex.com/es-us/" class="stx-regional-switcher__link" gtmlinkcontext="header">Espa&#241;ol</a>
                                                         <a gtmlinkname="中文" href="https://www.forex.com/zh-us/" class="stx-regional-switcher__link" gtmlinkcontext="header">中文</a>
                                                     </div>
@@ -2403,11 +2396,11 @@ Get Started      </span>
                                                                 Elite products, value, and execution
                                                             </div>
                                                             <div class="card-desc field-text">
-                                                                <p>Choose from <a href="https://www.cfxm-pro.com/en/forex-trading/"><span style="text-decoration: underline;">80 products</span></a> and selected <a href="https://www.cfxm-pro.com/en/futures-and-futures-options/"><span style="text-decoration: underline;">futures</span></a>                                                                    through our affiliate.</p>
+                                                                <p>Choose from <a href="/en/InfoPage.php?page=markets"><span style="text-decoration: underline;">80 products</span></a> and selected <a href="/en/InfoPage.php?page=markets"><span style="text-decoration: underline;">futures</span></a>                                                                    through our affiliate.</p>
                                                                 <p>Enjoy consistently low trading costs and fast, quality execution.</p>
                                                             </div>
                                                             <div class="arrow-link">
-                                                                <a gtmLinkName="Trade markets" href="https://www.cfxm-pro.com/en/markets-to-trade/" gtmLinkContext="main">Trade markets</a>
+                                                                <a gtmLinkName="Trade markets" href="/en/InfoPage.php?page=markets" gtmLinkContext="main">Trade markets</a>
                                                             </div>
                                                         </div>
                                                         <div class="card-simple card-simple-light">
@@ -2418,11 +2411,11 @@ Get Started      </span>
                                                                 Tools designed for your edge
                                                             </div>
                                                             <div class="card-desc field-text">
-                                                                <p>Refine your trading with exclusive data tools like <a href="https://www.cfxm-pro.com/en/performance-analytics-hub/"><span style="text-decoration: underline;">Performance Analytics</span></a>. And take full command
-                                                                    of your analysis with industry-leading <a href="https://www.cfxm-pro.com/en/trading-platforms/tradingview/"><span style="text-decoration: underline;">TradingView charts</span></a>.</p>
+                                                                <p>Refine your trading with exclusive data tools like <span style="text-decoration: underline;">Performance Analytics</span>. And take full command
+                                                                    of your analysis with industry-leading <span style="text-decoration: underline;">TradingView charts</span>.</p>
                                                             </div>
                                                             <div class="arrow-link">
-                                                                <a gtmLinkName="Get trading tools" href="https://www.cfxm-pro.com/en/trading-tools/" gtmLinkContext="main">Get trading tools</a>
+                                                                <a gtmLinkName="Get trading tools" href="/en/InfoPage.php?page=platforms" gtmLinkContext="main">Get trading tools</a>
                                                             </div>
                                                         </div>
                                                         <div class="card-simple card-simple-light">
@@ -2436,7 +2429,7 @@ Get Started      </span>
                                                                 <p>Access knowledgeable customer support by phone, email or chat, enjoy convenient online account management tools, and experience a personalized service (selected offerings only).</p>
                                                             </div>
                                                             <div class="arrow-link">
-                                                                <a gtmLinkName="Customer support" href="https://www.cfxm-pro.com/en/help-and-support/" gtmLinkContext="main">Customer support</a>
+                                                                <a gtmLinkName="Customer support" href="/en/InfoPage.php?page=support" gtmLinkContext="main">Customer support</a>
                                                             </div>
                                                         </div>
                                                         <div class="card-simple card-simple-light">
@@ -2450,7 +2443,7 @@ Get Started      </span>
                                                                 <p>As the number 1 broker in the US*, we're regulated, financially stable, and have provided our clients with trading services since 2001.</p>
                                                             </div>
                                                             <div class="arrow-link">
-                                                                <a gtmLinkName="Financial security" href="https://www.cfxm-pro.com/en/about-us/strength-and-security/" gtmLinkContext="main">Financial security</a>
+                                                                Financial security
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2687,9 +2680,9 @@ Get Started      </span>
                                                                                 </a>
                                                                             </div>
                                                                             <div class="button button-bordered-secondary my-sm" style="padding-top: 10px">
-                                                                                <a href="https://www.cfxm-pro.com/en/trading-academy/webinars/">
+                                                                                
       View All Interactive Livestreams
-    </a>
+    
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -2805,13 +2798,13 @@ Get Started      </span>
                                                                         </div>
                                                                     </div>
                                                                     <div class="button button-solid button-primary">
-                                                                        <a gtmLinkName="Open a RAW Pricing Account" href="https://www.cfxm-pro.com/en/application/raw-pricing-account-us/" title="open an account" gtmLinkContext="main" target="_blank">Open a RAW Pricing Account</a>
+                                                                        <a gtmLinkName="Open a RAW Pricing Account" href="/en/InfoPage.php?page=plans" title="open an account" gtmLinkContext="main" target="_blank">Open a RAW Pricing Account</a>
                                                                     </div>
 
 
 
                                                                     <div class="py-xs button button-bordered-secondary">
-                                                                        <a gtmLinkName="Learn about RAW Pricing" href="https://www.cfxm-pro.com/en/trading-accounts/raw-pricing-account/" gtmLinkContext="main" target="_blank">Learn about RAW Pricing</a>
+                                                                        Learn about RAW Pricing
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -2963,7 +2956,7 @@ Get Started      </span>
                                                                                     </p>
                                                                                 </div>
                                                                                 <div class="button button-bordered-primary">
-                                                                                    <a gtmLinkName="VIP" href="https://www.cfxm-pro.com/en/active-trader/" title="FOREX.com VIP" gtmLinkContext="main">FOREX.com VIP</a>
+                                                                                    <a gtmLinkName="VIP" href="/en/InfoPage.php?page=about" title="FOREX.com VIP" gtmLinkContext="main">FOREX.com VIP</a>
                                                                                 </div>
 
 
@@ -3033,13 +3026,13 @@ Get Started      </span>
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="button button-solid button-primary">
-                                                                                    <a gtmLinkName="Open a RAW Pricing Account" href="https://www.cfxm-pro.com/en/application/raw-pricing-account-us/" title="open an account" gtmLinkContext="main" target="_blank">Open a RAW Pricing Account</a>
+                                                                                    <a gtmLinkName="Open a RAW Pricing Account" href="/en/InfoPage.php?page=plans" title="open an account" gtmLinkContext="main" target="_blank">Open a RAW Pricing Account</a>
                                                                                 </div>
 
 
 
                                                                                 <div class="py-xs button button-bordered-secondary">
-                                                                                    <a gtmLinkName="Learn about RAW Pricing" href="https://www.cfxm-pro.com/en/trading-accounts/raw-pricing-account/" gtmLinkContext="main" target="_blank">Learn about RAW Pricing</a>
+                                                                                    Learn about RAW Pricing
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -3076,7 +3069,7 @@ Get Started      </span>
                                                         <div class="component section-title col-12 spacing-m-t-50">
                                                             <div class="component-content">
                                                                 <div class="field-subtitle">
-                                                                    <h2 style="text-align: center;"><a style="color: #12225c; text-decoration: none" href="https://www.cfxm-pro.com/en/trading-platforms/">Control, power, and speed. Our app and platforms give you every possible edge.</a></h2>
+                                                                    <h2 style="text-align: center;"><a style="color: #12225c; text-decoration: none" href="/en/InfoPage.php?page=platforms">Control, power, and speed. Our app and platforms give you every possible edge.</a></h2>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -3091,7 +3084,7 @@ Get Started      </span>
                                                                                     <div class="bullet-icon field-icon"><img loading="lazy"src="https://www.forex.com/en-us/-/media/project/gain-capital/forex/icons/platforms/icon-platforms-mobileapp-colour.svg?iar=0&amp;extension=webp" alt="Blue icon of a mobile phone with an arrow "
                                                                                             data-variantitemid="{11A790A2-AD65-4ABF-ADC8-34DE967057FE}" data-variantfieldname="Icon" /></div>
                                                                                     <h3 class="bullet-title field-title">
-                                                                                        <a href="https://www.cfxm-pro.com/en/trading-platforms/mobile-trading/">Mobile app</a>
+                                                                                        Mobile app
                                                                                     </h3>
 
                                                                                     <div class="bullet-desc field-description">Intuitive and packed with tools and features, trade on the go with quick-trading, TradingView charts and tools like Performance Analytics.</div>
@@ -3100,7 +3093,7 @@ Get Started      </span>
                                                                                     <div class="bullet-icon field-icon"><img loading="lazy"src="https://www.forex.com/en-us/-/media/project/gain-capital/forex/icons/icon-webtraderplatform-colour.svg?iar=0&amp;extension=webp" alt="Computer monitor icon in blue"
                                                                                             data-variantitemid="{C3740B38-83D7-408E-983C-78AAB12563EC}" data-variantfieldname="Icon" /></div>
                                                                                     <h3 class="bullet-title field-title">
-                                                                                        <a href="https://www.cfxm-pro.com/en/trading-platforms/web-trader/">Web trading</a>
+                                                                                        Web trading
                                                                                     </h3>
 
                                                                                     <div class="bullet-desc field-description">Trade without compromise. Access TradingView charts with over 80 indicators, Reuters news feeds, behavioral science technology and much more with our web trading platform.</div>
@@ -3109,7 +3102,7 @@ Get Started      </span>
                                                                                     <div class="bullet-icon field-icon"><img loading="lazy"src="https://www.forex.com/en-us/-/media/project/gain-capital/forex/icons/platforms/icon-platforms-metatrader-colour.svg?iar=0&amp;extension=webp" alt="Blue MetaTrader icon"
                                                                                             data-variantitemid="{E8F24756-DA38-4D03-9AA7-3F5B00327316}" data-variantfieldname="Icon" /></div>
                                                                                     <h3 class="bullet-title field-title">
-                                                                                        <a href="https://www.cfxm-pro.com/en/trading-platforms/metatrader-5/">MetaTrader</a>
+                                                                                        MetaTrader
                                                                                     </h3>
 
                                                                                     <div class="bullet-desc field-description">The popular and powerful MetaTrader platform&nbsp;comes with superior tools, features, and execution - with access to integrated Reuters news as standard.</div>
@@ -3119,7 +3112,7 @@ Get Started      </span>
                                                                             </ul>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="button button-bordered-primary field-promolink1"><a gtmLinkName="Choose your trading platform" href="https://www.cfxm-pro.com/en/trading-platforms/" data-variantitemid="{D7B6B42F-8859-44A8-BD30-8174064EC726}" gtmLinkContext="main" data-variantfieldname="PromoLink1">Choose your trading platform</a></div>
+                                                                    <div class="button button-bordered-primary field-promolink1"><a gtmLinkName="Choose your trading platform" href="/en/InfoPage.php?page=platforms" data-variantitemid="{D7B6B42F-8859-44A8-BD30-8174064EC726}" gtmLinkContext="main" data-variantfieldname="PromoLink1">Choose your trading platform</a></div>
                                                                 </div>
                                                                 <div class="col-img">
                                                                     <div class="field-promoimage1"><img loading="lazy"src="https://www.forex.com/en-us/-/media/project/gain-capital/forex/feature-images/home/fxall-platforms-laptop-control-power-speed.png?h=1178&amp;iar=0&amp;w=1427&amp;extension=webp" alt="FXUS-Laptop-and-Phones-Platform"
@@ -3165,7 +3158,7 @@ Get Started      </span>
 <p style="font-size: 18px; color: #ffffff;">Access your FOREX.com account on TradingView.com to unlock a more complete trading experience. Utilize their popular charts, dynamic trade management, and trade ideas from the TradingView user community to inspire your own trading.</p>
 </span></div>
                                                                     <div class="button button-bordered-secondary">
-                                                                        <a gtmLinkName="Explore TradingView" href="https://www.cfxm-pro.com/en/trading-platforms/tradingview/" gtmLinkContext="main">Explore TradingView</a>
+                                                                        Explore TradingView
                                                                     </div>
 
 
@@ -3210,7 +3203,7 @@ Get Started      </span>
 <p style="font-size: 18px; color: #ffffff;">Access your FOREX.com account on TradingView.com to unlock a more complete trading experience. Utilize their popular charts, dynamic trade management, and trade ideas from the TradingView user community to inspire your own trading.</p>
 </span></div>
                                                                     <div class="button button-bordered-secondary">
-                                                                        <a gtmLinkName="Explore TradingView" href="https://www.cfxm-pro.com/en/trading-platforms/tradingview/" gtmLinkContext="main">Explore TradingView</a>
+                                                                        Explore TradingView
                                                                     </div>
 
 
@@ -3382,7 +3375,7 @@ Get Started      </span>
                                                                             </ul>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="button button-bordered-primary field-promolink1"><a gtmLinkName="MetaTrader" href="https://www.cfxm-pro.com/en/trading-platforms/metatrader-5/" data-variantitemid="{742ED40B-9405-4107-BE06-10BFE19E5BCE}" gtmLinkContext="main" data-variantfieldname="PromoLink1">MetaTrader</a></div>
+                                                                    <div class="button button-bordered-primary field-promolink1">MetaTrader</div>
                                                                 </div>
                                                                 <div class="col-img">
                                                                     <div class="field-promoimage1"><img loading="lazy"src="https://www.forex.com/en-us/-/media/project/gain-capital/forex/feature-images/platforms/metatrader/fxall-metatrader-xx-for-desktop.png?h=716&amp;iar=0&amp;w=1000&amp;extension=webp"
@@ -3477,7 +3470,7 @@ Get Started      </span>
                                                                             <div class="field-ctabarsubtitle">The markets are always moving. Get the latest news and analysis.</div>
                                                                         </div>
                                                                         <div class="button button-solid button-teritary">
-                                                                            <a gtmLinkName="News and analysis" href="https://www.cfxm-pro.com/en/news-and-analysis/" gtmLinkContext="main">News and analysis</a>
+                                                                            <a gtmLinkName="News and analysis" href="/en/InfoPage.php?page=insights" gtmLinkContext="main">News and analysis</a>
                                                                         </div><img loading="lazy"src="https://www.forex.com/en-us/-/media/project/gain-capital/shared/academy/shutterstock-1118101037-candle-bg2x.png?h=342&amp;iar=0&amp;w=2460&amp;extension=webp" alt="candle background"
                                                                             width="2460" height="342" data-variantitemid="{C6BE57E2-A534-40A0-9CD6-12EDB211B382}" data-variantfieldname="CTABarBackgroundImage" /> </div>
                                                                 </div>
@@ -3509,58 +3502,58 @@ Get Started      </span>
                                                                 <div class="mi-related-articles__tiles">
                                                                     <div class="mi-related-articles__tile">
                                                                         <div class="mi-related-article">
-                                                                            <a class="mi-related-article__link" href="https://www.cfxm-pro.com/en/news-and-analysis/usdmxn-outlook-is-appetite-for-the-mexican-peso-finally-returning/" title="USD/MXN Outlook: Is appetite for the Mexican peso finally returning?">
+                                                                            
                                     <img class="mi-related-article__thumbnail" src="https://micms.stonex.com/cdn-cgi/image/width=500,quality=90/sites/default/files/2024-12/mexico_07.jpg" alt="USD/MXN Outlook: Is appetite for the Mexican peso finally returning?" />
                                 <h4 class="mi-related-article__title">
                                     USD/MXN Outlook: Is appetite for the Mexican peso finally returning?
                                 </h4>
-                            </a>
+                            
 
                                                                             <div class="mi-related-article__footer">
-                                                                                <div class="mi-related-article__author">By <a href="https://www.cfxm-pro.com/en/news-and-analysis/forex-com-analysts/julian-pineda/">Julian Pineda</a></div>
+                                                                                <div class="mi-related-article__author">By Julian Pineda</div>
                                                                                 <div class="mi-related-article__date">April 01, 2026 03:06 PM</div>
                                                                             </div>
                                                                             <div class="mi-related-article__tags card-tags card-tags_with-hidden-list">
                                                                                 <ul class="default-tags">
                                                                                     <li>
-                                                                                        <a href="https://www.cfxm-pro.com/en/news-and-analysis/tags/mexican-peso/" class="pill pill-primary">
+                                                                                        
                                                 Mexican peso
-                                            </a>
+                                            
                                                                                     </li>
                                                                                     <li>
-                                                                                        <a href="https://www.cfxm-pro.com/en/news-and-analysis/tags/peso/" class="pill pill-primary">
+                                                                                        
                                                 Peso
-                                            </a>
+                                            
                                                                                     </li>
                                                                                     <li>
-                                                                                        <a href="https://www.cfxm-pro.com/en/news-and-analysis/tags/mxn/" class="pill pill-primary">
+                                                                                        
                                                 MXN
-                                            </a>
+                                            
                                                                                     </li>
                                                                                     <li>
-                                                                                        <a href="https://www.cfxm-pro.com/en/news-and-analysis/tags/usd-mxn/" class="pill pill-primary">
+                                                                                        
                                                 USD MXN
-                                            </a>
+                                            
                                                                                     </li>
                                                                                     <li>
-                                                                                        <a href="https://www.cfxm-pro.com/en/news-and-analysis/tags/forex/" class="pill pill-primary">
+                                                                                        
                                                 Forex
-                                            </a>
+                                            
                                                                                     </li>
                                                                                     <li>
-                                                                                        <a href="https://www.cfxm-pro.com/en/news-and-analysis/tags/middle-east/" class="pill pill-primary">
+                                                                                        
                                                 Middle East
-                                            </a>
+                                            
                                                                                     </li>
                                                                                     <li>
-                                                                                        <a href="https://www.cfxm-pro.com/en/news-and-analysis/tags/central-banks/" class="pill pill-primary">
+                                                                                        
                                                 Central banks
-                                            </a>
+                                            
                                                                                     </li>
                                                                                     <li>
-                                                                                        <a href="https://www.cfxm-pro.com/en/news-and-analysis/tags/dollar-index/" class="pill pill-primary">
+                                                                                        
                                                 Dollar index
-                                            </a>
+                                            
                                                                                     </li>
                                                                                 </ul>
                                                                             </div>
@@ -3568,33 +3561,33 @@ Get Started      </span>
                                                                     </div>
                                                                     <div class="mi-related-articles__tile">
                                                                         <div class="mi-related-article">
-                                                                            <a class="mi-related-article__link" href="https://www.cfxm-pro.com/en/news-and-analysis/us-dollar-outlook-bearish-april-seasonality-meets-middle-east-wildcard/" title="US Dollar Outlook: Bearish April Seasonality Meets Middle East Wildcard">
+                                                                            
                                     <img class="mi-related-article__thumbnail" src="https://micms.stonex.com/cdn-cgi/image/width=500,quality=90/sites/default/files/2024-12/NandA_Banner_USD_GBP_EUR.jpg" alt="US Dollar Outlook: Bearish April Seasonality Meets Middle East Wildcard" />
                                 <h4 class="mi-related-article__title">
                                     US Dollar Outlook: Bearish April Seasonality Meets Middle East Wildcard
                                 </h4>
-                            </a>
+                            
 
                                                                             <div class="mi-related-article__footer">
-                                                                                <div class="mi-related-article__author">By <a href="https://www.cfxm-pro.com/en/news-and-analysis/forex-com-analysts/matt-simpson/">Matt Simpson</a></div>
+                                                                                <div class="mi-related-article__author">By Matt Simpson</div>
                                                                                 <div class="mi-related-article__date">April 01, 2026 04:23 AM</div>
                                                                             </div>
                                                                             <div class="mi-related-article__tags card-tags card-tags_with-hidden-list">
                                                                                 <ul class="default-tags">
                                                                                     <li>
-                                                                                        <a href="https://www.cfxm-pro.com/en/news-and-analysis/tags/forex/" class="pill pill-primary">
+                                                                                        
                                                 Forex
-                                            </a>
+                                            
                                                                                     </li>
                                                                                     <li>
-                                                                                        <a href="https://www.cfxm-pro.com/en/news-and-analysis/tags/dxy/" class="pill pill-primary">
+                                                                                        
                                                 DXY
-                                            </a>
+                                            
                                                                                     </li>
                                                                                     <li>
-                                                                                        <a href="https://www.cfxm-pro.com/en/news-and-analysis/tags/apac-session/" class="pill pill-primary">
+                                                                                        
                                                 APAC Session
-                                            </a>
+                                            
                                                                                     </li>
                                                                                 </ul>
                                                                             </div>
@@ -3602,43 +3595,43 @@ Get Started      </span>
                                                                     </div>
                                                                     <div class="mi-related-articles__tile">
                                                                         <div class="mi-related-article">
-                                                                            <a class="mi-related-article__link" href="https://www.cfxm-pro.com/en/news-and-analysis/aud-usd-rallies-as-trump-signals-exit-without-hormuz-fix/" title="AUD/USD rallies as Trump signals exit without Hormuz fix">
+                                                                            
                                     <img class="mi-related-article__thumbnail" src="https://micms.stonex.com/cdn-cgi/image/width=500,quality=90/sites/default/files/2026-03/Middle%20East%202_0.jpg" alt="AUD/USD rallies as Trump signals exit without Hormuz fix" />
                                 <h4 class="mi-related-article__title">
                                     AUD/USD rallies as Trump signals exit without Hormuz fix
                                 </h4>
-                            </a>
+                            
 
                                                                             <div class="mi-related-article__footer">
-                                                                                <div class="mi-related-article__author">By <a href="https://www.cfxm-pro.com/en/news-and-analysis/forex-com-analysts/david-scutt/">David Scutt</a></div>
+                                                                                <div class="mi-related-article__author">By David Scutt</div>
                                                                                 <div class="mi-related-article__date">March 31, 2026 11:41 PM</div>
                                                                             </div>
                                                                             <div class="mi-related-article__tags card-tags card-tags_with-hidden-list">
                                                                                 <ul class="default-tags">
                                                                                     <li>
-                                                                                        <a href="https://www.cfxm-pro.com/en/news-and-analysis/tags/aud-usd/" class="pill pill-primary">
+                                                                                        
                                                 AUD USD
-                                            </a>
+                                            
                                                                                     </li>
                                                                                     <li>
-                                                                                        <a href="https://www.cfxm-pro.com/en/news-and-analysis/tags/forex/" class="pill pill-primary">
+                                                                                        
                                                 Forex
-                                            </a>
+                                            
                                                                                     </li>
                                                                                     <li>
-                                                                                        <a href="https://www.cfxm-pro.com/en/news-and-analysis/tags/trade-ideas/" class="pill pill-primary">
+                                                                                        
                                                 Trade Ideas
-                                            </a>
+                                            
                                                                                     </li>
                                                                                     <li>
-                                                                                        <a href="https://www.cfxm-pro.com/en/news-and-analysis/tags/technical-analysis/" class="pill pill-primary">
+                                                                                        
                                                 Technical Analysis
-                                            </a>
+                                            
                                                                                     </li>
                                                                                     <li>
-                                                                                        <a href="https://www.cfxm-pro.com/en/news-and-analysis/tags/fundamental-analysis/" class="pill pill-primary">
+                                                                                        
                                                 Fundamental Analysis
-                                            </a>
+                                            
                                                                                     </li>
                                                                                 </ul>
                                                                             </div>
@@ -3669,7 +3662,7 @@ Get Started      </span>
                     <div class="component link button button-solid button-primary col-12 show-on-scroll" id="sticky-cta">
                         <div class="component-content">
 
-                            <a gtmLinkName="Download Mobile App" href="https://www.cfxm-pro.com/en/application/mobile-download/" data-variantitemid="{17FF8049-B9C9-4FF7-B686-D53EC061DED8}" gtmLinkContext="footer" data-variantfieldname="Link">Download the App</a> </div>
+                            Download the App </div>
                     </div>
 
 
@@ -3701,7 +3694,7 @@ Get Started      </span>
                                                         <div class="component link button button-bordered-secondary col-12">
                                                             <div class="component-content">
 
-                                                                <a gtmLinkName="Footer Bar Login Button" href="https://www.cfxm-pro.com/en/account-login/" data-variantitemid="{E2BD0F66-513C-4451-A8DA-2A7C1654A051}" gtmLinkContext="footer" data-variantfieldname="Link">Log in</a>                                                                </div>
+                                                                <a gtmLinkName="Footer Bar Login Button" href="/Dashboard/LoginContainer.php" data-variantitemid="{E2BD0F66-513C-4451-A8DA-2A7C1654A051}" gtmLinkContext="footer" data-variantfieldname="Link">Log in</a>                                                                </div>
                                                         </div>
 
                                                         <div class="component link button button-solid button-primary col-12">
@@ -3827,10 +3820,10 @@ Get Started      </span>
                                                                         </a>
                                                                     </li>
                                                                     <li class="item2 odd last   cta-with-modal__trigger">
-                                                                        <a href="https://www.cfxm-pro.com/en/tradingview-login-instructions/" gtmLinkContext="footer" gtmLinkName="TradingView" target="_blank">
+                                                                        
                                                                             <div><img loading="lazy"src="https://www.forex.com/en-us/-/media/project/gain-capital/forex/icons/core/footer-icons/trade-on-tradingview-button-dark.png?h=512&amp;iar=0&amp;w=1830&amp;extension=webp"
                                                                                     alt="Trade On TradingView Button Dark" width="1830" height="512" data-variantitemid="{FF3A3C8A-47A8-44B0-A3B8-DF2CD4DB7D33}" data-variantfieldname="LinkIcon" /></div>
-                                                                        </a>
+                                                                        
                                                                     </li>
                                                                 </ul>
                                                             </div>
@@ -3853,16 +3846,16 @@ Get Started      </span>
                                                     <div data-as="h3">Tell me more about</div>
                                                     <ul class="link-list-wrapper">
                                                         <li class="item0 odd first cta-with-modal__trigger">
-                                                            <div class="field-link"><a gtmLinkName="Range of Markets" href="https://www.cfxm-pro.com/en/markets-to-trade/" data-variantitemid="{E86C4EA3-99FB-465A-80A5-CF8DFB620B56}" gtmLinkContext="footer" data-variantfieldname="Link">Range of Markets</a></div>
+                                                            <div class="field-link"><a gtmLinkName="Range of Markets" href="/en/InfoPage.php?page=markets" data-variantitemid="{E86C4EA3-99FB-465A-80A5-CF8DFB620B56}" gtmLinkContext="footer" data-variantfieldname="Link">Range of Markets</a></div>
                                                         </li>
                                                         <li class="item1 even cta-with-modal__trigger">
-                                                            <div class="field-link"><a gtmLinkName="Trading Platforms" href="https://www.cfxm-pro.com/en/trading-platforms/" data-variantitemid="{D08E76CE-C430-402F-A70C-5EE5804025C2}" gtmLinkContext="footer" data-variantfieldname="Link">Trading Platforms</a></div>
+                                                            <div class="field-link"><a gtmLinkName="Trading Platforms" href="/en/InfoPage.php?page=platforms" data-variantitemid="{D08E76CE-C430-402F-A70C-5EE5804025C2}" gtmLinkContext="footer" data-variantfieldname="Link">Trading Platforms</a></div>
                                                         </li>
                                                         <li class="item2 odd cta-with-modal__trigger">
-                                                            <div class="field-link"><a gtmLinkName="Trading Costs" href="https://www.cfxm-pro.com/en/about-us/financial-transparency/trading-costs/" data-variantitemid="{78935CA5-1436-418D-B87F-883A5030A248}" gtmLinkContext="footer" data-variantfieldname="Link">Trading Costs</a></div>
+                                                            <div class="field-link">Trading Costs</div>
                                                         </li>
                                                         <li class="item3 even last cta-with-modal__trigger">
-                                                            <div class="field-link"><a gtmLinkName="Margin Requirements" href="https://www.cfxm-pro.com/en/about-us/financial-transparency/margin-requirements/" data-variantitemid="{F30B2E29-C506-47EA-9517-BAD9E5C48AB2}" gtmLinkContext="footer" data-variantfieldname="Link">Margin Requirements</a></div>
+                                                            <div class="field-link">Margin Requirements</div>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -3879,20 +3872,19 @@ Get Started      </span>
                                                     <div data-as="h3">I would like to</div>
                                                     <ul class="link-list-wrapper">
                                                         <li class="item0 odd first cta-with-modal__trigger">
-                                                            <div class="field-link"><a gtmLinkName="Fund My Account" href="https://www.cfxm-pro.com/en/help-and-support/funding-your-account/" data-variantitemid="{AF6E9A52-86B3-4D50-B63E-AE9CCC1EAF55}" gtmLinkContext="footer" data-variantfieldname="Link">Fund My Account</a></div>
+                                                            <div class="field-link">Fund My Account</div>
                                                         </li>
                                                         <li class="item1 even cta-with-modal__trigger">
-                                                            <div class="field-link"><a gtmLinkName="Withdraw Funds" href="https://www.cfxm-pro.com/en/help-and-support/withdrawals/" data-variantitemid="{27A862E4-8F16-46C3-9F3D-284DEFA28729}" gtmLinkContext="footer" data-variantfieldname="Link">Withdraw Funds</a></div>
+                                                            <div class="field-link">Withdraw Funds</div>
                                                         </li>
                                                         <li class="item2 odd cta-with-modal__trigger">
-                                                            <div class="field-link"><a gtmLinkName="Download FOREX Platforms" href="https://www.cfxm-pro.com/en/trading-platforms/download-trading-platforms/" data-variantitemid="{E67F98D6-BBA6-4397-84FF-7B60716FBF6E}" gtmLinkContext="footer" data-variantfieldname="Link">Download FOREX.com Platforms</a></div>
+                                                            <div class="field-link">Download FOREX.com Platforms</div>
                                                         </li>
                                                         <li class="item3 even cta-with-modal__trigger">
-                                                            <div class="field-link"><a gtmLinkName="Download TradingView" href="https://www.cfxm-pro.com/en/trading-platforms/download-trading-platforms/#tradingview" data-variantitemid="{AEEF4593-CE7B-445D-BF12-85118C7E8F81}" gtmLinkContext="footer"
-                                                                    data-variantfieldname="Link">Download TradingView</a></div>
+                                                            <div class="field-link">Download TradingView</div>
                                                         </li>
                                                         <li class="item4 odd last cta-with-modal__trigger">
-                                                            <div class="field-link"><a gtmLinkName="Download MT4" href="https://www.cfxm-pro.com/en/trading-platforms/download-trading-platforms/#mt5" data-variantitemid="{351BBF63-C7F9-43ED-8AFD-45BFC9F36D3C}" gtmLinkContext="footer" data-variantfieldname="Link">Download MT5</a></div>
+                                                            <div class="field-link">Download MT5</div>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -3909,19 +3901,16 @@ Get Started      </span>
                                                     <div data-as="h3">I would like to learn about</div>
                                                     <ul class="link-list-wrapper">
                                                         <li class="item0 odd first cta-with-modal__trigger">
-                                                            <div class="field-link"><a gtmLinkName="Trading Forex" href="https://www.cfxm-pro.com/en/trading-academy/courses/introduction-to-financial-markets/forex-trading/" data-variantitemid="{42D0B194-4B15-4824-B51E-F398B2D37240}" gtmLinkContext="footer"
-                                                                    data-variantfieldname="Link">Trading Forex</a></div>
+                                                            <div class="field-link">Trading Forex</div>
                                                         </li>
                                                         <li class="item1 even cta-with-modal__trigger">
-                                                            <div class="field-link"><a gtmLinkName="Managing Risk" href="https://www.cfxm-pro.com/en/trading-academy/courses/managing-risk/risk-management/" data-variantitemid="{51BD6434-C5E6-4109-8517-7E8C4051CCE2}" gtmLinkContext="footer" data-variantfieldname="Link">Managing Risk</a></div>
+                                                            <div class="field-link">Managing Risk</div>
                                                         </li>
                                                         <li class="item2 odd cta-with-modal__trigger">
-                                                            <div class="field-link"><a gtmLinkName="Technical Analysis" href="https://www.cfxm-pro.com/en/trading-academy/courses/technical-analysis/understanding-technical-analysis/" data-variantitemid="{A7A5370A-552D-4264-AE35-55328ED09A3A}" gtmLinkContext="footer"
-                                                                    data-variantfieldname="Link">Technical Analysis</a></div>
+                                                            <div class="field-link">Technical Analysis</div>
                                                         </li>
                                                         <li class="item3 even last cta-with-modal__trigger">
-                                                            <div class="field-link"><a gtmLinkName="Trading Volatility" href="https://www.cfxm-pro.com/en/trading-academy/courses/successful-trading-techniques/volatility-trading-tips/" data-variantitemid="{4721ADB1-CA4D-40FE-8DE9-FC759C024143}" gtmLinkContext="footer"
-                                                                    data-variantfieldname="Link">Trading Volatility</a></div>
+                                                            <div class="field-link">Trading Volatility</div>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -3933,7 +3922,7 @@ Get Started      </span>
 
                                             <div class="component rich-text col-12 spacing-m-t-10">
                                                 <div class="component-content">
-                                                    <p class="p-lg" style="margin-bottom: -10px;">Need help? <a href="https://www.cfxm-pro.com/en/help-and-support/">Contact us</a></p>
+                                                    <p class="p-lg" style="margin-bottom: -10px;">Need help? <a href="/en/InfoPage.php?page=support">Contact us</a></p>
                                                 </div>
                                             </div>
 
@@ -3966,7 +3955,7 @@ Get Started      </span>
                                         <div data-as="h3"></div>
                                         <ul class="link-list-wrapper">
                                             <li class="item0 odd first cta-with-modal__trigger">
-                                                <div class="field-link"><a gtmLinkName="Disclosures and Risk Warning" href="https://www.cfxm-pro.com/en/terms-and-policies/risk-disclosure/" data-variantitemid="{F7B5C0D7-FC13-4090-B5A9-14C00F6015BA}" gtmLinkContext="footer" data-variantfieldname="Link">Disclosures and Risk Warning</a></div>
+                                                <div class="field-link">Disclosures and Risk Warning</div>
                                             </li>
                                             <li class="item1 even cta-with-modal__trigger">
                                                 <div class="field-link"><a gtmLinkName="Customer Agreement" href="https://www.filesandimages.com/Brand/forex/pdf/FXUS-Customer-Agreement-November-2025.pdf" target="_blank" rel="noopener noreferrer" data-variantitemid="{BCD5952F-A60F-4C40-A4B0-B3B1DC2F1BE3}"
@@ -3994,7 +3983,7 @@ Get Started      </span>
 
                                 <div class="component rich-text col-12 spacing-m-t-25 spacing-m-b-25">
                                     <div class="component-content">
-                                        <p>cfxm-pro.com is a registered EMC and TVASSETS with the CFTC and member of the National Futures Association (NFA # 905285). CFXM PRO trading involves significant risk of loss and is not suitable for all investors. <a href="https://www.cfxm-pro.com/en/terms-and-policies/risk-disclosure/">Full Disclosures and Risk Warning</a>.
+                                        <p>cfxm-pro.com is a registered EMC and TVASSETS with the CFTC and member of the National Futures Association (NFA # 905285). CFXM PRO trading involves significant risk of loss and is not suitable for all investors. Full Disclosures and Risk Warning.
                                             <strong>Increased leverage increases risk.</strong></p>
                                         <p>GAIN Capital Group LLC (dba cfxm-pro.com) 30 Delaware, USA. Transcient Capital Group LLC </p>
                                        
@@ -4023,10 +4012,10 @@ Get Started      </span>
                                                     <div data-as="h3"></div>
                                                     <ul class="link-list-wrapper">
                                                         <li class="item0 odd first cta-with-modal__trigger">
-                                                            <div class="field-link"><a gtmLinkName="Terms and Policies" href="https://www.cfxm-pro.com/en/terms-and-policies/" data-variantitemid="{CEF7E63E-AA00-47F7-99D4-58D28263C9D0}" gtmLinkContext="footer" data-variantfieldname="Link">Terms and Policies</a></div>
+                                                            <div class="field-link"><a gtmLinkName="Terms and Policies" href="/en/InfoPage.php?page=terms" data-variantitemid="{CEF7E63E-AA00-47F7-99D4-58D28263C9D0}" gtmLinkContext="footer" data-variantfieldname="Link">Terms and Policies</a></div>
                                                         </li>
                                                         <li class="item1 even cta-with-modal__trigger">
-                                                            <div class="field-link"><a gtmLinkName="Sitemap" href="https://www.cfxm-pro.com/en/sitemap/" data-variantitemid="{F7D9A321-D683-4AD3-925F-53E62E69E8C4}" gtmLinkContext="footer" data-variantfieldname="Link">Sitemap</a></div>
+                                                            <div class="field-link">Sitemap</div>
                                                         </li>
                                                         <li class="item2 odd last cta-with-modal__trigger">
                                                             <div class="field-link"><a gtmLinkName="StoneX" href="https://www.stonex.com/" target="_blank" rel="noopener noreferrer" data-variantitemid="{938E8B63-B7F5-4A7B-ADCB-54B2BE67A6B4}" gtmLinkContext="footer" data-variantfieldname="Link">StoneX</a></div>
