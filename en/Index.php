@@ -2718,28 +2718,28 @@ Why Trade with Us?      </span>
                                 <!-- CFXM-PRO AI bot plans -->
 <section id="bot-plans" class="cfxm-bot-plans" aria-labelledby="cfxm-bot-plans-title">
   <style>
-    .cfxm-bot-plans{--bot-purple:#9b5de5;--bot-deep:#211638;--bot-ink:#211638;background:linear-gradient(135deg,#f8f5ff 0%,#fff 55%,#f1e8ff 100%);padding:clamp(48px,7vw,88px) 20px;color:var(--bot-ink);overflow:hidden}
+    .cfxm-bot-plans{--bot-purple:#b77aff;--bot-deep:#1b1035;--bot-ink:#f6f0ff;background:linear-gradient(135deg,#0f0b1c 0%,#171027 48%,#211238 100%);padding:clamp(48px,7vw,88px) 20px;color:var(--bot-ink);overflow:hidden}
     .cfxm-bot-plans *{box-sizing:border-box}
     .cfxm-bot-plans .bot-plans-inner{max-width:1240px;margin:0 auto}
     .cfxm-bot-plans .bot-plans-heading{text-align:center;max-width:760px;margin:0 auto 34px}
-    .cfxm-bot-plans .bot-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border:1px solid #e4d4ff;border-radius:999px;background:#fff;color:#7138bd;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
-    .cfxm-bot-plans h2{margin:18px 0 12px;font-size:clamp(30px,4vw,48px);line-height:1.12;font-weight:750;color:#211638}
-    .cfxm-bot-plans .bot-plans-heading p{margin:0;color:#665d75;font-size:16px;line-height:1.7}
+    .cfxm-bot-plans .bot-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border:1px solid rgba(183,122,255,.38);border-radius:999px;background:rgba(155,93,229,.13);color:#d5b5ff;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+    .cfxm-bot-plans h2{margin:18px 0 12px;font-size:clamp(30px,4vw,48px);line-height:1.12;font-weight:750;color:#fff}
+    .cfxm-bot-plans .bot-plans-heading p{margin:0;color:#c2b6d5;font-size:16px;line-height:1.7}
     .cfxm-bot-plans .bot-plans-track{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px;align-items:stretch}
-    .cfxm-bot-plans .bot-plan-card{display:flex;flex-direction:column;min-width:0;padding:22px 18px 20px;border:1px solid #e8e0f2;border-radius:20px;background:#fff;box-shadow:0 12px 35px rgba(45,20,77,.07);transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
-    .cfxm-bot-plans .bot-plan-card:hover{transform:translateY(-5px);border-color:#c7a6f5;box-shadow:0 18px 42px rgba(75,35,125,.13)}
-    .cfxm-bot-plans .bot-plan-tag{align-self:flex-start;padding:5px 9px;border-radius:7px;background:#f1e8ff;color:#7138bd;font-size:10px;font-weight:800;letter-spacing:.1em}
-    .cfxm-bot-plans .bot-plan-card h3{margin:15px 0 7px;color:#211638;font-size:19px;line-height:1.25}
-    .cfxm-bot-plans .bot-plan-strategy{min-height:42px;color:#796d88;font-size:12px;line-height:1.5}
-    .cfxm-bot-plans .bot-plan-price{margin:17px 0 4px;font-size:clamp(23px,2vw,30px);font-weight:800;letter-spacing:-.04em;color:#4c1d95;white-space:nowrap}
-    .cfxm-bot-plans .bot-plan-label{font-size:11px;color:#847a91}
-    .cfxm-bot-plans .bot-plan-description{min-height:78px;margin:16px 0;color:#675d75;font-size:13px;line-height:1.65}
+    .cfxm-bot-plans .bot-plan-card{display:flex;flex-direction:column;min-width:0;padding:22px 18px 20px;border:1px solid rgba(183,122,255,.22);border-radius:20px;background:linear-gradient(155deg,rgba(48,31,73,.96),rgba(27,19,43,.98));box-shadow:0 12px 35px rgba(0,0,0,.24);transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+    .cfxm-bot-plans .bot-plan-card:hover{transform:translateY(-5px);border-color:#b77aff;box-shadow:0 18px 42px rgba(0,0,0,.38)}
+    .cfxm-bot-plans .bot-plan-tag{align-self:flex-start;padding:5px 9px;border-radius:7px;background:rgba(155,93,229,.18);color:#d8baff;font-size:10px;font-weight:800;letter-spacing:.1em}
+    .cfxm-bot-plans .bot-plan-card h3{margin:15px 0 7px;color:#fff;font-size:19px;line-height:1.25}
+    .cfxm-bot-plans .bot-plan-strategy{min-height:42px;color:#c0b2d2;font-size:12px;line-height:1.5}
+    .cfxm-bot-plans .bot-plan-price{margin:17px 0 4px;font-size:clamp(23px,2vw,30px);font-weight:800;letter-spacing:-.04em;color:#d1a8ff;white-space:nowrap}
+    .cfxm-bot-plans .bot-plan-label{font-size:11px;color:#aa9bbd}
+    .cfxm-bot-plans .bot-plan-description{min-height:78px;margin:16px 0;color:#c8bdd7;font-size:13px;line-height:1.65}
     .cfxm-bot-plans .bot-plan-features{list-style:none;padding:0;margin:0 0 22px;display:grid;gap:10px}
-    .cfxm-bot-plans .bot-plan-features li{display:flex;gap:8px;align-items:flex-start;color:#51465f;font-size:12px;line-height:1.5}
+    .cfxm-bot-plans .bot-plan-features li{display:flex;gap:8px;align-items:flex-start;color:#e0d6eb;font-size:12px;line-height:1.5}
     .cfxm-bot-plans .bot-plan-features li:before{content:"✓";flex:0 0 auto;color:#8b42d6;font-weight:800}
     .cfxm-bot-plans .bot-plan-buy{display:block;margin-top:auto;text-align:center;padding:12px 10px;border-radius:10px;background:#7138bd;color:#fff!important;font-size:13px;font-weight:750;text-decoration:none!important;transition:background .2s ease}
     .cfxm-bot-plans .bot-plan-buy:hover,.cfxm-bot-plans .bot-plan-buy:focus{background:#4c1d95}
-    .cfxm-bot-plans .bot-plans-note{max-width:940px;margin:26px auto 0;text-align:center;color:#81768e;font-size:11px;line-height:1.7}
+    .cfxm-bot-plans .bot-plans-note{max-width:940px;margin:26px auto 0;text-align:center;color:#a99ab9;font-size:11px;line-height:1.7}
     @media(max-width:1050px){.cfxm-bot-plans .bot-plans-track{grid-template-columns:repeat(3,minmax(220px,1fr))}.cfxm-bot-plans .bot-plan-description{min-height:0}}
     @media(max-width:700px){.cfxm-bot-plans{padding:48px 0}.cfxm-bot-plans .bot-plans-heading{padding:0 20px;margin-bottom:25px}.cfxm-bot-plans .bot-plans-heading p{font-size:14px}.cfxm-bot-plans .bot-plans-track{display:flex;overflow-x:auto;gap:12px;padding:4px 20px 18px;scroll-snap-type:x mandatory;scroll-padding-left:20px;-webkit-overflow-scrolling:touch}.cfxm-bot-plans .bot-plan-card{flex:0 0 60vw;width:60vw;max-width:280px;padding:19px 16px;border-radius:17px;scroll-snap-align:start}.cfxm-bot-plans .bot-plan-card h3{font-size:17px}.cfxm-bot-plans .bot-plan-price{font-size:25px}.cfxm-bot-plans .bot-plan-description{min-height:0}.cfxm-bot-plans .bot-plan-strategy{min-height:0}.cfxm-bot-plans .bot-plans-note{padding:0 20px}}
     @media(prefers-reduced-motion:reduce){.cfxm-bot-plans .bot-plan-card,.cfxm-bot-plans .bot-plan-buy{transition:none}}
