@@ -26,7 +26,7 @@ if ($botQuery) while ($botRow = mysqli_fetch_assoc($botQuery)) $myBots[] = $botR
 <div class="bot-section-head"><div><h2>Choose your AI bot</h2><p>Swipe horizontally on mobile to compare all five plans.</p></div><span class="bot-eyebrow">5 available plans</span></div>
 <div class="bot-plan-track" aria-label="AI trading bot plans">
 <?php foreach ($botPlans as $plan): ?>
-<article class="bot-card"><div class="bot-card-art"><img src="<?php echo bot_h($plan['image']); ?>" alt="" loading="lazy"><span class="bot-card-badge"><?php echo bot_h($plan['tag']); ?></span><span class="bot-card-icon"><i class="fas fa-robot" aria-hidden="true"></i></span></div><div class="bot-card-body"><h3><?php echo bot_h($plan['name']); ?></h3><span class="bot-strategy"><?php echo bot_h($plan['strategy']); ?></span><p class="bot-desc"><?php echo bot_h($plan['description']); ?></p><div class="bot-price">$<?php echo number_format($plan['price']); ?> <small>plan capital</small></div><div class="bot-capacity"><i class="fas fa-layer-group"></i><?php echo bot_h($plan['capacity']); ?></div><ul class="bot-features"><?php foreach ($plan['features'] as $feature): ?><li><i class="fas fa-check-circle"></i><span><?php echo bot_h($feature); ?></span></li><?php endforeach; ?></ul><button class="bot-acquire" type="button" data-plan="<?php echo bot_h($plan['id']); ?>" data-name="<?php echo bot_h($plan['name']); ?>" data-price="<?php echo (int)$plan['price']; ?>"><i class="fas fa-plus-circle"></i> Acquire bot</button></div></article>
+<article class="bot-card"><div class="bot-card-art"><img src="<?php echo bot_h($plan['image']); ?>" alt="" loading="lazy"><span class="bot-card-badge"><?php echo bot_h($plan['tag']); ?></span><span class="bot-card-icon"><i class="fas fa-robot" aria-hidden="true"></i></span></div><div class="bot-card-body"><h3><?php echo bot_h($plan['name']); ?></h3><span class="bot-strategy"><?php echo bot_h($plan['strategy']); ?></span><p class="bot-desc"><?php echo bot_h($plan['description']); ?></p><div class="bot-price">$<?php echo number_format($plan['price']); ?> <small>plan capital</small></div><div class="bot-capacity"><i class="fas fa-layer-group"></i><?php echo bot_h($plan['capacity']); ?></div><ul class="bot-features"><?php foreach ($plan['features'] as $feature): ?><li><i class="fas fa-check-circle"></i><span><?php echo bot_h($feature); ?></span></li><?php endforeach; ?></ul><button class="bot-acquire" type="button" data-plan="<?php echo bot_h($plan['id']); ?>" data-name="<?php echo bot_h($plan['name']); ?>" data-price="<?php echo (int)$plan['price']; ?>"><i class="fas fa-plus-circle"></i> Buy Bot</button></div></article>
 <?php endforeach; ?>
 </div>
 <div class="bot-risk-note"><i class="fas fa-exclamation-triangle"></i><div><strong>Trading risk and earnings transparency</strong><br>Trading can lose money. These plan tiers do not guarantee daily profit or mining rewards. No earnings should be credited merely because a bot was acquired; dashboard balances must reflect reconciled, realized results from actual executed trades. Live execution is not enabled by this plan catalogue alone.</div></div>
@@ -38,7 +38,7 @@ if ($botQuery) while ($botRow = mysqli_fetch_assoc($botQuery)) $myBots[] = $botR
  document.querySelectorAll('.bot-acquire').forEach(function(button){
   button.addEventListener('click', async function(){
    var name=button.dataset.name, price=Number(button.dataset.price);
-   if(!window.confirm('Acquire '+name+' for $'+price.toLocaleString()+'? The plan amount will be deducted from your available wallet balance.')) return;
+   if(!window.confirm('Buy '+name+' for $'+price.toLocaleString()+'? The plan amount will be deducted from your available wallet balance.')) return;
    button.disabled=true; button.innerHTML='<i class="fas fa-spinner fa-spin"></i> Processing...';
    try {
     var body=new URLSearchParams({action:'acquire',plan:button.dataset.plan,csrf:'<?php echo bot_h($_SESSION['bot_csrf'] = $_SESSION['bot_csrf'] ?? bin2hex(random_bytes(32))); ?>'});
@@ -46,7 +46,7 @@ if ($botQuery) while ($botRow = mysqli_fetch_assoc($botQuery)) $myBots[] = $botR
     var result=await response.json();
     if(!response.ok || !result.success) throw new Error(result.message || 'Could not acquire this bot.');
     window.alert(result.message); window.location.reload();
-   } catch(error){ window.alert(error.message || 'Request failed. Please try again.'); button.disabled=false; button.innerHTML='<i class="fas fa-plus-circle"></i> Acquire bot'; }
+   } catch(error){ window.alert(error.message || 'Request failed. Please try again.'); button.disabled=false; button.innerHTML='<i class="fas fa-plus-circle"></i> Buy Bot'; }
   });
  });
 })();
