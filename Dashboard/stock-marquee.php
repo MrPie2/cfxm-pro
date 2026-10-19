@@ -29,7 +29,7 @@
     track.dataset.initialized = 'true';
 
     const endpoint = 'stock-market-data.php';
-    const maxStocks = 10;
+    const maxStocks = 13;
     const esc = value => String(value == null ? '' : value).replace(/[&<>"']/g, ch => ({
         '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
     }[ch]));
@@ -45,23 +45,26 @@
         const cls = up ? 'is-up' : 'is-down';
         const icon = up ? 'fa-arrow-up' : 'fa-arrow-down';
         const companyIcons = {
-            'AAPL': 'fab fa-apple',
-            'MSFT': 'fab fa-microsoft',
-            'NVDA': 'fas fa-microchip',
-            'TM': 'fas fa-car',
-            'SONY': 'fas fa-tv',
-            'HMC': 'fas fa-car-side',
-            'GOOGL': 'fab fa-google',
-            'META': 'fas fa-users',
-            'BRK.B': 'fas fa-landmark',
-            'JPM': 'fas fa-university',
-            'AVGO': 'fas fa-microchip',
-            'LLY': 'fas fa-flask'
+            'NVDA': 'fas fa-microchip', 'TM': 'fas fa-car', 'SONY': 'fas fa-tv',
+            'HMC': 'fas fa-car-side', 'BRK.B': 'fas fa-landmark',
+            'JPM': 'fas fa-university', 'AVGO': 'fas fa-microchip', 'LLY': 'fas fa-flask'
+        };
+        const companyLogos = {
+            'AAPL': 'https://cdn.simpleicons.org/apple/000000',
+            'MSFT': 'https://cdn.simpleicons.org/microsoft/5E5E5E',
+            'GOOGL': 'https://cdn.simpleicons.org/google/4285F4',
+            'TSLA': 'https://cdn.simpleicons.org/tesla/E82127',
+            'BYDDY': 'https://cdn.simpleicons.org/byd/ED1C24',
+            'NVDA': 'https://cdn.simpleicons.org/nvidia/76B900',
+            'TM': 'https://cdn.simpleicons.org/toyota/EB0A1E',
+            'SONY': 'https://cdn.simpleicons.org/sony/000000',
+            'HMC': 'https://cdn.simpleicons.org/honda/E40521'
         };
         const companyIcon = companyIcons[stock.symbol] || 'fas fa-chart-line';
+        const companyLogo = companyLogos[stock.symbol];
         const percent = (changePercent > 0 ? '+' : '') + changePercent.toFixed(2) + '%';
         return '<article class="vh-stock-ticker '+cls+'" title="'+esc(stock.name)+' ('+esc(stock.symbol)+')">'
-            + '<div class="vh-stock-ticker-top"><span class="vh-stock-company-icon" aria-hidden="true"><i class="'+companyIcon+'"></i></span><span class="vh-stock-symbol">'+esc(stock.symbol)+'</span></div>'
+            + '<div class="vh-stock-ticker-top"><span class="vh-stock-company-icon" aria-hidden="true">'+(companyLogo ? '<img src="'+companyLogo+'" alt="" loading="lazy" style="width:24px;height:24px;object-fit:contain" onerror="this.style.display=\'none\'">' : '<i class="'+companyIcon+'"></i>')+'</span><span class="vh-stock-symbol">'+esc(stock.symbol)+'</span></div>'
             + '<strong class="vh-stock-price">'+money(Number(stock.price))+'</strong>'
             + '<div class="vh-stock-ticker-bottom"><span class="vh-stock-change-amount '+cls+'"><i class="fas '+icon+'" aria-hidden="true"></i>'+signedMoney(changeAmount)+'</span>'
             + '<span class="vh-stock-change-percent '+cls+'">'+percent+'</span></div>'
