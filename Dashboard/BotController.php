@@ -109,23 +109,12 @@ try {
 
     mysqli_commit($Conn);
     unset($_SESSION['bot_csrf']);
-    bot_json(200, true, $plan['name'] . ' was acquired successfully. 
+    bot_json(200, true, $plan['name'] . ' was acquired successfully. $' . number_format($plan['capital'], 2) . ' was deducted from ' . $walletColumn . '. Its status is pending engine connection; earnings will only be posted from reconciled realized trade results.', ['bot_id'=>$botId,'status'=>'pending_engine','capital'=>$plan['capital'],'wallet_source'=>$walletColumn,'wallet_balance'=>$newBalance]);
 } catch (Throwable $e) {
     mysqli_rollback($Conn);
     if ($e->getMessage() === 'INSUFFICIENT_FUNDS') {
-        bot_json(422, false, 'Insufficient funds. You need at least 
- . number_format($plan['capital'], 2) . ' was deducted from ' . $walletColumn . '. Its status is pending engine connection; earnings will only be posted from reconciled realized trade results.', ['bot_id'=>$botId,'status'=>'pending_engine','capital'=>$plan['capital'],'wallet_source'=>$walletColumn,'wallet_balance'=>$newBalance]);
-} catch (Throwable $e) {
-    mysqli_rollback($Conn);
-    bot_json(500, false, $e->getMessage() === 'Insufficient available wallet balance. You need at least $' . number_format($plan['capital'], 2) . ' in available funds.' ? $e->getMessage() : 'The bot could not be acquired. No balance change was saved.');
-}
- . number_format($plan['capital'], 2) . ' in either your Fin_Asset or Total_Deposit balance to buy this bot.');
+        bot_json(422, false, 'Insufficient funds. You need at least $' . number_format($plan['capital'], 2) . ' in either your Fin_Asset or Total_Deposit balance to buy this bot.');
     }
     error_log('CFXM bot acquisition failed: ' . $e->getMessage());
     bot_json(500, false, 'The bot could not be acquired. No balance change was saved.');
-}
- . number_format($plan['capital'], 2) . ' was deducted from ' . $walletColumn . '. Its status is pending engine connection; earnings will only be posted from reconciled realized trade results.', ['bot_id'=>$botId,'status'=>'pending_engine','capital'=>$plan['capital'],'wallet_source'=>$walletColumn,'wallet_balance'=>$newBalance]);
-} catch (Throwable $e) {
-    mysqli_rollback($Conn);
-    bot_json(500, false, $e->getMessage() === 'Insufficient available wallet balance. You need at least $' . number_format($plan['capital'], 2) . ' in available funds.' ? $e->getMessage() : 'The bot could not be acquired. No balance change was saved.');
 }
