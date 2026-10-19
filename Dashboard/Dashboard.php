@@ -103,6 +103,26 @@ window.location.href='Notification.php?id=".$id."';
         mysqli_stmt_close($dashboardBotRecordStmt);
     }
 
+    // Bot summary: realized simulated profit plus an estimate from currently active bots.
+    $dashboardBotProfit = 0.0;
+    $dashboardBotDailyRateAmount = 0.0;
+    $dashboardBotActiveCapital = 0.0;
+    $dashboardBotDailyPercentage = 0.0;
+    $dashboardBotSummaryStmt = @mysqli_prepare($Conn, "SELECT COALESCE(SUM(total_earned),0), COALESCE(SUM(CASE WHEN status='active' AND mining_status='active' THEN capital * daily_rate_percent / 100 ELSE 0 END),0), COALESCE(SUM(CASE WHEN status='active' AND mining_status='active' THEN capital ELSE 0 END),0) FROM user_trading_bots WHERE investor_id=?");
+    if ($dashboardBotSummaryStmt) {
+        mysqli_stmt_bind_param($dashboardBotSummaryStmt, 's', $Investor_id);
+        if (mysqli_stmt_execute($dashboardBotSummaryStmt)) {
+            mysqli_stmt_bind_result($dashboardBotSummaryStmt, $dashboardBotProfit, $dashboardBotDailyRateAmount, $dashboardBotActiveCapital);
+            mysqli_stmt_fetch($dashboardBotSummaryStmt);
+        }
+        mysqli_stmt_close($dashboardBotSummaryStmt);
+    }
+    $dashboardBotProfitDisplay = (float)$dashboardBotProfit * (float)$exchangerate;
+    $dashboardBotDailyRateDisplay = (float)$dashboardBotDailyRateAmount * (float)$exchangerate;
+    $dashboardBotDailyPercentage = (float)$dashboardBotActiveCapital > 0
+        ? ((float)$dashboardBotDailyRateAmount / (float)$dashboardBotActiveCapital) * 100
+        : 0.0;
+
     // Tesla cards link to the real TSLA entry in the existing stock catalogue.
     // Vehicle cards are visual entry points to Tesla Inc. shares, not claims of vehicle ownership.
     $teslaStock = null;
@@ -206,6 +226,16 @@ window.smartsupp||(function(d) {
             <strong><?php echo number_format($dashboardBotRecordCount); ?></strong>
             <small>Recorded bot plans · Manage bots <i class="fas fa-arrow-right" aria-hidden="true"></i></small>
         </a>
+        <div class="vh-stat-card vh-bot-profit-card">
+            <span class="vh-stat-icon vh-icon-green"><i class="fas fa-chart-line"></i></span>
+            <span class="vh-stat-label">Bot profit</span>
+            <strong><?php echo htmlspecialchars($curAbbr, ENT_QUOTES, 'UTF-8') . number_format($dashboardBotProfitDisplay, 2, '.', ','); ?></strong>
+            <small>Earned from your bot records</small>
+            <div class="vh-bot-profit-details">
+                <span><b>Bot rate</b><strong><?php echo htmlspecialchars($curAbbr, ENT_QUOTES, 'UTF-8') . number_format($dashboardBotDailyRateDisplay, 2, '.', ','); ?>/day</strong></span>
+                <span><b>Daily percentage</b><strong><?php echo number_format($dashboardBotDailyPercentage, 4, '.', ','); ?>%</strong></span>
+            </div>
+        </div>
     </div>
 
 
