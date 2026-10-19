@@ -1,6 +1,6 @@
 <?php
 /**
- * Same-origin US stock quote proxy for dashboard stock cards.
+ * Same-origin featured stock quote proxy for dashboard stock cards.
  * Configure FINNHUB_API_KEY in the PHP/server environment; never expose it in JavaScript.
  */
 session_start();
@@ -29,9 +29,9 @@ $stocks = array(
     array('symbol' => 'AAPL', 'name' => 'Apple'),
     array('symbol' => 'MSFT', 'name' => 'Microsoft'),
     array('symbol' => 'NVDA', 'name' => 'NVIDIA'),
-    array('symbol' => 'AMZN', 'name' => 'Amazon'),
-    array('symbol' => 'GOOGL', 'name' => 'Alphabet'),
-    array('symbol' => 'META', 'name' => 'Meta'),
+    array('symbol' => 'TM', 'name' => 'Toyota Motor'),
+    array('symbol' => 'SONY', 'name' => 'Sony Group'),
+    array('symbol' => 'HMC', 'name' => 'Honda Motor'),
     array('symbol' => 'BRK.B', 'name' => 'Berkshire Hathaway'),
     array('symbol' => 'JPM', 'name' => 'JPMorgan Chase'),
     array('symbol' => 'AVGO', 'name' => 'Broadcom'),

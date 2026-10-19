@@ -7,12 +7,10 @@ if (!isset($_SESSION['User_id'])) {
 include('Header.php');
 
 $marketAssets = array(
-    array('name' => 'Netflix', 'symbol' => 'NFLX', 'exchange' => 'NASDAQ', 'match' => array('Netflix', 'NFLX'), 'mark' => 'N', 'class' => 'netflix', 'category' => 'Entertainment', 'description' => 'Explore the Netflix opportunity in the platform market catalogue.'),
-    array('name' => 'Dell Technologies', 'symbol' => 'DELL', 'exchange' => 'NYSE', 'match' => array('Dell', 'DELL'), 'mark' => 'D', 'class' => 'dell', 'category' => 'Technology', 'description' => 'Explore Dell Technologies through the available investment catalogue.'),
-    array('name' => 'Microsoft', 'symbol' => 'MSFT', 'exchange' => 'NASDAQ', 'match' => array('Microsoft', 'MSFT'), 'mark' => 'M', 'class' => 'microsoft', 'category' => 'Technology', 'description' => 'Explore Microsoft and its technology business.'),
-    array('name' => 'SpaceX', 'symbol' => 'PRIVATE', 'exchange' => 'PRIVATE COMPANY', 'match' => array('SpaceX', 'SPACEX'), 'mark' => 'X', 'class' => 'spacex', 'category' => 'Aerospace', 'description' => 'SpaceX is privately held; availability here depends on the platform’s configured offering.'),
-    array('name' => 'Magnet', 'symbol' => 'MAGNET', 'exchange' => 'PLATFORM LISTING', 'match' => array('Magnet', 'MAGNET'), 'mark' => '🧲', 'class' => 'magnet', 'category' => 'Market opportunity', 'description' => 'Review the Magnet opportunity if it has been configured in the platform catalogue.'),
-    array('name' => 'Amazon', 'symbol' => 'AMZN', 'exchange' => 'NASDAQ', 'match' => array('Amazon', 'AMZN'), 'mark' => 'a', 'class' => 'amazon', 'category' => 'Consumer & cloud', 'description' => 'Explore Amazon and its e-commerce and cloud businesses.')
+    array('name'=>'NVIDIA','symbol'=>'NVDA','exchange'=>'NASDAQ','match'=>array('NVIDIA','NVDA'),'mark'=>'N','class'=>'nvidia','category'=>'Semiconductors','description'=>'Explore NVIDIA and its graphics, accelerated computing and AI platforms.'),
+    array('name'=>'Toyota Motor','symbol'=>'TM','exchange'=>'NYSE ADR','match'=>array('Toyota','TM'),'mark'=>'T','class'=>'toyota','category'=>'Japanese automotive','description'=>'Explore Toyota Motor and its global automotive and mobility business.'),
+    array('name'=>'Sony Group','symbol'=>'SONY','exchange'=>'NYSE ADR','match'=>array('Sony','SONY'),'mark'=>'S','class'=>'sony','category'=>'Japanese technology','description'=>'Explore Sony Group across entertainment, electronics, gaming and imaging.'),
+    array('name'=>'Honda Motor','symbol'=>'HMC','exchange'=>'NYSE ADR','match'=>array('Honda','HMC'),'mark'=>'H','class'=>'honda','category'=>'Japanese automotive','description'=>'Explore Honda Motor across automobiles, motorcycles and mobility technology.')
 );
 
 foreach ($marketAssets as &$asset) {
@@ -52,7 +50,7 @@ $marketEscape = static function ($value) {
 .cfxm-market-card:hover{transform:translateY(-3px);border-color:rgba(119,72,188,.38);box-shadow:0 14px 34px rgba(15,25,45,.1)}
 .cfxm-market-card-top{display:flex;align-items:center;gap:13px;padding:19px 19px 14px}
 .cfxm-market-mark{display:grid;place-items:center;flex:0 0 50px;width:50px;height:50px;border:1px solid var(--cfxm-line,rgba(130,145,160,.2));border-radius:15px;background:var(--cfxm-bg,var(--body-bg,#f6f7fb));color:var(--cfxm-text,var(--text-color,#192c36));font-size:24px;font-weight:900}
-.cfxm-market-mark.netflix{background:#e50914;color:#fff;border-color:#e50914}.cfxm-market-mark.dell{background:#0872ce;color:#fff;border-color:#0872ce}.cfxm-market-mark.microsoft{background:linear-gradient(135deg,#f35325 0 48%,#81bc06 49% 100%);color:#fff;border-color:transparent}.cfxm-market-mark.spacex{background:#101820;color:#fff;border-color:#3b4650}.cfxm-market-mark.magnet{background:#f3e8ff;color:#6b21a8;border-color:#e9d5ff}.cfxm-market-mark.amazon{background:#111827;color:#ffb84d;border-color:#374151}
+.cfxm-market-mark.netflix{background:#e50914;color:#fff;border-color:#e50914}.cfxm-market-mark.dell{background:#0872ce;color:#fff;border-color:#0872ce}.cfxm-market-mark.microsoft{background:linear-gradient(135deg,#f35325 0 48%,#81bc06 49% 100%);color:#fff;border-color:transparent}.cfxm-market-mark.spacex{background:#101820;color:#fff;border-color:#3b4650}.cfxm-market-mark.magnet{background:#f3e8ff;color:#6b21a8;border-color:#e9d5ff}.cfxm-market-mark.nvidia{background:#76b900;color:#fff;border-color:#76b900}.cfxm-market-mark.toyota{background:#d71920;color:#fff;border-color:#d71920}.cfxm-market-mark.sony{background:#111;color:#fff;border-color:#111}.cfxm-market-mark.honda{background:#d71920;color:#fff;border-color:#d71920}
 .cfxm-market-company{min-width:0;flex:1}
 .cfxm-market-company h3{overflow-wrap:anywhere;margin:0 0 5px;color:var(--cfxm-text,var(--text-color,#192c36));font-size:16px;font-weight:850;letter-spacing:-.025em}
 .cfxm-market-company p{margin:0;color:var(--cfxm-muted,#83919c);font-size:11px}
@@ -74,7 +72,7 @@ $marketEscape = static function ($value) {
         <div>
             <span class="cfxm-market-kicker"><i class="fas fa-chart-line"></i> CFXM PRO MARKET</span>
             <h1>Explore the market</h1>
-            <p>Browse featured companies and opportunities, review their available market details, and continue through the same investment review flow used for Tesla.</p>
+            <p>Browse featured companies and opportunities, review their available market details, and continue through the platform's stock review flow.</p>
         </div>
         <div class="cfxm-market-hero-icon" aria-hidden="true"><i class="fas fa-globe"></i></div>
     </section>
@@ -107,7 +105,7 @@ $marketEscape = static function ($value) {
         <?php endforeach; ?>
     </section>
 
-    <div class="cfxm-market-note"><i class="fas fa-info-circle"></i><span>Market listings are connected to the platform’s stock catalogue. Netflix, Dell, Microsoft and Amazon are publicly traded companies; SpaceX is privately held, and Magnet needs a clearly defined catalogue listing. An investment button is enabled only when a matching catalogue entry exists. Displaying a company here does not itself mean that CFXM Pro holds shares in that company.</span></div>
+    <div class="cfxm-market-note"><i class="fas fa-info-circle"></i><span>Market listings are connected to the platform's stock catalogue. NVIDIA is listed on NASDAQ; Toyota, Sony and Honda are represented by their US-listed ADR symbols. An investment button is enabled only when a matching catalogue entry exists. Displaying a company here does not itself mean that CFXM Pro holds shares in that company.</span></div>
 </main>
 <?php include('Footer.php'); ?>
 </body>
