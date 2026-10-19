@@ -312,7 +312,7 @@ li a{
             .top3nav div a{font-size:11pt;color:var(--text-color)}
             .top3nav div a i{padding:20px;border-radius:50%;background:var(--liner-text-color);color:var(--bg-color);font-size:15pt}
             /* Modern, full-width mobile navigation: five equal destinations stay visible. */
-            .bottomnav{position:fixed;left:0;right:0;bottom:0;z-index:99999;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;width:100%;padding:8px max(8px,env(safe-area-inset-left)) calc(8px + env(safe-area-inset-bottom)) max(8px,env(safe-area-inset-right));background:var(--nav-bg,rgba(255,255,255,.96));border-top:1px solid rgba(130,145,160,.22);box-shadow:0 -10px 30px rgba(15,25,45,.08);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+            .bottomnav{position:fixed;left:0;right:0;bottom:0;z-index:99999;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:0;width:100%;padding:8px max(8px,env(safe-area-inset-left)) calc(8px + env(safe-area-inset-bottom)) max(8px,env(safe-area-inset-right));background:var(--nav-bg,rgba(255,255,255,.96));border-top:1px solid rgba(130,145,160,.22);box-shadow:0 -10px 30px rgba(15,25,45,.08);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
             .bottomnav .bottomnav-item{display:flex;min-width:0;min-height:48px;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:5px 2px;border-radius:13px;color:var(--vh-muted,#81909b);text-decoration:none;font-size:10px;font-weight:700;line-height:1.1;white-space:nowrap}
             .bottomnav .bottomnav-item i{font-size:18px;color:inherit;line-height:1}
             .bottomnav .bottomnav-item span{font-size:10px;overflow:hidden;text-overflow:ellipsis;max-width:100%}
@@ -430,6 +430,7 @@ html[data-theme="light"] body .left-sidebar #sidebar-menu {
                 <a href="Dashboard.php" class="bottomnav-item"><i class="fas fa-th-large"></i><span>Home</span></a>
                 <a href="Account.php" class="bottomnav-item"><i class="fas fa-wallet"></i><span>Wallet</span></a>
                 <a href="AccountInsight.php" class="bottomnav-item bottomnav-insight"><i class="fas fa-chart-pie"></i><span>Insight</span></a>
+                <a href="BotPlans.php" class="bottomnav-item"><i class="fas fa-robot"></i><span>Bots</span></a>
                 <a href="Profile.php" class="bottomnav-item"><i class="fas fa-user-circle"></i><span>Profile</span></a>
                 <a href="Earners.php" class="bottomnav-item"><i class="fas fa-exchange-alt"></i><span>Earners</span></a>
             </nav>
