@@ -1,8 +1,6 @@
 <?php session_start();
 if(isset($_SESSION['User_id'])){
 include('Header.php');
-require_once __DIR__ . '/BotSchema.php';
-$dashboardBotSchemaReady = cfxm_ensure_bot_tables($Conn);
 include('ProcessStock.php');
 $bop="";
 $Investor_id=$_SESSION['User_id'];
@@ -91,57 +89,6 @@ window.location.href='Notification.php?id=".$id."';
         }
     }
     $dashboardReferralEarningsDisplay = $dashboardReferralEarnings * (float)$exchangerate;
-
-    // Bot overview includes purchased plans and posted simulated mining earnings.
-    $dashboardBotCount = 0;
-    $dashboardActiveBotCount = 0;
-    $dashboardBotCapital = 0.0;
-    $dashboardBotPnl = 0.0;
-    $dashboardBotSimulatedEarnings = 0.0;
-    $dashboardBotQuery = $dashboardBotSchemaReady ? mysqli_prepare($Conn, "SELECT COUNT(*) AS bot_count, COALESCE(SUM(CASE WHEN status='active' AND mining_status='active' THEN 1 ELSE 0 END),0) AS active_count, COALESCE(SUM(capital),0) AS capital_total, COALESCE(SUM(total_earned),0) AS simulated_earnings FROM user_trading_bots WHERE investor_id=?") : false;
-    if ($dashboardBotQuery) {
-        mysqli_stmt_bind_param($dashboardBotQuery, 's', $Investor_id);
-        if (mysqli_stmt_execute($dashboardBotQuery)) {
-            $dashboardBotResult = mysqli_stmt_get_result($dashboardBotQuery);
-            if ($dashboardBotResult && ($dashboardBotRow = mysqli_fetch_assoc($dashboardBotResult))) {
-                $dashboardBotCount = (int)$dashboardBotRow['bot_count'];
-                $dashboardActiveBotCount = (int)$dashboardBotRow['active_count'];
-                $dashboardBotCapital = (float)$dashboardBotRow['capital_total'];
-                $dashboardBotSimulatedEarnings = (float)$dashboardBotRow['simulated_earnings'];
-            }
-        }
-        mysqli_stmt_close($dashboardBotQuery);
-    }
-    $dashboardBotLedgerQuery = $dashboardBotSchemaReady ? mysqli_prepare($Conn, "SELECT COALESCE(SUM(CASE WHEN entry_type='realized_profit' THEN amount WHEN entry_type='realized_loss' THEN amount ELSE 0 END),0) AS realized_net FROM trading_bot_ledger WHERE investor_id=?") : false;
-    if ($dashboardBotLedgerQuery) {
-        mysqli_stmt_bind_param($dashboardBotLedgerQuery, 's', $Investor_id);
-        if (mysqli_stmt_execute($dashboardBotLedgerQuery)) {
-            $dashboardBotLedgerResult = mysqli_stmt_get_result($dashboardBotLedgerQuery);
-            if ($dashboardBotLedgerResult && ($dashboardBotLedgerRow = mysqli_fetch_assoc($dashboardBotLedgerResult))) {
-                $dashboardBotPnl = (float)$dashboardBotLedgerRow['realized_net'];
-            }
-        }
-        mysqli_stmt_close($dashboardBotLedgerQuery);
-    }
-    $dashboardMyBots = array();
-    if ($dashboardBotSchemaReady) {
-        $dashboardMyBotsQuery = mysqli_prepare($Conn, "SELECT id, plan_name, strategy, capital, status, mining_status, daily_rate_percent, total_earned, due_at, created_at FROM user_trading_bots WHERE investor_id=? ORDER BY id DESC LIMIT 5");
-        if ($dashboardMyBotsQuery) {
-            mysqli_stmt_bind_param($dashboardMyBotsQuery, 's', $Investor_id);
-            if (mysqli_stmt_execute($dashboardMyBotsQuery)) {
-                $dashboardMyBotsResult = mysqli_stmt_get_result($dashboardMyBotsQuery);
-                if ($dashboardMyBotsResult) {
-                    while ($dashboardMyBotsRow = mysqli_fetch_assoc($dashboardMyBotsResult)) {
-                        $dashboardMyBots[] = $dashboardMyBotsRow;
-                    }
-                }
-            }
-            mysqli_stmt_close($dashboardMyBotsQuery);
-        }
-    }
-    $dashboardBotCapitalDisplay = $dashboardBotCapital * (float)$exchangerate;
-    $dashboardBotPnlDisplay = $dashboardBotPnl * (float)$exchangerate;
-    $dashboardBotSimulatedEarningsDisplay = $dashboardBotSimulatedEarnings * (float)$exchangerate;
 
     // Tesla cards link to the real TSLA entry in the existing stock catalogue.
     // Vehicle cards are visual entry points to Tesla Inc. shares, not claims of vehicle ownership.
@@ -242,35 +189,7 @@ window.smartsupp||(function(d) {
         </div>
     </div>
 
-    <section class="cfxm-dashboard-bots" aria-labelledby="cfxmDashboardBotsTitle">
-        <div class="cfxm-dashboard-bots-head">
-            <div><span class="cfxm-dashboard-bots-eyebrow">AUTOMATION OVERVIEW</span><h2 id="cfxmDashboardBotsTitle">AI trading bots</h2><p>Seven-day simulated mining activity, posted earnings, and expiry tracking.</p></div>
-            <a href="BotPlans.php">Manage bots <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-        </div>
-        <div class="cfxm-dashboard-bots-grid">
-            <article class="cfxm-dashboard-bot-stat"><span class="cfxm-dashboard-bot-icon"><i class="fas fa-robot" aria-hidden="true"></i></span><span class="cfxm-dashboard-bot-label">Bots acquired</span><strong><?php echo number_format($dashboardBotCount); ?></strong><small><?php echo number_format($dashboardActiveBotCount); ?> currently mining · <?php echo number_format(max(0, $dashboardBotCount - $dashboardActiveBotCount)); ?> completed or inactive</small></article>
-            <article class="cfxm-dashboard-bot-stat"><span class="cfxm-dashboard-bot-icon"><i class="fas fa-layer-group" aria-hidden="true"></i></span><span class="cfxm-dashboard-bot-label">Bot plan capital</span><strong><?php echo htmlspecialchars($curAbbr, ENT_QUOTES, 'UTF-8') . number_format($dashboardBotCapitalDisplay, 2, '.', ','); ?></strong><small>Total recorded capital across acquired plans</small></article>
-            <article class="cfxm-dashboard-bot-stat"><span class="cfxm-dashboard-bot-icon"><i class="fas fa-coins" aria-hidden="true"></i></span><span class="cfxm-dashboard-bot-label">Simulated earnings</span><strong class="is-profit"><?php echo htmlspecialchars($curAbbr, ENT_QUOTES, 'UTF-8') . number_format($dashboardBotSimulatedEarningsDisplay, 2, '.', ','); ?></strong><small>Credits already posted to Fin_Asset</small></article>
-        </div>
-        <div class="cfxm-dashboard-bot-list">
-            <div class="cfxm-dashboard-bot-list-head"><h3>Your bot plans</h3><span><?php echo number_format(count($dashboardMyBots)); ?> recorded</span></div>
-            <?php if (count($dashboardMyBots) > 0): ?>
-            <div class="cfxm-dashboard-bot-table-wrap"><table class="cfxm-dashboard-bot-table"><thead><tr><th>Bot plan</th><th>Capital</th><th>Daily rate</th><th>Earned</th><th>Mining status</th><th>Expires</th></tr></thead><tbody>
-            <?php foreach ($dashboardMyBots as $dashboardMyBot): ?>
-            <tr><td><strong><?php echo htmlspecialchars($dashboardMyBot['plan_name'], ENT_QUOTES, 'UTF-8'); ?></strong><small><?php echo htmlspecialchars($dashboardMyBot['strategy'], ENT_QUOTES, 'UTF-8'); ?></small></td><td><?php echo htmlspecialchars($curAbbr, ENT_QUOTES, 'UTF-8') . number_format(((float)$dashboardMyBot['capital']) * (float)$exchangerate, 2, '.', ','); ?></td><td><?php echo number_format((float)$dashboardMyBot['daily_rate_percent'], 4); ?>%</td><td><?php echo htmlspecialchars($curAbbr, ENT_QUOTES, 'UTF-8') . number_format(((float)$dashboardMyBot['total_earned']) * (float)$exchangerate, 2, '.', ','); ?></td><td><span class="cfxm-dashboard-bot-status status-<?php echo htmlspecialchars($dashboardMyBot['mining_status'], ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars(ucfirst($dashboardMyBot['mining_status']), ENT_QUOTES, 'UTF-8'); ?></span></td><td><?php echo htmlspecialchars($dashboardMyBot['due_at'] ? date('d M Y H:i', strtotime($dashboardMyBot['due_at'])) : '—', ENT_QUOTES, 'UTF-8'); ?></td></tr>
-            <?php endforeach; ?>
-            </tbody></table></div>
-            <?php else: ?>
-            <div class="cfxm-dashboard-bot-empty"><i class="fas fa-robot" aria-hidden="true"></i><div><strong>No bot plans yet</strong><p>Choose an AI trading profile to see your acquired plan and its activation status here.</p></div><a href="BotPlans.php">Explore bots <i class="fas fa-arrow-right" aria-hidden="true"></i></a></div>
-            <?php endif; ?>
-        </div>
-        <?php if ($dashboardBotCount > 0 && $dashboardActiveBotCount === 0): ?><p class="cfxm-dashboard-bot-notice"><i class="fas fa-info-circle" aria-hidden="true"></i> No bots are currently mining. Completed bots stop accruing simulated earnings after their seven-day expiry.</p><?php endif; ?>
-    </section>
-    <style>
-      .cfxm-dashboard-bot-list{margin-top:18px;padding-top:17px;border-top:1px solid var(--cfxm-line,rgba(130,145,160,.16))}.cfxm-dashboard-bot-list-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:10px}.cfxm-dashboard-bot-list-head h3{margin:0;font-size:15px;font-weight:850;color:inherit}.cfxm-dashboard-bot-list-head>span{font-size:10px;color:var(--cfxm-muted,var(--liner-text-color,#75808c))}.cfxm-dashboard-bot-table-wrap{overflow:auto;border:1px solid var(--cfxm-line,rgba(130,145,160,.16));border-radius:12px}.cfxm-dashboard-bot-table{width:100%;border-collapse:collapse;min-width:760px}.cfxm-dashboard-bot-table th,.cfxm-dashboard-bot-table td{padding:11px 12px;text-align:left;border-bottom:1px solid var(--cfxm-line,rgba(130,145,160,.12));font-size:11px}.cfxm-dashboard-bot-table th{font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:var(--cfxm-muted,var(--liner-text-color,#75808c))}.cfxm-dashboard-bot-table td strong,.cfxm-dashboard-bot-table td small{display:block}.cfxm-dashboard-bot-table td small{margin-top:3px;font-size:10px;color:var(--cfxm-muted,var(--liner-text-color,#75808c))}.cfxm-dashboard-bot-status{display:inline-block;padding:5px 8px;border-radius:999px;background:rgba(217,119,6,.12);color:#b97708;font-size:9px;font-weight:800;text-transform:capitalize}.cfxm-dashboard-bot-status.status-active{background:rgba(22,155,105,.12);color:#169b69}.cfxm-dashboard-bot-status.status-paused{background:rgba(100,116,139,.14);color:#64748b}.cfxm-dashboard-bot-status.status-closed{background:rgba(220,69,69,.12);color:#dc4545}.cfxm-dashboard-bot-empty{display:flex;align-items:center;gap:12px;padding:15px;border:1px dashed var(--cfxm-line,rgba(130,145,160,.25));border-radius:13px}.cfxm-dashboard-bot-empty>i{display:grid;place-items:center;flex:0 0 38px;height:38px;border-radius:11px;background:rgba(139,91,209,.13);color:#8b5bd1;font-size:17px}.cfxm-dashboard-bot-empty>div{flex:1;min-width:0}.cfxm-dashboard-bot-empty strong{font-size:12px}.cfxm-dashboard-bot-empty p{margin:4px 0 0;font-size:10px;line-height:1.6;color:var(--cfxm-muted,var(--liner-text-color,#75808c))}.cfxm-dashboard-bot-empty>a{white-space:nowrap;color:#8b5bd1;font-size:11px;font-weight:800;text-decoration:none}@media(max-width:560px){.cfxm-dashboard-bot-empty{align-items:flex-start;flex-wrap:wrap}.cfxm-dashboard-bot-empty>a{margin-left:50px}}
-      .cfxm-dashboard-bots{margin:24px 0 30px;padding:clamp(17px,2.6vw,26px);border:1px solid var(--cfxm-line,rgba(130,145,160,.2));border-radius:20px;background:var(--cfxm-surface,var(--card-bg,#fff));color:var(--cfxm-text,var(--text-color,#202438))}
-      .cfxm-dashboard-bots *{box-sizing:border-box}.cfxm-dashboard-bots-head{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin-bottom:18px}.cfxm-dashboard-bots-eyebrow{font-size:10px;font-weight:850;letter-spacing:.15em;color:#8b5bd1}.cfxm-dashboard-bots-head h2{margin:6px 0;font-size:22px;font-weight:850;color:inherit}.cfxm-dashboard-bots-head p{margin:0;font-size:12px;line-height:1.6;color:var(--cfxm-muted,var(--liner-text-color,#75808c))}.cfxm-dashboard-bots-head>a{white-space:nowrap;color:#8b5bd1;font-size:12px;font-weight:800;text-decoration:none}.cfxm-dashboard-bots-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.cfxm-dashboard-bot-stat{min-width:0;padding:16px;border:1px solid var(--cfxm-line,rgba(130,145,160,.16));border-radius:15px;background:var(--cfxm-bg,var(--body-bg,#f8f9fc))}.cfxm-dashboard-bot-icon{display:grid;place-items:center;width:35px;height:35px;margin-bottom:12px;border-radius:11px;background:rgba(139,91,209,.13);color:#8b5bd1}.cfxm-dashboard-bot-label{display:block;font-size:11px;color:var(--cfxm-muted,var(--liner-text-color,#75808c))}.cfxm-dashboard-bot-stat strong{display:block;overflow-wrap:anywhere;margin:6px 0;font-size:clamp(19px,2vw,25px);font-weight:850;letter-spacing:-.035em;color:inherit}.cfxm-dashboard-bot-stat strong.is-profit{color:#169b69}.cfxm-dashboard-bot-stat strong.is-loss{color:#dc4545}.cfxm-dashboard-bot-stat small{display:block;font-size:10px;line-height:1.55;color:var(--cfxm-muted,var(--liner-text-color,#75808c))}.cfxm-dashboard-bot-notice{display:flex;gap:8px;margin:14px 0 0;padding:12px;border-radius:11px;background:rgba(217,119,6,.08);font-size:11px;line-height:1.6;color:var(--cfxm-muted,var(--liner-text-color,#75808c))}.cfxm-dashboard-bot-notice i{color:#d97706;margin-top:2px}@media(max-width:720px){.cfxm-dashboard-bots-grid{grid-template-columns:1fr}.cfxm-dashboard-bot-stat{display:grid;grid-template-columns:36px 1fr;column-gap:12px;align-items:center}.cfxm-dashboard-bot-icon{grid-row:1/4;margin:0}.cfxm-dashboard-bot-label,.cfxm-dashboard-bot-stat strong,.cfxm-dashboard-bot-stat small{grid-column:2}.cfxm-dashboard-bots-head{align-items:flex-start;flex-direction:column}}
-    </style>
+
 
     <section class="vh-investment-catalog" aria-labelledby="vhTeslaHeading">
         <div class="vh-investment-catalog-head">
