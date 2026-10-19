@@ -90,6 +90,19 @@ window.location.href='Notification.php?id=".$id."';
     }
     $dashboardReferralEarningsDisplay = $dashboardReferralEarnings * (float)$exchangerate;
 
+    // Count the signed-in investor's recorded bot plans without requiring the schema helper on every dashboard load.
+    $dashboardBotRecordCount = 0;
+    $dashboardBotRecordStmt = @mysqli_prepare($Conn, "SELECT COUNT(*) FROM user_trading_bots WHERE investor_id=?");
+    if ($dashboardBotRecordStmt) {
+        mysqli_stmt_bind_param($dashboardBotRecordStmt, 's', $Investor_id);
+        if (mysqli_stmt_execute($dashboardBotRecordStmt)) {
+            mysqli_stmt_bind_result($dashboardBotRecordStmt, $dashboardBotRecordCount);
+            mysqli_stmt_fetch($dashboardBotRecordStmt);
+            $dashboardBotRecordCount = (int)$dashboardBotRecordCount;
+        }
+        mysqli_stmt_close($dashboardBotRecordStmt);
+    }
+
     // Tesla cards link to the real TSLA entry in the existing stock catalogue.
     // Vehicle cards are visual entry points to Tesla Inc. shares, not claims of vehicle ownership.
     $teslaStock = null;
@@ -187,6 +200,12 @@ window.smartsupp||(function(d) {
             <strong><?php echo htmlspecialchars($curAbbr, ENT_QUOTES, 'UTF-8') . number_format($dashboardReferralEarningsDisplay, 2, '.', ','); ?></strong>
             <small>Available referral rewards</small>
         </div>
+        <a class="vh-stat-card vh-bot-record-card" href="BotPlans.php" style="text-decoration:none">
+            <span class="vh-stat-icon vh-icon-purple"><i class="fas fa-robot"></i></span>
+            <span class="vh-stat-label">Bot record</span>
+            <strong><?php echo number_format($dashboardBotRecordCount); ?></strong>
+            <small>Recorded bot plans · Manage bots <i class="fas fa-arrow-right" aria-hidden="true"></i></small>
+        </a>
     </div>
 
 
