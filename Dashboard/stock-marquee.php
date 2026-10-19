@@ -4,18 +4,18 @@
  * which keeps the Finnhub API key on the server rather than exposing it in the browser.
  */
 ?>
-<section class="vh-stock-marquee" aria-label="US stock market prices">
+<section class="vh-stock-marquee" aria-label="Featured stock market prices">
     <div class="vh-stock-marquee-head">
         <div>
             <span class="vh-stock-live-dot" aria-hidden="true"></span>
-            <strong>US STOCKS</strong>
+            <strong>FEATURED STOCKS</strong>
             <span class="vh-stock-market-caption">Live market prices</span>
         </div>
-        <span class="vh-stock-updated" id="vhStockUpdated" aria-live="polite">Loading US stock quotes…</span>
+        <span class="vh-stock-updated" id="vhStockUpdated" aria-live="polite">Loading stock quotes…</span>
     </div>
     <div class="vh-stock-marquee-viewport" tabindex="0" role="region" aria-label="Scroll horizontally to view more stock cards">
         <div class="vh-stock-marquee-track" id="vhStockTrack">
-            <div class="vh-stock-loading">Connecting to US market data…</div>
+            <div class="vh-stock-loading">Connecting to market data…</div>
         </div>
     </div>
     <div class="vh-stock-marquee-note">Shows current quote and daily price movement. Quotes may be delayed by the data provider.</div>
@@ -48,7 +48,9 @@
             'AAPL': 'fab fa-apple',
             'MSFT': 'fab fa-microsoft',
             'NVDA': 'fas fa-microchip',
-            'AMZN': 'fab fa-amazon',
+            'TM': 'fas fa-car',
+            'SONY': 'fas fa-tv',
+            'HMC': 'fas fa-car-side',
             'GOOGL': 'fab fa-google',
             'META': 'fas fa-users',
             'BRK.B': 'fas fa-landmark',
@@ -83,10 +85,10 @@
             if (!stocks.length) throw new Error('No stock quotes are available right now.');
             track.innerHTML = stocks.map(card).join('');
             track.classList.add('is-ready');
-            updated.textContent = stocks.length + ' US stocks · Updated ' +
+            updated.textContent = stocks.length + ' featured stocks · Updated ' +
                 new Date((Number(payload.updatedAt) || Math.floor(Date.now() / 1000)) * 1000)
                     .toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
-            track.setAttribute('aria-label', 'Up to 10 US stock prices. Scroll horizontally to see each card.');
+            track.setAttribute('aria-label', 'Up to 10 featured stock prices. Scroll horizontally to see each card.');
         } catch (error) {
             if (!track.classList.contains('is-ready')) {
                 const message = error && typeof error.message === 'string' && error.message.trim()
