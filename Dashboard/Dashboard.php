@@ -90,6 +90,38 @@ window.location.href='Notification.php?id=".$id."';
     }
     $dashboardReferralEarningsDisplay = $dashboardReferralEarnings * (float)$exchangerate;
 
+    // AI bot summary is read-only: display only acquired bot records and realized ledger entries.
+    $dashboardBotCount = 0;
+    $dashboardActiveBotCount = 0;
+    $dashboardBotCapital = 0.0;
+    $dashboardBotPnl = 0.0;
+    $dashboardBotQuery = mysqli_prepare($Conn, "SELECT COUNT(*) AS bot_count, COALESCE(SUM(CASE WHEN status='active' THEN 1 ELSE 0 END),0) AS active_count, COALESCE(SUM(capital),0) AS capital_total FROM user_trading_bots WHERE investor_id=?");
+    if ($dashboardBotQuery) {
+        mysqli_stmt_bind_param($dashboardBotQuery, 's', $Investor_id);
+        if (mysqli_stmt_execute($dashboardBotQuery)) {
+            $dashboardBotResult = mysqli_stmt_get_result($dashboardBotQuery);
+            if ($dashboardBotResult && ($dashboardBotRow = mysqli_fetch_assoc($dashboardBotResult))) {
+                $dashboardBotCount = (int)$dashboardBotRow['bot_count'];
+                $dashboardActiveBotCount = (int)$dashboardBotRow['active_count'];
+                $dashboardBotCapital = (float)$dashboardBotRow['capital_total'];
+            }
+        }
+        mysqli_stmt_close($dashboardBotQuery);
+    }
+    $dashboardBotLedgerQuery = mysqli_prepare($Conn, "SELECT COALESCE(SUM(CASE WHEN entry_type='realized_profit' THEN amount WHEN entry_type='realized_loss' THEN amount ELSE 0 END),0) AS realized_net FROM trading_bot_ledger WHERE investor_id=?");
+    if ($dashboardBotLedgerQuery) {
+        mysqli_stmt_bind_param($dashboardBotLedgerQuery, 's', $Investor_id);
+        if (mysqli_stmt_execute($dashboardBotLedgerQuery)) {
+            $dashboardBotLedgerResult = mysqli_stmt_get_result($dashboardBotLedgerQuery);
+            if ($dashboardBotLedgerResult && ($dashboardBotLedgerRow = mysqli_fetch_assoc($dashboardBotLedgerResult))) {
+                $dashboardBotPnl = (float)$dashboardBotLedgerRow['realized_net'];
+            }
+        }
+        mysqli_stmt_close($dashboardBotLedgerQuery);
+    }
+    $dashboardBotCapitalDisplay = $dashboardBotCapital * (float)$exchangerate;
+    $dashboardBotPnlDisplay = $dashboardBotPnl * (float)$exchangerate;
+
     // Tesla cards link to the real TSLA entry in the existing stock catalogue.
     // Vehicle cards are visual entry points to Tesla Inc. shares, not claims of vehicle ownership.
     $teslaStock = null;
@@ -188,6 +220,23 @@ window.smartsupp||(function(d) {
             <small>Available referral rewards</small>
         </div>
     </div>
+
+    <section class="cfxm-dashboard-bots" aria-labelledby="cfxmDashboardBotsTitle">
+        <div class="cfxm-dashboard-bots-head">
+            <div><span class="cfxm-dashboard-bots-eyebrow">AUTOMATION OVERVIEW</span><h2 id="cfxmDashboardBotsTitle">AI trading bots</h2><p>Acquisition status and reconciled trading results from your bot ledger.</p></div>
+            <a href="BotPlans.php">Manage bots <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+        <div class="cfxm-dashboard-bots-grid">
+            <article class="cfxm-dashboard-bot-stat"><span class="cfxm-dashboard-bot-icon"><i class="fas fa-robot" aria-hidden="true"></i></span><span class="cfxm-dashboard-bot-label">Bots acquired</span><strong><?php echo number_format($dashboardBotCount); ?></strong><small><?php echo number_format($dashboardActiveBotCount); ?> active · <?php echo number_format(max(0, $dashboardBotCount - $dashboardActiveBotCount)); ?> awaiting activation or paused</small></article>
+            <article class="cfxm-dashboard-bot-stat"><span class="cfxm-dashboard-bot-icon"><i class="fas fa-layer-group" aria-hidden="true"></i></span><span class="cfxm-dashboard-bot-label">Bot plan capital</span><strong><?php echo htmlspecialchars($curAbbr, ENT_QUOTES, 'UTF-8') . number_format($dashboardBotCapitalDisplay, 2, '.', ','); ?></strong><small>Total recorded capital across acquired plans</small></article>
+            <article class="cfxm-dashboard-bot-stat"><span class="cfxm-dashboard-bot-icon"><i class="fas fa-chart-line" aria-hidden="true"></i></span><span class="cfxm-dashboard-bot-label">Realized net P&amp;L</span><strong class="<?php echo $dashboardBotPnlDisplay < 0 ? 'is-loss' : 'is-profit'; ?>"><?php echo ($dashboardBotPnlDisplay > 0 ? '+' : '') . htmlspecialchars($curAbbr, ENT_QUOTES, 'UTF-8') . number_format($dashboardBotPnlDisplay, 2, '.', ','); ?></strong><small>Settled trade results only; no estimated daily returns</small></article>
+        </div>
+        <?php if ($dashboardBotCount > 0 && $dashboardActiveBotCount === 0): ?><p class="cfxm-dashboard-bot-notice"><i class="fas fa-info-circle" aria-hidden="true"></i> Your bot plan records exist, but no bot is active yet. Live execution requires a connected trading engine.</p><?php endif; ?>
+    </section>
+    <style>
+      .cfxm-dashboard-bots{margin:24px 0 30px;padding:clamp(17px,2.6vw,26px);border:1px solid var(--cfxm-line,rgba(130,145,160,.2));border-radius:20px;background:var(--cfxm-surface,var(--card-bg,#fff));color:var(--cfxm-text,var(--text-color,#202438))}
+      .cfxm-dashboard-bots *{box-sizing:border-box}.cfxm-dashboard-bots-head{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin-bottom:18px}.cfxm-dashboard-bots-eyebrow{font-size:10px;font-weight:850;letter-spacing:.15em;color:#8b5bd1}.cfxm-dashboard-bots-head h2{margin:6px 0;font-size:22px;font-weight:850;color:inherit}.cfxm-dashboard-bots-head p{margin:0;font-size:12px;line-height:1.6;color:var(--cfxm-muted,var(--liner-text-color,#75808c))}.cfxm-dashboard-bots-head>a{white-space:nowrap;color:#8b5bd1;font-size:12px;font-weight:800;text-decoration:none}.cfxm-dashboard-bots-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.cfxm-dashboard-bot-stat{min-width:0;padding:16px;border:1px solid var(--cfxm-line,rgba(130,145,160,.16));border-radius:15px;background:var(--cfxm-bg,var(--body-bg,#f8f9fc))}.cfxm-dashboard-bot-icon{display:grid;place-items:center;width:35px;height:35px;margin-bottom:12px;border-radius:11px;background:rgba(139,91,209,.13);color:#8b5bd1}.cfxm-dashboard-bot-label{display:block;font-size:11px;color:var(--cfxm-muted,var(--liner-text-color,#75808c))}.cfxm-dashboard-bot-stat strong{display:block;overflow-wrap:anywhere;margin:6px 0;font-size:clamp(19px,2vw,25px);font-weight:850;letter-spacing:-.035em;color:inherit}.cfxm-dashboard-bot-stat strong.is-profit{color:#169b69}.cfxm-dashboard-bot-stat strong.is-loss{color:#dc4545}.cfxm-dashboard-bot-stat small{display:block;font-size:10px;line-height:1.55;color:var(--cfxm-muted,var(--liner-text-color,#75808c))}.cfxm-dashboard-bot-notice{display:flex;gap:8px;margin:14px 0 0;padding:12px;border-radius:11px;background:rgba(217,119,6,.08);font-size:11px;line-height:1.6;color:var(--cfxm-muted,var(--liner-text-color,#75808c))}.cfxm-dashboard-bot-notice i{color:#d97706;margin-top:2px}@media(max-width:720px){.cfxm-dashboard-bots-grid{grid-template-columns:1fr}.cfxm-dashboard-bot-stat{display:grid;grid-template-columns:36px 1fr;column-gap:12px;align-items:center}.cfxm-dashboard-bot-icon{grid-row:1/4;margin:0}.cfxm-dashboard-bot-label,.cfxm-dashboard-bot-stat strong,.cfxm-dashboard-bot-stat small{grid-column:2}.cfxm-dashboard-bots-head{align-items:flex-start;flex-direction:column}}
+    </style>
 
     <section class="vh-investment-catalog" aria-labelledby="vhTeslaHeading">
         <div class="vh-investment-catalog-head">
