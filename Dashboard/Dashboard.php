@@ -316,9 +316,40 @@ window.smartsupp||(function(d) {
                         </div>
                     </div>
                 </div>
-                
-                
-                
+
+                <!-- AI trading bot plans appear immediately after the account verification status. -->
+                <section class="cfxm-bot-preview" aria-labelledby="cfxmBotPreviewTitle">
+                    <div class="cfxm-bot-preview-head">
+                        <div><span>AI-POWERED STRATEGIES</span><h2 id="cfxmBotPreviewTitle">Explore AI trading bots</h2><p>Five strategy profiles with different market capacities. Start at $2,000.</p></div>
+                        <a href="BotPlans.php">View all bots <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="cfxm-bot-preview-track" aria-label="AI trading bot plan preview">
+                        <a class="cfxm-bot-preview-card" href="BotPlans.php"><img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&amp;fit=crop&amp;w=520&amp;q=80" alt="" loading="lazy"><span>AI Scout</span><strong>$2,000</strong><small>3 markets · Trend signals</small></a>
+                        <a class="cfxm-bot-preview-card" href="BotPlans.php"><img src="https://images.unsplash.com/photo-1642790106117-e829e14a795f?auto=format&amp;fit=crop&amp;w=520&amp;q=80" alt="" loading="lazy"><span>Momentum AI</span><strong>$5,000</strong><small>8 markets · Breakouts</small></a>
+                        <a class="cfxm-bot-preview-card" href="BotPlans.php"><img src="https://images.unsplash.com/photo-1642543492481-077b4d7ccf2c?auto=format&amp;fit=crop&amp;w=520&amp;q=80" alt="" loading="lazy"><span>Quant Matrix</span><strong>$10,000</strong><small>15 markets · Quant signals</small></a>
+                        <a class="cfxm-bot-preview-card" href="BotPlans.php"><img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&amp;fit=crop&amp;w=520&amp;q=80" alt="" loading="lazy"><span>Neural Trader</span><strong>$25,000</strong><small>25 markets · AI ensemble</small></a>
+                        <a class="cfxm-bot-preview-card" href="BotPlans.php"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&amp;fit=crop&amp;w=520&amp;q=80" alt="" loading="lazy"><span>Apex Autonomous</span><strong>$50,000</strong><small>40 markets · Adaptive profile</small></a>
+                    </div>
+                    <p class="cfxm-bot-preview-note"><i class="fas fa-info-circle"></i> Bot acquisition does not guarantee returns. Earnings can only be reflected after actual trades are executed and realized results are reconciled.</p>
+                </section>
+                <style>
+                    .cfxm-bot-preview{margin:24px 0 30px;padding:20px;border:1px solid var(--cfxm-line,rgba(130,145,160,.18));border-radius:20px;background:var(--cfxm-surface,var(--card-bg,#fff));color:var(--cfxm-text,var(--text-color,#202438))}
+                    .cfxm-bot-preview-head{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin-bottom:16px}
+                    .cfxm-bot-preview-head span{font-size:9px;font-weight:850;letter-spacing:.15em;color:#9a73df}
+                    .cfxm-bot-preview-head h2{margin:6px 0;font-size:21px;font-weight:850;color:inherit}
+                    .cfxm-bot-preview-head p{margin:0;font-size:12px;line-height:1.6;color:var(--cfxm-muted,var(--liner-text-color,#75808c))}
+                    .cfxm-bot-preview-head>a{white-space:nowrap;color:#9a73df;font-size:12px;font-weight:800;text-decoration:none}
+                    .cfxm-bot-preview-track{display:flex;gap:13px;overflow-x:auto;padding:2px 2px 12px;scroll-snap-type:x mandatory}
+                    .cfxm-bot-preview-card{display:flex;flex:0 0 205px;flex-direction:column;overflow:hidden;border:1px solid var(--cfxm-line,rgba(130,145,160,.18));border-radius:15px;background:var(--cfxm-bg,var(--body-bg,#121f27));text-decoration:none!important;scroll-snap-align:start}
+                    .cfxm-bot-preview-card img{width:100%;height:90px;object-fit:cover;opacity:.86}
+                    .cfxm-bot-preview-card span{padding:10px 11px 0;font-size:12px;font-weight:800;color:var(--cfxm-text,var(--text-color,#202438))}
+                    .cfxm-bot-preview-card strong{padding:3px 11px;font-size:18px;color:var(--cfxm-text,var(--text-color,#202438))}
+                    .cfxm-bot-preview-card small{padding:0 11px 12px;font-size:10px;color:var(--cfxm-muted,var(--liner-text-color,#75808c))}
+                    .cfxm-bot-preview-note{display:flex;gap:8px;margin:12px 0 0;font-size:10px;line-height:1.6;color:var(--cfxm-muted,var(--liner-text-color,#75808c))}
+                    .cfxm-bot-preview-note i{color:#d97706}
+                    @media(max-width:560px){.cfxm-bot-preview{padding:15px}.cfxm-bot-preview-head{align-items:flex-start;flex-direction:column}.cfxm-bot-preview-card{flex-basis:175px}}
+                </style>
+
                  <div class="row d-none">
                  
 
