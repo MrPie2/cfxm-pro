@@ -15,7 +15,7 @@ if (($_POST['action'] ?? '') !== 'acquire') bot_json(400, false, 'Unknown bot ac
 require_once __DIR__ . '/../Connect.php';
 $investorId = (string)$_SESSION['User_id'];
 $investorEscaped = mysqli_real_escape_string($Conn, $investorId);
-$userQuery = mysqli_query($Conn, "SELECT Investor_id, V_Status, Fin_Asset FROM investors WHERE Investor_id='{$investorEscaped}' LIMIT 1");
+$userQuery = mysqli_query($Conn, "SELECT Investor_id, V_Status, Fin_Asset, Total_Deposit FROM investors WHERE Investor_id='{$investorEscaped}' LIMIT 1");
 if (!$userQuery || mysqli_num_rows($userQuery) !== 1) bot_json(404, false, 'Your account could not be found.');
 $user = mysqli_fetch_assoc($userQuery);
 if ((int)($user['V_Status'] ?? 0) < 1) bot_json(403, false, 'Complete account verification before acquiring a trading bot.');
@@ -63,15 +63,29 @@ try {
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4";
     if (!mysqli_query($Conn, $createLedger)) throw new Exception('Could not prepare bot ledger.');
 
-    $lockQuery = mysqli_query($Conn, "SELECT Fin_Asset, V_Status FROM investors WHERE Investor_id='{$investorEscaped}' LIMIT 1 FOR UPDATE");
+    $lockQuery = mysqli_query($Conn, "SELECT Fin_Asset, Total_Deposit, V_Status FROM investors WHERE Investor_id='{$investorEscaped}' LIMIT 1 FOR UPDATE");
     if (!$lockQuery || mysqli_num_rows($lockQuery) !== 1) throw new Exception('Could not lock account balance.');
     $lockedUser = mysqli_fetch_assoc($lockQuery);
     if ((int)($lockedUser['V_Status'] ?? 0) < 1) throw new Exception('Account verification is required.');
-    $balance = (float)$lockedUser['Fin_Asset'];
-    if ($balance < $plan['capital']) throw new Exception('Insufficient available wallet balance. You need at least $' . number_format($plan['capital'], 2) . ' in available funds.');
+    // Use one wallet only per purchase: prefer Fin_Asset when it can cover the full price,
+    // otherwise use Total_Deposit if that wallet can cover it. Never combine balances.
+    $finAsset = max(0, (float)($lockedUser['Fin_Asset'] ?? 0));
+    $totalDeposit = max(0, (float)($lockedUser['Total_Deposit'] ?? 0));
+    $walletColumn = null;
+    $walletBalance = 0.0;
+    if ($finAsset >= $plan['capital']) {
+        $walletColumn = 'Fin_Asset';
+        $walletBalance = $finAsset;
+    } elseif ($totalDeposit >= $plan['capital']) {
+        $walletColumn = 'Total_Deposit';
+        $walletBalance = $totalDeposit;
+    } else {
+        throw new Exception('INSUFFICIENT_FUNDS');
+    }
 
-    $newBalance = $balance - $plan['capital'];
-    $balanceUpdate = mysqli_prepare($Conn, "UPDATE investors SET Fin_Asset=? WHERE Investor_id=?");
+    $newBalance = round($walletBalance - $plan['capital'], 2);
+    // Column name is selected only from this fixed allow-list above.
+    $balanceUpdate = mysqli_prepare($Conn, "UPDATE investors SET {$walletColumn}=? WHERE Investor_id=?");
     if (!$balanceUpdate) throw new Exception('Could not update wallet balance.');
     mysqli_stmt_bind_param($balanceUpdate, 'ds', $newBalance, $investorId);
     if (!mysqli_stmt_execute($balanceUpdate) || mysqli_stmt_affected_rows($balanceUpdate) !== 1) { mysqli_stmt_close($balanceUpdate); throw new Exception('Wallet update failed.'); }
@@ -95,7 +109,22 @@ try {
 
     mysqli_commit($Conn);
     unset($_SESSION['bot_csrf']);
-    bot_json(200, true, $plan['name'] . ' was acquired successfully. Its status is pending engine connection; earnings will only be posted from reconciled realized trade results.', ['bot_id'=>$botId,'status'=>'pending_engine','capital'=>$plan['capital']]);
+    bot_json(200, true, $plan['name'] . ' was acquired successfully. 
+} catch (Throwable $e) {
+    mysqli_rollback($Conn);
+    if ($e->getMessage() === 'INSUFFICIENT_FUNDS') {
+        bot_json(422, false, 'Insufficient funds. You need at least 
+ . number_format($plan['capital'], 2) . ' was deducted from ' . $walletColumn . '. Its status is pending engine connection; earnings will only be posted from reconciled realized trade results.', ['bot_id'=>$botId,'status'=>'pending_engine','capital'=>$plan['capital'],'wallet_source'=>$walletColumn,'wallet_balance'=>$newBalance]);
+} catch (Throwable $e) {
+    mysqli_rollback($Conn);
+    bot_json(500, false, $e->getMessage() === 'Insufficient available wallet balance. You need at least $' . number_format($plan['capital'], 2) . ' in available funds.' ? $e->getMessage() : 'The bot could not be acquired. No balance change was saved.');
+}
+ . number_format($plan['capital'], 2) . ' in either your Fin_Asset or Total_Deposit balance to buy this bot.');
+    }
+    error_log('CFXM bot acquisition failed: ' . $e->getMessage());
+    bot_json(500, false, 'The bot could not be acquired. No balance change was saved.');
+}
+ . number_format($plan['capital'], 2) . ' was deducted from ' . $walletColumn . '. Its status is pending engine connection; earnings will only be posted from reconciled realized trade results.', ['bot_id'=>$botId,'status'=>'pending_engine','capital'=>$plan['capital'],'wallet_source'=>$walletColumn,'wallet_balance'=>$newBalance]);
 } catch (Throwable $e) {
     mysqli_rollback($Conn);
     bot_json(500, false, $e->getMessage() === 'Insufficient available wallet balance. You need at least $' . number_format($plan['capital'], 2) . ' in available funds.' ? $e->getMessage() : 'The bot could not be acquired. No balance change was saved.');
