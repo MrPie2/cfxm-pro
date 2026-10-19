@@ -839,6 +839,56 @@ a:focus-visible,button:focus-visible,[role=button]:focus-visible{outline:3px sol
 .stx-megamenu__item.stx-megamenu__item--main.level-0:hover,.stx-megamenu__item.stx-megamenu__item--main.level-0:focus{background-color:#6d28d9!important;color:#fff!important}
 .stx-megamenu__item.stx-megamenu__item--main.level-0{accent-color:#7c3aed}
 </style>
+
+    <style id="cfxm-bright-heading-contrast">
+      /* Keep every landing-page heading readable against dark purple sections and rows. */
+      body.professional #wrapper h1,
+      body.professional #wrapper h2,
+      body.professional #wrapper h3,
+      body.professional #wrapper h4,
+      body.professional #wrapper h5,
+      body.professional #wrapper h6,
+      body.professional #wrapper [data-as="h1"],
+      body.professional #wrapper [data-as="h2"],
+      body.professional #wrapper [data-as="h3"],
+      body.professional #wrapper [data-as="h4"],
+      body.professional #wrapper [data-as="h5"],
+      body.professional #wrapper [data-as="h6"] {
+        color: #f5f0ff !important;
+        -webkit-text-fill-color: #f5f0ff !important;
+      }
+      body.professional #wrapper main h1,
+      body.professional #wrapper main h2,
+      body.professional #wrapper main h3,
+      body.professional #wrapper main h4,
+      body.professional #wrapper main h5,
+      body.professional #wrapper main h6,
+      body.professional #wrapper footer h1,
+      body.professional #wrapper footer h2,
+      body.professional #wrapper footer h3,
+      body.professional #wrapper footer h4,
+      body.professional #wrapper footer h5,
+      body.professional #wrapper footer h6 {
+        text-shadow: 0 1px 12px rgba(167, 139, 250, .12);
+      }
+      body.professional #wrapper .cfxm-bot-plans .bot-plan-card h3,
+      body.professional #wrapper .cfxm-tesla-heading h2,
+      body.professional #wrapper .cfxm-tesla-card h3,
+      body.professional #wrapper .mi-related-article__title {
+        color: #f5f0ff !important;
+        -webkit-text-fill-color: #f5f0ff !important;
+      }
+      body.professional #wrapper h1 a,
+      body.professional #wrapper h2 a,
+      body.professional #wrapper h3 a,
+      body.professional #wrapper h4 a,
+      body.professional #wrapper h5 a,
+      body.professional #wrapper h6 a {
+        color: #c4b5fd !important;
+        -webkit-text-fill-color: #c4b5fd !important;
+      }
+    </style>
+
 </head>
 
 
