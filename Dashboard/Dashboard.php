@@ -324,11 +324,11 @@ window.smartsupp||(function(d) {
                         <a href="BotPlans.php">View all bots <i class="fas fa-arrow-right"></i></a>
                     </div>
                     <div class="cfxm-bot-preview-track" aria-label="AI trading bot plan preview">
-                        <a class="cfxm-bot-preview-card" href="BotPlans.php"><img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&amp;fit=crop&amp;w=520&amp;q=80" alt="" loading="lazy"><span>AI Scout</span><strong>$2,000</strong><small>3 markets · Trend signals</small></a>
-                        <a class="cfxm-bot-preview-card" href="BotPlans.php"><img src="https://images.unsplash.com/photo-1642790106117-e829e14a795f?auto=format&amp;fit=crop&amp;w=520&amp;q=80" alt="" loading="lazy"><span>Momentum AI</span><strong>$5,000</strong><small>8 markets · Breakouts</small></a>
-                        <a class="cfxm-bot-preview-card" href="BotPlans.php"><img src="https://images.unsplash.com/photo-1642543492481-077b4d7ccf2c?auto=format&amp;fit=crop&amp;w=520&amp;q=80" alt="" loading="lazy"><span>Quant Matrix</span><strong>$10,000</strong><small>15 markets · Quant signals</small></a>
-                        <a class="cfxm-bot-preview-card" href="BotPlans.php"><img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&amp;fit=crop&amp;w=520&amp;q=80" alt="" loading="lazy"><span>Neural Trader</span><strong>$25,000</strong><small>25 markets · AI ensemble</small></a>
-                        <a class="cfxm-bot-preview-card" href="BotPlans.php"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&amp;fit=crop&amp;w=520&amp;q=80" alt="" loading="lazy"><span>Apex Autonomous</span><strong>$50,000</strong><small>40 markets · Adaptive profile</small></a>
+                        <a class="cfxm-bot-preview-card" href="BotPlans.php"><img src="assets/bots/scout.svg" alt="" loading="lazy"><span>AI Scout</span><strong>$2,000</strong><small>3 markets · Trend signals</small></a>
+                        <a class="cfxm-bot-preview-card" href="BotPlans.php"><img src="assets/bots/momentum.svg" alt="" loading="lazy"><span>Momentum AI</span><strong>$5,000</strong><small>8 markets · Breakouts</small></a>
+                        <a class="cfxm-bot-preview-card" href="BotPlans.php"><img src="assets/bots/quant.svg" alt="" loading="lazy"><span>Quant Matrix</span><strong>$10,000</strong><small>15 markets · Quant signals</small></a>
+                        <a class="cfxm-bot-preview-card" href="BotPlans.php"><img src="assets/bots/neural.svg" alt="" loading="lazy"><span>Neural Trader</span><strong>$25,000</strong><small>25 markets · AI ensemble</small></a>
+                        <a class="cfxm-bot-preview-card" href="BotPlans.php"><img src="assets/bots/apex.svg" alt="" loading="lazy"><span>Apex Autonomous</span><strong>$50,000</strong><small>40 markets · Adaptive profile</small></a>
                     </div>
                     <p class="cfxm-bot-preview-note"><i class="fas fa-info-circle"></i> Bot acquisition does not guarantee returns. Earnings can only be reflected after actual trades are executed and realized results are reconciled.</p>
                 </section>
