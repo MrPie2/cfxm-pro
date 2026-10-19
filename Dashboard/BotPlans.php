@@ -38,15 +38,49 @@ if ($botQuery) while ($botRow = mysqli_fetch_assoc($botQuery)) $myBots[] = $botR
  document.querySelectorAll('.bot-acquire').forEach(function(button){
   button.addEventListener('click', async function(){
    var name=button.dataset.name, price=Number(button.dataset.price);
-   if(!window.confirm('Buy '+name+' for $'+price.toLocaleString()+'? The plan amount will be deducted from your available wallet balance.')) return;
-   button.disabled=true; button.innerHTML='<i class="fas fa-spinner fa-spin"></i> Processing...';
+   var confirmed = await swal({
+    title: 'Confirm bot purchase',
+    text: 'Buy ' + name + ' for $' + price.toLocaleString() + '? The full amount will be deducted from either Fin_Asset or Total_Deposit, whichever eligible wallet can cover the purchase.',
+    icon: 'warning',
+    buttons: ['Cancel', 'Buy Bot'],
+    dangerMode: false
+   });
+   if (!confirmed) return;
+
+   button.disabled=true;
+   button.innerHTML='<i class="fas fa-spinner fa-spin"></i> Processing...';
    try {
     var body=new URLSearchParams({action:'acquire',plan:button.dataset.plan,csrf:'<?php echo bot_h($_SESSION['bot_csrf'] = $_SESSION['bot_csrf'] ?? bin2hex(random_bytes(32))); ?>'});
     var response=await fetch('BotController.php',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8','X-Requested-With':'XMLHttpRequest'},body:body.toString(),credentials:'same-origin'});
     var result=await response.json();
-    if(!response.ok || !result.success) throw new Error(result.message || 'Could not acquire this bot.');
-    window.alert(result.message); window.location.reload();
-   } catch(error){ window.alert(error.message || 'Request failed. Please try again.'); button.disabled=false; button.innerHTML='<i class="fas fa-plus-circle"></i> Buy Bot'; }
+    if(!response.ok || !result.success) {
+     await swal({
+      title: response.status === 422 ? 'Insufficient funds' : 'Purchase unsuccessful',
+      text: result.message || 'Could not acquire this bot. Please try again.',
+      icon: response.status === 422 ? 'warning' : 'error',
+      button: 'OK'
+     });
+     button.disabled=false;
+     button.innerHTML='<i class="fas fa-plus-circle"></i> Buy Bot';
+     return;
+    }
+    await swal({
+     title: 'Bot purchased successfully',
+     text: result.message,
+     icon: 'success',
+     button: 'Continue'
+    });
+    window.location.reload();
+   } catch(error) {
+    await swal({
+     title: 'Request failed',
+     text: error.message || 'Please check your connection and try again.',
+     icon: 'error',
+     button: 'OK'
+    });
+    button.disabled=false;
+    button.innerHTML='<i class="fas fa-plus-circle"></i> Buy Bot';
+   }
   });
  });
 })();
