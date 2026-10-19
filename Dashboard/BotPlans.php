@@ -3,6 +3,8 @@ session_start();
 if (!isset($_SESSION['User_id'])) { header('Location: LoginContainer.php'); exit; }
 $PageTitle = 'AI Trading Bots';
 include('Header.php');
+require_once __DIR__ . '/BotSchema.php';
+$botSchemaReady = cfxm_ensure_bot_tables($Conn);
 
 function bot_h($v) { return htmlspecialchars((string)$v, ENT_QUOTES, 'UTF-8'); }
 $botPlans = [
@@ -13,7 +15,7 @@ $botPlans = [
  ['id'=>'apex','name'=>'Apex Autonomous','price'=>50000,'tag'=>'ELITE','strategy'=>'Multi-market adaptive execution','description'=>'The highest-capacity profile, intended for a connected and monitored trading engine.','capacity'=>'Up to 40 markets','features'=>['Adaptive strategy selection','Expanded market coverage','Priority monitoring tools'],'image'=>'assets/bots/apex.svg']
 ];
 $myBots = [];
-$botQuery = mysqli_query($Conn, "SELECT id, plan_code, plan_name, capital, status, created_at FROM user_trading_bots WHERE investor_id='" . mysqli_real_escape_string($Conn, (string)$_SESSION['User_id']) . "' ORDER BY id DESC LIMIT 20");
+$botQuery = $botSchemaReady ? mysqli_query($Conn, "SELECT id, plan_code, plan_name, capital, status, created_at FROM user_trading_bots WHERE investor_id='" . mysqli_real_escape_string($Conn, (string)$_SESSION['User_id']) . "' ORDER BY id DESC LIMIT 20") : false;
 if ($botQuery) while ($botRow = mysqli_fetch_assoc($botQuery)) $myBots[] = $botRow;
 ?>
 <style>
